@@ -1,0 +1,1528 @@
+;-----------------------------------------------
+;----------1001201206-8.672.1.2-100113a-094402C-Sony
+;-----------------------------------------------
+; ATI Display Information file : ATIIXPAG.INF
+; Installation INF for the ATI display driver.
+; Copyright(C) 1998-2004 ATI Technologies Inc.
+; Windows XP
+; Base INF Last Updated 2005/11/01
+
+[Version]
+Signature="$Windows NT$"
+Provider=%ATI%
+ClassGUID={4D36E968-E325-11CE-BFC1-08002BE10318}
+Class=Display
+DriverVer=01/13/2010, 8.672.1.2000
+CatalogFile=CX_94402.CAT
+
+[DestinationDirs]
+DefaultDestDir      = 11
+ati2mtag.OGL        = 10  ;Windows
+ati2mtag.Miniport   = 12  ; drivers
+ati2mtag.Display    = 11  ; system32
+ati2mtag.OD	    = 11  ; system32
+
+[ControlFlags]
+ExcludeFromSelect=*
+;
+; Driver information
+;
+
+[Manufacturer]
+%ATI% = ATI.Mfg, NTx86
+
+[ATI.Mfg.NTx86]
+"ATI Mobility Radeon HD 3430" = ati2mtag_M72, PCI\VEN_1002&DEV_95C2&SUBSYS_9045104D
+"ATI Mobility Radeon HD 3470" = ati2mtag_M72, PCI\VEN_1002&DEV_95C4&SUBSYS_9033104D
+"ATI Mobility Radeon HD 3470 " = ati2mtag_M72, PCI\VEN_1002&DEV_95C4&SUBSYS_9035104D
+"ATI Mobility Radeon HD 3650" = ati2mtag_M76, PCI\VEN_1002&DEV_9591&SUBSYS_9035104D
+"ATI Mobility Radeon HD 4570" = ati2mtag_M9x, PCI\VEN_1002&DEV_9553&SUBSYS_9056104D
+"ATI Mobility Radeon HD 4570 " = ati2mtag_M9x, PCI\VEN_1002&DEV_9553&SUBSYS_9035104D
+"ATI Mobility Radeon HD 4570  " = ati2mtag_M9x, PCI\VEN_1002&DEV_9553&SUBSYS_9033104D
+"ATI Mobility Radeon HD 4570   " = ati2mtag_M9x, PCI\VEN_1002&DEV_9553&SUBSYS_906B104D
+"ATI Mobility Radeon HD 4650" = ati2mtag_M9x, PCI\VEN_1002&DEV_9480&SUBSYS_9035104D
+"ATI Mobility Radeon HD 4650 " = ati2mtag_M9x, PCI\VEN_1002&DEV_9480&SUBSYS_9071104D
+"ATI Mobility Radeon HD 5145" = ati2mtag_M9x, PCI\VEN_1002&DEV_9553&SUBSYS_9071104D
+"ATI Mobility Radeon HD 5470" = ati2mtag_Manhattan, PCI\VEN_1002&DEV_68E0&SUBSYS_9071104D
+"ATI Mobility Radeon HD 5650" = ati2mtag_Manhattan, PCI\VEN_1002&DEV_68C1&SUBSYS_9071104D
+;
+; General installation section
+;
+
+[ati2mtag_M76]
+Include=msdv.inf
+CopyFiles=ati2mtag.Miniport, ati2mtag.Display, ati2mtag.ORCA, Uninstall.CopyFiles, ati2mtag.OGL, ati2mtag.OD;, DVCR.CopyCodec
+AddReg=Uninstall.AddReg
+DelFiles=ati2mtag_DelFiles
+;UpdateInis=DVCR.UpdateIni
+UninstallFiles=Uninstall.CopyFiles
+UninstallReg=Uninstall.AddReg
+CleanFiles=ati2mtag.Miniport, ati2mtag.Display, ati2mtag.ORCA,, ati2mtag.OGL, ati2mtag.OD
+CleanReg=ati2mtag_SoftwareDeviceSettings, ati2mtag_M76_SoftwareDeviceSettings, atiorcaWS_OpenGLSoftwareSettings, ati2mtag_Mobile_SoftwareDeviceSettings, ati2mtag_MobileLargeDesktopSettings, ati2mtag_R6x_SoftwareDeviceSettings
+CleanService=ati2mtag_RemoveService
+
+[ati2mtag_M9x]
+Include=msdv.inf
+CopyFiles=ati2mtag.Miniport, ati2mtag.Display, ati2mtag.ORCA, Uninstall.CopyFiles, ati2mtag.OGL, ati2mtag.OD;, DVCR.CopyCodec
+AddReg=Uninstall.AddReg
+DelFiles=ati2mtag_DelFiles
+;UpdateInis=DVCR.UpdateIni
+UninstallFiles=Uninstall.CopyFiles
+UninstallReg=Uninstall.AddReg
+CleanFiles=ati2mtag.Miniport, ati2mtag.Display, ati2mtag.ORCA,, ati2mtag.OGL, ati2mtag.OD
+CleanReg=ati2mtag_SoftwareDeviceSettings, ati2mtag_M9x_SoftwareDeviceSettings, atiorcaWS_OpenGLSoftwareSettings, ati2mtag_Mobile_SoftwareDeviceSettings, ati2mtag_MobileLargeDesktopSettings, ati2mtag_R6x_SoftwareDeviceSettings, ati2mtag_MultiUVD_SoftwareDeviceSettings
+CleanService=ati2mtag_RemoveService
+
+[ati2mtag_Manhattan]
+Include=msdv.inf
+CopyFiles=ati2mtag.Miniport, ati2mtag.Display, ati2mtag.ORCA, Uninstall.CopyFiles, ati2mtag.OGL, ati2mtag.OD;, DVCR.CopyCodec
+AddReg=Uninstall.AddReg
+DelFiles=ati2mtag_DelFiles
+;UpdateInis=DVCR.UpdateIni
+UninstallFiles=Uninstall.CopyFiles
+UninstallReg=Uninstall.AddReg
+CleanFiles=ati2mtag.Miniport, ati2mtag.Display, ati2mtag.ORCA,, ati2mtag.OGL, ati2mtag.OD
+CleanReg=ati2mtag_SoftwareDeviceSettings, ati2mtag_Manhattan_SoftwareDeviceSettings, atiorcaWS_OpenGLSoftwareSettings, ati2mtag_Mobile_SoftwareDeviceSettings, ati2mtag_MobileLargeDesktopSettings, ati2mtag_R6x_SoftwareDeviceSettings, ati2mtag_MultiUVD_SoftwareDeviceSettings
+CleanService=ati2mtag_RemoveService
+
+[ati2mtag_M72]
+Include=msdv.inf
+CopyFiles=ati2mtag.Miniport, ati2mtag.Display, ati2mtag.OpenGL, Uninstall.CopyFiles, ati2mtag.OGL, ati2mtag.ORCA;, DVCR.CopyCodec
+AddReg=Uninstall.AddReg
+DelFiles=ati2mtag_DelFiles
+;UpdateInis=DVCR.UpdateIni
+UninstallFiles=Uninstall.CopyFiles
+UninstallReg=Uninstall.AddReg
+CleanFiles=ati2mtag.Miniport, ati2mtag.Display, ati2mtag.OpenGL, ati2mtag.OGL, ati2mtag.ORCA
+CleanReg=ati2mtag_SoftwareDeviceSettings, ati2mtag_M72_SoftwareDeviceSettings, atioglxx_OpenGLSoftwareSettings, ati2mtag_Mobile_SoftwareDeviceSettings, ati2mtag_MobileLargeDesktopSettings, ati2mtag_R6x_SoftwareDeviceSettings
+CleanService=ati2mtag_RemoveService
+
+[ati2mtag_RemoveService]
+ati2mtag
+Ati HotKey Poller
+;
+; File sections
+;
+
+[Uninstall.CopyFiles]
+atiiiexx.dll
+
+[ati2mtag.Miniport]
+ati2mtag.sys
+ati2erec.dll
+
+[ati2mtag.Display]
+ati2dvag.dll
+ati2cqag.dll
+Ati2mdxx.exe
+ati3duag.dll
+ativvaxx.dll
+atiicdxx.dat
+ativva5x.dat
+ativva6x.dat
+amdpcom32.dll,atimpc32.dll
+atimpc32.dll
+atiadlxx.dll
+ativvaxx.cap
+atitvo32.dll
+ati2evxx.exe
+ati2evxx.dll
+atipdlxx.dll
+ati2edxx.dll
+atikvmag.dll
+atifglpf.xml
+ATIDEMGX.dll
+aticaldd.dll
+aticalrt.dll
+aticalcl.dll
+atibtmon.exe
+
+[ati2mtag.OGL]
+atiogl.xml
+atiogl.xml
+
+[ati2mtag.OpenGL]
+atiok3x2.dll
+atiok3x2.dll
+atioglxx.dll
+
+[ati2mtag.ORCA]
+atiok3x2.dll
+atioglxx.dll
+
+[ati2mtag.OD]
+ATIODCLI.exe
+ATIODE.exe
+
+[Uninstall.AddReg]
+HKLM,"Software\Microsoft\Windows\CurrentVersion\Uninstall\ATI Display Driver",DisplayName,,"ATI Display Driver"
+HKLM,"Software\Microsoft\Windows\CurrentVersion\Uninstall\ATI Display Driver",UninstallString,,"rundll32 %11%\atiiiexx.dll,_InfEngUnInstallINFFile_RunDLL@16 -force_restart -flags:0x2010001 -inf_class:DISPLAY -clean"
+HKLM,"SOFTWARE\ATI Technologies\Installed Drivers\ATI Display Driver"
+HKLM,"Software\Microsoft\Windows\CurrentVersion\Uninstall\ATI Display Driver",DisplayVersion,,"8.672.1.2-100113a-094402C-Sony"
+
+[ati2mtag_DelFiles]
+amdcalcl.dll
+amdcaldd.dll
+amdcalrt.dll
+;
+; Service Installation
+;
+
+[ati2mtag_M76.Services]
+AddService = ati2mtag, 0x00000002, ati2mtag_Service_Inst, ati2mtag_EventLog_Inst
+AddService = Ati HotKey Poller,, Ati2evxx_Generic_Service_Inst, Ati2evxx_EventLog_Inst
+
+[ati2mtag_M9x.Services]
+AddService = ati2mtag, 0x00000002, ati2mtag_Service_Inst, ati2mtag_EventLog_Inst
+AddService = Ati HotKey Poller,, Ati2evxx_Generic_Service_Inst, Ati2evxx_EventLog_Inst
+
+[ati2mtag_Manhattan.Services]
+AddService = ati2mtag, 0x00000002, ati2mtag_Service_Inst, ati2mtag_EventLog_Inst
+AddService = Ati HotKey Poller,, Ati2evxx_Generic_Service_Inst, Ati2evxx_EventLog_Inst
+
+[ati2mtag_M72.Services]
+AddService = ati2mtag, 0x00000002, ati2mtag_Service_Inst, ati2mtag_EventLog_Inst
+AddService = Ati HotKey Poller,, Ati2evxx_Generic_Service_Inst, Ati2evxx_EventLog_Inst
+
+[ati2mtag_Service_Inst]
+ServiceType    = 1                  ; SERVICE_KERNEL_DRIVER
+StartType      = 3                  ; SERVICE_DEMAND_START
+ErrorControl   = 0                  ; SERVICE_ERROR_IGNORE
+LoadOrderGroup = Video
+ServiceBinary  = %12%\ati2mtag.sys
+
+[ati2mtag_EventLog_Inst]
+AddReg = ati2mtag_EventLog_AddReg
+
+[ati2mtag_EventLog_AddReg]
+HKR,,EventMessageFile,0x00020000,"%SystemRoot%\System32\IoLogMsg.dll;%SystemRoot%\System32\drivers\ati2erec.dll;%SystemRoot%\System32\drivers\ati2mtag.sys"
+HKR,,TypesSupported,0x00010001,7
+HKR,, CategoryMessageFile, 0x00020000, "%SystemRoot%\System32\drivers\ati2erec.dll"
+HKR,, CategoryCount, 0x00010001, 63
+
+[Ati2evxx_Generic_Service_Inst]
+ServiceType    = 0x110
+StartType      = 2
+ErrorControl   = 1
+ServiceBinary  = %11%\Ati2evxx.exe
+LoadOrderGroup = Event log
+
+[Ati2evxx_EventLog_Inst]
+AddReg=Ati2evxx_EventLog_AddReg
+
+[Ati2evxx_EventLog_AddReg]
+HKR,,EventMessageFile,0x00020000,"%11%\Ati2evxx.exe"
+HKR,,TypesSupported,0x00010001,7
+;
+; Software Installation
+;
+
+[ati2mtag_M76.SoftwareSettings]
+AddReg = ati2mtag_SoftwareDeviceSettings
+AddReg = ati2mtag_M76_SoftwareDeviceSettings
+AddReg = ati2mtag_R6x_SoftwareDeviceSettings
+AddReg = ati2mtag_Mobile_SoftwareDeviceSettings
+AddReg = atiorcaWS_OpenGLSoftwareSettings
+DelReg = ati2mtag_RemoveDeviceSettings
+
+[ati2mtag_M9x.SoftwareSettings]
+AddReg = ati2mtag_SoftwareDeviceSettings
+AddReg = ati2mtag_M9x_SoftwareDeviceSettings
+AddReg = ati2mtag_MultiUVD_SoftwareDeviceSettings
+AddReg = ati2mtag_Mobile_SoftwareDeviceSettings
+AddReg = atiorcaWS_OpenGLSoftwareSettings
+DelReg = ati2mtag_RemoveDeviceSettings
+
+[ati2mtag_Manhattan.SoftwareSettings]
+AddReg = ati2mtag_SoftwareDeviceSettings
+AddReg = ati2mtag_Manhattan_SoftwareDeviceSettings
+AddReg = ati2mtag_MultiUVD_SoftwareDeviceSettings
+AddReg = ati2mtag_Mobile_SoftwareDeviceSettings
+AddReg = atiorcaWS_OpenGLSoftwareSettings
+DelReg = ati2mtag_RemoveDeviceSettings
+
+[ati2mtag_M72.SoftwareSettings]
+AddReg = ati2mtag_SoftwareDeviceSettings
+AddReg = ati2mtag_M72_SoftwareDeviceSettings
+AddReg = ati2mtag_R6x_SoftwareDeviceSettings
+AddReg = ati2mtag_Mobile_SoftwareDeviceSettings
+AddReg = atioglxx_OpenGLSoftwareSettings
+DelReg = ati2mtag_RemoveDeviceSettings
+
+[ati2mtag_M76_SoftwareDeviceSettings]
+HKR,, DALRULE_NOTVANDLCDONCRTC,             %REG_DWORD%,    1
+HKR,, WmAgpMaxIdleClk,			    %REG_DWORD%,    0x20
+HKR,, DisableIDCT,                          %REG_DWORD%,    0
+HKLM,"SOFTWARE\Microsoft\Windows\CurrentVersion\Run",ATIModeChange,,"Ati2mdxx.exe"
+HKR,, DALR6 CRT_MaxModeInfo,                  %REG_BINARY%,00,00,00,00,40,06,00,00,B0,04,00,00,00,00,00,00,3C,00,00,00
+HKR,, DisableFullAdapterInit,      %REG_DWORD%,    0
+HKR,, MemInitLatencyTimer,         %REG_DWORD%,    0x775771BF
+HKR,, GCORULE_FlickerWA,             %REG_DWORD%, 1
+HKR,, SMOOTHVISION_NAME, %REG_SZ%, "SMOOTHVISION HD"
+HKR,, GI_DEF, %REG_SZ%, 1
+HKR,, AreaAniso_DEF, %REG_SZ%, 0
+HKR,, VIDEO_NAME_SUFFIX, %REG_SZ%, "Avivo(TM)"
+HKR,, SameOnAllUsingStandardInVideoTheaterCloneMode, %REG_SZ%, "1"
+HKR,, ASTT_DEF, %REG_SZ%, 0
+HKR,, ASD_DEF, %REG_SZ%, 1
+HKR,, 3to2Pulldown, %REG_SZ%, 0
+HKR,, 3to2Pulldown_DEF, %REG_SZ%, 0
+HKR,, 3to2Pulldown_NA, %REG_SZ%, 0
+HKR,, GI_NA, %REG_SZ%, 1
+HKR,, AreaAniso_NA, %REG_SZ%, "1"
+HKR,, AntiAliasMapping_SET,  %REG_SZ%, "0(0:0,1:0) 2(0:2,1:2) 4(0:4,1:4) 8(0:8,1:8,2:16)"
+HKR,, AAF_NA, %REG_SZ%, 0
+HKR,, AAF_DEF, %REG_SZ%, 0
+HKR,, AAF_Value_SET, %REG_SZ%, "Box:0,Narrow-tent:1,Wide-tent:2,Edge-detect:3"
+HKR,, AAF_Mapping_SET, %REG_SZ%, "0(Box:2,Narrow-tent:4,Wide-tent:6,Edge-detect:12) 2(Box:2,Narrow-tent:4,Wide-tent:6) 4(Box:4,Narrow-tent:6,Wide-tent:8,Edge-detect:12) 8(Box:8,Narrow-tent:12,Wide-tent:16,Edge-detect:24) 16(Box:16,Narrow-tent:24,Wide-tent:32)"
+HKR,, FanSpeedRPMActual_NA, %REG_SZ%, 1
+HKR,, FanSpeedRPMTarget_NA, %REG_SZ%, 1
+HKR,, FanSpeedPercentActual_NA, %REG_SZ%, 1
+HKR,, FanSpeedPercentTarget_NA, %REG_SZ%, 1
+HKR,, DALNonStandardModesBCD1, %REG_BINARY%,19,20,10,80,00,00,00,85
+HKR,, DALRestrictedModesBCD1, %REG_BINARY%,07,20,04,80,00,00,00,00,08,48,04,80,00,00,00,00,11,52,08,64,00,00,00,00,12,80,10,24,00,00,00,00,17,92,13,44,00,00,00,00,18,00,14,40,00,00,00,00,18,56,13,92,00,00,00,00
+HKR,, DALRULE_ALLOWINFPANELVENDORID,    %REG_DWORD%,    1
+HKR,, DALRULE_OVERWRITEPANELVENDORID, %REG_DWORD%,    1
+HKR,, DisableDualView,                 %REG_DWORD%,    0
+HKR,, DisableDualviewWithHotKey,    %REG_DWORD%,    1
+HKR,, ExtEvent_EnablePolling,      %REG_DWORD%,    1
+HKR,, ExtEvent_BroadcastDispChange,      %REG_DWORD%,    0
+HKR,, ExtEvent_UpdateAdapterInfoOnHK,      %REG_DWORD%,    1
+HKR,, GCORULE_DisableHotKeyIfDDExclusiveMode,          %REG_DWORD%,    0
+HKR,, ExtEvent_LCDSetMaxResOnDockChg,      %REG_DWORD%,    0
+HKR,, GCORULE_DisableGPIOPowerSaveMode,   %REG_DWORD%,    1
+HKR,, DALRULE_NOCRTANDDFPONSAMECONTROLLER,      %REG_DWORD%,    1
+HKR,, GCORULE_IntTMDSReduceBlankTiming,      %REG_DWORD%,    0
+HKR,, TVDisableModes,   %REG_DWORD%,    0
+HKR,, GCORULE_ENABLERMXFILTER, %REG_DWORD%,   1
+HKR,, OVShiftOddDown,                         %REG_DWORD%,    1
+HKR,, DALRULE_RESTRICT2ACTIVEDISPLAYS,      %REG_DWORD%,    0
+HKR,, DALRULE_POWERPLAYOPTIONCOLORDEPTHREDUCTION,      %REG_DWORD%,    0
+HKR,, R6LCD_FOLLOWLIDSTATE,   %REG_DWORD%,    0
+HKR,, DisableFakeOSDualViewNotify,      %REG_DWORD%,    1
+HKR,, GCORULE_TMDSiCoherentMode, %REG_DWORD%, 0
+HKR,, DisableSWInterrupt,      		   %REG_DWORD%,    0
+HKR,, ExtEvent_BIOSEventByInterrupt,      %REG_DWORD%,    1
+HKR,, DisableD3DExclusiveModeChange,             %REG_DWORD%,    1
+HKR,, DisableOpenGLExclusiveModeChange,             %REG_DWORD%,    1
+HKR,, ExtEvent_EnableChgLCDResOnHotKey,                  %REG_DWORD%,    0
+HKR,, TVM6Flag,   %REG_DWORD%,    0
+HKR,, DisableDalValidateChild,        %REG_DWORD%,    0
+HKR,, DALRULE_ENABLESHOWACSLIDER,                  %REG_DWORD%,    1
+HKR,, DALRULE_ENABLESHOWDCLOWSLIDER,                  %REG_DWORD%,    1
+HKR,, R6LCD_RETURNALLBIOSMODES,              %REG_DWORD%,    0
+HKR,, ExtEvent_RestoreLargeDesktopOnResume,      %REG_DWORD%,    0
+HKR,, ExtEvent_EnableAutoDisplayConfig,      %REG_DWORD%,    1
+HKR,, DALRULE_USERDEVICEPROFILEUPDATE,               %REG_DWORD%,    1
+HKR,, ExtEvent_EnableMpAtLogon,      %REG_DWORD%,    1
+HKR,, ExtEvent_EnableMpAtResume,      %REG_DWORD%,    1
+HKR,, ExtEvent_EnableMpAtDocking,      %REG_DWORD%,    1
+HKR,, ExtEvent_EnableMpAtSessionChange,      %REG_DWORD%,    1
+HKR,, ExtEvent_EnableMpAtLidSwitch,      %REG_DWORD%,    1
+HKR,, ExtEvent_EnableMpAtHotPlug,      %REG_DWORD%,    1
+HKR,, ExtEvent_EnableMpAtHotKeyExtEvent,      %REG_DWORD%,    1
+HKR,, ExtEvent_ApplyADCAtFUS, %REG_DWORD%, 1
+HKR,, ExtEvent_SaveProfileBySelected,      %REG_DWORD%,    1
+HKR,, ExtEvent_ApplyADCAtSBiosRequest,      %REG_DWORD%,    1
+HKR,, DALRULE_EDIDPROFILE,      %REG_DWORD%,    1
+HKR,, ExtEvent_SaveADCProfileGlobally,      %REG_DWORD%,    1
+HKR,, ExtEvent_NonExtendedADCProfileOnHotKey,      %REG_DWORD%,    1
+HKR,, DALRULE_ADDEXTDESKTOPTOPROFILEKEY,      %REG_DWORD%,    1
+HKR,, ExtEvent_DeviceTypeBasedADCProfile,      %REG_DWORD%,    1
+HKR,, DALRULE_DEVICETYPEBASEDPROFILEKEY,      %REG_DWORD%,    1
+HKR,, GCORULE_PPForceBlankDisplays,             %REG_DWORD%, 1
+HKR,, ExtEvent_SaveExpansionInADCProfile,      %REG_DWORD%,    1
+HKR,, ExtEvent_OverDriveSupport,      %REG_DWORD%,    1
+HKR,, DXVA_WMV,                 %REG_SZ%,    1
+HKR,, DXVA_WMV_DEF,                 %REG_SZ%,    1
+HKR,, DfpUsePixSlip,                  %REG_DWORD%,    1
+HKR,, GxoMEC, %REG_DWORD%, 0
+HKR,, DigitalEncoderEngineRestrictions,             %REG_DWORD%, 0x101
+HKR,, DALRULE_SkipEDIDReadForNoSink,      %REG_DWORD%,    1
+HKR,, GCORULE_X1DETECT,      %REG_DWORD%,    1
+HKR,, Gxo50HzTimingSupport,          %REG_DWORD%,    1
+HKR,, EnableGeminiAutoLink,        %REG_DWORD%,    1
+HKR,, Main3D_DEF, %REG_SZ%, 3
+HKR,, AntiAlias_DEF, %REG_SZ%, 1
+HKR,, AntiAliasSamples_DEF, %REG_SZ%, 0
+HKR,, AnisoType_DEF, %REG_SZ%, 0
+HKR,, AnisoDegree_DEF, %REG_SZ%, 0
+HKR,, TextureOpt_DEF, %REG_SZ%, 0
+HKR,, TextureLod_DEF, %REG_SZ%, 0
+HKR,, TruformMode_DEF, %REG_SZ%, 0
+HKR,, VSyncControl_DEF, %REG_SZ%, 1
+HKR,, SwapEffect_DEF, %REG_SZ%, 0
+HKR,, TemporalAAMultiplier_DEF, %REG_SZ%, 0
+HKR,, ExportCompressedTex_DEF, %REG_SZ%, 1
+HKR,, PixelCenter_DEF, %REG_SZ%, 0
+HKR,, ForceZBufferDepth_DEF, %REG_SZ%, 0
+HKR,, EnableTripleBuffering_DEF, %REG_SZ%, 0
+HKR,, ColourDesktopGamma_DEF, %REG_SZ%, "1.0 1.0 1.0"
+HKR,, ColourDesktopBrightness_DEF, %REG_SZ%, "0 0 0"
+HKR,, ColourDesktopContrast_DEF, %REG_SZ%, "1.0 1.0 1.0"
+HKR,, ColourFullscreenGamma_DEF, %REG_SZ%, "1.0 1.0 1.0"
+HKR,, ColourFullscreenBrightness_DEF, %REG_SZ%, "0 0 0"
+HKR,, ColourFullscreenContrast_DEF, %REG_SZ%, "1.0 1.0 1.0"
+HKR,, 3D_Refresh_Rate_Override_DEF, %REG_DWORD%, 0
+HKR,, Display_Detection_DEF, %REG_DWORD%, 0
+HKR,, Panning_Mode_DEF, %REG_DWORD%, 0
+HKR,, Mouse_Track_Orientation_DEF, %REG_DWORD%, 1
+HKR,, Force_TV_Detection_DEF, %REG_DWORD%, 0
+HKR,, CatalystAI_DEF, %REG_SZ%, 1
+
+[ati2mtag_M9x_SoftwareDeviceSettings]
+HKR,, DALRULE_NOTVANDLCDONCRTC,             %REG_DWORD%,    1
+HKR,, WmAgpMaxIdleClk,			    %REG_DWORD%,    0x20
+HKR,, DisableIDCT,                          %REG_DWORD%,    0
+HKLM,"SOFTWARE\Microsoft\Windows\CurrentVersion\Run",ATIModeChange,,"Ati2mdxx.exe"
+HKR,, DALR6 CRT_MaxModeInfo,                  %REG_BINARY%,00,00,00,00,40,06,00,00,B0,04,00,00,00,00,00,00,3C,00,00,00
+HKR,, DisableFullAdapterInit,      %REG_DWORD%,    0
+HKR,, MemInitLatencyTimer,         %REG_DWORD%,    0x775771BF
+HKR,, GCORULE_FlickerWA,             %REG_DWORD%, 1
+HKR,, SMOOTHVISION_NAME, %REG_SZ%, "SMOOTHVISION HD"
+HKR,, GI_DEF, %REG_SZ%, 1
+HKR,, AreaAniso_DEF, %REG_SZ%, 0
+HKR,, VIDEO_NAME_SUFFIX, %REG_SZ%, "Avivo(TM)"
+HKR,, SameOnAllUsingStandardInVideoTheaterCloneMode, %REG_SZ%, "1"
+HKR,, ASTT_DEF, %REG_SZ%, 0
+HKR,, ASD_DEF, %REG_SZ%, 1
+HKR,, 3to2Pulldown, %REG_SZ%, 0
+HKR,, 3to2Pulldown_DEF, %REG_SZ%, 0
+HKR,, 3to2Pulldown_NA, %REG_SZ%, 0
+HKR,, GI_NA, %REG_SZ%, 1
+HKR,, AreaAniso_NA, %REG_SZ%, "1"
+HKR,, AAF_NA, %REG_SZ%, 0
+HKR,, AAF_DEF, %REG_SZ%, 0
+HKR,, AAF_Value_SET, %REG_SZ%, "Box:0,Narrow-tent:1,Wide-tent:2,Edge-detect:3"
+HKR,, AAF_Mapping_SET, %REG_SZ%, "0(Box:2,Narrow-tent:4,Wide-tent:6,Edge-detect:12) 2(Box:2,Narrow-tent:4,Wide-tent:6) 4(Box:4,Narrow-tent:6,Wide-tent:8,Edge-detect:12) 8(Box:8,Narrow-tent:12,Wide-tent:16,Edge-detect:24) 16(Box:16,Narrow-tent:24,Wide-tent:32)"
+HKR,, ColorVibrance_DEF, %REG_SZ%, "0"
+HKR,, Fleshtone_DEF, %REG_SZ%, "0"
+HKR,, TemporalAAMultiplier_NA, %REG_SZ%, "1"
+HKR,, DXVA_WMV_NA,                 %REG_SZ%,    1
+HKR,, ATMS_DEF, %REG_SZ%, 1
+HKR,, AAAMethod_DEF, %REG_SZ%, 0
+HKR,, ColorVibrance_ENABLE_DEF, %REG_SZ%, "0"
+HKR,, Denoise_DEF, %REG_SZ%, "64"
+HKR,, Detail_DEF, %REG_SZ%, "0"
+HKR,, Detail_ENABLE_DEF, %REG_SZ%, "0"
+HKR,, Denoise_ENABLE_DEF, %REG_SZ%, "1"
+HKR,, Detail_NA, %REG_SZ%, "0"
+HKR,, Denoise_NA, %REG_SZ%, "0"
+HKR,, DynamicRange_NA, %REG_SZ%, "1"
+HKR,, Fleshtone_ENABLE_DEF, %REG_SZ%, "0"
+HKR,, MainVideo_SET, %REG_SZ%, "0 1 2 3 4"
+HKR,, MainVideo_TBL, %REG_SZ%, "1:Brightness=0.0,Contrast=1.0,Saturation=1.0,Gamma=0.0,Hue=0.0;2:Brightness=-3.0,Contrast=1.16,Saturation=1.25,Gamma=0.0,Hue=0.0;3:Brightness=-3.0,Contrast=1.07,Saturation=1.10,Gamma=0.0,Hue=0.0;4:Brightness=7.0,Contrast=1.25,Saturation=0.96,Gamma=0.0,Hue=0.0"
+HKR,, DALNonStandardModesBCD1, %REG_BINARY%,19,20,10,80,00,00,00,85
+HKR,, DALRestrictedModesBCD1, %REG_BINARY%,07,20,04,80,00,00,00,00,08,48,04,80,00,00,00,00,11,52,08,64,00,00,00,00,12,80,10,24,00,00,00,00,17,92,13,44,00,00,00,00,18,00,14,40,00,00,00,00,18,56,13,92,00,00,00,00
+HKR,, DALRULE_ALLOWINFPANELVENDORID,    %REG_DWORD%,    1
+HKR,, DALRULE_OVERWRITEPANELVENDORID, %REG_DWORD%,    1
+HKR,, DisableDualView,                 %REG_DWORD%,    0
+HKR,, DisableDualviewWithHotKey,    %REG_DWORD%,    1
+HKR,, ExtEvent_EnablePolling,      %REG_DWORD%,    1
+HKR,, ExtEvent_BroadcastDispChange,      %REG_DWORD%,    0
+HKR,, ExtEvent_UpdateAdapterInfoOnHK,      %REG_DWORD%,    1
+HKR,, GCORULE_DisableHotKeyIfDDExclusiveMode,          %REG_DWORD%,    0
+HKR,, ExtEvent_LCDSetMaxResOnDockChg,      %REG_DWORD%,    0
+HKR,, GCORULE_DisableGPIOPowerSaveMode,   %REG_DWORD%,    1
+HKR,, DALRULE_NOCRTANDDFPONSAMECONTROLLER,      %REG_DWORD%,    1
+HKR,, GCORULE_IntTMDSReduceBlankTiming,      %REG_DWORD%,    0
+HKR,, TVDisableModes,   %REG_DWORD%,    0
+HKR,, GCORULE_ENABLERMXFILTER, %REG_DWORD%,   1
+HKR,, OVShiftOddDown,                         %REG_DWORD%,    1
+HKR,, DALRULE_RESTRICT2ACTIVEDISPLAYS,      %REG_DWORD%,    0
+HKR,, DALRULE_POWERPLAYOPTIONCOLORDEPTHREDUCTION,      %REG_DWORD%,    0
+HKR,, R6LCD_FOLLOWLIDSTATE,   %REG_DWORD%,    0
+HKR,, DisableFakeOSDualViewNotify,      %REG_DWORD%,    1
+HKR,, GCORULE_TMDSiCoherentMode, %REG_DWORD%, 0
+HKR,, DisableSWInterrupt,      		   %REG_DWORD%,    0
+HKR,, ExtEvent_BIOSEventByInterrupt,      %REG_DWORD%,    1
+HKR,, DisableD3DExclusiveModeChange,             %REG_DWORD%,    1
+HKR,, DisableOpenGLExclusiveModeChange,             %REG_DWORD%,    1
+HKR,, ExtEvent_EnableChgLCDResOnHotKey,                  %REG_DWORD%,    0
+HKR,, TVM6Flag,   %REG_DWORD%,    0
+HKR,, DisableDalValidateChild,        %REG_DWORD%,    0
+HKR,, DALRULE_ENABLESHOWACSLIDER,                  %REG_DWORD%,    1
+HKR,, DALRULE_ENABLESHOWDCLOWSLIDER,                  %REG_DWORD%,    1
+HKR,, R6LCD_RETURNALLBIOSMODES,              %REG_DWORD%,    0
+HKR,, ExtEvent_RestoreLargeDesktopOnResume,      %REG_DWORD%,    0
+HKR,, ExtEvent_EnableAutoDisplayConfig,      %REG_DWORD%,    1
+HKR,, DALRULE_USERDEVICEPROFILEUPDATE,               %REG_DWORD%,    1
+HKR,, ExtEvent_EnableMpAtLogon,      %REG_DWORD%,    1
+HKR,, ExtEvent_EnableMpAtResume,      %REG_DWORD%,    1
+HKR,, ExtEvent_EnableMpAtDocking,      %REG_DWORD%,    1
+HKR,, ExtEvent_EnableMpAtSessionChange,      %REG_DWORD%,    1
+HKR,, ExtEvent_EnableMpAtLidSwitch,      %REG_DWORD%,    1
+HKR,, ExtEvent_EnableMpAtHotPlug,      %REG_DWORD%,    1
+HKR,, ExtEvent_EnableMpAtHotKeyExtEvent,      %REG_DWORD%,    1
+HKR,, ExtEvent_ApplyADCAtFUS, %REG_DWORD%, 1
+HKR,, ExtEvent_SaveProfileBySelected,      %REG_DWORD%,    1
+HKR,, ExtEvent_ApplyADCAtSBiosRequest,      %REG_DWORD%,    1
+HKR,, DALRULE_EDIDPROFILE,      %REG_DWORD%,    1
+HKR,, ExtEvent_SaveADCProfileGlobally,      %REG_DWORD%,    1
+HKR,, ExtEvent_NonExtendedADCProfileOnHotKey,      %REG_DWORD%,    1
+HKR,, DALRULE_ADDEXTDESKTOPTOPROFILEKEY,      %REG_DWORD%,    1
+HKR,, ExtEvent_DeviceTypeBasedADCProfile,      %REG_DWORD%,    1
+HKR,, DALRULE_DEVICETYPEBASEDPROFILEKEY,      %REG_DWORD%,    1
+HKR,, GCORULE_PPForceBlankDisplays,             %REG_DWORD%, 1
+HKR,, ExtEvent_SaveExpansionInADCProfile,      %REG_DWORD%,    1
+HKR,, ExtEvent_OverDriveSupport,      %REG_DWORD%,    1
+HKR,, DfpUsePixSlip,                  %REG_DWORD%,    1
+HKR,, ASE_NA, %REG_SZ%, "1"
+HKR,, GxoMEC, %REG_DWORD%, 0
+HKR,, DigitalEncoderEngineRestrictions,             %REG_DWORD%, 0x101
+HKR,, GCORULE_X1DETECT,      %REG_DWORD%,    1
+HKR,, Gxo50HzTimingSupport,          %REG_DWORD%,    1
+HKR,, EnableGeminiAutoLink,        %REG_DWORD%,    1
+HKR,, DigitalHDTVDefaultUnderscan, %REG_DWORD%, 0
+HKR,, DFP_AddHDTVPixelFormats,      %REG_DWORD%,    3
+HKR,, Gxo24HzTimingSupport,          %REG_DWORD%,    1
+HKR,, Main3D_DEF, %REG_SZ%, 3
+HKR,, AntiAlias_DEF, %REG_SZ%, 1
+HKR,, AntiAliasSamples_DEF, %REG_SZ%, 0
+HKR,, AnisoType_DEF, %REG_SZ%, 0
+HKR,, AnisoDegree_DEF, %REG_SZ%, 0
+HKR,, TextureOpt_DEF, %REG_SZ%, 0
+HKR,, TextureLod_DEF, %REG_SZ%, 0
+HKR,, TruformMode_DEF, %REG_SZ%, 0
+HKR,, VSyncControl_DEF, %REG_SZ%, 1
+HKR,, SwapEffect_DEF, %REG_SZ%, 0
+HKR,, TemporalAAMultiplier_DEF, %REG_SZ%, 0
+HKR,, ExportCompressedTex_DEF, %REG_SZ%, 1
+HKR,, PixelCenter_DEF, %REG_SZ%, 0
+HKR,, ForceZBufferDepth_DEF, %REG_SZ%, 0
+HKR,, EnableTripleBuffering_DEF, %REG_SZ%, 0
+HKR,, ColourDesktopGamma_DEF, %REG_SZ%, "1.0 1.0 1.0"
+HKR,, ColourDesktopBrightness_DEF, %REG_SZ%, "0 0 0"
+HKR,, ColourDesktopContrast_DEF, %REG_SZ%, "1.0 1.0 1.0"
+HKR,, ColourFullscreenGamma_DEF, %REG_SZ%, "1.0 1.0 1.0"
+HKR,, ColourFullscreenBrightness_DEF, %REG_SZ%, "0 0 0"
+HKR,, ColourFullscreenContrast_DEF, %REG_SZ%, "1.0 1.0 1.0"
+HKR,, 3D_Refresh_Rate_Override_DEF, %REG_DWORD%, 0
+HKR,, Display_Detection_DEF, %REG_DWORD%, 0
+HKR,, Panning_Mode_DEF, %REG_DWORD%, 0
+HKR,, Mouse_Track_Orientation_DEF, %REG_DWORD%, 1
+HKR,, Force_TV_Detection_DEF, %REG_DWORD%, 0
+HKR,, CatalystAI_DEF, %REG_SZ%, 1
+
+[ati2mtag_Manhattan_SoftwareDeviceSettings]
+HKR,, DALRULE_NOTVANDLCDONCRTC,             %REG_DWORD%,    1
+HKR,, WmAgpMaxIdleClk,			    %REG_DWORD%,    0x20
+HKR,, DisableIDCT,                          %REG_DWORD%,    0
+HKLM,"SOFTWARE\Microsoft\Windows\CurrentVersion\Run",ATIModeChange,,"Ati2mdxx.exe"
+HKR,, DALR6 CRT_MaxModeInfo,                  %REG_BINARY%,00,00,00,00,40,06,00,00,B0,04,00,00,00,00,00,00,3C,00,00,00
+HKR,, DisableFullAdapterInit,      %REG_DWORD%,    0
+HKR,, MemInitLatencyTimer,         %REG_DWORD%,    0x775771BF
+HKR,, GCORULE_FlickerWA,             %REG_DWORD%, 1
+HKR,, SMOOTHVISION_NAME, %REG_SZ%, "SMOOTHVISION HD"
+HKR,, GI_DEF, %REG_SZ%, 1
+HKR,, AreaAniso_DEF, %REG_SZ%, 0
+HKR,, VIDEO_NAME_SUFFIX, %REG_SZ%, "Avivo(TM)"
+HKR,, SameOnAllUsingStandardInVideoTheaterCloneMode, %REG_SZ%, "1"
+HKR,, ASTT_DEF, %REG_SZ%, 0
+HKR,, ASD_DEF, %REG_SZ%, 1
+HKR,, 3to2Pulldown, %REG_SZ%, 0
+HKR,, 3to2Pulldown_DEF, %REG_SZ%, 0
+HKR,, 3to2Pulldown_NA, %REG_SZ%, 0
+HKR,, GI_NA, %REG_SZ%, 1
+HKR,, AreaAniso_NA, %REG_SZ%, "1"
+HKR,, AAF_NA, %REG_SZ%, 0
+HKR,, AAF_DEF, %REG_SZ%, 0
+HKR,, AAF_Value_SET, %REG_SZ%, "Box:0,Narrow-tent:1,Wide-tent:2,Edge-detect:3"
+HKR,, AAF_Mapping_SET, %REG_SZ%, "0(Box:2,Narrow-tent:4,Wide-tent:6,Edge-detect:12) 2(Box:2,Narrow-tent:4,Wide-tent:6) 4(Box:4,Narrow-tent:6,Wide-tent:8,Edge-detect:12) 8(Box:8,Narrow-tent:12,Wide-tent:16,Edge-detect:24) 16(Box:16,Narrow-tent:24,Wide-tent:32)"
+HKR,, ColorVibrance_DEF, %REG_SZ%, "0"
+HKR,, Fleshtone_DEF, %REG_SZ%, "0"
+HKR,, TemporalAAMultiplier_NA, %REG_SZ%, "1"
+HKR,, DXVA_WMV_NA,                 %REG_SZ%,    1
+HKR,, ATMS_DEF, %REG_SZ%, 1
+HKR,, AAAMethod_DEF, %REG_SZ%, 0
+HKR,, ColorVibrance_ENABLE_DEF, %REG_SZ%, "0"
+HKR,, Denoise_DEF, %REG_SZ%, "64"
+HKR,, Detail_DEF, %REG_SZ%, "0"
+HKR,, Detail_ENABLE_DEF, %REG_SZ%, "0"
+HKR,, Denoise_ENABLE_DEF, %REG_SZ%, "1"
+HKR,, Detail_NA, %REG_SZ%, "0"
+HKR,, Denoise_NA, %REG_SZ%, "0"
+HKR,, Fleshtone_ENABLE_DEF, %REG_SZ%, "0"
+HKR,, MainVideo_SET, %REG_SZ%, "0 1 2 3 4"
+HKR,, MainVideo_TBL, %REG_SZ%, "1:Brightness=0.0,Contrast=1.0,Saturation=1.0,Gamma=0.0,Hue=0.0;2:Brightness=-3.0,Contrast=1.16,Saturation=1.25,Gamma=0.0,Hue=0.0;3:Brightness=-3.0,Contrast=1.07,Saturation=1.10,Gamma=0.0,Hue=0.0;4:Brightness=7.0,Contrast=1.25,Saturation=0.96,Gamma=0.0,Hue=0.0"
+HKR,, BlueStretch_NA, %REG_SZ%, 0
+HKR,, StaticGamma_NA, %REG_SZ%, 0
+HKR,, DynamicRange_NA, %REG_SZ%, 0
+HKR,, StaticGamma, %REG_SZ%, 100
+HKR,, StaticGamma_DEF, %REG_SZ%, 100
+HKR,, ASTT_NA, %REG_SZ%, "1"
+HKR,, ASTT_DEF, %REG_SZ%, 0
+HKR,, ASD_DEF, %REG_SZ%, 0
+HKR,, ASE_DEF, %REG_SZ%, 0
+HKR,, DALNonStandardModesBCD1, %REG_BINARY%,19,20,10,80,00,00,00,85,12,80,07,68,00,00,00,60
+HKR,, DALRestrictedModesBCD1, %REG_BINARY%,08,48,04,80,00,00,00,00,11,52,08,64,00,00,00,00,17,92,13,44,00,00,00,00,18,00,14,40,00,00,00,00,18,56,13,92,00,00,00,00
+HKR,, DALRULE_ALLOWINFPANELVENDORID,    %REG_DWORD%,    1
+HKR,, DALRULE_OVERWRITEPANELVENDORID, %REG_DWORD%,    1
+HKR,, DisableDualView,                 %REG_DWORD%,    0
+HKR,, DisableDualviewWithHotKey,    %REG_DWORD%,    1
+HKR,, ExtEvent_EnablePolling,      %REG_DWORD%,    1
+HKR,, ExtEvent_BroadcastDispChange,      %REG_DWORD%,    0
+HKR,, ExtEvent_UpdateAdapterInfoOnHK,      %REG_DWORD%,    1
+HKR,, GCORULE_DisableHotKeyIfDDExclusiveMode,          %REG_DWORD%,    0
+HKR,, ExtEvent_LCDSetMaxResOnDockChg,      %REG_DWORD%,    0
+HKR,, GCORULE_DisableGPIOPowerSaveMode,   %REG_DWORD%,    1
+HKR,, DALRULE_NOCRTANDDFPONSAMECONTROLLER,      %REG_DWORD%,    1
+HKR,, GCORULE_IntTMDSReduceBlankTiming,      %REG_DWORD%,    0
+HKR,, TVDisableModes,   %REG_DWORD%,    0
+HKR,, GCORULE_ENABLERMXFILTER, %REG_DWORD%,   1
+HKR,, OVShiftOddDown,                         %REG_DWORD%,    1
+HKR,, DALRULE_RESTRICT2ACTIVEDISPLAYS,      %REG_DWORD%,    0
+HKR,, DALRULE_POWERPLAYOPTIONCOLORDEPTHREDUCTION,      %REG_DWORD%,    0
+HKR,, R6LCD_FOLLOWLIDSTATE,   %REG_DWORD%,    0
+HKR,, DisableFakeOSDualViewNotify,      %REG_DWORD%,    1
+HKR,, GCORULE_TMDSiCoherentMode, %REG_DWORD%, 0
+HKR,, DisableSWInterrupt,      		   %REG_DWORD%,    0
+HKR,, ExtEvent_BIOSEventByInterrupt,      %REG_DWORD%,    1
+HKR,, DisableD3DExclusiveModeChange,             %REG_DWORD%,    1
+HKR,, DisableOpenGLExclusiveModeChange,             %REG_DWORD%,    1
+HKR,, ExtEvent_EnableChgLCDResOnHotKey,                  %REG_DWORD%,    0
+HKR,, TVM6Flag,   %REG_DWORD%,    0
+HKR,, DisableDalValidateChild,        %REG_DWORD%,    0
+HKR,, DALRULE_ENABLESHOWACSLIDER,                  %REG_DWORD%,    1
+HKR,, DALRULE_ENABLESHOWDCLOWSLIDER,                  %REG_DWORD%,    1
+HKR,, R6LCD_RETURNALLBIOSMODES,              %REG_DWORD%,    0
+HKR,, ExtEvent_RestoreLargeDesktopOnResume,      %REG_DWORD%,    0
+HKR,, ExtEvent_EnableAutoDisplayConfig,      %REG_DWORD%,    1
+HKR,, DALRULE_USERDEVICEPROFILEUPDATE,               %REG_DWORD%,    1
+HKR,, ExtEvent_EnableMpAtLogon,      %REG_DWORD%,    1
+HKR,, ExtEvent_EnableMpAtResume,      %REG_DWORD%,    1
+HKR,, ExtEvent_EnableMpAtDocking,      %REG_DWORD%,    1
+HKR,, ExtEvent_EnableMpAtSessionChange,      %REG_DWORD%,    1
+HKR,, ExtEvent_EnableMpAtLidSwitch,      %REG_DWORD%,    1
+HKR,, ExtEvent_EnableMpAtHotPlug,      %REG_DWORD%,    1
+HKR,, ExtEvent_EnableMpAtHotKeyExtEvent,      %REG_DWORD%,    1
+HKR,, ExtEvent_ApplyADCAtFUS, %REG_DWORD%, 1
+HKR,, ExtEvent_SaveProfileBySelected,      %REG_DWORD%,    1
+HKR,, ExtEvent_ApplyADCAtSBiosRequest,      %REG_DWORD%,    1
+HKR,, DALRULE_EDIDPROFILE,      %REG_DWORD%,    1
+HKR,, ExtEvent_SaveADCProfileGlobally,      %REG_DWORD%,    1
+HKR,, ExtEvent_NonExtendedADCProfileOnHotKey,      %REG_DWORD%,    1
+HKR,, DALRULE_ADDEXTDESKTOPTOPROFILEKEY,      %REG_DWORD%,    1
+HKR,, ExtEvent_DeviceTypeBasedADCProfile,      %REG_DWORD%,    1
+HKR,, DALRULE_DEVICETYPEBASEDPROFILEKEY,      %REG_DWORD%,    1
+HKR,, GCORULE_PPForceBlankDisplays,             %REG_DWORD%, 1
+HKR,, ExtEvent_SaveExpansionInADCProfile,      %REG_DWORD%,    1
+HKR,, ExtEvent_OverDriveSupport,      %REG_DWORD%,    1
+HKR,, DfpUsePixSlip,                  %REG_DWORD%,    1
+HKR,, GxoMEC, %REG_DWORD%, 0
+HKR,, GCORULE_X1DETECT,      %REG_DWORD%,    1
+HKR,, Gxo50HzTimingSupport,          %REG_DWORD%,    1
+HKR,, EnableGeminiAutoLink,        %REG_DWORD%,    1
+HKR,, DigitalHDTVDefaultUnderscan, %REG_DWORD%, 0
+HKR,, DFP_AddHDTVPixelFormats,      %REG_DWORD%,    3
+HKR,, Gxo24HzTimingSupport,          %REG_DWORD%,    1
+HKR,, Main3D_DEF, %REG_SZ%, 3
+HKR,, AntiAlias_DEF, %REG_SZ%, 1
+HKR,, AntiAliasSamples_DEF, %REG_SZ%, 0
+HKR,, AnisoType_DEF, %REG_SZ%, 0
+HKR,, AnisoDegree_DEF, %REG_SZ%, 0
+HKR,, TextureOpt_DEF, %REG_SZ%, 0
+HKR,, TextureLod_DEF, %REG_SZ%, 0
+HKR,, TruformMode_DEF, %REG_SZ%, 0
+HKR,, VSyncControl_DEF, %REG_SZ%, 1
+HKR,, SwapEffect_DEF, %REG_SZ%, 0
+HKR,, TemporalAAMultiplier_DEF, %REG_SZ%, 0
+HKR,, ExportCompressedTex_DEF, %REG_SZ%, 1
+HKR,, PixelCenter_DEF, %REG_SZ%, 0
+HKR,, ForceZBufferDepth_DEF, %REG_SZ%, 0
+HKR,, EnableTripleBuffering_DEF, %REG_SZ%, 0
+HKR,, ColourDesktopGamma_DEF, %REG_SZ%, "1.0 1.0 1.0"
+HKR,, ColourDesktopBrightness_DEF, %REG_SZ%, "0 0 0"
+HKR,, ColourDesktopContrast_DEF, %REG_SZ%, "1.0 1.0 1.0"
+HKR,, ColourFullscreenGamma_DEF, %REG_SZ%, "1.0 1.0 1.0"
+HKR,, ColourFullscreenBrightness_DEF, %REG_SZ%, "0 0 0"
+HKR,, ColourFullscreenContrast_DEF, %REG_SZ%, "1.0 1.0 1.0"
+HKR,, 3D_Refresh_Rate_Override_DEF, %REG_DWORD%, 0
+HKR,, Display_Detection_DEF, %REG_DWORD%, 0
+HKR,, Panning_Mode_DEF, %REG_DWORD%, 0
+HKR,, Mouse_Track_Orientation_DEF, %REG_DWORD%, 1
+HKR,, Force_TV_Detection_DEF, %REG_DWORD%, 0
+HKR,, CatalystAI_DEF, %REG_SZ%, 1
+
+[ati2mtag_M72_SoftwareDeviceSettings]
+HKR,, DALRULE_NOTVANDLCDONCRTC,             %REG_DWORD%,    1
+HKR,, WmAgpMaxIdleClk,			    %REG_DWORD%,    0x20
+HKR,, DisableIDCT,                          %REG_DWORD%,    0
+HKLM,"SOFTWARE\Microsoft\Windows\CurrentVersion\Run",ATIModeChange,,"Ati2mdxx.exe"
+HKR,, DALR6 CRT_MaxModeInfo,                  %REG_BINARY%,00,00,00,00,40,06,00,00,B0,04,00,00,00,00,00,00,3C,00,00,00
+HKR,, DisableFullAdapterInit,      %REG_DWORD%,    0
+HKR,, MemInitLatencyTimer,         %REG_DWORD%,    0x775771BF
+HKR,, GCORULE_FlickerWA,             %REG_DWORD%, 1
+HKR,, SMOOTHVISION_NAME, %REG_SZ%, "SMOOTHVISION HD"
+HKR,, GI_DEF, %REG_SZ%, 1
+HKR,, AreaAniso_DEF, %REG_SZ%, 0
+HKR,, VIDEO_NAME_SUFFIX, %REG_SZ%, "Avivo(TM)"
+HKR,, SameOnAllUsingStandardInVideoTheaterCloneMode, %REG_SZ%, "1"
+HKR,, ASTT_DEF, %REG_SZ%, 0
+HKR,, ASD_DEF, %REG_SZ%, 1
+HKR,, 3to2Pulldown, %REG_SZ%, 0
+HKR,, 3to2Pulldown_DEF, %REG_SZ%, 0
+HKR,, 3to2Pulldown_NA, %REG_SZ%, 0
+HKR,, GI_NA, %REG_SZ%, 1
+HKR,, AntiAliasMapping_SET,  %REG_SZ%, "0(0:0,1:0) 2(0:2,1:2) 4(0:4,1:4,2:8)"
+HKR,, AAF_NA, %REG_SZ%, 0
+HKR,, AreaAniso_NA, %REG_SZ%, "1"
+HKR,, AAF_DEF, %REG_SZ%, 0
+HKR,, AAF_Value_SET, %REG_SZ%, "Box:0,Narrow-tent:1,Wide-tent:2"
+HKR,, AAF_Mapping_SET, %REG_SZ%, "0(Box:2,Narrow-tent:4,Wide-tent:6) 2(Box:2,Narrow-tent:4,Wide-tent:6) 4(Box:4,Narrow-tent:6,Wide-tent:8) 8(Box:8,Narrow-tent:12,Wide-tent:16)"
+HKR,, DALNonStandardModesBCD1, %REG_BINARY%,19,20,10,80,00,00,00,85
+HKR,, DALRestrictedModesBCD1, %REG_BINARY%,07,20,04,80,00,00,00,00,08,48,04,80,00,00,00,00,11,52,08,64,00,00,00,00,12,80,10,24,00,00,00,00,17,92,13,44,00,00,00,00,18,00,14,40,00,00,00,00,18,56,13,92,00,00,00,00
+HKR,, DALRULE_ALLOWINFPANELVENDORID,    %REG_DWORD%,    1
+HKR,, DALRULE_OVERWRITEPANELVENDORID, %REG_DWORD%,    1
+HKR,, DisableDualView,                 %REG_DWORD%,    0
+HKR,, DisableDualviewWithHotKey,    %REG_DWORD%,    1
+HKR,, ExtEvent_EnablePolling,      %REG_DWORD%,    1
+HKR,, ExtEvent_BroadcastDispChange,      %REG_DWORD%,    0
+HKR,, ExtEvent_UpdateAdapterInfoOnHK,      %REG_DWORD%,    1
+HKR,, GCORULE_DisableHotKeyIfDDExclusiveMode,          %REG_DWORD%,    0
+HKR,, ExtEvent_LCDSetMaxResOnDockChg,      %REG_DWORD%,    0
+HKR,, GCORULE_DisableGPIOPowerSaveMode,   %REG_DWORD%,    1
+HKR,, DALRULE_NOCRTANDDFPONSAMECONTROLLER,      %REG_DWORD%,    1
+HKR,, GCORULE_IntTMDSReduceBlankTiming,      %REG_DWORD%,    0
+HKR,, TVDisableModes,   %REG_DWORD%,    0
+HKR,, GCORULE_ENABLERMXFILTER, %REG_DWORD%,   1
+HKR,, OVShiftOddDown,                         %REG_DWORD%,    1
+HKR,, DALRULE_RESTRICT2ACTIVEDISPLAYS,      %REG_DWORD%,    0
+HKR,, DALRULE_POWERPLAYOPTIONCOLORDEPTHREDUCTION,      %REG_DWORD%,    0
+HKR,, R6LCD_FOLLOWLIDSTATE,   %REG_DWORD%,    0
+HKR,, DisableFakeOSDualViewNotify,      %REG_DWORD%,    1
+HKR,, GCORULE_TMDSiCoherentMode, %REG_DWORD%, 0
+HKR,, DisableSWInterrupt,      		   %REG_DWORD%,    0
+HKR,, ExtEvent_BIOSEventByInterrupt,      %REG_DWORD%,    1
+HKR,, DisableD3DExclusiveModeChange,             %REG_DWORD%,    1
+HKR,, DisableOpenGLExclusiveModeChange,             %REG_DWORD%,    1
+HKR,, ExtEvent_EnableChgLCDResOnHotKey,                  %REG_DWORD%,    0
+HKR,, TVM6Flag,   %REG_DWORD%,    0
+HKR,, DisableDalValidateChild,        %REG_DWORD%,    0
+HKR,, DALRULE_ENABLESHOWACSLIDER,                  %REG_DWORD%,    1
+HKR,, DALRULE_ENABLESHOWDCLOWSLIDER,                  %REG_DWORD%,    1
+HKR,, R6LCD_RETURNALLBIOSMODES,              %REG_DWORD%,    0
+HKR,, ExtEvent_RestoreLargeDesktopOnResume,      %REG_DWORD%,    0
+HKR,, ExtEvent_EnableAutoDisplayConfig,      %REG_DWORD%,    1
+HKR,, DALRULE_USERDEVICEPROFILEUPDATE,               %REG_DWORD%,    1
+HKR,, ExtEvent_EnableMpAtLogon,      %REG_DWORD%,    1
+HKR,, ExtEvent_EnableMpAtResume,      %REG_DWORD%,    1
+HKR,, ExtEvent_EnableMpAtDocking,      %REG_DWORD%,    1
+HKR,, ExtEvent_EnableMpAtSessionChange,      %REG_DWORD%,    1
+HKR,, ExtEvent_EnableMpAtLidSwitch,      %REG_DWORD%,    1
+HKR,, ExtEvent_EnableMpAtHotPlug,      %REG_DWORD%,    1
+HKR,, ExtEvent_EnableMpAtHotKeyExtEvent,      %REG_DWORD%,    1
+HKR,, ExtEvent_ApplyADCAtFUS, %REG_DWORD%, 1
+HKR,, ExtEvent_SaveProfileBySelected,      %REG_DWORD%,    1
+HKR,, ExtEvent_ApplyADCAtSBiosRequest,      %REG_DWORD%,    1
+HKR,, DALRULE_EDIDPROFILE,      %REG_DWORD%,    1
+HKR,, ExtEvent_SaveADCProfileGlobally,      %REG_DWORD%,    1
+HKR,, ExtEvent_NonExtendedADCProfileOnHotKey,      %REG_DWORD%,    1
+HKR,, DALRULE_ADDEXTDESKTOPTOPROFILEKEY,      %REG_DWORD%,    1
+HKR,, ExtEvent_DeviceTypeBasedADCProfile,      %REG_DWORD%,    1
+HKR,, DALRULE_DEVICETYPEBASEDPROFILEKEY,      %REG_DWORD%,    1
+HKR,, GCORULE_PPForceBlankDisplays,             %REG_DWORD%, 1
+HKR,, ExtEvent_SaveExpansionInADCProfile,      %REG_DWORD%,    1
+HKR,, ExtEvent_OverDriveSupport,      %REG_DWORD%,    1
+HKR,, DXVA_WMV,                 %REG_SZ%,    1
+HKR,, DXVA_WMV_DEF,                 %REG_SZ%,    1
+HKR,, DfpUsePixSlip,                  %REG_DWORD%,    1
+HKR,, GxoMEC, %REG_DWORD%, 0
+HKR,, DigitalEncoderEngineRestrictions,             %REG_DWORD%, 0x101
+HKR,, DALRULE_SkipEDIDReadForNoSink,      %REG_DWORD%,    1
+HKR,, ArbWriteMode,      %REG_DWORD%,    1
+HKR,, GCORULE_X1DETECT,      %REG_DWORD%,    1
+HKR,, Gxo50HzTimingSupport,          %REG_DWORD%,    1
+HKR,, Main3D_DEF, %REG_SZ%, 3
+HKR,, AntiAlias_DEF, %REG_SZ%, 1
+HKR,, AntiAliasSamples_DEF, %REG_SZ%, 0
+HKR,, AnisoType_DEF, %REG_SZ%, 0
+HKR,, AnisoDegree_DEF, %REG_SZ%, 0
+HKR,, TextureOpt_DEF, %REG_SZ%, 0
+HKR,, TextureLod_DEF, %REG_SZ%, 0
+HKR,, TruformMode_DEF, %REG_SZ%, 0
+HKR,, VSyncControl_DEF, %REG_SZ%, 1
+HKR,, SwapEffect_DEF, %REG_SZ%, 0
+HKR,, TemporalAAMultiplier_DEF, %REG_SZ%, 0
+HKR,, ExportCompressedTex_DEF, %REG_SZ%, 1
+HKR,, PixelCenter_DEF, %REG_SZ%, 0
+HKR,, ForceZBufferDepth_DEF, %REG_SZ%, 0
+HKR,, EnableTripleBuffering_DEF, %REG_SZ%, 0
+HKR,, ColourDesktopGamma_DEF, %REG_SZ%, "1.0 1.0 1.0"
+HKR,, ColourDesktopBrightness_DEF, %REG_SZ%, "0 0 0"
+HKR,, ColourDesktopContrast_DEF, %REG_SZ%, "1.0 1.0 1.0"
+HKR,, ColourFullscreenGamma_DEF, %REG_SZ%, "1.0 1.0 1.0"
+HKR,, ColourFullscreenBrightness_DEF, %REG_SZ%, "0 0 0"
+HKR,, ColourFullscreenContrast_DEF, %REG_SZ%, "1.0 1.0 1.0"
+HKR,, 3D_Refresh_Rate_Override_DEF, %REG_DWORD%, 0
+HKR,, Display_Detection_DEF, %REG_DWORD%, 0
+HKR,, Panning_Mode_DEF, %REG_DWORD%, 0
+HKR,, Mouse_Track_Orientation_DEF, %REG_DWORD%, 1
+HKR,, Force_TV_Detection_DEF, %REG_DWORD%, 0
+HKR,, CatalystAI_DEF, %REG_SZ%, 1
+
+[ati2mtag_SoftwareDeviceSettings]
+HKR,, DDC2Disabled,                         %REG_DWORD%,    0
+HKR,, DisableBlockWrite,                    %REG_DWORD%,    1
+HKR,, DisableDMACopy,                       %REG_DWORD%,    0
+HKR,, InstalledDisplayDrivers,              %REG_MULTI_SZ%, ati2dvag
+HKR,, MultiFunctionSupported,               %REG_DWORD%,    1
+HKR,, TestEnv,                              %REG_DWORD%,    0
+HKR,, TimingSelection,                      %REG_DWORD%,    0
+HKR,, VgaCompatible,                        %REG_DWORD%,    0
+HKR,,"Adaptive De-interlacing",             %REG_DWORD%,    1
+HKR,,"VPE Adaptive De-interlacing",         %REG_DWORD%,    1
+HKR,, GCOOPTION_DisableGPIOPowerSaveMode,   %REG_DWORD%,    1
+HKLM,"Software\ATI Technologies\CBT",ReleaseVersion,,"8.672.1.2-100113a-094402C-Sony"
+HKR,, ReleaseVersion,,"8.672.1.2-100113a-094402C-Sony"
+HKR,, BuildNumber,,"94402"
+HKR,, drv,, "ati2dvag.dll"
+HKR,, DALGameGammaScale,       %REG_DWORD%,   0x00646464
+HKR,"ATI WDM Configurations","PnP ID Version",%REG_SZ%,"34"
+HKR,, UseNewOGLRegPath,      %REG_DWORD%,    1
+HKR,, DALRULE_DYNAMICFIXEDDISPLAYMODEREPORTING,      %REG_DWORD%,    1
+HKR,, SwapEffect_NA, %REG_SZ%, 1
+HKR,, GXOPPUseExclusiveExecution,  %REG_DWORD%,    1
+HKLM,"SYSTEM\CurrentControlSet\Control\GraphicsDrivers\EnableMapIOSpaceProtection"
+HKR,, OvlTheaterModeType_DEF, %REG_SZ%,"0"
+HKR,, LRTCCoef_DEF, %REG_SZ%,"0"
+HKR,, LRTCEnable, %REG_SZ%, "0"
+HKR,, LRTCEnable_DEF, %REG_SZ%, "0"
+HKR,, ATMS_NA, %REG_SZ%, 1
+HKR,, DI_METHOD_DEF, %REG_SZ%, "-1"
+HKR,, Force_CV_Detection_DEF,      %REG_DWORD%, 0
+HKR,, Fleshtone_NA, %REG_SZ%, "1"
+HKR,, ColorVibrance_NA, %REG_SZ%, "1"
+HKR,, DemoMode_NA, %REG_SZ%, "1"
+HKR,, WhiteBalanceCorrection_DEF, %REG_SZ%, "0"
+HKR,, BlueStretch_DEF, %REG_SZ%, "0"
+HKR,, OverridePA_DEF, %REG_SZ%, "0"
+HKR,, StaticGamma_ENABLE_DEF, %REG_SZ%, "0"
+HKR,, StaticGamma_DEF, %REG_SZ%, "100"
+HKR,, DynamicRange_DEF, %REG_SZ%, "0"
+HKR,, DemoMode_DEF, %REG_SZ%, "0"
+HKR,, DisableTimeStampWriteBack,   %REG_DWORD%,    0
+HKR,, DALRULE_GETVGAEXPANSIONATBOOT,                  %REG_DWORD%,    0
+HKLM, "Software\CLASSES\CLSID\{EBB5845F-CA80-11CF-BD3C-008029E89281}\InProcServer32",,,"atitvo32.dll"
+HKLM, "Software\CLASSES\CLSID\{EBB5845F-CA80-11CF-BD3C-008029E89281}\InProcServer32",ThreadingModel,,"Both"
+HKR,MMLIB,ForceOneField,		    %REG_DWORD%,    0
+HKR,, DisableTiling,                        %REG_DWORD%,    0
+HKR,, DALRULE_ENABLEDALRESUMESUPPORT, %REG_DWORD%,   1
+HKR,, ExtEvent_EnableHotPlug,      %REG_DWORD%,    0
+HKR,, DisableHotPlugDFP,	%REG_DWORD%,	1
+HKR,, ExtEvent_EnableMouseRotation,      %REG_DWORD%,    0
+HKR,, ExtEvent_EnableAlpsMouseOrientation,      %REG_DWORD%,    0
+HKR,, ExtEvent_SafeEscapeSupport,   %REG_DWORD%,    1
+HKR,, DFPRULE_HotplugSupported, %REG_DWORD%, 1
+HKR,, DALRULE_DISABLEPSEUDOLARGEDESKTOP,      %REG_DWORD%,    1
+HKR,, OvlTheaterMode, %REG_BINARY%, 00,00,00,00
+HKR,, DisableOvlTheaterMode,%REG_DWORD%,1
+HKR,, TheaterMode_NA, %REG_SZ%, 1
+HKR,, UseVMRPitch,                        %REG_DWORD%,    1
+HKR,, DisableMMSnifferCode,               %REG_DWORD%,    0
+HKR,, DisableProgPCILatency,               %REG_DWORD%,    0
+HKR,, DALRULE_NOTVANDCRTONSAMECONTROLLER,   %REG_DWORD%,    1
+HKR,, DALRULE_GetTVFakeEDID,        %REG_DWORD%,    0
+HKR,, Catalyst_Version,,"0"
+HKR,, DALRULE_REGISTRYACCESS,      %REG_DWORD%,    0
+HKR,, DALRULE_RESTRICTCRTANALOGDETECTIONONEDIDMISMATCH,   %REG_DWORD%,    0
+HKR,, DALRULE_ENABLEDRIVERMODEPRUNNING,   %REG_DWORD%,    0
+HKR,, GCORULE_ENABLETILEDMEMORYCALCULATION,               %REG_DWORD%,    1
+HKR,, DALRULE_MACROVISIONINFOREPORT,      %REG_DWORD%,    0
+HKR,, DisableEnumAllChilds,        %REG_DWORD%,    1
+HKR,, DALRULE_BANDWIDTHMODEENUM, %REG_DWORD%, 1
+HKR,, DALRULE_NOCRTANDLCDONSAMECONTROLLER, %REG_DWORD%, 1
+HKR,, ExtEvent_LCDSetNativeModeOnResume,      %REG_DWORD%,    0
+HKR,, DALRULE_LIMITTMDSMODES ,      %REG_DWORD%,    0
+HKR,, DALRULE_RESTRICT640x480MODE,        %REG_DWORD%,    0
+HKR,, DALRULE_DISPLAYSRESTRICTMODES,   %REG_DWORD%,    0
+HKR,, DALRULE_RESTRICT8BPPON2NDDRV,      %REG_DWORD%,    0
+HKR,, TVForceDetection,   %REG_DWORD%,    0
+HKR,, DALRULE_ADAPTERBANDWIDTHMODEENUM,      %REG_DWORD%,    1
+HKR,, GCOOPTION_MinMemEff,      %REG_DWORD%,    0
+HKR,, GCORULE_IncreaseMinMemEff,      %REG_DWORD%,    0
+HKR,, DALRULE_DISABLECWDDEDETECTION,      %REG_DWORD%,    0
+HKR,, DALRULE_SELECTION_SCHEME, %REG_DWORD%, 0
+HKR,, DALRULE_NOCRTANDDFPACTIVESIMULTANEOUSLY,      %REG_DWORD%,    1
+HKR,, DisableTabletPCRotation,      %REG_DWORD%,    1
+HKR,, DALRULE_RESTRICTNONDDCCRTTO1024x768,      %REG_DWORD%,    1
+HKR,, DALDisplayPrioritySequence, %REG_BINARY%, 08,00,00,00,01,00,00,00,04,00,00,00,02,00,00,00,20,00,00,00,10,00,00,00,40,00,00,00,80,00,00,00
+HKR,, VPURecover_NA,      %REG_SZ%,    "1"
+HKR,, DisableSmartSave_DEF,      %REG_DWORD%,    1
+HKR,, VPUEnableSubmissionBox_DEF,      %REG_SZ%,    "0"
+HKLM,"SOFTWARE\Microsoft\Windows NT\CurrentVersion\Winlogon\Notify\AtiExtEvent",DLLName,,"Ati2evxx.dll"
+HKLM,"SOFTWARE\Microsoft\Windows NT\CurrentVersion\Winlogon\Notify\AtiExtEvent",Asynchronous,      %REG_DWORD%,    0
+HKLM,"SOFTWARE\Microsoft\Windows NT\CurrentVersion\Winlogon\Notify\AtiExtEvent",Impersonate,      %REG_DWORD%,    1
+HKLM,"SOFTWARE\Microsoft\Windows NT\CurrentVersion\Winlogon\Notify\AtiExtEvent",Lock,,"AtiLockEvent"
+HKLM,"SOFTWARE\Microsoft\Windows NT\CurrentVersion\Winlogon\Notify\AtiExtEvent",Logoff,,"AtiLogoffEvent"
+HKLM,"SOFTWARE\Microsoft\Windows NT\CurrentVersion\Winlogon\Notify\AtiExtEvent",Logon,,"AtiLogonEvent"
+HKLM,"SOFTWARE\Microsoft\Windows NT\CurrentVersion\Winlogon\Notify\AtiExtEvent",Disconnect,,"AtiDisConnectEvent"
+HKLM,"SOFTWARE\Microsoft\Windows NT\CurrentVersion\Winlogon\Notify\AtiExtEvent",Reconnect,, "AtiReConnectEvent"
+HKLM,"SOFTWARE\Microsoft\Windows NT\CurrentVersion\Winlogon\Notify\AtiExtEvent",Safe,      %REG_DWORD%,    0
+HKLM,"SOFTWARE\Microsoft\Windows NT\CurrentVersion\Winlogon\Notify\AtiExtEvent",Shutdown,, "AtiShutdownEvent"
+HKLM,"SOFTWARE\Microsoft\Windows NT\CurrentVersion\Winlogon\Notify\AtiExtEvent",StartScreenSaver,, "AtiStartScreenSaverEvent"
+HKLM,"SOFTWARE\Microsoft\Windows NT\CurrentVersion\Winlogon\Notify\AtiExtEvent",StartShell,,"AtiStartShellEvent"
+HKLM,"SOFTWARE\Microsoft\Windows NT\CurrentVersion\Winlogon\Notify\AtiExtEvent",Startup,,"AtiStartupEvent"
+HKLM,"SOFTWARE\Microsoft\Windows NT\CurrentVersion\Winlogon\Notify\AtiExtEvent",StopScreenSaver,,"AtiStopScreenSaverEvent"
+HKLM,"SOFTWARE\Microsoft\Windows NT\CurrentVersion\Winlogon\Notify\AtiExtEvent",Unlock,,"AtiUnLockEvent"
+HKR,, ExtEvent_EnableMultiSessions,      %REG_DWORD%,    1
+HKR,, TVEnableOverscan,      %REG_DWORD%,    1
+HKR,, GCOOPTION_RemoveOverscanBorder,  %REG_DWORD%,    1
+HKR,, DALRULE_NOTVANDDVIACTIVESIMULTANEOUSLY,      %REG_DWORD%,    1
+HKR,, DALRULE_DYNAMICMODESUPPORT,                  %REG_DWORD%,    1
+HKR,, DALRULE_ADDNATIVEMODESTOMODETABLE,    %REG_DWORD%,    1
+HKR,, Denoise_NA, %REG_SZ%, 1
+HKR,, Detail_NA, %REG_SZ%, 1
+HKR,, SplitDisplay_NA, %REG_SZ%, 1
+HKR,, DALRULE_NOCRTANDTVACTIVESIMULTANEOUSLY,      %REG_DWORD%,    1
+HKR,, AutoColorDepthReduction_NA,   %REG_DWORD%,    1
+HKLM,"SYSTEM\CurrentControlSet\Services\Atierecord",eRecordEnable,          %REG_DWORD%,    1
+HKLM,"SYSTEM\CurrentControlSet\Services\Atierecord",eRecordEnablePopups,          %REG_DWORD%,    1
+HKR,, DisableOGLx2Loader, %REG_DWORD%, 0x00000000
+HKR,, DAL_TVRestrictedModesBCD, %REG_BINARY%,10,24,06,00,00,00,00,00
+HKR,, Disable5299,               %REG_DWORD%,    0
+
+[ati2mtag_Mobile_SoftwareDeviceSettings]
+HKR,, ExtEvent_EnablePowerPlay,      %REG_DWORD%,    0
+HKR,, DALRULE_LCDSHOWRESOLUTIONCHANGEMESSAGE, %REG_DWORD%, 0
+HKR,, DALRULE_GETLCDFAKEEDID, %REG_DWORD%, 1
+HKR,, DALRULE_SETMODEAFTERPOWERSTATECHANGE, %REG_DWORD%, 0
+HKR,, DALRULE_USEOLDPOWERPLAYINTERFACE,               %REG_DWORD%,    0
+HKR,, DALRULE_USEOLDPOWERPLAYPROPERTYPAGE,               %REG_DWORD%,    0
+HKR,, DALRULE_OTHEREXPANSIONMODEDEFAULT,      %REG_DWORD%,    1
+HKR,, DALRULE_WADSUPPORT,    %REG_DWORD%,    1
+HKR,, GCORULE_WADSUPPORT,   %REG_DWORD%,    1
+HKR,, DALRULE_NOFORCEBOOT,       %REG_DWORD%,    0
+HKR,, GCORULE_PowerPlayClearMemBase,      %REG_DWORD%, 1
+HKR,, DALRULE_PROFILEPREFERREDMODEBASEDONEXTDEVICE,                  %REG_DWORD%,    1
+HKR,, DALOPTION_MinResBCD,  %REG_BINARY%, 00,00,00,00,00,00,00,60
+HKR,, ExtEvent_SaveProfileAtShutdown,                %REG_DWORD%,    1
+HKR,, ExtEvent_EnableADCLogicalMapping,      %REG_DWORD%,    1
+
+[ati2mtag_MultiUVD_SoftwareDeviceSettings]
+HKR,, PP_DisableMultiUVDStates,      %REG_DWORD%,    0
+
+[ati2mtag_R6x_SoftwareDeviceSettings]
+HKR,, ATMS_DEF, %REG_SZ%, 1
+HKR,, AAAMethod_DEF, %REG_SZ%, 0
+HKR,, Denoise_DEF, %REG_SZ%, "64"
+HKR,, Detail_DEF, %REG_SZ%, "0"
+HKR,, ColorVibrance_DEF, %REG_SZ%, "0"
+HKR,, Fleshtone_DEF, %REG_SZ%, "0"
+HKR,, Denoise_ENABLE_DEF, %REG_SZ%, "1"
+HKR,, Detail_ENABLE_DEF, %REG_SZ%, "0"
+HKR,, ColorVibrance_ENABLE_DEF, %REG_SZ%, "0"
+HKR,, Fleshtone_ENABLE_DEF, %REG_SZ%, "0"
+HKR,, DynamicContrast_NA, %REG_SZ%, "1"
+HKR,, Detail_NA, %REG_SZ%, "0"
+HKR,, Denoise_NA, %REG_SZ%, "0"
+HKR,, MainVideo_SET, %REG_SZ%, "0 1 2 3 4"
+HKR,, MainVideo_TBL, %REG_SZ%, "1:Brightness=0.0,Contrast=1.0,Saturation=1.0,Gamma=0.0,Hue=0.0;2:Brightness=-3.0,Contrast=1.16,Saturation=1.25,Gamma=0.0,Hue=0.0;3:Brightness=-3.0,Contrast=1.07,Saturation=1.10,Gamma=0.0,Hue=0.0;4:Brightness=7.0,Contrast=1.25,Saturation=0.96,Gamma=0.0,Hue=0.0"
+HKR,, BlueStretch_NA, %REG_SZ%, 1   
+HKR,, DynamicRange_NA, %REG_SZ%, 1
+HKR,, StaticGamma_NA, %REG_SZ%, 1
+HKR,, Gamma_NA, %REG_SZ%, 0
+HKR,, OverridePA_NA, %REG_SZ%, "1"
+HKR,, ASE_NA, %REG_SZ%, "1"
+HKR,, DigitalHDTVDefaultUnderscan, %REG_DWORD%, 0
+HKR,, DFP_AddHDTVPixelFormats,      %REG_DWORD%,    3
+HKR,, Gxo24HzTimingSupport,          %REG_DWORD%,    1
+HKR,, DALRULE_AllowNonCEModes,    %REG_DWORD%,    0
+
+[atioglxx_OpenGLSoftwareSettings]
+HKLM, "Software\Microsoft\Windows NT\CurrentVersion\OpenGLDrivers\ati2dvag", Version, %REG_DWORD%, 2
+HKLM, "Software\Microsoft\Windows NT\CurrentVersion\OpenGLDrivers\ati2dvag", DriverVersion, %REG_DWORD%, 1
+HKLM, "Software\Microsoft\Windows NT\CurrentVersion\OpenGLDrivers\ati2dvag", Flags, %REG_DWORD%, 1
+HKLM, "Software\Microsoft\Windows NT\CurrentVersion\OpenGLDrivers\ati2dvag", Dll, %REG_SZ%, atioglxx.dll
+
+[atiorcaWS_OpenGLSoftwareSettings]
+HKLM, "Software\Microsoft\Windows NT\CurrentVersion\OpenGLDrivers\ati2dvag", Version, %REG_DWORD%, 2
+HKLM, "Software\Microsoft\Windows NT\CurrentVersion\OpenGLDrivers\ati2dvag", DriverVersion, %REG_DWORD%, 1
+HKLM, "Software\Microsoft\Windows NT\CurrentVersion\OpenGLDrivers\ati2dvag", Flags, %REG_DWORD%, 1
+HKLM, "Software\Microsoft\Windows NT\CurrentVersion\OpenGLDrivers\ati2dvag", Dll, %REG_SZ%, atioglxx.dll
+HKLM, "Software\Microsoft\Windows NT\CurrentVersion\OpenGLDrivers\atifglws", Version, %REG_DWORD%, 2
+HKLM, "Software\Microsoft\Windows NT\CurrentVersion\OpenGLDrivers\atifglws", DriverVersion, %REG_DWORD%, 1
+HKLM, "Software\Microsoft\Windows NT\CurrentVersion\OpenGLDrivers\atifglws", Flags, %REG_DWORD%, 1
+HKLM, "Software\Microsoft\Windows NT\CurrentVersion\OpenGLDrivers\atifglws", Dll, %REG_SZ%, atioglxx.dll
+HKR,, CurrentProfile,,"Default"
+HKR,, RebootFlags, %REG_DWORD%,  0x00000000
+HKR,, RebootFlagsEx, %REG_DWORD%, 0x00000000
+HKR,, CapabilitiesEx, %REG_DWORD%, 0x00000000
+HKR,, Capabilities, %REG_DWORD%, 0x00000000
+
+[ati2mtag_MobileLargeDesktopSettings]
+
+[ati2mtag_RemoveDeviceSettings]
+HKR,"Desktop",NoAtipta
+HKR,, ActiveBusCaps
+HKR,, Adaptive De-interlacing
+HKR,, AgpLevel
+HKR,, AntiAlias
+HKR,, ATIPoll
+HKR,, DALCurrentObjectData
+HKR,, DALLastConnected
+HKR,, DALLastSelected
+HKR,, DALLastTypes
+HKR,, DALNonStandardModesBCD
+HKR,, DALNonStandardModesBCD1
+HKR,, DALNonStandardModesBCD2
+HKR,, DALNonStandardModesBCD3
+HKR,, DALNonStandardModesBCD4
+HKR,, DALNonStandardModesBCD5
+HKR,, DALObjectData
+HKR,, DALObjectData0
+HKR,, DALObjectData1
+HKR,, DALR6 CRT_MaxModeInfo
+HKR,, DALR6 CRT2_MaxModeInfo
+HKR,, DALR6 DFP_MaxModeInfo
+HKR,, DALR6 DFPx_MaxModeInfo
+HKR,, DALR6 GCO_Index0
+HKR,, DALRestrictedModesBCD
+HKR,, DALRestrictedModesBCD1
+HKR,, DALRestrictedModesBCD2
+HKR,, DALRestrictedModesBCD3
+HKR,, DALRestrictedModesBCD4
+HKR,, DALRestrictedModesBCD5
+HKR,, DALRULE_ADDNATIVEMODESTOMODETABLE
+HKR,, DALRULE_CRTSUPPORTSALLMODES
+HKR,, DALRULE_DISABLEBANDWIDTH
+HKR,, DALRULE_DISPLAYSRESTRICTMODES
+HKR,, DALRULE_NOCRTANDLCDONSAMECONTROLLER
+HKR,, DALRULE_NOFORCEBOOT
+HKR,, DALRULE_NOTVANDCRTONSAMECONTROLLER
+HKR,, DALRULE_RESTRICTUNKNOWNMONITOR
+HKR,, DALRULE_SAVEPANLOCK
+HKR,, DALSelectObjectData0
+HKR,, DALSelectObjectData1
+HKR,, DDC2Disabled
+HKR,, DefaultMode
+HKR,, DFPRULE_HotplugSupported
+HKR,, DisableAGP
+HKR,, DisableAGPDFB
+HKR,, DisableAGPPM4
+HKR,, DisableAGPTexture
+HKR,, DisableAGPWrite
+HKR,, DisableBlockWrite
+HKR,, DisableD3D
+HKR,, DisableDMA
+HKR,, DisableDMACopy
+HKR,, DisableDrvAlphaBlend
+HKR,, DisableDrvStretchBlt
+HKR,, DisableDynamicEnableMode
+HKR,, DisableEngine
+HKR,, DisableEnumAllChilds
+HKR,, DisableFullAdapterInit
+HKR,, DisableHierarchicalZ
+HKR,, DisableHWAAFonts
+HKR,, DisableIDCT
+HKR,, DisableLCD
+HKR,, DisableMMLIB
+HKR,, DisableOpenGLScrAccelerate
+HKR,, DisablePllInit
+HKR,, DisablePrimaryTiling
+HKR,, DisableRptrWriteBack
+HKR,, DisableTCL
+HKR,, DisableTiling
+HKR,, DisableTimeStampWriteBack
+HKR,, DisableUSWC
+HKR,, DisableVideoUSWC
+HKR,, DisableVPE
+HKR,, EnableWaitUntilIdxTriList2
+HKR,, ExtEvent_BroadcastDispChange
+HKR,, ExtEvent_DriverMessageSupport
+HKR,, ExtEvent_EnableChgLCDResOnHotKey
+HKR,, ExtEvent_EnableHotPlug
+HKR,, ExtEvent_EnableMouseRotation
+HKR,, ExtEvent_EnablePolling
+HKR,, ExtEvent_EnablePowerPlay
+HKR,, ExtEvent_LCDSetMaxResOnDockChg
+HKR,, ExtEvent_UpdateAdapterInfoOnHK
+HKR,, GCORULE_HIGHDISPRI
+HKR,, GCORULE_R200TVPLLWA
+HKR,, LVB
+HKR,, MaxAgpVb
+HKR,, MaxAGPVB
+HKR,, MaxLocalVb
+HKR,, MaxLocalVB
+HKR,, MemInitLatencyTimer
+HKR,, QSindirectBufferLocation
+HKR,, QSringBufferLocation
+HKR,, RequestedBusCaps
+HKR,, SubmitOnDraw
+HKR,, TestedBusCaps
+HKR,, TestEnv
+HKR,, TimingSelection
+HKR,, TVR200Flag
+HKR,, VgaCompatible
+HKR,, VPE Adaptive De-interlacing
+HKR,, DALInstallFlag
+HKR,, FireGLRocketScience
+HKR,, CurrentProfile
+HKR,, RebootFlags
+HKR,, RebootFlagsEx
+HKR,, Capabilities
+HKR,, CapabilitiesEx
+HKR,, DALPowerPlayOptions
+HKR,, DALRULE_NOCRTANDDFPONSAMECONTROLLER
+HKR,, DALRULE_NOCRTANDLCDONSAMECONTROLLER
+HKR,, GCORULE_DISABLETMDSREDUCEDBLANKING
+HKR,, GCORULE_IntTMDSReduceBlankTiming
+HKR,, GCORULE_R200TVPLLWA
+HKR,, TVR200Flag
+HKR,, AntiAlias
+HKR,, GCORULE_DisableHotKeyIfOverlayAllocated
+HKR,, DisableDualView
+HKR,, DisableDualviewWithHotKey
+HKR,"OpenGL",OGLEnableSharedBackZ
+HKR,, DALRULE_LARGEPANELSUPPORT
+HKR,, DFPRULE_ResyncCRTCs
+HKR,, GCORULE_SameDividersForIntAndExtTMDS
+HKR,, DALOPTION_MinResBCD
+HKR,, DALOPTION_MaxResBCD
+HKR,, DALOPTION_MinRes2BCD
+HKR,, DALOPTION_MaxRes2BCD
+HKR,, DALRULE_MOBILEFEATURES
+HKR,, GCORULE_ForceCoherentTMDSForHighMode
+HKR,, DALRV100TMDSiReducedBlanking
+HKR,, DALRV200TMDSiReducedBlanking
+HKR,, DALR200TMDSiReducedBlanking
+HKR,, DALRV250TMDSiReducedBlanking
+HKR,, DALRV280TMDSiReducedBlanking
+HKR,, DALRV350TMDSiReducedBlanking
+HKR,, DALR300TMDSiReducedBlanking
+HKR,, DALR350TMDSiReducedBlanking
+HKR,, DALR360TMDSiReducedBlanking
+HKR,, DALATI M6TMDSiReducedBlanking
+HKR,, DALATI M7TMDSiReducedBlanking
+HKR,, DALATI M9TMDSiReducedBlanking
+HKR,, DALATI M9 PLUSTMDSiReducedBlanking
+HKR,, DALM10TMDSiReducedBlanking
+HKR,, DALRV380TMDSiReducedBlanking
+HKR,, DALR420TMDSiReducedBlanking
+HKR,, DALM18TMDSiReducedBlanking
+HKR,, DALM24TMDSiReducedBlanking
+HKR,, DALR300TMDSiCoherentMode
+HKR,, DALR350TMDSiCoherentMode
+HKR,, DALR360TMDSiCoherentMode
+HKR,, DALRV280TMDSiCoherentMode
+HKR,, DALRV350TMDSiCoherentMode
+HKR,, DALATI M9 PLUSTMDSiCoherentMode
+HKR,, DALM10TMDSiCoherentMode
+HKR,, DALRV380TMDSiCoherentMode
+HKR,, DALR420TMDSiCoherentMode
+HKR,, DALM18TMDSiCoherentMode
+HKR,, DALM24TMDSiCoherentMode
+HKR,, DALRULE_MODESUPPORTEDSIMPLECHECK
+HKR,, DALRULE_DISPLAYSRESTRICTMODESLARGEDESKTOP
+HKR,, OptimalNB
+HKR,, OptimalPamac0
+HKR,, OptimalPamac1
+HKR,, GCOOPTION_MaxTmdsPllOutFreq
+HKR,, DAL2ndDisplayDefaultMode
+HKR,, R6LCD_RETURNALLBIOSMODES
+HKR,, VPUEnableSubmissionBox
+HKR,, VPUEnableSubmissionBox_NA
+HKR,, VPURecover_NA
+HKR,, DisplaysManagerRotation_NA
+HKR,, GCORULE_MemoryClockGraduallyChange
+HKR,, DALRULE_AUTOGENERATELARGEDESKTOPMODES
+HKR,, UseCentredCVTiming
+HKR,, GCORULE_R200TVPLLWA
+HKR,, TVR200Flag
+HKR,, DALRULE_POWERPLAYFORCEREFRESHSCREEN
+HKR,, GI
+HKR,, DALR6 CRT_INFO
+HKR,, DefaultSettings.BitsPerPel
+HKR,, DefaultSettings.XResolution
+HKR,, DefaultSettings.YResolution
+HKR,, DefaultSettings.VRefresh
+HKR,, TruformMode_NA
+HKR,, 3D_Preview
+HKR,, VPURecover_NA
+HKR,, SMARTGART_NA
+HKR,, OGL_Specific_NA
+HKR,, TemporalAAMultiplier_NA
+HKR,, CatalystAI_NA
+HKR,, SwapEffect_NA
+HKR,, AutoColorDepthReduction_NA
+HKR,, "3D_Preview"
+HKR,, 3D_Refresh_Rate_Override_DEF
+HKR,, ACE
+HKR,, ACE_Copy
+HKR,, AnisoDegree_DEF
+HKR,, AnisoType_DEF
+HKR,, AntiAlias_DEF
+HKR,, AntiAliasSamples_DEF
+HKR,, Capabilities_DEF
+HKR,, CapabilitiesEx_DEF
+HKR,, CatalystAI_DEF
+HKR,, ColourDesktopBrightness_DEF
+HKR,, ColourDesktopContrast_DEF
+HKR,, ColourDesktopGamma_DEF
+HKR,, ColourFullscreenBrightness_DEF
+HKR,, ColourFullscreenContrast_DEF
+HKR,, ColourFullscreenGamma_DEF
+HKR,, CurrentProfile_DEF
+HKR,, DisableSmartSave_DEF
+HKR,, DisableSmartSave
+HKR,, Display_Detection_DEF
+HKR,, DitherAlpha_DEF
+HKR,, EnableTripleBuffering_DEF
+HKR,, ExportCompressedTex_DEF
+HKR,, Force_TV_Detection_DEF
+HKR,, ForceZBufferDepth_DEF
+HKR,, FSAAPerfMode_DEF
+HKR,, GI_DEF
+HKR,, Main3D_DEF
+HKR,, Mouse_Track_Orientation_DEF
+HKR,, Panning_Mode_DEF
+HKR,, PixelCenter_DEF
+HKR,, SwapEffect_DEF
+HKR,, TemporalAAMultiplier_DEF
+HKR,, TextureLod_DEF
+HKR,, TextureOpt_DEF
+HKR,, TruformMode_DEF
+HKR,, VisualEnhancements_Capabilities_DEF
+HKR,, VPUEnableSubmissionBox_DEF
+HKR,, VSyncControl_DEF
+HKR,, ZFormats_DEF
+HKR,, DALRULE_ONEDISPLAYBOOTDEFAULT
+HKR,, DisableSWInterrupt
+HKR,, ExtEvent_BIOSEventByInterrupt
+HKR,, DisableDirectDraw
+HKLM,"SYSTEM\CurrentControlSet\Services\Atierecord",eRecordEnable
+HKLM,"SYSTEM\CurrentControlSet\Services\Atierecord",eRecordEnablePopups
+HKR,, DALVariBrightStatus
+HKR,, GI_NA
+HKR,, RotationSupportLevel
+HKR,, NewRotation
+HKR,, SGCountDown
+HKR,, TVM6Flag
+HKR,, TheaterMode_NA
+HKR,, ASTT_NA
+HKR,, DisableDFB
+HKR, "UMD\DXVA", DXVA_NOHDDECODE
+HKR,, PP_PhmUseDummyBackEnd
+HKR,, SORTOverrideFPSCaps
+HKR,, SORTOverrideVidSizeCaps
+HKR,, DXVA_Only24FPS1080MPEG2
+HKR,, DXVA_Only24FPS1080H264
+HKR,, DXVA_Only24FPS1080VC1
+HKR,, DisableCFExtendedDesktop
+HKR,, ATMS_DEF
+HKR,, AAAMethod_DEF
+HKR,, TestEnv
+HKR,, PP_DisablePPLib
+HKR,, FrameBufferMode
+HKR,, EnableUnifiedGartSegment
+HKR,, EnablePDMA
+HKR,, PP_PhmUseDummyBackEnd
+HKR,, DisableRejectCf
+HKR,, PP_GFXClockGatingEnabled
+HKR,, DisablePCIEGen2Support
+HKR,, DynamicContrast_ENABLE_DEF
+HKR,, DynamicContrast_NA
+HKR,, DynamicContrast_DEF
+HKR,, DP_EnableSSByDefault
+HKR,, DXVA_WMV_DEF
+HKR,, DXVA_WMV
+HKR,, DisableCfSpSupport
+HKR,, AntiAliasMapping_SET
+HKR,, DisableLoadBalancing
+HKR,, DALRULE_SETDEFAULTMODETO32BPP
+HKR,, DisableMultiMonEnum
+HKR,, DALRULE_ENABLEDDC2CWRITEI2CLINE
+HKR,, DALRULE_ALLOWNONDDCCRTALLMODESUPTO1600x1200
+HKR,, ATIPOLLINTERVAL
+HKR,"OpenGL",OGLEnableSharedBackZ
+HKR,"Desktop\UIO\Color",DefaultGammaDesktop
+HKR,, ExtEvent_EnableFjsuMouseOrientation
+HKR,, ExtEvent_DriverMessageSupport
+HKR,, TVContrastDefaultNTSC
+HKR,, GCORULE_DisableHotKeyIfOverlayAllocated
+HKR,, DisableFlush2DCache
+HKR,, HDTVRULE_HDTVGDOENABLE
+HKR,, HDTVRULE_HDTVSIGNALFORMAT
+HKR,, DALRULE_NOEDIDTOOS
+HKR,, GCORULE_TMDSiCoherentMode
+HKR,, GCOHOOK_TMDSiCoherentMode
+HKR,, DALRULE_POWERPLAYSUSPENDSUPPORT
+HKR,, DALRULE_POWERPLAYOPTIONENABLEDBYDEFAULT
+HKR,, DALRULE_USECMOSDISPLAYSETTINGS
+HKR,, TabletPCRotateClockwise
+HKR,, ExtEvent_EnableMpAtHotKeyAcpi
+HKR,, DisableOSModePruning
+HKR,, DALRULE_ALLOWNONDDCCRTALLMODESUPTO1920x1200
+HKR,, DisablePM4TSInterrupt
+HKR,, GCORule_ForceSingleController
+HKR,, DALRULE_DISABLEDISPLAYSWITCHINGIFOVERLAYALLOCATED
+HKLM,"Software\ATI Technologies\WDMCapture",Keep704AspectRatio
+HKR,, DALRULE_DONOTTURNONTVBYDEFAULT
+HKR,, TVLumaFlicker
+HKR,, TVDotCrawl
+HKR,, TVCompositeFilter
+HKR,, DALRULE_SETNONDDCCRTPREFERREDMODE800x600
+HKR,, DALRULE_DISABLEPOWERPLAYMESSAGES
+HKR,, ExtEvent_EnableADCRotationSupport
+HKR,, ApplyRotationDefaultMode
+HKR,, DisableSmartSave_DEF
+HKR,, VPUEnableSubmissionBox_DEF
+HKR,, DisableSmartSave
+HKR,, DALRULE_DISABLEOVERDRIVE
+HKR,, DALOverdrive
+HKR,, ExtEvent_OverDriveSupport
+HKR,, DALRULE_GETDEFAULTTVFORMATATBOOT
+HKR,, HibernationPatch
+HKR,, DALRULE_CVALLOCOV480IONLY
+HKR,, DALRULE_USEENABLEDATBOOTSCHEME
+HKR,, DisableCursor
+HKR,, DALRULE_UNRESTRICTSXGAPCRTONOWNCRTC
+HKR,, DALRULE_USERESTRICTEDNATIVETIMING
+HKR,, DFPOption_MaxFreq
+HKR,, DALRestrictedModesCRTC2BCD1
+HKR,, GCORULE_ModeBWException
+HKR,, DXVA_HWSP_1CRTC
+HKR,, DisableAGPFW
+HKR,, UseBT601CSC
+HKR,, ExtEvent_EnableADCAtUndocking
+HKR,, DALRULE_SETCRTANDDFPTYPESONPRIMARYCONTROLLER
+HKR,, BootInLandscape
+HKR,, BootInLandscapeDefaultModeBCD
+HKR,, DALRULE_LCDENABLEDONPRIMARYCONTROLLER
+HKR,, CVRULE_CENTRETIMINGDISABLED
+HKR,, DAL2ndDrvMin1stMode
+HKR,, GCORULE_CloneModeBWException
+HKR,, DALRULE_DISABLEPOWERPLAYSWITCHATRESUME
+HKR,, CRTRULE_FORCECRTDAC1DETECTED
+HKR,, CRTRULE_FORCECRTDAC2DETECTED
+HKR,, CRTRULE_FORCECRTDACTYPESDETECTED
+HKR,, CVRULE_CUSTOMIZEDMODESENABLED
+HKR,, GCORULE_TMDSReducedBlankingUseCVT
+HKR,, LRTCEnable
+HKR,, GSettingControl
+HKR,, DisableDTM
+HKR,, DFPOption_SingleLink
+HKR,, DFPXOption_SingleLink
+HKR,, TVContrastDefaultNTSCJ
+HKR,, TVContrastDefaultPAL
+HKR,, R6LCD_ALLOWDISABLELOWREFRESHBYUSER
+HKR,, TVDACSettings
+HKR,, DALRULE_ALLOWMONITORRANGELIMITMODES
+HKR,, DALRULE_ALLOWMONITORRANGELIMITMODESCRT
+HKR,, GCORULE_TMDSForceReducedBlanking
+HKR,, DALRULE_CUSTOMODSUPPORT
+HKR,, ExtEvent_EnableADCExclusiveModeHandling
+HKR,, DXVA_ELEGANT
+HKR,, ExtEvent_EnableChgCVResOnHotKey
+HKR,, GCOOPTION_DefaultOvlBrightness
+HKR,, GCOOPTION_DefaultOvlSaturation
+HKR,, GCOOPTION_DefaultOvlContrast
+HKR,, DAL_CRTRestrictedModesBCD
+HKR,, RegKeyLight
+HKR,, PP_GFXClockGatingEnabled
+HKR,, DisableFBCSupport
+HKR,, GXODFPxDVODDRSupport
+HKR,, DisableLoadBalancing
+HKR,, DeltaAgpPoolSize
+HKR,, InitialAgpPoolSize
+HKR,, PP_ForceHighDPMLevel
+HKR,, GCORULE_ExtTMDSReduceBlankTiming
+HKR,, GCOOPTION_ExtTMDSMaxTMDSClockSpeed
+HKR,, OverDrive3_NA
+HKR,, OverDrive2_NA
+HKR,, CRTRULE_EIAJ_TRANSLATION
+HKR,, DAL_CvRestrictedModesBCD
+HKR,, CRTRULE_480PALWAYSSUPPORTED
+HKR,, DFPRULE_ExtTMDSEncoderSupport
+HKR,, AutoClockConfig_NA
+HKR,, Acceleration.Level
+HKR,, DALRULE_DISABLEVARIBRIGHTBYDEFAULT
+HKR,, DALRULE_HIDEVARIBRIGHT
+HKR,, DALRULE_DONTSHOWWADOPTION
+HKR,, NotSupportedRotationModesExt
+HKR,, ExtEvent_SetDefault32BppOn2ndDrv
+HKR,, OvlRotation
+HKR,, GCORULE_EnableOption
+HKR,, OvlDisableOverlay
+HKR,, DALRULE_DONOTUSECUSTOMISEDMODEFORCVPANNING
+HKR,, RotationAngle
+HKR,, DefaultSettings.Orientation
+HKR,, DALRULE_SENDCONTROLLERCONFIGCHANGEMESSAGE
+HKR,, maMethod
+HKR,, GCORULE_CvImproveClkPrecision
+HKR,, DisableSkippingS5Dpms
+HKR,, LimitDFBCreation
+HKR,, DALDefaultCvModeBCD
+HKR,, DALRULE_CVUSEOPTIMODEASDEFAULT
+HKR,, DALDefaultCEDTVModeBCD
+HKR,, DALRULE_CEDTVUSEOPTIMODEASDEFAULT
+HKR,, DALRULE_ADDEDIDSTANDARDMODESTOMODETABLE
+HKR,, DisableConditionalMutex
+HKR,, DAL_CVDeviceData
+HKR,, GXONoLineReplication
+HKR,, GXOM5XDisableLaneSwitch
+HKR,, DisableTurnOnAllDisplaysAtResume
+HKR,, GXOPPDCDEFAULTTOBALANCEDMODE
+HKR,, GXOPPDCLOWDEFAULTTOBALANCEDMODE
+HKR,, DisableMFunction
+HKR,, GXODisableDefaultVideoPowerSwitch
+HKR,, CVRULE_ENABLEPALTIMINGSUPPORT
+HKR,, MVPUAllowCompatibleAFR
+HKR,, DALRULE_LIMITEDGREYSCALESUPPORT
+HKR,, Extevent_HotplugUseCurrentMapping
+HKR,, DALRULE_ALWAYSREPORTLARGEDESKTOPMODES
+HKR,, HWUVD_DisableH264
+HKR,, HWUVD_DisableVC1
+HKR,, DisableVForceMode
+HKR,, PP_ForceReportOverdrive4
+HKR,, EnablePPSMSupport
+HKR,, PPSMSupportLevel
+HKR,, EnableSPSurface
+HKR,, PP_DeferFirstStateSwitch
+HKR,, GXODontDisableVGAAtResume
+HKR,, PP_RS780CGINTGFXMISC2
+HKR,, EnableGeminiAutoLink
+HKR,, DisableFBCSupport
+HKR,, FBCSupportLevel
+HKR,, HDTVRULE_HDTVGDOENABLE
+HKR,, HDTVRULE_HDTVSIGNALFORMAT
+HKR,, ForceHigh3DClocks_NA
+HKR,, TMDS_DisableDither
+HKR,, PP_VariBrightFeatureEnable
+HKR,, GXODFPxDVODDRSupport
+HKR,,   DisableVLDForSingleFireMVAsic
+HKR,, DisableOGL10BitPixelFormats
+HKR,, DALRULE_AllowNativeModeAsDefaultModes
+HKR,, GXODFPxDVODDRSupport
+HKR,, GXOUseSclkforProgrammableDispClk
+HKR,, DALDefaultACPowerState
+HKR,, DALDCLowThresholdValue
+HKR,, DynamicContrast_ENABLE_DEF
+HKR,, PO_SwRi
+HKR,, DALPanelPatchByID
+HKR,, GXOTwoDigitalPanelPLLWa
+HKR,, GxoAllCvFormatSupportedAtBoot
+HKR,, DALRULE_ENABLEMONITORTIMEOUTPWRSTATE
+HKR,, Gxo30BppPanels
+HKR,, GXODFPDefaultCoherentMode
+HKR,, GXODFP2DefaultCoherentMode
+HKR,, GXODFPXDefaultCoherentMode
+HKR,, DisplayCrossfireLogo_DEF
+HKR,, DALRULE_SkipEDIDReadForNoSink
+HKR,, DisablePCIEx1LaneUVD
+HKR,, PP_DCPowerSourceUIMapping_Default
+HKR,, MaxDPMClock
+HKR,, Disable8435
+HKR,, GCOOPTION_MaxOverlayBandwidth
+HKR,, Gxo_AdapterOverlayBandwidth
+HKR,, CRTRULE_R520FORCECRTDAC2DETECTED
+HKR,, DisableTearFreeDesktop
+HKR,, Disable3dOptVSync
+HKR,, PP_DisableODStateInDC
+HKR,, PP_DisableDCODT
+HKR,, DisableConsumerStretchRotation
+HKR,, DisableIGPDirectAccess
+HKR,, Extevent_HotplugSetDevicePreferredMode
+HKR,, SUPPORTHPDMISSINGDVI
+HKR,, ExtEvent_ADCApplyCurrentModeWhenNothingConnected
+HKR,, GxoAdjustVBlankForHTLinkChange
+HKR,, DAL_DFPScalingOptionDefault
+HKR,, DAL_DFP2ScalingOptionDefault
+HKR,, DAL_DFP3ScalingOptionDefault
+HKR,, DAL_DFP4ScalingOptionDefault
+HKR,, DAL_DFP5ScalingOptionDefault
+HKR,, LcdPixelClockFrequencySpreadPercentage
+HKR,, SKIPAZALIAINBLANK
+HKR,, DisableFireGLCrossfire
+HKR,, LCDOverdrivePerPowerSource
+HKR, "UMD\DXVA", VForceMPEG2SDOnly
+HKR,, EnablePartialBlitForPaging
+
+[ati2mtag_M76.GeneralConfigData]
+MaximumDeviceMemoryConfiguration=128
+MaximumNumberOfDevices=4
+SessionImageSize = 16
+
+[ati2mtag_M9x.GeneralConfigData]
+MaximumDeviceMemoryConfiguration=128
+MaximumNumberOfDevices=4
+SessionImageSize = 16
+
+[ati2mtag_Manhattan.GeneralConfigData]
+MaximumDeviceMemoryConfiguration=128
+MaximumNumberOfDevices=4
+SessionImageSize = 16
+
+[ati2mtag_M72.GeneralConfigData]
+MaximumDeviceMemoryConfiguration=128
+MaximumNumberOfDevices=4
+SessionImageSize = 16
+
+[SourceDisksNames.x86]
+1 = %DiskId%,,,.\B_94236
+
+[SourceDisksNames.ia64]
+1 = %DiskID%,,,.\B_94236
+
+[SourceDisksFiles]
+ati2cqag.dll=1
+ati2dvag.dll=1
+ati2edxx.dll=1
+ati2erec.dll=1
+ati2evxx.dll=1
+ati2evxx.exe=1
+ati2mdxx.exe=1
+ati2mtag.sys=1
+ati3duag.dll=1
+atiadlxx.dll=1
+atibtmon.exe=1
+aticalcl.dll=1
+aticaldd.dll=1
+aticalrt.dll=1
+atidemgx.dll=1
+atifglpf.xml=1
+atiicdxx.dat=1
+atiiiexx.dll=1
+atikvmag.dll=1
+atimpc32.dll=1
+atiodcli.exe=1
+atiode.exe=1
+atiogl.xml=1
+atioglxx.dll=1
+atiok3x2.dll=1
+atipdlxx.dll=1
+atitvo32.dll=1
+ativva5x.dat=1
+ativva6x.dat=1
+ativvaxx.cap=1
+ativvaxx.dll=1
+
+[Strings]
+;
+; Non-Localizable Strings
+;
+REG_SZ         ="0x00000000"
+REG_MULTI_SZ   ="0x00010000"
+REG_EXPAND_SZ  ="0x00020000"
+REG_BINARY     ="0x00000001"
+REG_DWORD      ="0x00010001"
+SERVICEROOT    ="System\CurrentControlSet\Services"
+;
+; Localizable Strings
+;
+DiskId       = "ATI Technologies Inc. Installation DISK (VIDEO)"
+GraphAdap    = "Graphics Adapter"
+ATI          = "ATI Technologies Inc."
+ATIR200="Chaplin (R200)" 
+; Driver Information Entries
+; These items will be set by IHV...
+DriverMfgr="ATI Technologies Inc."			; IHV name
+DriverVersionID="7.xx"					; The IHV driver version
+BaseDriverFileName="ati2mtag.sys" 			; Key file for version 
+BaseDriverFileVersion="5.13.01.3210" 			; version of key file 
+; These items will be set by IHV and updated by OEM 
+DriverOEM="ATI Technologies Inc."			; name of the OEM 
+DriverFamily="Video" 					; device family (NIC, Storage, Video...)
+DriverProduct="ATI Radeon" 				; Specific Name of device (chipset, for example)
+DriverDescription="Graphics Driver" 			; Description of device (product name, OS or system supported)
+DriverOEMVersion="Centralized Build"                    ; OEM-specified version 

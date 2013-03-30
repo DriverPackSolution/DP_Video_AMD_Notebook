@@ -1,0 +1,1181 @@
+;-----------------------------------------------
+;----------1210111148-8.982.10.8-121003a1-147897C-Lenovo
+; ATI Display Information file : atiilhag.inf
+;
+; Installation INF for the ATI display driver.
+; Copyright(C) 1998-2006 ATI Technologies Inc.
+;-----------------------------------------------
+; PX - PX Proxy mode
+; PR - PX Proxy Ready
+
+[Version]
+Signature="$Windows NT$"
+Provider=%ATI%
+ClassGUID={4D36E968-E325-11CE-BFC1-08002BE10318}
+Class=Display
+DriverVer=10/03/2012, 8.982.10.8000
+;;LayoutFile=layout.inf
+CatalogFile=C8147897.CAT
+
+[SignatureAttributes]
+atimpc32.dll=SignatureAttributes.PETrust
+amdpcom32.dll=SignatureAttributes.PETrust
+atimpc64.dll=SignatureAttributes.PETrust
+amdpcom64.dll=SignatureAttributes.PETrust
+atiumd64.dll=SignatureAttributes.PETrust
+atiumd6a.dll=SignatureAttributes.PETrust
+atiumdag.dll=SignatureAttributes.PETrust
+atidxx32.dll=SignatureAttributes.PETrust
+aticfx32.dll=SignatureAttributes.PETrust
+atiu9pag.dll=SignatureAttributes.PETrust
+atiuxpag.dll=SignatureAttributes.PETrust
+atidxx64.dll=SignatureAttributes.PETrust
+aticfx64.dll=SignatureAttributes.PETrust
+atiu9p64.dll=SignatureAttributes.PETrust
+atiuxp64.dll=SignatureAttributes.PETrust
+atiumdva.dll=SignatureAttributes.PETrust
+
+[SignatureAttributes.PETrust]
+PETrust=true
+
+[DestinationDirs]
+DefaultDestDir  = 11
+R300.OGL        = 10  ; Windows
+R300.Miniport   = 12  ; drivers
+R300.Display    = 11  ; system32
+R300.DXX        = 11  ; system32
+R300.OD		= 11  ; system32
+R300.Mppxy      = 12  ; drivers
+R300.DispWow    = 10, SysWOW64
+Coinstaller_CopyFiles = 11
+R300.ProxyM	= 12  ; drivers
+R300.ProxyU	= 11  ; system32
+R300.Samu	= 11  ; system32
+R300.SamuWow64	= 10  ; SysWOW64
+R300.ProxyUWoW  = 10, SysWOW64
+r300.CFNext	= 11
+r300.CFNextWow	= 10, SysWOW64
+R300.VCE	= 11  ;system32
+R300.VCEWOW	= 10, SysWOW64
+R300.MFTDLLs    = 16427,ATI Technologies\Multimedia
+
+[ControlFlags]
+ExcludeFromSelect=*
+;
+; Driver information
+;
+
+[Manufacturer]
+%ATI% = ATI.Mfg, NTamd64.6.2
+
+[ATI.Mfg.NTamd64.6.2]
+"%AMD6750.1%" = ati2mtag_NI, PCI\VEN_1002&DEV_6750&SUBSYS_361817AA
+"%AMD6750.2%" = ati2mtag_NI, PCI\VEN_1002&DEV_6750&SUBSYS_307A17AA
+"%AMD68C1.1%" = ati2mtag_Manhattan, PCI\VEN_1002&DEV_68C1&SUBSYS_361817AA
+;
+; General installation section
+;
+
+[ati2mtag_Manhattan]
+FeatureScore=E0
+CopyFiles=R300.Miniport, R300.Display, R300.DXX, R300.DispWow, R300.OGL, R300.OD
+CopyFiles=R300.Mppxy
+CopyFiles=R300.ProxyM, R300.ProxyU
+CopyFiles=r300.CFNext
+CopyFiles=r300.CFNextWow
+CopyFiles=R300.MFTDLLs
+AddReg = ati2mtag_SoftwareDeviceSettings
+AddReg = ati2mtag_Manhattan_SoftwareDeviceSettings
+AddReg = ati2mtag_MultiUVD_SoftwareDeviceSettings
+AddReg = ati2mtag_Mobile_SoftwareDeviceSettings
+AddReg = ati2mtag_Mobile_NONPX_SoftwareDeviceSettings
+AddReg = ati2mtag_Post_EG
+AddReg = ati2mtag_Mobile_PX_SoftwareDeviceSettings
+AddReg = ati2mtag_Mobile_PXAA_SoftwareDeviceSettings
+AddReg = ati2mtag_ProxySettings_DX10
+AddReg = ati2mtag_ProxySettings_DX10_PXAA
+AddReg = ati2mtag_PXAA
+AddReg = ati2mtag_Manhattan_PX
+AddReg = ati2mtag_DX11
+DelReg = ati2mtag_RemoveDeviceSettings
+DelFiles = R300.DelFiles
+RegisterDlls = TMM.RegisterDlls
+RegisterDlls = MFTRegisterDlls
+
+[ati2mtag_NI]
+FeatureScore=E0
+CopyFiles=R300.Miniport, R300.Display, R300.DXX, R300.DispWow, R300.OGL, R300.OD
+CopyFiles=R300.Mppxy
+CopyFiles=R300.ProxyM, R300.ProxyU
+CopyFiles=r300.CFNext
+CopyFiles=r300.CFNextWow
+CopyFiles=R300.MFTDLLs
+AddReg = ati2mtag_SoftwareDeviceSettings
+AddReg = ati2mtag_NI_SoftwareDeviceSettings
+AddReg = ati2mtag_Desktop_SoftwareDeviceSettings
+AddReg = ati2mtag_Post_EG
+AddReg = ati2mtag_ProxySettings_DX10
+AddReg = ati2mtag_ProxySettings_DX10_PXAA
+AddReg = ati2mtag_Proxy
+AddReg = ati2mtag_DX11
+DelReg = ati2mtag_RemoveDeviceSettings
+DelFiles = R300.DelFiles
+RegisterDlls = TMM.RegisterDlls
+RegisterDlls = MFTRegisterDlls
+
+[r300.CFNext]
+aticfx64.dll,,,0x00004000
+
+[r300.CFNextWow]
+aticfx32.dll,,,0x00004000
+
+[r300.Miniport]
+atikmdag.sys
+ati2erec.dll
+atikmpag.sys,,,0x00004000
+
+[r300.Mppxy]
+
+[r300.Display]
+atiumd64.dll,,,0x00004000             ; COPYFLG_IN_USE_TRY_RENAME
+atiumd6a.dll,,,0x00004000             ; COPYFLG_IN_USE_TRY_RENAME
+atitmm64.dll,,,0x00004000
+atiicdxx.dat,,,0x00004000
+amdpcom64.dll,,,0x00004000
+atimpc64.dll,,,0x00004000
+atiadlxx.dll,,,0x00004000
+atiumd6a.cap,,,0x00004000
+atimuixx.dll,,,0x00004000
+atiapfxx.exe
+ativvsva.dat,,,0x00004000
+ativvsvl.dat,,,0x00004000
+;;atiogl64.dll
+atiesrxx.exe,,,0x00004000
+atieclxx.exe,,,0x00004000
+atiedu64.dll,,,0x00004000
+atidemgy.dll,,,0x00004000
+atio6axx.dll,,,0x00004000
+aticaldd64.dll,,,0x00004000
+aticalrt64.dll,,,0x00004000
+aticalcl64.dll,,,0x00004000
+atipblag.dat,,,0x00004000
+atiu9p64.dll,,,0x00004000             ; COPYFLG_IN_USE_TRY_RENAME
+atiuxp64.dll,,,0x00004000             ; COPYFLG_IN_USE_TRY_RENAME
+atig6pxx.dll,,,0x00004000
+atig6txx.dll,,,0x00004000
+atibtmon.exe
+atiapfxx.blb
+
+[r300.DispWow]
+atiumdag.dll,,,0x00004000             ; COPYFLG_IN_USE_TRY_RENAME
+atiumdva.dll,,,0x00004000             ; COPYFLG_IN_USE_TRY_RENAME
+amdpcom32.dll,,,0x00004000
+atimpc32.dll,,,0x00004000
+atiadlxy.dll,,,0x00004000
+atiumdva.cap,,,0x00004000
+ativvsva.dat
+ativvsvl.dat
+;;atiogl32.dll
+ati2edxx.dll,,,0x00004000
+atioglxx.dll,,,0x00004000
+atidxx32.dll,,,0x00004000
+aticaldd.dll,,,0x00004000
+aticalrt.dll,,,0x00004000
+aticalcl.dll,,,0x00004000
+atipblag.dat,,,0x00004000
+atiu9pag.dll,,,0x00004000             ; COPYFLG_IN_USE_TRY_RENAME
+atiuxpag.dll,,,0x00004000             ; COPYFLG_IN_USE_TRY_RENAME
+atigktxx.dll,,,0x00004000
+atiglpxx.dll,,,0x00004000
+atiapfxx.blb
+
+[Coinstaller_CopyFiles]
+coinst_8.982.10.8.dll,,,0x00004000
+
+[r300.DXX]
+atidxx64.dll,,,0x00004000
+
+[r300.OGL]
+atiogl.xml
+
+[R300.OD]
+ATIODCLI.exe
+ATIODE.exe
+
+[R300.ProxyM]
+atikmpag.sys,,,0x00004000
+
+[R300.ProxyU]
+atipblag.dat,,,0x00004000
+atiu9p64.dll,,,0x00004000
+atiuxp64.dll,,,0x00004000
+atig6txx.dll,,,0x00004000
+atiglpxx.dll,,,0x00004000
+
+[R300.MFTDLLs]
+AMDh264Enc32.dll,,,0x00004000
+AMDh264Enc64.dll,,,0x00004000
+AMDhwDecoder_32.dll,,,0x00004000
+AMDhwDecoder_64.dll,,,0x00004000
+
+[r300.DelFiles]
+ativvaxx.dll
+amdcaldd64.dll
+amdcalrt64.dll
+amdcalcl64.dll
+amdcaldd.dll
+amdcalrt.dll
+amdcalcl.dll
+Ati2evxx.exe
+Ati2evxx.dll
+;
+;Register COM object
+;
+
+[TMM.RegisterDlls]
+11,,atitmm64.dll,1
+
+[MFTRegisterDlls]
+16427,ATI Technologies\Multimedia,AMDh264Enc32.dll,1
+16427,ATI Technologies\Multimedia,AMDh264Enc64.dll,1
+16427,ATI Technologies\Multimedia,AMDhwDecoder_32.dll,1
+16427,ATI Technologies\Multimedia,AMDhwDecoder_64.dll,1
+;
+; Service Installation
+;
+
+[ati2mtag_Manhattan.Services]
+AddService = amdkmdap, 0x00000002, Proxy_Service_Inst, R300_EventLog_Inst
+AddService = amdkmdag, 0x00000000, AMD_Service_Inst_Manhattan, R300_EventLog_Inst
+DelService = Ati External Event Utility
+AddService = AMD External Events Utility, 0x00000000, Ati2evxx_Generic_Service_Inst, Ati2evxx_EventLog_Inst, APPLICATION, ATIeRecord
+
+[ati2mtag_NI.Services]
+AddService = amdkmdap, 0x00000002, Proxy_Service_Inst, R300_EventLog_Inst
+AddService = amdkmdag, 0x00000000, AMD_Service_Inst_NI, R300_EventLog_Inst
+DelService = Ati External Event Utility
+AddService = AMD External Events Utility, 0x00000000, Ati2evxx_Generic_Service_Inst, Ati2evxx_EventLog_Inst, APPLICATION, ATIeRecord
+
+[ati2mtag_Manhattan.Coinstallers]
+AddReg=Coinstaller_AddReg
+CopyFiles=Coinstaller_CopyFiles
+
+[ati2mtag_NI.Coinstallers]
+AddReg=Coinstaller_AddReg
+CopyFiles=Coinstaller_CopyFiles
+
+[Proxy_Service_Inst]
+ServiceType    = 1                  ; SERVICE_KERNEL_DRIVER
+StartType      = 3                  ; SERVICE_DEMAND_START
+ErrorControl   = 0                  ; SERVICE_ERROR_IGNORE
+LoadOrderGroup = Video
+ServiceBinary  = %12%\atikmpag.sys
+Delreg = Delreg_services
+;;;GENCOM_REMOVED
+
+[AMD_Service_Inst_Manhattan]
+AddReg = ati2mtag_SoftwareDeviceSettings
+AddReg = ati2mtag_Manhattan_SoftwareDeviceSettings
+AddReg = ati2mtag_MultiUVD_SoftwareDeviceSettings
+AddReg = ati2mtag_Mobile_SoftwareDeviceSettings
+AddReg = ati2mtag_Mobile_PX_SoftwareDeviceSettings
+AddReg = ati2mtag_Mobile_PXAA_SoftwareDeviceSettings
+AddReg = ati2mtag_ProxySettings_DX10
+AddReg = ati2mtag_ProxySettings_DX10_PXAA
+AddReg = ati2mtag_PXAA
+AddReg = ati2mtag_Manhattan_PX
+AddReg = ati2mtag_DX11
+DelReg = ati2mtag_RemoveDeviceSettings
+ServiceType    = 1                  ; SERVICE_KERNEL_DRIVER
+StartType      = 3                  ; SERVICE_DEMAND_START
+ErrorControl   = 0                  ; SERVICE_ERROR_IGNORE
+LoadOrderGroup = Video
+ServiceBinary  = %12%\atikmdag.sys
+
+[AMD_Service_Inst_NI]
+AddReg = ati2mtag_SoftwareDeviceSettings
+AddReg = ati2mtag_NI_SoftwareDeviceSettings
+AddReg = ati2mtag_Desktop_SoftwareDeviceSettings
+AddReg = ati2mtag_ProxySettings_DX10
+AddReg = ati2mtag_ProxySettings_DX10_PXAA
+AddReg = ati2mtag_Proxy
+AddReg = ati2mtag_DX11
+DelReg = ati2mtag_RemoveDeviceSettings
+DelFiles = R300.DelFiles
+ServiceType    = 1                  ; SERVICE_KERNEL_DRIVER
+StartType      = 3                  ; SERVICE_DEMAND_START
+ErrorControl   = 0                  ; SERVICE_ERROR_IGNORE
+LoadOrderGroup = Video
+ServiceBinary  = %12%\atikmdag.sys
+
+[Ati2evxx_EventLog_AddReg]
+HKR,, eRecordEnable,          %REG_DWORD%,    1
+HKR,, CategoryCount,          %REG_DWORD%,    0x3f
+HKR,, TypesSupported,          %REG_DWORD%,    0x7
+HKR,, CategoryMessageFile,     %REG_EXPAND_SZ%, "%%SystemRoot%%\System32\drivers\ati2erec.dll"
+HKR,, EventMessageFile,     %REG_EXPAND_SZ%, "%%SystemRoot%%\System32\drivers\ati2erec.dll"
+HKLM,"SOFTWARE\ATI Technologies",eRecordEnable,          %REG_DWORD%,    1
+HKR,,TypesSupported,0x00010001,7
+
+[Ati2evxx_EventLog_Inst]
+AddReg=Ati2evxx_EventLog_AddReg
+
+[Ati2evxx_Generic_Service_Inst]
+ServiceType    = 0x10
+StartType      = 2
+ErrorControl   = 1
+ServiceBinary  = %11%\atiesrxx.exe
+LoadOrderGroup = Event log
+
+[R300_EventLog_AddReg]
+HKR,,EventMessageFile,0x00020000,"%SystemRoot%\System32\drivers\ati2erec.dll"
+HKR,,TypesSupported,0x00010001,7
+HKR,, CategoryMessageFile, 0x00020000, "%SystemRoot%\System32\drivers\ati2erec.dll"
+HKR,, CategoryCount, 0x00010001, 63
+
+[R300_EventLog_Inst]
+AddReg = R300_EventLog_AddReg
+
+[ati2mtag_Manhattan.HW]
+AddReg = atikmdag_MSI_HardwareDeviceSettings
+
+[ati2mtag_NI.HW]
+AddReg = atikmdag_MSI_HardwareDeviceSettings
+
+[Coinstaller_AddReg]
+HKR,,CoInstallers32,%REG_MULTI_SZ%,"coinst_8.982.10.8.dll,CoInstallerEntry"
+HKR,,CoInstallers32,%REG_MULTI_SZ%,"coinst_8.982.10.8.dll,CoInstallerEntry"
+
+[ati2mtag_DX11]
+HKR,, UserModeDriverName,                   %REG_MULTI_SZ%, aticfx64.dll, aticfx64.dll, aticfx64.dll
+HKR,, UserModeDriverNameWow,                   %REG_MULTI_SZ%, aticfx32.dll, aticfx32.dll, aticfx32.dll
+HKR,, InstalledDisplayDrivers,              %REG_MULTI_SZ%, aticfx64, aticfx64, aticfx64, aticfx32, aticfx32, aticfx32, atiumd64, atidxx64, atidxx64, atiumdag, atidxx32, atidxx32, atiumdva, atiumd6a, atitmm64
+HKR,, ProxyLDA_Support, %REG_DWORD%, 2
+
+[ati2mtag_Desktop_SoftwareDeviceSettings]
+HKR,, DMMEnableDDCPolling,   %REG_DWORD%,    1
+
+[ati2mtag_Manhattan_SoftwareDeviceSettings]
+HKR,, DALRULE_NOTVANDLCDONCRTC,             %REG_DWORD%,    1
+HKR,, WmAgpMaxIdleClk,			    %REG_DWORD%,    0x20
+HKR,, DisableIDCT,                          %REG_DWORD%,    0
+HKR,, DALR6 CRT_MaxModeInfo,                  %REG_BINARY%,00,00,00,00,40,06,00,00,B0,04,00,00,00,00,00,00,3C,00,00,00
+HKR,, DisableFullAdapterInit,      %REG_DWORD%,    0
+HKR,, MemInitLatencyTimer,         %REG_DWORD%,    0x775771BF
+HKR,, GCORULE_FlickerWA,             %REG_DWORD%, 1
+HKR,, SMOOTHVISION_NAME, %REG_SZ%, "SMOOTHVISION HD"
+HKR, "UMD",GI_DEF, %REG_SZ%, 1
+HKR, "UMD",ASTT_DEF, %REG_SZ%, 0
+HKR, "UMD",AreaAniso_DEF, %REG_SZ%, 0
+HKR,, SameOnAllUsingStandardInVideoTheaterCloneMode, %REG_SZ%, "1"
+HKR,, 3to2Pulldown_NA, %REG_SZ%, 0
+HKR,, GI_NA, %REG_SZ%, 1
+HKR,, VIDEO_NAME_SUFFIX, %REG_SZ%, "Avivo(TM)"
+HKR,, AAF_NA, %REG_SZ%, 0
+HKR,, AreaAniso_NA, %REG_SZ%, "1"
+HKR, "UMD", AAF_DEF, %REG_SZ%, 0
+HKR, "UMD", AAF_Value_SET, %REG_SZ%, "Box:0,Narrow-tent:1,Wide-tent:2,Edge-detect:3"
+HKR, "UMD", AAF_Mapping_SET, %REG_SZ%, "0(Box:2,Narrow-tent:4,Wide-tent:6,Edge-detect:12) 2(Box:2,Narrow-tent:4,Wide-tent:6) 4(Box:4,Narrow-tent:6,Wide-tent:8,Edge-detect:12) 8(Box:8,Narrow-tent:12,Wide-tent:16,Edge-detect:24) 16(Box:16,Narrow-tent:24,Wide-tent:32)"
+HKR,, TemporalAAMultiplier_NA, %REG_SZ%, "1"
+HKR, "UMD",AAAMethod_DEF, %REG_SZ%, 0
+HKR, "UMD",ATMS_DEF, %REG_SZ%, 1
+HKR, "UMD\DXVA",3to2Pulldown, %REG_SZ%, "1"
+HKR, "UMD\DXVA",3to2Pulldown_DEF, %REG_SZ%, "1"
+HKR,, Denoise_NA, %REG_SZ%, "0"
+HKR,, Detail_NA, %REG_SZ%, "0"
+HKR,, DynamicContrast_NA, %REG_SZ%, "0"
+HKR, "UMD\DXVA",StaticGamma, %REG_SZ%, "100"
+HKR, "UMD\DXVA",StaticGamma_DEF, %REG_SZ%, "100"
+HKR,, ASTT_NA, %REG_SZ%, "1"
+HKR, "UMD",ASTT_DEF, %REG_SZ%, 0
+HKR, "UMD",ASD_DEF, %REG_SZ%, 0
+HKR, "UMD",ASE_DEF, %REG_SZ%, 0
+HKR,, DemoMode_NA, %REG_SZ%, "0"
+HKR,, SplitScreen_NA, %REG_SZ%, "0"
+HKR,, TheaterMode_NA, %REG_SZ%, 1
+HKR,, DemoMode_DEF, %REG_SZ%, "0"
+HKR,, DisableFBCSupport,      %REG_DWORD%,    1
+HKR,, StaticGamma_NA, %REG_SZ%, 0
+HKR,, Gamma_NA, %REG_SZ%, 1
+HKR,, EQAA_NA, %REG_SZ%, 1
+HKR,, MLF_NA, %REG_SZ%, 1
+HKR,, EnableUlps_NA, %REG_SZ%, 1
+HKR,, SurfaceFormatReplacements_NA, %REG_SZ%, 1
+HKR,, TFQ_NA, %REG_SZ%, 1
+HKR,, AntiAlias_NA, %REG_SZ%, 0
+HKR, "UMD\DXVA",CameraShake_NA, %REG_SZ%, "1"
+HKR,, DALRestrictedModesBCD1, %REG_BINARY%,07,20,04,80,00,00,00,00,07,20,05,76,00,00,00,00,08,00,04,80,00,00,00,00,10,24,04,80,00,00,00,00,10,24,06,00,00,00,00,00,10,24,07,68,00,00,00,00,11,52,08,64,00,00,00,00,12,80,07,20,00,00,00,00
+HKR,, DALRestrictedModesBCD2, %REG_BINARY%,12,80,07,68,00,00,00,00,12,80,08,00,00,00,00,00,12,80,09,60,00,00,00,00,14,00,10,50,00,00,00,00,14,40,09,00,00,00,00,60,16,80,10,50,00,00,00,00,19,20,12,00,00,00,00,00
+HKR,, DisableDualView,                 %REG_DWORD%,    0
+HKR,, DisableDualviewWithHotKey,    %REG_DWORD%,    1
+HKR,, TVDisableModes,   %REG_DWORD%,    0
+HKR,, DisableSWInterrupt,      		   %REG_DWORD%,    0
+HKR,, ExtEvent_BIOSEventByInterrupt,      %REG_DWORD%,    1
+HKR,, TVM6Flag,   %REG_DWORD%,    1
+HKR,, DfpUsePixSlip,                  %REG_DWORD%,    1
+HKR,, Gxo50HzTimingSupport,          %REG_DWORD%,    1
+HKR,, EnableCrossFireAutoLink,        %REG_DWORD%,    1
+HKR,, DigitalHDTVDefaultUnderscan, %REG_DWORD%, 0
+HKR,, DFP_AddHDTVPixelFormats,      %REG_DWORD%,    3
+HKR,, Gxo24HzTimingSupport,          %REG_DWORD%,    1
+HKR, "UMD\DXVA",DI_METHOD_DEF, %REG_SZ%, "-1"
+HKR,, EnableUlps,      %REG_DWORD%,    1
+HKR, "UMD\DXVA",MosquitoNoiseRemoval_DEF, %REG_SZ%, "50"
+HKR, "UMD\DXVA",MosquitoNoiseRemoval_ENABLE_DEF, %REG_SZ%, "0"
+HKR,, MosquitoNoiseRemoval_NA, %REG_SZ%, "0"
+HKR, "UMD\DXVA",Deblocking_DEF, %REG_SZ%, "50"
+HKR, "UMD\DXVA",Deblocking_ENABLE_DEF, %REG_SZ%, "0"
+HKR,, Deblocking_NA, %REG_SZ%, "0"
+HKR, "UMD",Main3D_DEF, %REG_SZ%, 3
+HKR, "UMD",AntiAlias_DEF, %REG_SZ%, 1
+HKR, "UMD",AntiAliasSamples_DEF, %REG_SZ%, 0
+HKR, "UMD",AnisoType_DEF, %REG_SZ%, 0
+HKR, "UMD",AnisoDegree_DEF, %REG_SZ%, 0
+HKR, "UMD",TextureOpt_DEF, %REG_SZ%, 0
+HKR, "UMD",TextureLod_DEF, %REG_SZ%, 0
+HKR, "UMD",TruformMode_DEF, %REG_SZ%, 0
+HKR, "UMD",VSyncControl_DEF, %REG_SZ%, 1
+HKR, "UMD",SwapEffect_DEF, %REG_SZ%, 0
+HKR, "UMD",TemporalAAMultiplier_DEF, %REG_SZ%, 0
+HKR, "UMD",ExportCompressedTex_DEF, %REG_SZ%, 1
+HKR, "UMD",PixelCenter_DEF, %REG_SZ%, 0
+HKR, "UMD",ForceZBufferDepth_DEF, %REG_SZ%, 0
+HKR, "UMD",EnableTripleBuffering_DEF, %REG_SZ%, 0
+HKR, "UMD",CatalystAI_DEF, %REG_SZ%, 1
+HKR,, ColourDesktopGamma_DEF, %REG_SZ%, "1.0 1.0 1.0"
+HKR,, ColourDesktopBrightness_DEF, %REG_SZ%, "0 0 0"
+HKR,, ColourDesktopContrast_DEF, %REG_SZ%, "1.0 1.0 1.0"
+HKR,, ColourFullscreenGamma_DEF, %REG_SZ%, "1.0 1.0 1.0"
+HKR,, ColourFullscreenBrightness_DEF, %REG_SZ%, "0 0 0"
+HKR,, ColourFullscreenContrast_DEF, %REG_SZ%, "1.0 1.0 1.0"
+HKR,, 3D_Refresh_Rate_Override_DEF, %REG_DWORD%, 0
+HKR,, Display_Detection_DEF, %REG_DWORD%, 0
+HKR,, Panning_Mode_DEF, %REG_DWORD%, 0
+HKR,, Force_TV_Detection_DEF, %REG_DWORD%, 0
+
+[ati2mtag_NI_SoftwareDeviceSettings]
+HKR,, GCOOPTION_DigitalCrtInfo,    %REG_BINARY%,   A3,38,61,C1,A3,38,61,B1
+HKR,, GCORULE_FlickerWA,             %REG_DWORD%, 1
+HKR,, SMOOTHVISION_NAME, %REG_SZ%, ""
+HKR, "UMD",GI_DEF, %REG_SZ%, 1
+HKR, "UMD",AreaAniso_DEF, %REG_SZ%, 0
+HKR,, VIDEO_NAME_SUFFIX, %REG_SZ%, "Avivo(TM)"
+HKR,, SameOnAllUsingStandardInVideoTheaterCloneMode, %REG_SZ%, "1"
+HKR, "UMD",ASTT_DEF, %REG_SZ%, 0
+HKR, "UMD",ASD_DEF, %REG_SZ%, 1
+HKR,, 3to2Pulldown_NA, %REG_SZ%, 0
+HKR,, GI_NA, %REG_SZ%, 1
+HKR,, AreaAniso_NA, %REG_SZ%, "1"
+HKR,, AAF_NA, %REG_SZ%, 0
+HKR, "UMD", AAF_DEF, %REG_SZ%, 0
+HKR, "UMD",AAF_Value_SET,%REG_SZ%, "Standard:0,Edge-detect:3"
+HKR, "UMD",AAF_Mapping_SET,%REG_SZ%, "0(Standard:2,Edge-detect:12) 2(Standard:2) 4(Standard:4,Edge-detect:12) 8(Standard:8,Edge-detect:24) 16(Standard:16)"
+HKR, "UMD",ATMS_DEF, %REG_SZ%, 1
+HKR, "UMD",AAAMethod_DEF, %REG_SZ%, 0
+HKR,, TemporalAAMultiplier_NA, %REG_SZ%, "1"
+HKR,, Detail_NA, %REG_SZ%, "0"
+HKR,, Denoise_NA, %REG_SZ%, "0"
+HKR, "UMD\DXVA",3to2Pulldown, %REG_SZ%, "1"
+HKR, "UMD\DXVA",3to2Pulldown_DEF, %REG_SZ%, "1"
+HKR,, 3to2Pulldown_NA, %REG_SZ%, "0"
+HKR, "UMD\DXVA",DI_METHOD_DEF, %REG_SZ%, "-1"
+HKR, "UMD\DXVA",StaticGamma, %REG_SZ%, "100"
+HKR, "UMD\DXVA",StaticGamma_DEF, %REG_SZ%, "100"
+HKR,, ASTT_NA, %REG_SZ%, "1"
+HKR, "UMD",ASTT_DEF, %REG_SZ%, 0
+HKR, "UMD",ASD_DEF, %REG_SZ%, 0
+HKR, "UMD",ASE_DEF, %REG_SZ%, 0
+HKR,, DemoMode_NA, %REG_SZ%, "0"
+HKR,, SplitScreen_NA, %REG_SZ%, "0"
+HKR,, TheaterMode_NA, %REG_SZ%, 1
+HKR,, DemoMode_DEF, %REG_SZ%, "0"
+HKR,, StaticGamma_NA, %REG_SZ%, 0
+HKR,, Gamma_NA, %REG_SZ%, 1
+HKR,, DisableFBCSupport,      %REG_DWORD%,    1
+HKR,, DemoMode_NA, %REG_SZ%, 0
+HKR,, EQAA_NA, %REG_SZ%, 1
+HKR,, MLF_NA, %REG_SZ%, 0
+HKR, "UMD",MLF_DEF, %REG_SZ%, 0
+HKR,, EnableUlps_NA, %REG_SZ%, 1
+HKR,, SurfaceFormatReplacements_NA, %REG_SZ%, 0
+HKR, "UMD",SurfaceFormatReplacements_DEF, %REG_SZ%, 1
+HKR,, TFQ_NA, %REG_SZ%, 0
+HKR, "UMD",TFQ_DEF, %REG_SZ%, 1
+HKR,, AntiAlias_NA, %REG_SZ%, 0
+HKR, "UMD",AntiAliasSamples_SET,%REG_SZ%, "0 2 4 8"
+HKR,, TextureLod_NA, %REG_SZ%, 1
+HKR, "UMD",AntiAlias_DEF, %REG_SZ%, 1
+HKR, "UMD",AntiAliasSamples_DEF, %REG_SZ%, 0
+HKR, "UMD",AntiAliasMapping_SET,%REG_SZ%, "0(0:0,1:0) 2(0:2,1:2) 4(0:4,1:4) 8(0:8,1:8,2:16)"
+HKR,, TestOnceRequest_NA, %REG_SZ%, 1
+HKR,, AutoTuneRequest_NA, %REG_SZ%, 1
+HKR,, DALNonStandardModesBCD1, %REG_BINARY%,16,00,12,00,00,00,00,70,17,92,13,44,00,00,00,00,18,00,14,40,00,00,00,00,18,56,13,92,00,00,00,00
+HKR,, DALRestrictedModesBCD1, %REG_BINARY%,10,24,07,68,00,00,00,00,12,80,07,20,00,00,00,00,12,80,07,68,00,00,00,00,12,80,08,00,00,00,00,00,12,80,09,60,00,00,00,00,14,40,09,00,00,00,00,00,19,20,12,00,00,00,00,00
+HKR,, Gxo50HzTimingSupport,          %REG_DWORD%,    1
+HKR,, EnableCrossFireAutoLink,        %REG_DWORD%,    1
+HKR,, DigitalHDTVDefaultUnderscan, %REG_DWORD%, 0
+HKR,, DigitalHDTVDefaultUnderscan, %REG_DWORD%, 0
+HKR,, DFP_AddHDTVPixelFormats,      %REG_DWORD%,    3
+HKR,, Gxo24HzTimingSupport,          %REG_DWORD%,    1
+HKR,, GXOxvYCCSupport,      %REG_DWORD%,    1
+HKR, "UMD\DXVA",CmMode_XvYCC,               %REG_DWORD%,    1
+HKR,, GXOxvYCCSupport,      %REG_DWORD%,    1
+HKR, "UMD\DXVA",CmMode_XvYCC,               %REG_DWORD%,    1
+HKR,, DALRULE_NOTSHOWFORCEMODEINCLONE, %REG_DWORD%, 1
+HKR,, DMMRecommendNonDDCCRTModes,      %REG_DWORD%,    1
+HKR,, EnableUlps,      %REG_DWORD%,    1
+HKR, "UMD\DXVA",MosquitoNoiseRemoval_DEF, %REG_SZ%, "50"
+HKR, "UMD\DXVA",MosquitoNoiseRemoval_ENABLE_DEF, %REG_SZ%, "0"
+HKR,, MosquitoNoiseRemoval_NA, %REG_SZ%, "0"
+HKR, "UMD\DXVA",Deblocking_DEF, %REG_SZ%, "50"
+HKR, "UMD\DXVA",Deblocking_ENABLE_DEF, %REG_SZ%, "0"
+HKR,, Deblocking_NA, %REG_SZ%, "0"
+HKR, "UMD\DXVA", CameraShake_ENABLE_DEF, %REG_SZ%, "0"
+HKR, "UMD\DXVA", CameraShakeStrength_DEF, %REG_SZ%, "1"
+HKR, "UMD\DXVA", CameraShakeDelay_DEF, %REG_SZ%, "1"
+HKR, "UMD\DXVA", CameraShakeZoom_DEF, %REG_SZ%, "95"
+HKR, "UMD",Main3D_DEF, %REG_SZ%, 3
+HKR, "UMD",AntiAlias_DEF, %REG_SZ%, 1
+HKR, "UMD",AntiAliasSamples_DEF, %REG_SZ%, 0
+HKR, "UMD",AnisoType_DEF, %REG_SZ%, 0
+HKR, "UMD",AnisoDegree_DEF, %REG_SZ%, 0
+HKR, "UMD",TextureOpt_DEF, %REG_SZ%, 0
+HKR, "UMD",TextureLod_DEF, %REG_SZ%, 0
+HKR, "UMD",TruformMode_DEF, %REG_SZ%, 0
+HKR, "UMD",VSyncControl_DEF, %REG_SZ%, 1
+HKR, "UMD",SwapEffect_DEF, %REG_SZ%, 0
+HKR, "UMD",TemporalAAMultiplier_DEF, %REG_SZ%, 0
+HKR, "UMD",ExportCompressedTex_DEF, %REG_SZ%, 1
+HKR, "UMD",PixelCenter_DEF, %REG_SZ%, 0
+HKR, "UMD",ForceZBufferDepth_DEF, %REG_SZ%, 0
+HKR, "UMD",EnableTripleBuffering_DEF, %REG_SZ%, 0
+HKR, "UMD",CatalystAI_DEF, %REG_SZ%, 1
+HKR,, ColourDesktopGamma_DEF, %REG_SZ%, "1.0 1.0 1.0"
+HKR,, ColourDesktopBrightness_DEF, %REG_SZ%, "0 0 0"
+HKR,, ColourDesktopContrast_DEF, %REG_SZ%, "1.0 1.0 1.0"
+HKR,, ColourFullscreenGamma_DEF, %REG_SZ%, "1.0 1.0 1.0"
+HKR,, ColourFullscreenBrightness_DEF, %REG_SZ%, "0 0 0"
+HKR,, ColourFullscreenContrast_DEF, %REG_SZ%, "1.0 1.0 1.0"
+HKR,, 3D_Refresh_Rate_Override_DEF, %REG_DWORD%, 0
+HKR,, Display_Detection_DEF, %REG_DWORD%, 0
+HKR,, Panning_Mode_DEF, %REG_DWORD%, 0
+HKR,, Force_TV_Detection_DEF, %REG_DWORD%, 0
+
+[ati2mtag_Mobile_SoftwareDeviceSettings]
+HKR,, RemovableSources,                      %REG_DWORD%,    2
+HKLM,"Software\AMD\EEU",HKPreferenceUseCCD,          %REG_DWORD%,    0
+HKR,, DALRULE_ENABLESHOWACSLIDER,                  %REG_DWORD%,    1
+HKR,, DALRULE_ENABLESHOWDCLOWSLIDER,                  %REG_DWORD%,    1
+HKR,, ExtEvent_EnableAutoDisplayConfig,      %REG_DWORD%,    1
+HKR,, DALOPTION_MinResBCD,  %REG_BINARY%, 00,00,00,00,00,00,00,60
+HKR,, UserMustConfirm,      %REG_DWORD%,    1
+HKR,, KMD_EnableBrightnessInterface2,             %REG_DWORD%, 1
+
+[ati2mtag_Mobile_PX_SoftwareDeviceSettings]
+HKR,, ACPI_HKUseCCD,    %REG_DWORD%,    1
+HKR,, PXACAdapter, %REG_DWORD%, 2
+HKR,, PXDCAdapter, %REG_DWORD%, 1
+
+[ati2mtag_Mobile_PXAA_SoftwareDeviceSettings]
+HKR,, PX2HPDEnable,      %REG_DWORD%,    1
+HKR,, PX2HotkeySwitch,      %REG_DWORD%,    1
+HKR,, PX2EnableConnectivityAPI,      %REG_DWORD%,    1
+HKR,, PXUseAPLForSwitch,             %REG_DWORD%, 1
+HKR,, PXReducePopUps,             %REG_DWORD%, 1
+
+[ati2mtag_MultiUVD_SoftwareDeviceSettings]
+HKR,, PP_DisableMultiUVDStates,      %REG_DWORD%,    0
+
+[ati2mtag_SoftwareDeviceSettings]
+HKR,, DDC2Disabled,                         %REG_DWORD%,    0
+HKR,, DisableBlockWrite,                    %REG_DWORD%,    1
+HKR,, DisableDMACopy,                       %REG_DWORD%,    0
+HKR,, KMDTst,                               %REG_DWORD%,    1
+HKR,, MultiFunctionSupported,               %REG_DWORD%,    0
+HKR,, TestEnv,                              %REG_DWORD%,    0
+HKR,, TimingSelection,                      %REG_DWORD%,    0
+HKR,, VgaCompatible,                        %REG_DWORD%,    0
+HKR,,"Adaptive De-interlacing",             %REG_DWORD%,    1
+HKR,,"VPE Adaptive De-interlacing",         %REG_DWORD%,    1
+HKR,, GCOOPTION_DisableGPIOPowerSaveMode,   %REG_DWORD%,    1
+HKLM,"Software\ATI Technologies\CBT",ReleaseVersion,,"8.982.10.8-121003a1-147897C-Lenovo"
+HKR,, ReleaseVersion,,"8.982.10.8-121003a1-147897C-Lenovo"
+HKR,, BuildNumber,,"09700"
+HKR,, UserModeDriverGUID,     %REG_SZ%, {"4242B984-6C36-4FC8-8626-DE5E8B11886D"}
+HKR,, DALGameGammaScale,       %REG_DWORD%,   0x00646464
+HKLM, "Software\CLASSES\CLSID\{EBB5845F-CA80-11CF-BD3C-008029E89281}\InProcServer32",ThreadingModel,,"Both"
+HKLM,"SOFTWARE\Microsoft\Windows Media Foundation",EMUOPM, %REG_DWORD%, 0
+HKR,, GXOPPUseExclusiveExecution,  %REG_DWORD%,    1
+HKR, "UMD\DXVA",OvlTheaterMode_DEF, %REG_SZ%, "0"
+HKR, "UMD\DXVA",TrueWhite_DEF, %REG_SZ%, "0"
+HKR, "UMD\DXVA",LRTCCoef_DEF, %REG_SZ%, "100"
+HKLM,"Software\Microsoft\TMM",UseIViewHelper, %REG_DWORD%, 1
+HKR,, DXVA_WMV_NA, %REG_SZ%, "1"
+HKR,, DI_METHOD_NA, %REG_SZ%, "0"
+HKR,, GCORULE_X1DETECT,        %REG_DWORD%,    1
+HKR, "UMD\DXVA",OvlTheaterModeType_DEF, %REG_SZ%, "0"
+HKR, "UMD\DXVA",LRTCEnable, %REG_SZ%, "0"
+HKR, "UMD\DXVA",LRTCEnable_DEF, %REG_SZ%, "0"
+HKR, "UMD",MainVideo_SET, %REG_SZ%, "0 1 2 3 4"
+HKR, "UMD",MainVideo_TBL, %REG_SZ%, "1:Brightness=0.0,Contrast=1.0,Saturation=1.0,Gamma=0.0,Hue=0.0;2:Brightness=-3.0,Contrast=1.16,Saturation=1.25,Gamma=0.0,Hue=0.0;3:Brightness=-3.0,Contrast=1.07,Saturation=1.10,Gamma=0.0,Hue=0.0;4:Brightness=7.0,Contrast=1.25,Saturation=0.96,Gamma=0.0,Hue=0.0"
+HKR, "UMD",ATMS_NA, %REG_SZ%, 1
+HKR,, Force_CV_Detection_DEF,      %REG_DWORD%, 0
+HKR,, LDA_ChainDescriptor, %REG_SZ%, ""
+HKR, "UMD\DXVA",WhiteBalanceCorrection_DEF, %REG_SZ%, "0"
+HKR, "UMD\DXVA",BlueStretch_DEF, %REG_SZ%, "1"
+HKR, "UMD\DXVA",StaticGamma_ENABLE_DEF, %REG_SZ%, "0"
+HKR, "UMD\DXVA",DemoMode_DEF, %REG_SZ%, "0"
+HKR,, PowerXpressLoad, %REG_DWORD%, 0xFFFFFFFF
+HKR, "UMD",CFM_SET, %REG_SZ%, "0,1,2,3"
+HKR, "UMD",CFM_DEF, %REG_SZ%, "1"
+HKR,, KMD_UVDVideoStopDelay,  %REG_DWORD%,    0x7D0
+HKR, "UMD",EnableCrossfireForNonProfileApps_DEF, %REG_SZ%, 0
+HKR, "UMD\DXVA",DI_METHOD, %REG_BINARY%, 2d,00,31,00,00,00
+HKR,, DisableTiling,                        %REG_DWORD%,    0
+HKR,, DisableMMSnifferCode,               %REG_DWORD%,    0
+HKR,, TVForceDetection,   %REG_DWORD%,    0
+HKR,, DALRULE_RESTRICTNONDDCCRTTO1024x768,      %REG_DWORD%,    1
+HKR,, TVEnableOverscan,      %REG_DWORD%,    1
+HKR,, DALRULE_ALLOWMONITORRANGELIMITMODESCRT,      %REG_DWORD%,    0
+HKR,, PP_ULPSDelayIntervalInMilliSeconds,      %REG_DWORD%,    30000
+HKR,, AutoColorDepthReduction_NA,   %REG_DWORD%,    1
+HKLM,"SYSTEM\CurrentControlSet\Services\Atierecord",eRecordEnable,          %REG_DWORD%,    1
+HKLM,"SYSTEM\CurrentControlSet\Services\Atierecord",eRecordEnablePopups,          %REG_DWORD%,    1
+HKR,, OverDrive3_NA,          %REG_SZ%, "All"
+HKR,, OverDrive2_NA,          %REG_SZ%, "All"
+HKR,, OpenGLFlagsWow,               %REG_DWORD%,    3
+HKR,, OpenGLVersionWow,               %REG_DWORD%,    1
+HKR,, OpenGLDriverName,                   %REG_MULTI_SZ%, atio6axx.dll
+HKR,, OpenGLDriverNameWow,                   %REG_MULTI_SZ%, atioglxx.dll
+HKR,, OpenGLFlags,               %REG_DWORD%,    3
+HKR,, OpenGLVersion,               %REG_DWORD%,    1
+HKR,, DALRULE_DoNotReportPALHDTVModes,      %REG_DWORD%,    1
+HKR,, PXSplashScreen,    %REG_DWORD%,    0
+HKLM,"Software\AMD\EEU", LogOutputERecord,          %REG_DWORD%,    1
+HKR,, DalAsicFIDOSForcedModeSupport,             %REG_DWORD%, 0
+HKR, "UMD\DXVA",Detail_DEF, %REG_SZ%, "10"
+HKR, "UMD\DXVA",Detail_ENABLE_DEF, %REG_SZ%, "1"
+HKR, "UMD\DXVA",Denoise_DEF, %REG_SZ%, "64"
+HKR, "UMD\DXVA",Denoise_ENABLE_DEF, %REG_SZ%, "1"
+HKR, "UMD\DXVA",OverridePA_DEF, %REG_SZ%, "0"
+HKR, "UMD\DXVA",ColorVibrance_DEF, %REG_SZ%, "40"
+HKR, "UMD\DXVA",ColorVibrance_ENABLE_DEF, %REG_SZ%, "1"
+HKR,, DalNumOfPathPerDpMstConnector, %REG_DWORD%, 0
+
+[atikmdag_MSI_HardwareDeviceSettings]
+HKR,Interrupt Management\MessageSignaledInterruptProperties, MSISupported, 0x00010001, 1
+
+[ati2mtag_ProxySettings_DX10]
+
+[ati2mtag_ProxySettings_DX10_PXAA]
+HKR,, D3DVendorName,            %REG_MULTI_SZ%, atiumd64.dll, atiumd64.dll, atidxx64.dll, atidxx64.dll
+HKR,, D3DVendorNameWoW,         %REG_MULTI_SZ%, atiumdag.dll, atiumdag.dll, atidxx32.dll, atidxx32.dll
+HKR,, OpenGLDriverName,         %REG_MULTI_SZ%, atig6pxx.dll
+HKR,, OpenGLDriverNameWoW,      %REG_MULTI_SZ%, atiglpxx.dll
+HKR,, OpenGLVendorName,         %REG_MULTI_SZ%, atio6axx.dll, atio6axx.dll
+HKR,, OpenGLVendorNameWoW,      %REG_MULTI_SZ%, atioglxx.dll, atioglxx.dll
+HKR,, PXACAutoSwitch,      %REG_DWORD%,    0
+HKR,, PXDCAutoSwitch,      %REG_DWORD%,    0
+HKR,, OpenGLDynamicPX,             %REG_DWORD%,    1
+
+[ati2mtag_PXAA]
+HKR,, PXUseAPLForSwitch,             %REG_DWORD%, 1
+HKR,, PXReducePopUps,             %REG_DWORD%, 1
+
+[ati2mtag_Manhattan_PX]
+
+[ati2mtag_Post_EG]
+HKR, "UMD",Tessellation_OPTION_DEF, %REG_SZ%, "0"
+HKR, "UMD",Tessellation_DEF, %REG_SZ%, "64"
+HKR, "UMD\DXVA",InternetVideo_DEF, %REG_SZ%, "0"
+HKR, "UMD\DXVA",Fleshtone_DEF, %REG_SZ%, "50"
+HKR, "UMD\DXVA",Fleshtone_ENABLE_DEF, %REG_SZ%, "1"
+HKR,, DalAllowHSyncVSyncAdjustment,             %REG_DWORD%, 0
+HKR,, DalAllowCompositeSyncAdjustment,             %REG_DWORD%, 0
+HKR, "UMD\DXVA",DynamicRange_DEF, %REG_SZ%, "0"
+HKR, "UMD\DXVA",DynamicRange_ENABLE_DEF, %REG_SZ%, "0"
+HKR, "UMD\DXVA",DynamicContrast_ENABLE_DEF, %REG_SZ%, "0"
+HKR, "UMD\DXVA",BlueStretch_ENABLE_DEF, %REG_SZ%, "1"
+HKR, "UMD\DXVA",BlueStretch_DEF, %REG_SZ%, "1"
+
+[ati2mtag_Proxy]
+HKR,, UserModeDriverGUID,     %REG_SZ%, {"F3A42474-0891-4151-B44A-ED04B657432B"}
+
+[ati2mtag_Mobile_NONPX_SoftwareDeviceSettings]
+HKR,, DMMEnableDDCPolling,   %REG_DWORD%,    1
+
+[Delreg_services]
+HKR,, KMD_PXDefaultScheme
+HKR,, KMD_PXForceDynamicSchemeSupport
+HKR,, PXRemovableDeviceInfo
+HKR,, PXScheme
+HKR,, PXVgaDeviceInfo
+HKR,, KMD_PXDefaultGpuForDynamicScheme
+HKR,, PXDPPEFixedControl
+HKR,, OpenGLDynamicPX
+HKR,, KMD_PXDPPEDynamicPowerStates
+HKR,, KMD_PXDPPEEnableDynamicPowerStates
+HKR,, KMD_APlusISharedMiniSegmentSize
+HKR,, KMD_APlusISharedMiniSegmentOptions
+HKR,, PX_AI_IndInstallSupport
+HKR,, KMD_PXForceVideoPlaybackToIntegrated
+
+[ati2mtag_RemoveDeviceSettings]
+HKR,, Adaptive De-interlacing
+HKR,, AgpLevel
+HKR,, AntiAlias
+HKR,, DALCurrentObjectData
+HKR,, DALLastConnected
+HKR,, DALLastSelected
+HKR,, DALLastTypes
+HKR,, DALNonStandardModesBCD
+HKR,, DALObjectData
+HKR,, DALObjectData0
+HKR,, DALObjectData1
+HKR,, DALR6 CRT_MaxModeInfo
+HKR,, DALR6 CRT2_MaxModeInfo
+HKR,, DALR6 DFP_MaxModeInfo
+HKR,, DALR6 DFPx_MaxModeInfo
+HKR,, DALR6 GCO_Index0
+HKR,, DALRestrictedModesBCD
+HKR,, DALRULE_ADDNATIVEMODESTOMODETABLE
+HKR,, DALRULE_CRTSUPPORTSALLMODES
+HKR,, DALRULE_DISABLEBANDWIDTH
+HKR,, DALRULE_DISPLAYSRESTRICTMODES
+HKR,, DALRULE_NOCRTANDLCDONSAMECONTROLLER
+HKR,, DALRULE_NOFORCEBOOT
+HKR,, DALRULE_NOTVANDCRTONSAMECONTROLLER
+HKR,, DALRULE_RESTRICTUNKNOWNMONITOR
+HKR,, DALRULE_SAVEPANLOCK
+HKR,, DALSelectObjectData0
+HKR,, DALSelectObjectData1
+HKR,, DDC2Disabled
+HKR,, DefaultMode
+HKR,, DFPRULE_HotplugSupported
+HKR,, DisableAGP
+HKR,, DisableAGPPM4
+HKR,, DisableBlockWrite
+HKR,, DisableDMA
+HKR,, DisableDMACopy
+HKR,, DisableDrvStretchBlt
+HKR,, DisableDynamicEnableMode
+HKR,, DisableEnumAllChilds
+HKR,, DisableFullAdapterInit
+HKR,, DisableHierarchicalZ
+HKR,, DisableIDCT
+HKR,, DisableLCD
+HKR,, DisableMMLIB
+HKR,, DisableOpenGLScrAccelerate
+HKR,, DisablePllInit
+HKR,, DisablePrimaryTiling
+HKR,, DisableTCL
+HKR,, DisableTimeStampWriteBack
+HKR,, DisableUSWC
+HKR,, DisableVPE
+HKR,, DisableFullAdapterInit
+HKR,, EnableWaitUntilIdxTriList2
+HKR,, GCORULE_HIGHDISPRI
+HKR,, GCORULE_R200TVPLLWA
+HKR,, KD_TilingMode
+HKR,, LVB
+HKR,, MaxAgpVb
+HKR,, MaxAGPVB
+HKR,, MaxLocalVb
+HKR,, MaxLocalVB
+HKR,, SubmitOnDraw
+HKR,, TestEnv
+HKR,, TimingSelection
+HKR,, TVR200Flag
+HKR,, VgaCompatible
+HKR,, VPE Adaptive De-interlacing
+HKR,, ATIPoll
+HKR,, TVM6Flag
+HKR,, DALNonStandardModesBCD
+HKR,, DALNonStandardModesBCD1
+HKR,, DALNonStandardModesBCD2
+HKR,, DALNonStandardModesBCD3
+HKR,, DALNonStandardModesBCD4
+HKR,, DALNonStandardModesBCD5
+HKR,, DALRestrictedModesBCD
+HKR,, DALRestrictedModesBCD1
+HKR,, DALRestrictedModesBCD2
+HKR,, DALRestrictedModesBCD3
+HKR,, DALRestrictedModesBCD4
+HKR,, DALRestrictedModesBCD5
+HKR,, RemovableSources
+HKR,, TheaterMode_NA
+HKR,, AreaAniso_DEF
+HKR,, ASTT_DEF
+HKR,, ASD_DEF
+HKR,, GI_DEF
+HKR,, CatalystAI_DEF
+HKR,, ASTT_NA
+HKR,, DALPowerPlayOptions
+HKR,, OGL_Specific_NA
+HKR,, ASTT_NA
+HKR,, APISpecific_NA
+HKR,, TemporalAAMultiplier_NA
+HKR,, Main3D_NA
+HKR,, CatalystAI_NA
+HKR,, NoPreview_NA
+HKR,, ASTT_NA
+HKR,, 3to2Pulldown_NA
+HKR,, Transcode_NA
+HKR,, GxoDisable8bppMode
+HKR, "UMD\DXVA",SORTOverrideFPSCaps
+HKR, "UMD\DXVA",SORTOverrideVidSizeCaps
+HKR, "UMD\DXVA",DXVA_Only24FPS1080MPEG2
+HKR, "UMD\DXVA",DXVA_Only24FPS1080H264
+HKR, "UMD\DXVA",DXVA_Only24FPS1080VC1
+HKR, "UMD\DXVA",HWUVD_DisableH264
+HKR, "UMD\DXVA",HWUVD_DisableVC1
+HKR,, DisableVForceMode
+HKR, "UMD",ATMS_DEF
+HKR, "UMD",AAAMethod_DEF
+HKR,, TestEnv
+HKR,, PP_DisablePPLib
+HKR,, FrameBufferMode
+HKR,, EnableUnifiedGartSegment
+HKR,, EnablePDMA
+HKR,, PrimaryTiling
+HKR,, LogicalMemCfg
+HKR,, AdjustFBSegment
+HKR,, DisableRejectCf
+HKR,, PP_GFXClockGatingEnabled
+HKR,, DisablePCIEGen2Support
+HKR,, DisableVPURecover
+HKR,, DynamicContrast_ENABLE_DEF
+HKR,, DynamicContrast_NA
+HKR, "UMD\DXVA",DynamicContrast_DEF
+HKR,, DP_EnableSSByDefault
+HKR,, DXVA_WMV_DEF
+HKR,, DXVA_WMV
+HKR,, DisableCfSpSupport
+HKR, "UMD",ForceDX10Only
+HKR,, DisableNonPOSTDevice
+HKR,, DALRULE_PHYSICAL_DETECTION_AT_RESUME
+HKR,, UserModeDriverGUID
+HKLM,, Software\Microsoft\TMM
+HKR,, DisableLoadBalancing
+HKR,, ProxyLDA_ChainID
+HKR,, ProxyLDA_ChainLength
+HKR,, ProxyLDA_DeviceID
+HKR,, ProxyLDA_Status
+HKR,, ProxyLDA_Support
+HKR,, LDA_Support
+HKR,, PX_Bypass
+HKR,, PX_PnP_HighPerformance
+HKR,, PX_PnP_PowerSaving
+HKR,, DalInstallFlag
+HKR,, DALR6 DFP
+HKR,, DALR6 DFPI 2
+HKR,, DALR6 DFPI 3
+HKR,, DALR6 DFPI 4
+HKR,, DALR6 DFPI 5
+HKR,, GDOADJR6 DFP
+HKR,, GDOADJR6 DFPI 2
+HKR,, GDOADJR6 DFPI 3
+HKR,, GDOADJR6 DFPI 4
+HKR,, GDOADJR6 DFPI 5
+HKR,, DemoMode_DEF
+HKR,, DemoMode_NA
+HKR,, DisableFBCSupport
+HKR,, DisableOGL10BitPixelFormats
+HKR,, DALRULE_AllowNativeModeAsDefaultModes
+HKR,, VisualEnhancements_Capabilities
+HKR,, VisualEnhancements_Capabilities_DEF
+HKR, "UMD",EnableUlps_DEF
+HKR,, InternetVideo_NA
+HKR,, PP_PhmSoftPowerPlayTable
+HKR,, PP_SCLKDEEPSLEEPDISABLE
+HKR,, PP_MCLKStutterModeThreshold
+HKR,, StutterMode
+HKR, "UMD\DXVA",CameraShake_NA
+HKR,, CameraShake_NA
+HKR,, AdapterDesc
+HKR,, Activity_NA
+HKR,, OpenGLVendorName
+HKR,, OpenGLVendorNameWoW
+HKR,, DFPRULE_HotplugSupported
+HKR,, TVContrastDefaultNTSC
+HKR,, HDTVRULE_HDTVGDOENABLE
+HKR,, HDTVRULE_HDTVSIGNALFORMAT
+HKR,, DALRULE_POWERPLAYOPTIONENABLEDBYDEFAULT
+HKR,, DALRULE_ALLOWNONDDCCRTALLMODESUPTO1920x1200
+HKR,, TVLumaFlicker
+HKR,, TVDotCrawl
+HKR,, TVCompositeFilter
+HKR,, DALDisplayPrioritySequence
+HKR,, ExtEvent_SaveADCProfileGlobally
+HKR,, ExtEvent_NonExtendedADCProfileOnHotKey
+HKR,, DALRULE_ADDEXTDESKTOPTOPROFILEKEY
+HKR,, DALRULE_GETDEFAULTTVFORMATATBOOT
+HKR,, DisableCursor
+HKR,, DALRULE_USERESTRICTEDNATIVETIMING
+HKR,, DFPOption_MaxFreq
+HKR,, DisableAGPFW
+HKR,, UseBT601CSC
+HKR,, CRTRULE_FORCECRTDAC1DETECTED
+HKR,, CRTRULE_FORCECRTDAC2DETECTED
+HKR,, CRTRULE_FORCECRTDACTYPESDETECTED
+HKR,, DALRULE_PROFILEPREFERREDMODEBASEDONEXTDEVICE
+HKR,, GCORULE_TMDSReducedBlankingUseCVT
+HKR,, DFPOption_SingleLink
+HKR,, DFPXOption_SingleLink
+HKR,, TVContrastDefaultNTSCJ
+HKR,, TVContrastDefaultPAL
+HKR,, R6LCD_ALLOWDISABLELOWREFRESHBYUSER
+HKR,, TVDACSettings
+HKR,, GCOOPTION_DefaultOvlBrightness
+HKR,, GCOOPTION_DefaultOvlSaturation
+HKR,, GCOOPTION_DefaultOvlContrast
+HKR,, DAL_CRTRestrictedModesBCD
+HKR,, PP_GFXClockGatingEnabled
+HKR,, DisableFBCSupport
+HKR,, DisableCrossFire
+HKR,, LDA_Status
+HKR,, LDA_ChainID
+HKR,, LDA_ChainLength
+HKR,, LDA_DeviceID
+HKR,, MMLibSupport
+HKR,, RemovableSources
+HKR,, VForceModeSize
+HKR,, PipeChannels
+HKR,, MVPUMemoryDowngrade
+HKR,, MVPULimitVisibleMemory
+HKR,, MemoryBankDowngrade
+HKR, "UMD",MVPU
+HKR,, GCORULE_ExtTMDSReduceBlankTiming
+HKR,, GCOOPTION_ExtTMDSMaxTMDSClockSpeed
+HKR,, DAL_CvRestrictedModesBCD
+HKR,, AutoClockConfig_NA
+HKR,, DALRULE_DISABLEVARIBRIGHTBYDEFAULT
+HKR,, DALRULE_HIDEVARIBRIGHT
+HKR,, PP_VariBrightFeatureEnable
+HKR,, PP_UserVariBrightEnable
+HKR,, GCORULE_CvImproveClkPrecision
+HKR,, DALDefaultCvModeBCD
+HKR,, DALRULE_CVUSEOPTIMODEASDEFAULT
+HKR,, GXOM5XDisableLaneSwitch
+HKR,, CVRULE_ENABLEPALTIMINGSUPPORT
+HKR,, DALRULE_LIMITEDGREYSCALESUPPORT
+HKR,, Extevent_HotplugUseCurrentMapping
+HKR,, ExtEvent_EnableADCTriggeredByTMM
+HKR,, DAL_TVRestrictedModesBCD
+HKR, "UMD\DXVA",HWUVD_DisableH264
+HKR, "UMD\DXVA",HWUVD_DisableVC1
+HKR,, DisableVForceMode
+HKR,, PP_ForceReportOverdrive4
+HKR,, DALRULE_LIMITEDGREYSCALESUPPORT
+HKR,, EnablePPSMSupport
+HKR,, PPSMSupportLevel
+HKR,, EnableSPSurface
+HKR,, ExtEvent_ApplyBootupProfile
+HKR,, PP_DeferFirstStateSwitch
+HKR,, DAL_DFPRestrictedModesBCD
+HKR,, DAL_DFP2RestrictedModesBCD
+HKR,, DAL_DFPEXTTMDSRestrictedModesBCD
+HKR,, GXODontDisableVGAAtResume
+HKR,, PP_RS780CGINTGFXMISC2
+HKR, "UMD",R600DB_DEBUG
+HKR,, EnableGeminiAutoLink
+HKR,, DisableFBCSupport
+HKR,, FBCSupportLevel
+HKR,, HDTVRULE_HDTVGDOENABLE
+HKR,, HDTVRULE_HDTVSIGNALFORMAT
+HKR,, ForceHigh3DClocks_NA
+HKR,, LEDSamplePeriodMs
+HKR,, LEDSampleHeight
+HKR,, LEDSampleWidth
+HKCU,"Software\AMD\Install",Command Line option for DAL
+HKR,, ExtEvent_EnablePolling
+HKR,, TMDS_DisableDither
+HKR,, PP_VariBrightFeatureEnable
+HKR,, GXODFPxDVODDRSupport
+HKR,, PXSplashScreen
+HKR,, DMMReportCurrentScalingSupport
+HKR,, EnableLassoSupport
+HKR,, EnableXDSupport
+HKR,, PlatformConfig
+HKR,,   DisableVLDForSingleFireMVAsic
+HKR,, DALRULE_AllowNonCEModes
+HKR,, EnableGPUVirtulizationFeature
+HKR,, MemorySizeReservedForHostOS
+HKR,, ExtEvent_ADCNoDetectionAtHotKey
+HKR,, PXBlockCrtSwitch
+HKR,, GXOUseSclkforProgrammableDispClk
+HKR,, DALDefaultACPowerState
+HKR,, DALDCLowThresholdValue
+HKR, "UMD\DXVA",DynamicContrast_ENABLE_DEF
+HKR,, DALRULE_NOTSHOWRANGELIMITMODEINCLONE
+HKR,, ExtEvent_ApplyBootupProfileForOEMSpecification
+HKR,, PO_SwRi
+HKR,, DALPanelPatchByID
+HKR,, GXOTwoDigitalPanelPLLWa
+HKR,, GxoAllCvFormatSupportedAtBoot
+HKR,, DALRULE_ENABLEMONITORTIMEOUTPWRSTATE
+HKR,, Gxo30BppPanels
+HKLM,"Software\AMD\EEU", SaveProfileGlobally
+HKR,, GXODFPDefaultCoherentMode
+HKR,, GXODFP2DefaultCoherentMode
+HKR,, GXODFPXDefaultCoherentMode
+HKR,, PXACAdapter
+HKR,, PXDCAdapter
+HKR,, PXACAutoSwitch
+HKR,, PXDCAutoSwitch
+HKR,, UserMustConfirm
+HKR,, PowerXpressLoad
+HKR,, D3DVendorName
+HKR,, OpenGLVendorName
+HKR,, D3DVendorNameWoW
+HKR,, OpenGLVendorNameWoW
+HKR, "UMD",DisplayCrossfireLogo_DEF
+HKR,, DALRULE_SkipEDIDReadForNoSink
+HKR,, DisablePCIEx1LaneUVD
+HKR,, PP_DCPowerSourceUIMapping_Default
+HKR,, MaxDPMClock
+HKR,, PXandHCF
+HKR,, Disable8435
+HKR,, GCOOPTION_MaxOverlayBandwidth
+HKR,, Gxo_AdapterOverlayBandwidth
+HKR,, PP_DisableDCODT
+HKR,, PXProfileSync
+HKR,, SUPPORTHPDMISSINGDVI
+HKR,, EnableLassoSupport
+HKR,, GxoAdjustVBlankForHTLinkChange
+HKR,, PP_DynamicPCIEGen2Enabled
+HKR,, EnablePartialBlitForPaging
+HKLM,"Software\Microsoft\TMM"
+HKLM,"Software\Microsoft\TMM"
+HKR,, LcdPixelClockFrequencySpreadPercentage
+HKR,, SKIPAZALIAINBLANK
+HKR,, DisableFireGLCrossfire
+HKR,, LCDOverdrivePerPowerSource
+HKR,, DisableNonPOSTDevice
+HKR,, PP_UserVariBrightLevel
+HKR,, Dal_UserVariBrightLevel
+HKR,, HdmiDefaultColorDepth
+HKR,, DALRULE_FORCE_DISABLE_DP_AUDIO
+HKR, "UMD\DXVA", VForceMPEG2SDOnly
+HKR,, EnablePartialBlitForPaging
+HKR,, DAL_LcdRestrictedModesBCD
+HKR,, GXODisablePFREQCHG
+HKR,, DisableMultiSlsGridSupport
+HKR,, EnableSixCloneSupport
+HKR,, DalAsicFIDMaxNC
+HKR,, EnableCpuMemCpy
+HKR,, PP_ABMFeatureEnable
+HKR,, ATIFSpecificSupport
+HKR,, EnableSLSBezelSupport
+HKR,, DalFID9204Enable
+HKR,, DP_NotSendingLTMessage
+HKR,, DalReportSingleSelectedTiming
+HKR, "UMD\DXVA", HWUVD_H264Level51Support
+HKR,, FID10284_DisableRotation
+HKR,, DalAllowOptimizedModeAsDefault
+HKR,, PXIGPUDisplaysBlockSwitch
+HKR,, PP_EnableCFULPSPolicy
+HKR, "UMD\DXVA", VForceUVDH264MVC
+HKR,, GXODFP2ReducedBlanking
+HKR,, DalForceTimingResync
+HKR,, PP_EnableDualACTemplateForOD
+HKR,, EPVD
+HKR,, PP_MCLKStutterModeThreshold
+HKR,, DALDefaultModeNonDdcVga
+HKR,, DalTravisPwDnPolling
+HKR,, PP_DisableULV
+HKR,, DisableForceUvdToSclk
+HKR,, DisableVPURecover
+HKLM,"Software\AMD\EEU", MRUListPersistence
+
+[ati2mtag_Manhattan.GeneralConfigData]
+MaximumDeviceMemoryConfiguration=128
+MaximumNumberOfDevices=4
+
+[ati2mtag_NI.GeneralConfigData]
+MaximumDeviceMemoryConfiguration=256
+MaximumNumberOfDevices=4
+
+[SourceDisksNames.amd64]
+1 = %DiskId%,,,.\B148059
+
+[SourceDisksFiles]
+amdh264enc32.dll=1
+amdh264enc64.dll=1
+amdhwdecoder_32.dll=1
+amdhwdecoder_64.dll=1
+amdpcom32.dll=1
+amdpcom64.dll=1
+ati2edxx.dll=1
+ati2erec.dll=1
+atiadlxx.dll=1
+atiadlxy.dll=1
+atiapfxx.blb=1
+atiapfxx.exe=1
+atibtmon.exe=1
+aticalcl.dll=1
+aticalcl64.dll=1
+aticaldd.dll=1
+aticaldd64.dll=1
+aticalrt.dll=1
+aticalrt64.dll=1
+aticfx32.dll=1
+aticfx64.dll=1
+atidemgy.dll=1
+atidxx32.dll=1
+atidxx64.dll=1
+atieclxx.exe=1
+atiedu64.dll=1
+atiesrxx.exe=1
+atig6pxx.dll=1
+atig6txx.dll=1
+atigktxx.dll=1
+atiglpxx.dll=1
+atiicdxx.dat=1
+atikmdag.sys=1
+atikmpag.sys=1
+atimpc32.dll=1
+atimpc64.dll=1
+atimuixx.dll=1
+atio6axx.dll=1
+atiodcli.exe=1
+atiode.exe=1
+atiogl.xml=1
+atioglxx.dll=1
+atipblag.dat=1
+atitmm64.dll=1
+atiu9p64.dll=1
+atiu9pag.dll=1
+atiumd64.dll=1
+atiumd6a.cap=1
+atiumd6a.dll=1
+atiumdag.dll=1
+atiumdva.cap=1
+atiumdva.dll=1
+atiuxp64.dll=1
+atiuxpag.dll=1
+ativvsva.dat=1
+ativvsvl.dat=1
+coinst_8.982.10.8.dll=1
+
+[Strings]
+;
+; Non-Localizable Strings
+;
+REG_SZ         = 0x00000000
+REG_MULTI_SZ   = 0x00010000
+REG_EXPAND_SZ  = 0x00020000
+REG_BINARY     = 0x00000001
+REG_DWORD      = 0x00010001
+SERVICEROOT    = "System\CurrentControlSet\Services"
+;
+; Localizable Strings
+;
+DiskId       = "Advanced Micro Devices, Inc. Installation DISK (VIDEO)"
+GraphAdap    = "Graphics Adapter"
+ATI          = "Advanced Micro Devices, Inc."
+DisplayUninstall = "AMD Display Component Uninstall"
+ATIR300="WDDM (R300)"
+AMD6750.1 = "AMD Radeon HD 6650A"
+AMD6750.2 = "AMD Radeon HD 6650A Graphics"
+AMD68C1.1 = "ATI Mobility Radeon HD 5000 Series"

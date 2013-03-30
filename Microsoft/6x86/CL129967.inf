@@ -1,0 +1,3852 @@
+;-----------------------------------------------
+;----------1112081107-8.92-111109a-129967C-ATI
+;-----------------------------------------------
+; ATI Display Information file : atiilhag.inf
+;
+; Installation INF for the ATI display driver.
+; Copyright(C) 1998-2006 ATI Technologies Inc.
+;-----------------------------------------------
+; PX - PX Proxy mode
+; PR - PX Proxy Ready
+
+[Version]
+Signature="$Windows NT$"
+Provider=%ATI%
+ClassGUID={4D36E968-E325-11CE-BFC1-08002BE10318}
+Class=Display
+DriverVer=11/09/2011, 8.920.0.0000
+;;LayoutFile=layout.inf
+CatalogFile=CL129967.CAT
+
+[SignatureAttributes]
+atiumdva.dll=SignatureAttributes.PETrust
+atiumdag.dll=SignatureAttributes.PETrust
+
+[SignatureAttributes.PETrust]
+PETrust=true
+
+[DestinationDirs]
+DefaultDestDir  = 11
+R300.OGL        = 10  ; Windows
+R300.Miniport   = 12  ; drivers
+R300.Display    = 11  ; system32
+R300.DXX        = 11  ; system32
+R300.OD		= 11  ; system32
+R300.Mppxy      = 12  ; drivers
+Coinstaller_CopyFiles = 11
+R300.ProxyM	= 12  ; drivers
+R300.ProxyU	= 11  ; system32
+r300.CFNext	= 11
+R300.VCE	= 11  ; system32
+
+[ControlFlags]
+ExcludeFromSelect=*
+;
+; Driver information
+;
+
+[Manufacturer]
+%ATI% = ATI.Mfg, NTx86.6.0, NTx86.6.1
+
+[ATI.Mfg.NTx86.6.0]
+"%AMD68B8.1%" = ati2mtag_Evergreen, PCI\VEN_1002&DEV_68B8&SUBSYS_30001002
+"%AMD9598.1%" = ati2mtag_RV630, PCI\VEN_1002&DEV_9598&SUBSYS_B3831002
+"%AMD94C1.1%" = ati2mtag_RV610, PCI\VEN_1002&DEV_94C1&SUBSYS_10021002
+"%AMD94C3.1%" = ati2mtag_RV610, PCI\VEN_1002&DEV_94C3&SUBSYS_03421002
+"%AMD94C1.2%" = ati2mtag_RV610, PCI\VEN_1002&DEV_94C1&SUBSYS_0D021002
+"%AMD9400.1%" = ati2mtag_R600, PCI\VEN_1002&DEV_9400&SUBSYS_30001002
+"%AMD9400.2%" = ati2mtag_R600, PCI\VEN_1002&DEV_9400&SUBSYS_25521002
+"%AMD9581.1%" = ati2mtag_M76, PCI\VEN_1002&DEV_9581&SUBSYS_95811002
+"%AMD9501.1%" = ati2mtag_RV630, PCI\VEN_1002&DEV_9501&SUBSYS_30001002
+"%AMD9505.1%" = ati2mtag_RV630, PCI\VEN_1002&DEV_9505&SUBSYS_30001002
+"%AMD9505.2%" = ati2mtag_RV630, PCI\VEN_1002&DEV_9505&SUBSYS_25421002
+"%AMD9501.2%" = ati2mtag_RV630, PCI\VEN_1002&DEV_9501&SUBSYS_25421002
+"%AMD68F9.1%" = ati2mtag_EvergreenC, PCI\VEN_1002&DEV_68F9&SUBSYS_00191019
+"%AMD68FA.1%" = ati2mtag_Evergreen, PCI\VEN_1002&DEV_68FA&SUBSYS_00211019
+"%AMD68FA.2%" = ati2mtag_Evergreen, PCI\VEN_1002&DEV_68FA&SUBSYS_00221019
+"%AMD68F9.2%" = ati2mtag_EvergreenC, PCI\VEN_1002&DEV_68F9&SUBSYS_00011019
+"%AMD94C3.2%" = ati2mtag_RV610, PCI\VEN_1002&DEV_94C3&SUBSYS_30001025
+"%AMD94C3.3%" = ati2mtag_RV610, PCI\VEN_1002&DEV_94C3&SUBSYS_04021028
+"%AMD94C1.3%" = ati2mtag_RV610, PCI\VEN_1002&DEV_94C1&SUBSYS_0D021028
+"%AMD94C3.4%" = ati2mtag_RV610, PCI\VEN_1002&DEV_94C3&SUBSYS_03021028
+"%AMD94C3.5%" = ati2mtag_RV610, PCI\VEN_1002&DEV_94C3&SUBSYS_04021028
+"%AMD94C1.4%" = ati2mtag_RV610, PCI\VEN_1002&DEV_94C1&SUBSYS_0D021028
+"%AMD68F9.3%" = ati2mtag_EvergreenC, PCI\VEN_1002&DEV_68F9&SUBSYS_2126103C
+"%AMD689C.1%" = ati2mtag_EvergreenH, PCI\VEN_1002&DEV_689C&SUBSYS_03521043
+"%AMD68E1.1%" = ati2mtag_ManhattanP, PCI\VEN_1002&DEV_68E1&SUBSYS_30001043
+"%AMD689C.2%" = ati2mtag_EvergreenH, PCI\VEN_1002&DEV_689C&SUBSYS_039E1043
+"%AMD9598.2%" = ati2mtag_RV630, PCI\VEN_1002&DEV_9598&SUBSYS_30011043
+"%AMD9505.3%" = ati2mtag_RV630, PCI\VEN_1002&DEV_9505&SUBSYS_30011043
+"%AMD944A.1%" = ati2mtag_M9x8, PCI\VEN_1002&DEV_944A&SUBSYS_30001043
+"%AMD9598.3%" = ati2mtag_RV630, PCI\VEN_1002&DEV_9598&SUBSYS_30001043
+"%AMD68E1.2%" = ati2mtag_ManhattanP, PCI\VEN_1002&DEV_68E1&SUBSYS_60001092
+"%AMD68E1.3%" = ati2mtag_ManhattanP, PCI\VEN_1002&DEV_68E1&SUBSYS_254A1458
+"%AMD94C3.6%" = ati2mtag_RV610, PCI\VEN_1002&DEV_94C3&SUBSYS_216A1458
+"%AMD94C3.7%" = ati2mtag_RV610, PCI\VEN_1002&DEV_94C3&SUBSYS_21721458
+"%AMD94C1.5%" = ati2mtag_RV610, PCI\VEN_1002&DEV_94C1&SUBSYS_21741458
+"%AMD94C3.8%" = ati2mtag_RV610, PCI\VEN_1002&DEV_94C3&SUBSYS_30001458
+"%AMD9552.1%" = ati2mtag_M9x, PCI\VEN_1002&DEV_9552&SUBSYS_21AC1458
+"%AMD9552.2%" = ati2mtag_M9x, PCI\VEN_1002&DEV_9552&SUBSYS_21ED1458
+"%AMD944A.2%" = ati2mtag_M9x8, PCI\VEN_1002&DEV_944A&SUBSYS_30001458
+"%AMD68E1.4%" = ati2mtag_ManhattanP, PCI\VEN_1002&DEV_68E1&SUBSYS_21F11458
+"%AMD68E1.5%" = ati2mtag_ManhattanP, PCI\VEN_1002&DEV_68E1&SUBSYS_22021458
+"%AMD68E1.6%" = ati2mtag_ManhattanP, PCI\VEN_1002&DEV_68E1&SUBSYS_21E21458
+"%AMD68E1.7%" = ati2mtag_ManhattanP, PCI\VEN_1002&DEV_68E1&SUBSYS_21D81458
+"%AMD68E1.8%" = ati2mtag_ManhattanP, PCI\VEN_1002&DEV_68E1&SUBSYS_25481458
+"%AMD9498.1%" = ati2mtag_R7X, PCI\VEN_1002&DEV_9498&SUBSYS_21CF1458
+"%AMD94C3.9%" = ati2mtag_RV610, PCI\VEN_1002&DEV_94C3&SUBSYS_11041462
+"%AMD94C3.10%" = ati2mtag_RV610, PCI\VEN_1002&DEV_94C3&SUBSYS_10411462
+"%AMD94C3.11%" = ati2mtag_RV610, PCI\VEN_1002&DEV_94C3&SUBSYS_11051462
+"%AMD94C3.12%" = ati2mtag_RV610, PCI\VEN_1002&DEV_94C3&SUBSYS_10321462
+"%AMD94C1.6%" = ati2mtag_RV610, PCI\VEN_1002&DEV_94C1&SUBSYS_10401462
+"%AMD94C1.7%" = ati2mtag_RV610, PCI\VEN_1002&DEV_94C1&SUBSYS_10331462
+"%AMD94C1.8%" = ati2mtag_RV610, PCI\VEN_1002&DEV_94C1&SUBSYS_10331462
+"%AMD94C1.9%" = ati2mtag_RV610, PCI\VEN_1002&DEV_94C1&SUBSYS_11101462
+"%AMD94C3.13%" = ati2mtag_RV610, PCI\VEN_1002&DEV_94C3&SUBSYS_30001462
+"%AMD9589.1%" = ati2mtag_RV630, PCI\VEN_1002&DEV_9589&SUBSYS_30001462
+"%AMD944A.3%" = ati2mtag_M9x8, PCI\VEN_1002&DEV_944A&SUBSYS_30001462
+"%AMD68E1.9%" = ati2mtag_ManhattanP, PCI\VEN_1002&DEV_68E1&SUBSYS_23421462
+"%AMD68E1.10%" = ati2mtag_ManhattanP, PCI\VEN_1002&DEV_68E1&SUBSYS_23431462
+"%AMD68BF.1%" = ati2mtag_Evergreen, PCI\VEN_1002&DEV_68BF&SUBSYS_3000148C
+"%AMD955F.1%" = ati2mtag_M9x, PCI\VEN_1002&DEV_955F&SUBSYS_3000148C
+"%AMD94C3.14%" = ati2mtag_RV610, PCI\VEN_1002&DEV_94C3&SUBSYS_3000148C
+"%AMD94C3.15%" = ati2mtag_RV610, PCI\VEN_1002&DEV_94C3&SUBSYS_2247148C
+"%AMD95C5.1%" = ati2mtag_RV610, PCI\VEN_1002&DEV_95C5&SUBSYS_3000148C
+"%AMD95C0.1%" = ati2mtag_RV610, PCI\VEN_1002&DEV_95C0&SUBSYS_3000148C
+"%AMD95C5.2%" = ati2mtag_RV610, PCI\VEN_1002&DEV_95C5&SUBSYS_3001148C
+"%AMD9591.1%" = ati2mtag_M76, PCI\VEN_1002&DEV_9591&SUBSYS_2303148C
+"%AMD9581.2%" = ati2mtag_M76, PCI\VEN_1002&DEV_9581&SUBSYS_3000148C
+"%AMD9583.1%" = ati2mtag_M76, PCI\VEN_1002&DEV_9583&SUBSYS_3000148C
+"%AMD9598.4%" = ati2mtag_RV630, PCI\VEN_1002&DEV_9598&SUBSYS_3000148C
+"%AMD9505.4%" = ati2mtag_RV630, PCI\VEN_1002&DEV_9505&SUBSYS_3000148C
+"%AMD95C5.3%" = ati2mtag_RV610, PCI\VEN_1002&DEV_95C5&SUBSYS_3002148C
+"%AMD95C5.4%" = ati2mtag_RV610, PCI\VEN_1002&DEV_95C5&SUBSYS_3033148C
+"%AMD95C5.5%" = ati2mtag_RV610, PCI\VEN_1002&DEV_95C5&SUBSYS_3003148C
+"%AMD95C5.6%" = ati2mtag_RV610, PCI\VEN_1002&DEV_95C5&SUBSYS_3032148C
+"%AMD95C5.7%" = ati2mtag_RV610, PCI\VEN_1002&DEV_95C5&SUBSYS_3100148C
+"%AMD9552.3%" = ati2mtag_M9x, PCI\VEN_1002&DEV_9552&SUBSYS_3000148C
+"%AMD9598.5%" = ati2mtag_RV630, PCI\VEN_1002&DEV_9598&SUBSYS_3031148C
+"%AMD9505.5%" = ati2mtag_RV630, PCI\VEN_1002&DEV_9505&SUBSYS_3002148C
+"%AMD9505.6%" = ati2mtag_RV630, PCI\VEN_1002&DEV_9505&SUBSYS_3001148C
+"%AMD9505.7%" = ati2mtag_RV630, PCI\VEN_1002&DEV_9505&SUBSYS_3003148C
+"%AMD9505.8%" = ati2mtag_RV630, PCI\VEN_1002&DEV_9505&SUBSYS_3004148C
+"%AMD68E1.11%" = ati2mtag_ManhattanP, PCI\VEN_1002&DEV_68E1&SUBSYS_3000148C
+"%AMD68F9.4%" = ati2mtag_EvergreenC, PCI\VEN_1002&DEV_68F9&SUBSYS_3003148C
+"%AMD68E1.12%" = ati2mtag_ManhattanP, PCI\VEN_1002&DEV_68E1&SUBSYS_3001148C
+"%AMD68F9.5%" = ati2mtag_EvergreenC, PCI\VEN_1002&DEV_68F9&SUBSYS_3001148C
+"%AMD68E1.13%" = ati2mtag_ManhattanP, PCI\VEN_1002&DEV_68E1&SUBSYS_3002148C
+"%AMD68F9.6%" = ati2mtag_EvergreenC, PCI\VEN_1002&DEV_68F9&SUBSYS_3002148C
+"%AMD68F9.7%" = ati2mtag_EvergreenC, PCI\VEN_1002&DEV_68F9&SUBSYS_3004148C
+"%AMD68E1.14%" = ati2mtag_ManhattanP, PCI\VEN_1002&DEV_68E1&SUBSYS_3003148C
+"%AMD68DA.1%" = ati2mtag_Evergreen, PCI\VEN_1002&DEV_68DA&SUBSYS_3000148C
+"%AMD68DA.2%" = ati2mtag_Evergreen, PCI\VEN_1002&DEV_68DA&SUBSYS_3001148C
+"%AMD68D9.1%" = ati2mtag_Evergreen, PCI\VEN_1002&DEV_68D9&SUBSYS_3000148C
+"%AMD68D9.2%" = ati2mtag_Evergreen, PCI\VEN_1002&DEV_68D9&SUBSYS_3001148C
+"%AMD68BE.1%" = ati2mtag_Evergreen, PCI\VEN_1002&DEV_68BE&SUBSYS_3000148C
+"%AMD9480.1%" = ati2mtag_M9x, PCI\VEN_1002&DEV_9480&SUBSYS_3000148C
+"%AMD9552.4%" = ati2mtag_M9x, PCI\VEN_1002&DEV_9552&SUBSYS_3000148C
+"%AMD955F.2%" = ati2mtag_M9x, PCI\VEN_1002&DEV_955F&SUBSYS_3000148C
+"%AMD944A.4%" = ati2mtag_M9x8, PCI\VEN_1002&DEV_944A&SUBSYS_30001545
+"%AMD9552.5%" = ati2mtag_M9x, PCI\VEN_1002&DEV_9552&SUBSYS_44721545
+"%AMD955F.3%" = ati2mtag_M9x, PCI\VEN_1002&DEV_955F&SUBSYS_44721545
+"%AMD9598.6%" = ati2mtag_RV630, PCI\VEN_1002&DEV_9598&SUBSYS_30011545
+"%AMD9598.7%" = ati2mtag_RV630, PCI\VEN_1002&DEV_9598&SUBSYS_30001545
+"%AMD68E1.15%" = ati2mtag_ManhattanP, PCI\VEN_1002&DEV_68E1&SUBSYS_54501545
+"%AMD68F9.8%" = ati2mtag_EvergreenC, PCI\VEN_1002&DEV_68F9&SUBSYS_3B311642
+"%AMD6759.1%" = ati2mtag_NI, PCI\VEN_1002&DEV_6759&SUBSYS_3A671642
+"%AMD68BE.2%" = ati2mtag_Evergreen, PCI\VEN_1002&DEV_68BE&SUBSYS_39821642
+"%AMD94C3.16%" = ati2mtag_RV610, PCI\VEN_1002&DEV_94C3&SUBSYS_37161642
+"%AMD94C3.17%" = ati2mtag_RV610, PCI\VEN_1002&DEV_94C3&SUBSYS_30001642
+"%AMD9589.2%" = ati2mtag_RV630, PCI\VEN_1002&DEV_9589&SUBSYS_30001642
+"%AMD68F9.9%" = ati2mtag_EvergreenC, PCI\VEN_1002&DEV_68F9&SUBSYS_39871642
+"%AMD68E0.1%" = ati2mtag_ManhattanP, PCI\VEN_1002&DEV_68E0&SUBSYS_60001682
+"%AMD954F.1%" = ati2mtag_R7X, PCI\VEN_1002&DEV_954F&SUBSYS_29201682
+"%AMD954F.2%" = ati2mtag_R7X, PCI\VEN_1002&DEV_954F&SUBSYS_29211682
+"%AMD9555.1%" = ati2mtag_M9x, PCI\VEN_1002&DEV_9555&SUBSYS_29241682
+"%AMD9498.2%" = ati2mtag_R7X, PCI\VEN_1002&DEV_9498&SUBSYS_24511682
+"%AMD9498.3%" = ati2mtag_R7X, PCI\VEN_1002&DEV_9498&SUBSYS_24521682
+"%AMD9498.4%" = ati2mtag_R7X, PCI\VEN_1002&DEV_9498&SUBSYS_24541682
+"%AMD9498.5%" = ati2mtag_R7X, PCI\VEN_1002&DEV_9498&SUBSYS_29331682
+"%AMD9498.6%" = ati2mtag_R7X, PCI\VEN_1002&DEV_9498&SUBSYS_29341682
+"%AMD94B3.1%" = ati2mtag_RV7X, PCI\VEN_1002&DEV_94B3&SUBSYS_29001682
+"%AMD944A.5%" = ati2mtag_M9x8, PCI\VEN_1002&DEV_944A&SUBSYS_30001682
+"%AMD944C.1%" = ati2mtag_RV7X, PCI\VEN_1002&DEV_944C&SUBSYS_24801682
+"%AMD944C.2%" = ati2mtag_RV7X, PCI\VEN_1002&DEV_944C&SUBSYS_24811682
+"%AMD9442.1%" = ati2mtag_RV7X, PCI\VEN_1002&DEV_9442&SUBSYS_24701682
+"%AMD9442.2%" = ati2mtag_RV7X, PCI\VEN_1002&DEV_9442&SUBSYS_24711682
+"%AMD9440.1%" = ati2mtag_RV7X, PCI\VEN_1002&DEV_9440&SUBSYS_24401682
+"%AMD9440.2%" = ati2mtag_RV7X, PCI\VEN_1002&DEV_9440&SUBSYS_24411682
+"%AMD9440.3%" = ati2mtag_RV7X, PCI\VEN_1002&DEV_9440&SUBSYS_24441682
+"%AMD9440.4%" = ati2mtag_RV7X, PCI\VEN_1002&DEV_9440&SUBSYS_24451682
+"%AMD9441.1%" = ati2mtag_RV7X, PCI\VEN_1002&DEV_9441&SUBSYS_24401682
+"%AMD68E1.16%" = ati2mtag_ManhattanP, PCI\VEN_1002&DEV_68E1&SUBSYS_30001682
+"%AMD9555.2%" = ati2mtag_M9x, PCI\VEN_1002&DEV_9555&SUBSYS_24651682
+"%AMD954F.3%" = ati2mtag_R7X, PCI\VEN_1002&DEV_954F&SUBSYS_30901682
+"%AMD68BE.3%" = ati2mtag_Evergreen, PCI\VEN_1002&DEV_68BE&SUBSYS_3000174B
+"%AMD68BF.2%" = ati2mtag_Evergreen, PCI\VEN_1002&DEV_68BF&SUBSYS_6750174B
+"%AMD68FA.3%" = ati2mtag_Evergreen, PCI\VEN_1002&DEV_68FA&SUBSYS_E153174B
+"%AMD68C1.1%" = ati2mtag_Manhattan, PCI\VEN_1002&DEV_68C1&SUBSYS_5000174B
+"%AMD68E0.2%" = ati2mtag_ManhattanP, PCI\VEN_1002&DEV_68E0&SUBSYS_E204174B
+"%AMD68E1.17%" = ati2mtag_ManhattanP, PCI\VEN_1002&DEV_68E1&SUBSYS_6350174B
+"%AMD94C3.18%" = ati2mtag_RV610, PCI\VEN_1002&DEV_94C3&SUBSYS_3000174B
+"%AMD94C3.19%" = ati2mtag_RV610, PCI\VEN_1002&DEV_94C3&SUBSYS_E400174B
+"%AMD94C3.20%" = ati2mtag_RV610, PCI\VEN_1002&DEV_94C3&SUBSYS_E370174B
+"%AMD94C3.21%" = ati2mtag_RV610, PCI\VEN_1002&DEV_94C3&SUBSYS_E400174B
+"%AMD94C3.22%" = ati2mtag_RV610, PCI\VEN_1002&DEV_94C3&SUBSYS_E370174B
+"%AMD94C3.23%" = ati2mtag_RV610, PCI\VEN_1002&DEV_94C3&SUBSYS_E400174B
+"%AMD95C0.2%" = ati2mtag_RV610, PCI\VEN_1002&DEV_95C0&SUBSYS_D390174B
+"%AMD95C0.3%" = ati2mtag_RV610, PCI\VEN_1002&DEV_95C0&SUBSYS_3002174B
+"%AMD9589.3%" = ati2mtag_RV630, PCI\VEN_1002&DEV_9589&SUBSYS_0E41174B
+"%AMD95C5.8%" = ati2mtag_RV610, PCI\VEN_1002&DEV_95C5&SUBSYS_3010174B
+"%AMD95C0.4%" = ati2mtag_RV610, PCI\VEN_1002&DEV_95C0&SUBSYS_3020174B
+"%AMD95C5.9%" = ati2mtag_RV610, PCI\VEN_1002&DEV_95C5&SUBSYS_4250174B
+"%AMD9552.6%" = ati2mtag_M9x, PCI\VEN_1002&DEV_9552&SUBSYS_3000174B
+"%AMD9553.1%" = ati2mtag_M9x, PCI\VEN_1002&DEV_9553&SUBSYS_3092174B
+"%AMD954F.4%" = ati2mtag_R7X, PCI\VEN_1002&DEV_954F&SUBSYS_4450174B
+"%AMD954F.5%" = ati2mtag_R7X, PCI\VEN_1002&DEV_954F&SUBSYS_3000174B
+"%AMD9598.8%" = ati2mtag_RV630, PCI\VEN_1002&DEV_9598&SUBSYS_4570174B
+"%AMD9598.9%" = ati2mtag_RV630, PCI\VEN_1002&DEV_9598&SUBSYS_4580174B
+"%AMD9540.1%" = ati2mtag_R7X, PCI\VEN_1002&DEV_9540&SUBSYS_4590174B
+"%AMD9598.10%" = ati2mtag_RV630, PCI\VEN_1002&DEV_9598&SUBSYS_4610174B
+"%AMD9490.1%" = ati2mtag_R7X, PCI\VEN_1002&DEV_9490&SUBSYS_4710174B
+"%AMD9505.9%" = ati2mtag_RV630, PCI\VEN_1002&DEV_9505&SUBSYS_4730174B
+"%AMD9505.10%" = ati2mtag_RV630, PCI\VEN_1002&DEV_9505&SUBSYS_3010174B
+"%AMD9501.3%" = ati2mtag_RV630, PCI\VEN_1002&DEV_9501&SUBSYS_4750174B
+"%AMD9505.11%" = ati2mtag_RV630, PCI\VEN_1002&DEV_9505&SUBSYS_3001174B
+"%AMD944A.6%" = ati2mtag_M9x8, PCI\VEN_1002&DEV_944A&SUBSYS_3000174B
+"%AMD944E.1%" = ati2mtag_RV7X, PCI\VEN_1002&DEV_944E&SUBSYS_3260174B
+"%AMD944E.2%" = ati2mtag_RV7X, PCI\VEN_1002&DEV_944E&SUBSYS_3261174B
+"%AMD68E1.18%" = ati2mtag_ManhattanP, PCI\VEN_1002&DEV_68E1&SUBSYS_6000174B
+"%AMD68E1.19%" = ati2mtag_ManhattanP, PCI\VEN_1002&DEV_68E1&SUBSYS_3000174B
+"%AMD68F9.10%" = ati2mtag_EvergreenC, PCI\VEN_1002&DEV_68F9&SUBSYS_E127174B
+"%AMD68F9.11%" = ati2mtag_EvergreenC, PCI\VEN_1002&DEV_68F9&SUBSYS_E153174B
+"%AMD68F9.12%" = ati2mtag_EvergreenC, PCI\VEN_1002&DEV_68F9&SUBSYS_E145174B
+"%AMD68F9.13%" = ati2mtag_EvergreenC, PCI\VEN_1002&DEV_68F9&SUBSYS_5470174B
+"%AMD68E1.20%" = ati2mtag_ManhattanP, PCI\VEN_1002&DEV_68E1&SUBSYS_5470174B
+"%AMD68F9.14%" = ati2mtag_EvergreenC, PCI\VEN_1002&DEV_68F9&SUBSYS_5490174B
+"%AMD68F9.15%" = ati2mtag_EvergreenC, PCI\VEN_1002&DEV_68F9&SUBSYS_5530174B
+"%AMD68DA.3%" = ati2mtag_Evergreen, PCI\VEN_1002&DEV_68DA&SUBSYS_5630174B
+"%AMD68D8.1%" = ati2mtag_Evergreen, PCI\VEN_1002&DEV_68D8&SUBSYS_5690174B
+"%AMD68D8.2%" = ati2mtag_Evergreen, PCI\VEN_1002&DEV_68D8&SUBSYS_5730174B
+"%AMD6899.1%" = ati2mtag_Evergreen, PCI\VEN_1002&DEV_6899&SUBSYS_237B174B
+"%AMD68E1.21%" = ati2mtag_ManhattanP, PCI\VEN_1002&DEV_68E1&SUBSYS_6230174B
+"%AMD68F9.16%" = ati2mtag_EvergreenC, PCI\VEN_1002&DEV_68F9&SUBSYS_6230174B
+"%AMD68F9.17%" = ati2mtag_EvergreenC, PCI\VEN_1002&DEV_68F9&SUBSYS_6350174B
+"%AMD68F9.18%" = ati2mtag_EvergreenC, PCI\VEN_1002&DEV_68F9&SUBSYS_6350174B
+"%AMD68F9.19%" = ati2mtag_EvergreenC, PCI\VEN_1002&DEV_68F9&SUBSYS_3987174B
+"%AMD68DA.4%" = ati2mtag_Evergreen, PCI\VEN_1002&DEV_68DA&SUBSYS_3000174B
+"%AMD68DA.5%" = ati2mtag_Evergreen, PCI\VEN_1002&DEV_68DA&SUBSYS_6490174B
+"%AMD68D9.3%" = ati2mtag_Evergreen, PCI\VEN_1002&DEV_68D9&SUBSYS_3000174B
+"%AMD68D9.4%" = ati2mtag_Evergreen, PCI\VEN_1002&DEV_68D9&SUBSYS_6510174B
+"%AMD68D9.5%" = ati2mtag_Evergreen, PCI\VEN_1002&DEV_68D9&SUBSYS_6610174B
+"%AMD68BE.4%" = ati2mtag_Evergreen, PCI\VEN_1002&DEV_68BE&SUBSYS_3000174B
+"%AMD9555.3%" = ati2mtag_M9x, PCI\VEN_1002&DEV_9555&SUBSYS_3711174B
+"%AMD95C0.5%" = ati2mtag_RV610, PCI\VEN_1002&DEV_95C0&SUBSYS_3000174B
+"%AMD9501.4%" = ati2mtag_RV630, PCI\VEN_1002&DEV_9501&SUBSYS_3000174B
+"%AMD9505.12%" = ati2mtag_RV630, PCI\VEN_1002&DEV_9505&SUBSYS_3000174B
+"%AMD9598.11%" = ati2mtag_RV630, PCI\VEN_1002&DEV_9598&SUBSYS_3000174B
+"%AMD9598.12%" = ati2mtag_RV630, PCI\VEN_1002&DEV_9598&SUBSYS_3001174B
+"%AMD954F.6%" = ati2mtag_R7X, PCI\VEN_1002&DEV_954F&SUBSYS_4570174B
+"%AMD6738.1%" = ati2mtag_NI, PCI\VEN_1002&DEV_6738&SUBSYS_30001787
+"%AMD6739.1%" = ati2mtag_NI, PCI\VEN_1002&DEV_6739&SUBSYS_30001787
+"%AMD94C3.24%" = ati2mtag_RV610, PCI\VEN_1002&DEV_94C3&SUBSYS_30001787
+"%AMD94C3.25%" = ati2mtag_RV610, PCI\VEN_1002&DEV_94C3&SUBSYS_22471787
+"%AMD9589.4%" = ati2mtag_RV630, PCI\VEN_1002&DEV_9589&SUBSYS_30001787
+"%AMD9501.5%" = ati2mtag_RV630, PCI\VEN_1002&DEV_9501&SUBSYS_30001787
+"%AMD9505.13%" = ati2mtag_RV630, PCI\VEN_1002&DEV_9505&SUBSYS_30001787
+"%AMD95C5.10%" = ati2mtag_RV610, PCI\VEN_1002&DEV_95C5&SUBSYS_30501787
+"%AMD95C5.11%" = ati2mtag_RV610, PCI\VEN_1002&DEV_95C5&SUBSYS_31001787
+"%AMD9552.7%" = ati2mtag_M9x, PCI\VEN_1002&DEV_9552&SUBSYS_30001787
+"%AMD954F.7%" = ati2mtag_R7X, PCI\VEN_1002&DEV_954F&SUBSYS_30501787
+"%AMD954F.8%" = ati2mtag_R7X, PCI\VEN_1002&DEV_954F&SUBSYS_31001787
+"%AMD9540.2%" = ati2mtag_R7X, PCI\VEN_1002&DEV_9540&SUBSYS_30501787
+"%AMD9598.13%" = ati2mtag_RV630, PCI\VEN_1002&DEV_9598&SUBSYS_30501787
+"%AMD9498.7%" = ati2mtag_R7X, PCI\VEN_1002&DEV_9498&SUBSYS_30501787
+"%AMD9490.2%" = ati2mtag_R7X, PCI\VEN_1002&DEV_9490&SUBSYS_30501787
+"%AMD9498.8%" = ati2mtag_R7X, PCI\VEN_1002&DEV_9498&SUBSYS_31001787
+"%AMD944E.3%" = ati2mtag_RV7X, PCI\VEN_1002&DEV_944E&SUBSYS_30001787
+"%AMD944A.7%" = ati2mtag_M9x8, PCI\VEN_1002&DEV_944A&SUBSYS_30001787
+"%AMD944E.4%" = ati2mtag_RV7X, PCI\VEN_1002&DEV_944E&SUBSYS_30101787
+"%AMD944E.5%" = ati2mtag_RV7X, PCI\VEN_1002&DEV_944E&SUBSYS_31001787
+"%AMD68E1.22%" = ati2mtag_ManhattanP, PCI\VEN_1002&DEV_68E1&SUBSYS_30001787
+"%AMD68E1.23%" = ati2mtag_ManhattanP, PCI\VEN_1002&DEV_68E1&SUBSYS_30001787
+"%AMD68F9.20%" = ati2mtag_EvergreenC, PCI\VEN_1002&DEV_68F9&SUBSYS_30001787
+"%AMD68F9.21%" = ati2mtag_EvergreenC, PCI\VEN_1002&DEV_68F9&SUBSYS_30021787
+"%AMD68F9.22%" = ati2mtag_EvergreenC, PCI\VEN_1002&DEV_68F9&SUBSYS_30011787
+"%AMD68DA.6%" = ati2mtag_Evergreen, PCI\VEN_1002&DEV_68DA&SUBSYS_30001787
+"%AMD68D8.3%" = ati2mtag_Evergreen, PCI\VEN_1002&DEV_68D8&SUBSYS_30001787
+"%AMD68F9.23%" = ati2mtag_EvergreenC, PCI\VEN_1002&DEV_68F9&SUBSYS_30001787
+"%AMD68D9.6%" = ati2mtag_Evergreen, PCI\VEN_1002&DEV_68D9&SUBSYS_30001787
+"%AMD68E1.24%" = ati2mtag_ManhattanP, PCI\VEN_1002&DEV_68E1&SUBSYS_300117AF
+"%AMD6738.2%" = ati2mtag_NI, PCI\VEN_1002&DEV_6738&SUBSYS_201A17AF
+"%AMD6738.3%" = ati2mtag_NI, PCI\VEN_1002&DEV_6738&SUBSYS_201B17AF
+"%AMD94C3.26%" = ati2mtag_RV610, PCI\VEN_1002&DEV_94C3&SUBSYS_203817AF
+"%AMD95C5.12%" = ati2mtag_RV610, PCI\VEN_1002&DEV_95C5&SUBSYS_301017AF
+"%AMD9552.8%" = ati2mtag_M9x, PCI\VEN_1002&DEV_9552&SUBSYS_300017AF
+"%AMD954F.9%" = ati2mtag_R7X, PCI\VEN_1002&DEV_954F&SUBSYS_301017AF
+"%AMD9598.14%" = ati2mtag_RV630, PCI\VEN_1002&DEV_9598&SUBSYS_301017AF
+"%AMD9598.15%" = ati2mtag_RV630, PCI\VEN_1002&DEV_9598&SUBSYS_301117AF
+"%AMD9490.3%" = ati2mtag_R7X, PCI\VEN_1002&DEV_9490&SUBSYS_300017AF
+"%AMD9505.14%" = ati2mtag_RV630, PCI\VEN_1002&DEV_9505&SUBSYS_301017AF
+"%AMD944A.8%" = ati2mtag_M9x8, PCI\VEN_1002&DEV_944A&SUBSYS_300017AF
+"%AMD68E1.25%" = ati2mtag_ManhattanP, PCI\VEN_1002&DEV_68E1&SUBSYS_300017AF
+"%AMD68F9.24%" = ati2mtag_EvergreenC, PCI\VEN_1002&DEV_68F9&SUBSYS_301317AF
+"%AMD68F9.25%" = ati2mtag_EvergreenC, PCI\VEN_1002&DEV_68F9&SUBSYS_301117AF
+"%AMD68F9.26%" = ati2mtag_EvergreenC, PCI\VEN_1002&DEV_68F9&SUBSYS_301217AF
+"%AMD68DA.7%" = ati2mtag_Evergreen, PCI\VEN_1002&DEV_68DA&SUBSYS_301017AF
+"%AMD68D9.7%" = ati2mtag_Evergreen, PCI\VEN_1002&DEV_68D9&SUBSYS_301017AF
+"%AMD68D8.4%" = ati2mtag_Evergreen, PCI\VEN_1002&DEV_68D8&SUBSYS_301117AF
+"%AMD68D8.5%" = ati2mtag_Evergreen, PCI\VEN_1002&DEV_68D8&SUBSYS_301017AF
+"%AMD68F9.27%" = ati2mtag_EvergreenC, PCI\VEN_1002&DEV_68F9&SUBSYS_300117AF
+"%AMD68F9.28%" = ati2mtag_EvergreenC, PCI\VEN_1002&DEV_68F9&SUBSYS_300017AF
+"%AMD68F9.29%" = ati2mtag_EvergreenC, PCI\VEN_1002&DEV_68F9&SUBSYS_300217AF
+"%AMD68F9.30%" = ati2mtag_EvergreenC, PCI\VEN_1002&DEV_68F9&SUBSYS_301417AF
+"%AMD68E1.26%" = ati2mtag_ManhattanP, PCI\VEN_1002&DEV_68E1&SUBSYS_301417AF
+"%AMD68DA.8%" = ati2mtag_Evergreen, PCI\VEN_1002&DEV_68DA&SUBSYS_300017AF
+"%AMD68D9.8%" = ati2mtag_Evergreen, PCI\VEN_1002&DEV_68D9&SUBSYS_300017AF
+"%AMD68BE.5%" = ati2mtag_Evergreen, PCI\VEN_1002&DEV_68BE&SUBSYS_300017AF
+"%AMD9598.16%" = ati2mtag_RV630, PCI\VEN_1002&DEV_9598&SUBSYS_300117AF
+"%AMD94C3.27%" = ati2mtag_RV610, PCI\VEN_1002&DEV_94C3&SUBSYS_01011A93
+"%AMD9589.5%" = ati2mtag_RV630, PCI\VEN_1002&DEV_9589&SUBSYS_01001A93
+"%AMD9588.1%" = ati2mtag_RV630, PCI\VEN_1002&DEV_9588&SUBSYS_01021A93
+"%AMD95C5.13%" = ati2mtag_RV610, PCI\VEN_1002&DEV_95C5&SUBSYS_01051A93
+"%AMD95C5.14%" = ati2mtag_RV610, PCI\VEN_1002&DEV_95C5&SUBSYS_01041A93
+"%AMD68F9.31%" = ati2mtag_EvergreenC, PCI\VEN_1002&DEV_68F9&SUBSYS_174B3000
+"%AMD9591.2%" = ati2mtag_M76, PCI\VEN_1002&DEV_9591&SUBSYS_15453992
+"%AMD68F9.32%" = ati2mtag_EvergreenC, PCI\VEN_1002&DEV_68F9&SUBSYS_174B6250
+"%AMD68F9.33%" = ati2mtag_EvergreenC, PCI\VEN_1002&DEV_68F9&SUBSYS_174B6290
+"%AMD9519.1%" = ati2mtag_RV630, PCI\VEN_1002&DEV_9519
+"%AMD9452.1%" = ati2mtag_RV7X, PCI\VEN_1002&DEV_9452
+"%AMD9450.1%" = ati2mtag_RV7X, PCI\VEN_1002&DEV_9450
+"%AMD688D.1%" = ati2mtag_Evergreen, PCI\VEN_1002&DEV_688D
+"%AMD688C.1%" = ati2mtag_Evergreen, PCI\VEN_1002&DEV_688C
+"%AMD675F.1%" = ati2mtag_NI, PCI\VEN_1002&DEV_675F
+"%AMD9803.1%" = ati2mtag_Wrestler, PCI\VEN_1002&DEV_9803
+"%AMD9805.1%" = ati2mtag_Wrestler, PCI\VEN_1002&DEV_9805
+"%AMD9807.1%" = ati2mtag_Wrestler, PCI\VEN_1002&DEV_9807
+"%AMD9802.1%" = ati2mtag_Wrestler, PCI\VEN_1002&DEV_9802
+"%AMD9804.1%" = ati2mtag_Wrestler, PCI\VEN_1002&DEV_9804
+"%AMD9806.1%" = ati2mtag_Wrestler, PCI\VEN_1002&DEV_9806
+"%AMD9642.1%" = ati2mtag_Sumo_Desktop, PCI\VEN_1002&DEV_9642
+"%AMD6770.1%" = ati2mtag_NI, PCI\VEN_1002&DEV_6770
+"%AMD9644.1%" = ati2mtag_Sumo_Desktop, PCI\VEN_1002&DEV_9644
+"%AMD9645.1%" = ati2mtag_Sumo_Desktop, PCI\VEN_1002&DEV_9645
+"%AMD6779.1%" = ati2mtag_NI, PCI\VEN_1002&DEV_6779
+"%AMD964A.1%" = ati2mtag_Sumo_Desktop, PCI\VEN_1002&DEV_964A
+"%AMD9640.1%" = ati2mtag_Sumo_Desktop, PCI\VEN_1002&DEV_9640
+"%AMD6759.2%" = ati2mtag_NI, PCI\VEN_1002&DEV_6759
+"%AMD6758.1%" = ati2mtag_NI, PCI\VEN_1002&DEV_6758
+"%AMD68BA.1%" = ati2mtag_Evergreen, PCI\VEN_1002&DEV_68BA
+"%AMD68BF.3%" = ati2mtag_Evergreen, PCI\VEN_1002&DEV_68BF
+"%AMD673E.1%" = ati2mtag_NI, PCI\VEN_1002&DEV_673E
+"%AMD6738.4%" = ati2mtag_NI, PCI\VEN_1002&DEV_6738
+"%AMD6739.2%" = ati2mtag_NI, PCI\VEN_1002&DEV_6739
+"%AMD689B.1%" = ati2mtag_Evergreen, PCI\VEN_1002&DEV_689B
+"%AMD6718.1%" = ati2mtag_NICayman, PCI\VEN_1002&DEV_6718
+"%AMD6719.1%" = ati2mtag_NICayman, PCI\VEN_1002&DEV_6719
+"%AMD671D.1%" = ati2mtag_NICayman, PCI\VEN_1002&DEV_671D
+"%AMD671F.1%" = ati2mtag_NICayman, PCI\VEN_1002&DEV_671F
+"%AMD9649.1%" = ati2mtag_Sumo_Mobile, PCI\VEN_1002&DEV_9649
+"%AMD68E0.3%" = ati2mtag_ManhattanP, PCI\VEN_1002&DEV_68E0
+"%AMD9616.1%" = ati2mtag_RS780, PCI\VEN_1002&DEV_9616
+"%AMD9611.1%" = ati2mtag_RS780, PCI\VEN_1002&DEV_9611
+"%AMD94C7.1%" = ati2mtag_RV610, PCI\VEN_1002&DEV_94C7
+"%AMD94C3.28%" = ati2mtag_RV610, PCI\VEN_1002&DEV_94C3
+"%AMD94C1.10%" = ati2mtag_RV610, PCI\VEN_1002&DEV_94C1
+"%AMD94CC.1%" = ati2mtag_RV610, PCI\VEN_1002&DEV_94CC
+"%AMD9589.6%" = ati2mtag_RV630, PCI\VEN_1002&DEV_9589
+"%AMD958A.1%" = ati2mtag_RV630, PCI\VEN_1002&DEV_958A
+"%AMD9588.2%" = ati2mtag_RV630, PCI\VEN_1002&DEV_9588
+"%AMD9405.1%" = ati2mtag_R600, PCI\VEN_1002&DEV_9405
+"%AMD9403.1%" = ati2mtag_R600, PCI\VEN_1002&DEV_9403
+"%AMD9400.3%" = ati2mtag_R600, PCI\VEN_1002&DEV_9400
+"%AMD9610.1%" = ati2mtag_RS780, PCI\VEN_1002&DEV_9610
+"%AMD9614.1%" = ati2mtag_RS780D, PCI\VEN_1002&DEV_9614
+"%AMD95C0.6%" = ati2mtag_RV610, PCI\VEN_1002&DEV_95C0
+"%AMD95C5.15%" = ati2mtag_RV610, PCI\VEN_1002&DEV_95C5
+"%AMD9598.17%" = ati2mtag_RV630, PCI\VEN_1002&DEV_9598
+"%AMD9501.6%" = ati2mtag_RV630, PCI\VEN_1002&DEV_9501
+"%AMD9505.15%" = ati2mtag_RV630, PCI\VEN_1002&DEV_9505
+"%AMD9507.1%" = ati2mtag_RV630, PCI\VEN_1002&DEV_9507
+"%AMD9513.1%" = ati2mtag_RV630, PCI\VEN_1002&DEV_9513
+"%AMD9513.2%" = ati2mtag_RV630, PCI\VEN_1002&DEV_9513
+"%AMD950F.1%" = ati2mtag_RV630, PCI\VEN_1002&DEV_950F
+"%AMD9710.1%" = ati2mtag_RS880, PCI\VEN_1002&DEV_9710
+"%AMD9715.1%" = ati2mtag_RS880, PCI\VEN_1002&DEV_9715
+"%AMD9714.1%" = ati2mtag_RS880, PCI\VEN_1002&DEV_9714
+"%AMD954F.10%" = ati2mtag_R7X, PCI\VEN_1002&DEV_954F
+"%AMD9540.3%" = ati2mtag_R7X, PCI\VEN_1002&DEV_9540
+"%AMD9490.4%" = ati2mtag_R7X, PCI\VEN_1002&DEV_9490
+"%AMD9498.9%" = ati2mtag_R7X, PCI\VEN_1002&DEV_9498
+"%AMD944E.6%" = ati2mtag_RV7X, PCI\VEN_1002&DEV_944E
+"%AMD944E.7%" = ati2mtag_RV7X, PCI\VEN_1002&DEV_944E
+"%AMD94B4.1%" = ati2mtag_RV7X, PCI\VEN_1002&DEV_94B4
+"%AMD94B3.2%" = ati2mtag_RV7X, PCI\VEN_1002&DEV_94B3
+"%AMD94B5.1%" = ati2mtag_RV7X, PCI\VEN_1002&DEV_94B5
+"%AMD9440.5%" = ati2mtag_RV7X, PCI\VEN_1002&DEV_9440
+"%AMD9442.3%" = ati2mtag_RV7X, PCI\VEN_1002&DEV_9442
+"%AMD944C.3%" = ati2mtag_RV7X, PCI\VEN_1002&DEV_944C
+"%AMD9460.1%" = ati2mtag_RV7X, PCI\VEN_1002&DEV_9460
+"%AMD9462.1%" = ati2mtag_RV7X, PCI\VEN_1002&DEV_9462
+"%AMD9443.1%" = ati2mtag_RV7X, PCI\VEN_1002&DEV_9443
+"%AMD9441.2%" = ati2mtag_RV7X, PCI\VEN_1002&DEV_9441
+"%AMD68F9.34%" = ati2mtag_EvergreenC, PCI\VEN_1002&DEV_68F9
+"%AMD68DA.9%" = ati2mtag_Evergreen, PCI\VEN_1002&DEV_68DA
+"%AMD68D9.9%" = ati2mtag_Evergreen, PCI\VEN_1002&DEV_68D9
+"%AMD68B9.1%" = ati2mtag_Evergreen, PCI\VEN_1002&DEV_68B9
+"%AMD68D8.6%" = ati2mtag_Evergreen, PCI\VEN_1002&DEV_68D8
+"%AMD68B8.2%" = ati2mtag_Evergreen, PCI\VEN_1002&DEV_68B8
+"%AMD68BE.6%" = ati2mtag_Evergreen, PCI\VEN_1002&DEV_68BE
+"%AMD6898.1%" = ati2mtag_Evergreen, PCI\VEN_1002&DEV_6898
+"%AMD6899.2%" = ati2mtag_Evergreen, PCI\VEN_1002&DEV_6899
+"%AMD689E.1%" = ati2mtag_Evergreen, PCI\VEN_1002&DEV_689E
+"%AMD689C.3%" = ati2mtag_EvergreenH, PCI\VEN_1002&DEV_689C
+;
+; General installation section
+;
+
+[ati2mtag_Evergreen]
+FeatureScore=E6
+CopyFiles=R300.Miniport, R300.Display, R300.DXX, R300.OGL, R300.OD
+CopyFiles=R300.Mppxy
+CopyFiles=R300.ProxyM, R300.ProxyU
+CopyFiles=r300.CFNext
+AddReg = ati2mtag_SoftwareDeviceSettings
+AddReg = ati2mtag_Evergreen_SoftwareDeviceSettings
+AddReg = ati2mtag_Desktop_SoftwareDeviceSettings
+AddReg = ati2mtag_Post_EG
+AddReg = ati2mtag_ProxySettings_DX10
+AddReg = ati2mtag_ProxySettings_DX10_PXAA
+AddReg = ati2mtag_Proxy
+AddReg = ati2mtag_DX11
+DelReg = ati2mtag_RemoveDeviceSettings
+DelFiles = R300.DelFiles
+RegisterDlls = TMM.RegisterDlls
+
+[ati2mtag_EvergreenC]
+FeatureScore=E6
+CopyFiles=R300.Miniport, R300.Display, R300.DXX, R300.OGL, R300.OD
+CopyFiles=R300.Mppxy
+CopyFiles=R300.ProxyM, R300.ProxyU
+CopyFiles=r300.CFNext
+AddReg = ati2mtag_SoftwareDeviceSettings
+AddReg = ati2mtag_Evergreen_SoftwareDeviceSettings
+AddReg = ati2mtag_EvergreenC_SoftwareDeviceSettings
+AddReg = ati2mtag_Desktop_SoftwareDeviceSettings
+AddReg = ati2mtag_Post_EG
+AddReg = ati2mtag_ProxySettings_DX10
+AddReg = ati2mtag_ProxySettings_DX10_PXAA
+AddReg = ati2mtag_Proxy
+AddReg = ati2mtag_DX11
+DelReg = ati2mtag_RemoveDeviceSettings
+DelFiles = R300.DelFiles
+RegisterDlls = TMM.RegisterDlls
+
+[ati2mtag_EvergreenH]
+FeatureScore=E6
+CopyFiles=R300.Miniport, R300.Display, R300.DXX, R300.OGL, R300.OD
+CopyFiles=R300.Mppxy
+CopyFiles=R300.ProxyM, R300.ProxyU
+CopyFiles=r300.CFNext
+AddReg = ati2mtag_SoftwareDeviceSettings
+AddReg = ati2mtag_Evergreen_SoftwareDeviceSettings
+AddReg = ati2mtag_EvergreenH_SoftwareDeviceSettings
+AddReg = ati2mtag_Desktop_SoftwareDeviceSettings
+AddReg = ati2mtag_Post_EG
+AddReg = ati2mtag_ProxySettings_DX10
+AddReg = ati2mtag_ProxySettings_DX10_PXAA
+AddReg = ati2mtag_Proxy
+AddReg = ati2mtag_DX11
+DelReg = ati2mtag_RemoveDeviceSettings
+DelFiles = R300.DelFiles
+RegisterDlls = TMM.RegisterDlls
+
+[ati2mtag_EvergreenC_GL]
+FeatureScore=E6
+CopyFiles=R300.Miniport, R300.Display, R300.DXX, R300.OGL, R300.OD
+CopyFiles=R300.Mppxy
+CopyFiles=R300.ProxyM, R300.ProxyU
+CopyFiles=r300.CFNext
+AddReg = ati2mtag_SoftwareDeviceSettings
+AddReg = ati2mtag_Evergreen_SoftwareDeviceSettings
+AddReg = ati2mtag_EvergreenC_SoftwareDeviceSettings
+AddReg = ati2mtag_EvergreenGL_SoftwareDeviceSettings
+AddReg = ati2mtag_FGL_SoftwareDeviceSettings
+AddReg = ati2mtag_Post_EG
+AddReg = ati2mtag_ProxySettings_DX10
+AddReg = ati2mtag_ProxySettings_DX10_PXAA
+AddReg = ati2mtag_Proxy
+AddReg = ati2mtag_DX11
+DelReg = ati2mtag_RemoveDeviceSettings
+DelFiles = R300.DelFiles
+RegisterDlls = TMM.RegisterDlls
+
+[ati2mtag_M76]
+FeatureScore=E6
+CopyFiles=R300.Miniport, R300.Display, R300.DXX, R300.OGL, R300.OD
+CopyFiles=R300.Mppxy
+CopyFiles=R300.ProxyM, R300.ProxyU
+CopyFiles=r300.CFNext
+AddReg = ati2mtag_SoftwareDeviceSettings
+AddReg = ati2mtag_M76_SoftwareDeviceSettings
+AddReg = ati2mtag_R6x_SoftwareDeviceSettings
+AddReg = ati2mtag_Pre_EG
+AddReg = ati2mtag_Mobile_SoftwareDeviceSettings
+AddReg = ati2mtag_Mobile_NONPX_SoftwareDeviceSettings
+AddReg = ati2mtag_Mobile_PX_SoftwareDeviceSettings
+AddReg = ati2mtag_Mobile_PXAA_SoftwareDeviceSettings
+AddReg = ati2mtag_ProxySettings_DX10
+AddReg = ati2mtag_ProxySettings_DX10_PXAA
+AddReg = ati2mtag_PXAA
+AddReg = ati2mtag_DX10
+DelReg = ati2mtag_RemoveDeviceSettings
+DelFiles = R300.DelFiles
+RegisterDlls = TMM.RegisterDlls
+
+[ati2mtag_M9x]
+FeatureScore=E6
+CopyFiles=R300.Miniport, R300.Display, R300.DXX, R300.OGL, R300.OD
+CopyFiles=R300.Mppxy
+CopyFiles=R300.ProxyM, R300.ProxyU
+CopyFiles=r300.CFNext
+AddReg = ati2mtag_SoftwareDeviceSettings
+AddReg = ati2mtag_M9x_SoftwareDeviceSettings
+AddReg = ati2mtag_MultiUVD_SoftwareDeviceSettings
+AddReg = ati2mtag_Mobile_SoftwareDeviceSettings
+AddReg = ati2mtag_Mobile_NONPX_SoftwareDeviceSettings
+AddReg = ati2mtag_Pre_EG
+AddReg = ati2mtag_Mobile_PX_SoftwareDeviceSettings
+AddReg = ati2mtag_Mobile_PXAA_SoftwareDeviceSettings
+AddReg = ati2mtag_ProxySettings_DX10
+AddReg = ati2mtag_ProxySettings_DX10_PXAA
+AddReg = ati2mtag_M9x_PX
+AddReg = ati2mtag_PXAA
+AddReg = ati2mtag_DX10
+DelReg = ati2mtag_RemoveDeviceSettings
+DelFiles = R300.DelFiles
+RegisterDlls = TMM.RegisterDlls
+
+[ati2mtag_M9x8]
+FeatureScore=E6
+CopyFiles=R300.Miniport, R300.Display, R300.DXX, R300.OGL, R300.OD
+CopyFiles=R300.Mppxy
+CopyFiles=R300.ProxyM, R300.ProxyU
+CopyFiles=r300.CFNext
+AddReg = ati2mtag_SoftwareDeviceSettings
+AddReg = ati2mtag_M9x_SoftwareDeviceSettings
+AddReg = ati2mtag_Mobile_SoftwareDeviceSettings
+AddReg = ati2mtag_Mobile_NONPX_SoftwareDeviceSettings
+AddReg = ati2mtag_Pre_EG
+AddReg = ati2mtag_Mobile_PX_SoftwareDeviceSettings
+AddReg = ati2mtag_Mobile_PXAA_SoftwareDeviceSettings
+AddReg = ati2mtag_ProxySettings_DX10
+AddReg = ati2mtag_ProxySettings_DX10_PXAA
+AddReg = ati2mtag_PXAA
+AddReg = ati2mtag_M9x_PX
+AddReg = ati2mtag_DX10
+DelReg = ati2mtag_RemoveDeviceSettings
+DelFiles = R300.DelFiles
+RegisterDlls = TMM.RegisterDlls
+
+[ati2mtag_Manhattan]
+FeatureScore=E6
+CopyFiles=R300.Miniport, R300.Display, R300.DXX, R300.OGL, R300.OD
+CopyFiles=R300.Mppxy
+CopyFiles=R300.ProxyM, R300.ProxyU
+CopyFiles=r300.CFNext
+AddReg = ati2mtag_SoftwareDeviceSettings
+AddReg = ati2mtag_Manhattan_SoftwareDeviceSettings
+AddReg = ati2mtag_MultiUVD_SoftwareDeviceSettings
+AddReg = ati2mtag_Mobile_SoftwareDeviceSettings
+AddReg = ati2mtag_Mobile_NONPX_SoftwareDeviceSettings
+AddReg = ati2mtag_Post_EG
+AddReg = ati2mtag_Mobile_PX_SoftwareDeviceSettings
+AddReg = ati2mtag_Mobile_PXAA_SoftwareDeviceSettings
+AddReg = ati2mtag_ProxySettings_DX10
+AddReg = ati2mtag_ProxySettings_DX10_PXAA
+AddReg = ati2mtag_PXAA
+AddReg = ati2mtag_Manhattan_PX
+AddReg = ati2mtag_DX11
+DelReg = ati2mtag_RemoveDeviceSettings
+DelFiles = R300.DelFiles
+RegisterDlls = TMM.RegisterDlls
+
+[ati2mtag_ManhattanP]
+FeatureScore=E6
+CopyFiles=R300.Miniport, R300.Display, R300.DXX, R300.OGL, R300.OD
+CopyFiles=R300.Mppxy
+CopyFiles=R300.ProxyM, R300.ProxyU
+CopyFiles=r300.CFNext
+AddReg = ati2mtag_SoftwareDeviceSettings
+AddReg = ati2mtag_Manhattan_SoftwareDeviceSettings
+AddReg = ati2mtag_ManhattanP_SoftwareDeviceSettings
+AddReg = ati2mtag_MultiUVD_SoftwareDeviceSettings
+AddReg = ati2mtag_Mobile_SoftwareDeviceSettings
+AddReg = ati2mtag_Mobile_NONPX_SoftwareDeviceSettings
+AddReg = ati2mtag_Post_EG
+AddReg = ati2mtag_Mobile_PX_SoftwareDeviceSettings
+AddReg = ati2mtag_Mobile_PXAA_SoftwareDeviceSettings
+AddReg = ati2mtag_ProxySettings_DX10
+AddReg = ati2mtag_ProxySettings_DX10_PXAA
+AddReg = ati2mtag_PXAA
+AddReg = ati2mtag_Manhattan_PX
+AddReg = ati2mtag_DX11
+DelReg = ati2mtag_RemoveDeviceSettings
+DelFiles = R300.DelFiles
+RegisterDlls = TMM.RegisterDlls
+
+[ati2mtag_NI]
+FeatureScore=E6
+CopyFiles=R300.Miniport, R300.Display, R300.DXX, R300.OGL, R300.OD
+CopyFiles=R300.Mppxy
+CopyFiles=R300.ProxyM, R300.ProxyU
+CopyFiles=r300.CFNext
+AddReg = ati2mtag_SoftwareDeviceSettings
+AddReg = ati2mtag_NI_SoftwareDeviceSettings
+AddReg = ati2mtag_Desktop_SoftwareDeviceSettings
+AddReg = ati2mtag_Post_EG
+AddReg = ati2mtag_ProxySettings_DX10
+AddReg = ati2mtag_ProxySettings_DX10_PXAA
+AddReg = ati2mtag_Proxy
+AddReg = ati2mtag_DX11
+DelReg = ati2mtag_RemoveDeviceSettings
+DelFiles = R300.DelFiles
+RegisterDlls = TMM.RegisterDlls
+
+[ati2mtag_NICayman]
+FeatureScore=E6
+CopyFiles=R300.Miniport, R300.Display, R300.DXX, R300.OGL, R300.OD
+CopyFiles=R300.Mppxy
+CopyFiles=R300.ProxyM, R300.ProxyU
+CopyFiles=r300.CFNext
+AddReg = ati2mtag_SoftwareDeviceSettings
+AddReg = ati2mtag_NI_SoftwareDeviceSettings
+AddReg = ati2mtag_NICayman_SoftwareDeviceSettings
+AddReg = ati2mtag_Desktop_SoftwareDeviceSettings
+AddReg = ati2mtag_Post_EG
+AddReg = ati2mtag_ProxySettings_DX10
+AddReg = ati2mtag_ProxySettings_DX10_PXAA
+AddReg = ati2mtag_Proxy
+AddReg = ati2mtag_DX11
+DelReg = ati2mtag_RemoveDeviceSettings
+DelFiles = R300.DelFiles
+RegisterDlls = TMM.RegisterDlls
+
+[ati2mtag_R600]
+FeatureScore=E6
+CopyFiles=R300.Miniport, R300.Display, R300.DXX, R300.OGL, R300.OD
+CopyFiles=R300.Mppxy
+CopyFiles=R300.ProxyM, R300.ProxyU
+CopyFiles=r300.CFNext
+AddReg = ati2mtag_SoftwareDeviceSettings
+AddReg = ati2mtag_R600_SoftwareDeviceSettings
+AddReg = ati2mtag_R6x_SoftwareDeviceSettings
+AddReg = ati2mtag_Pre_EG
+AddReg = ati2mtag_Desktop_SoftwareDeviceSettings
+AddReg = ati2mtag_ProxySettings_DX10
+AddReg = ati2mtag_ProxySettings_DX10_PXAA
+AddReg = ati2mtag_Proxy
+AddReg = ati2mtag_DX10
+DelReg = ati2mtag_RemoveDeviceSettings
+DelFiles = R300.DelFiles
+RegisterDlls = TMM.RegisterDlls
+
+[ati2mtag_R7X]
+FeatureScore=E6
+CopyFiles=R300.Miniport, R300.Display, R300.DXX, R300.OGL, R300.OD
+CopyFiles=R300.Mppxy
+CopyFiles=R300.ProxyM, R300.ProxyU
+CopyFiles=r300.CFNext
+AddReg = ati2mtag_SoftwareDeviceSettings
+AddReg = ati2mtag_R7x_SoftwareDeviceSettings
+AddReg = ati2mtag_Pre_EG
+AddReg = ati2mtag_DX
+AddReg = ati2mtag_Desktop_SoftwareDeviceSettings
+AddReg = ati2mtag_ProxySettings_DX10
+AddReg = ati2mtag_ProxySettings_DX10_PXAA
+AddReg = ati2mtag_Proxy
+AddReg = ati2mtag_DX10
+DelReg = ati2mtag_RemoveDeviceSettings
+DelFiles = R300.DelFiles
+RegisterDlls = TMM.RegisterDlls
+
+[ati2mtag_RS780]
+FeatureScore=E6
+CopyFiles=R300.Miniport, R300.Display, R300.DXX, R300.OGL, R300.OD
+CopyFiles=R300.Mppxy
+CopyFiles=R300.ProxyM, R300.ProxyU
+CopyFiles=r300.CFNext
+AddReg = ati2mtag_SoftwareDeviceSettings
+AddReg = ati2mtag_RS780_SoftwareDeviceSettings
+AddReg = ati2mtag_Pre_EG
+AddReg = ati2mtag_Desktop_SoftwareDeviceSettings
+AddReg = ati2mtag_ProxySettings_DX10
+AddReg = ati2mtag_ProxySettings_DX10_PXAA
+AddReg = ati2mtag_Proxy
+AddReg = ati2mtag_DX10
+DelReg = ati2mtag_RemoveDeviceSettings
+DelFiles = R300.DelFiles
+RegisterDlls = TMM.RegisterDlls
+
+[ati2mtag_RS780D]
+FeatureScore=E6
+CopyFiles=R300.Miniport, R300.Display, R300.DXX, R300.OGL, R300.OD
+CopyFiles=R300.Mppxy
+CopyFiles=R300.ProxyM, R300.ProxyU
+CopyFiles=r300.CFNext
+AddReg = ati2mtag_SoftwareDeviceSettings
+AddReg = ati2mtag_RS780_SoftwareDeviceSettings
+AddReg = ati2mtag_RS780D_SoftwareDeviceSettings
+AddReg = ati2mtag_Pre_EG
+AddReg = ati2mtag_Desktop_SoftwareDeviceSettings
+AddReg = ati2mtag_ProxySettings_DX10
+AddReg = ati2mtag_ProxySettings_DX10_PXAA
+AddReg = ati2mtag_Proxy
+AddReg = ati2mtag_DX10
+DelReg = ati2mtag_RemoveDeviceSettings
+DelFiles = R300.DelFiles
+RegisterDlls = TMM.RegisterDlls
+
+[ati2mtag_RS880]
+FeatureScore=E6
+CopyFiles=R300.Miniport, R300.Display, R300.DXX, R300.OGL, R300.OD
+CopyFiles=R300.Mppxy
+CopyFiles=R300.ProxyM, R300.ProxyU
+CopyFiles=r300.CFNext
+AddReg = ati2mtag_SoftwareDeviceSettings
+AddReg = ati2mtag_RS880_SoftwareDeviceSettings
+AddReg = ati2mtag_Pre_EG
+AddReg = ati2mtag_Desktop_SoftwareDeviceSettings
+AddReg = ati2mtag_ProxySettings_DX10
+AddReg = ati2mtag_ProxySettings_DX10_PXAA
+AddReg = ati2mtag_Proxy
+AddReg = ati2mtag_DX10
+DelReg = ati2mtag_RemoveDeviceSettings
+DelFiles = R300.DelFiles
+RegisterDlls = TMM.RegisterDlls
+
+[ati2mtag_RV610]
+FeatureScore=E6
+CopyFiles=R300.Miniport, R300.Display, R300.DXX, R300.OGL, R300.OD
+CopyFiles=R300.Mppxy
+CopyFiles=R300.ProxyM, R300.ProxyU
+CopyFiles=r300.CFNext
+AddReg = ati2mtag_SoftwareDeviceSettings
+AddReg = ati2mtag_RV610_SoftwareDeviceSettings
+AddReg = ati2mtag_Pre_EG
+AddReg = ati2mtag_R6x_SoftwareDeviceSettings
+AddReg = ati2mtag_Desktop_SoftwareDeviceSettings
+AddReg = ati2mtag_ProxySettings_DX10
+AddReg = ati2mtag_ProxySettings_DX10_PXAA
+AddReg = ati2mtag_Proxy
+AddReg = ati2mtag_DX10
+DelReg = ati2mtag_RemoveDeviceSettings
+DelFiles = R300.DelFiles
+RegisterDlls = TMM.RegisterDlls
+
+[ati2mtag_RV630]
+FeatureScore=E6
+CopyFiles=R300.Miniport, R300.Display, R300.DXX, R300.OGL, R300.OD
+CopyFiles=R300.Mppxy
+CopyFiles=R300.ProxyM, R300.ProxyU
+CopyFiles=r300.CFNext
+AddReg = ati2mtag_SoftwareDeviceSettings
+AddReg = ati2mtag_RV630_SoftwareDeviceSettings
+AddReg = ati2mtag_R6x_SoftwareDeviceSettings
+AddReg = ati2mtag_Pre_EG
+AddReg = ati2mtag_Desktop_SoftwareDeviceSettings
+AddReg = ati2mtag_ProxySettings_DX10
+AddReg = ati2mtag_ProxySettings_DX10_PXAA
+AddReg = ati2mtag_Proxy
+AddReg = ati2mtag_DX10
+DelReg = ati2mtag_RemoveDeviceSettings
+DelFiles = R300.DelFiles
+RegisterDlls = TMM.RegisterDlls
+
+[ati2mtag_RV7X]
+FeatureScore=E6
+CopyFiles=R300.Miniport, R300.Display, R300.DXX, R300.OGL, R300.OD
+CopyFiles=R300.Mppxy
+CopyFiles=R300.ProxyM, R300.ProxyU
+CopyFiles=r300.CFNext
+AddReg = ati2mtag_SoftwareDeviceSettings
+AddReg = ati2mtag_R7x_SoftwareDeviceSettings
+AddReg = ati2mtag_Pre_EG
+AddReg = ati2mtag_Desktop_SoftwareDeviceSettings
+AddReg = ati2mtag_ProxySettings_DX10
+AddReg = ati2mtag_ProxySettings_DX10_PXAA
+AddReg = ati2mtag_Proxy
+AddReg = ati2mtag_DX11
+DelReg = ati2mtag_RemoveDeviceSettings
+DelFiles = R300.DelFiles
+RegisterDlls = TMM.RegisterDlls
+
+[ati2mtag_Sumo_Desktop]
+FeatureScore=E6
+CopyFiles=R300.Miniport, R300.Display, R300.DXX, R300.OGL, R300.OD
+CopyFiles=R300.Mppxy
+CopyFiles=R300.ProxyM, R300.ProxyU
+CopyFiles=r300.CFNext
+AddReg = ati2mtag_SoftwareDeviceSettings
+AddReg = ati2mtag_Sumo_Desktop_SoftwareDeviceSettings
+AddReg = ati2mtag_Desktop_SoftwareDeviceSettings
+AddReg = ati2mtag_Post_EG
+AddReg = ati2mtag_ProxySettings_DX10
+AddReg = ati2mtag_ProxySettings_DX10_PXAA
+AddReg = ati2mtag_Proxy
+AddReg = ati2mtag_DX11
+DelReg = ati2mtag_RemoveDeviceSettings
+DelFiles = R300.DelFiles
+RegisterDlls = TMM.RegisterDlls
+
+[ati2mtag_Sumo_Mobile]
+FeatureScore=E6
+CopyFiles=R300.Miniport, R300.Display, R300.DXX, R300.OGL, R300.OD
+CopyFiles=R300.Mppxy
+CopyFiles=R300.ProxyM, R300.ProxyU
+CopyFiles=r300.CFNext
+AddReg = ati2mtag_SoftwareDeviceSettings
+AddReg = ati2mtag_Sumo_Mobile_SoftwareDeviceSettings
+AddReg = ati2mtag_MultiUVD_SoftwareDeviceSettings
+AddReg = ati2mtag_Mobile_SoftwareDeviceSettings
+AddReg = ati2mtag_Mobile_NONPX_SoftwareDeviceSettings
+AddReg = ati2mtag_Post_EG
+AddReg = ati2mtag_Mobile_PX_SoftwareDeviceSettings
+AddReg = ati2mtag_Mobile_PXAA_SoftwareDeviceSettings
+AddReg = ati2mtag_ProxySettings_DX10
+AddReg = ati2mtag_ProxySettings_DX10_PXAA
+AddReg = ati2mtag_PXAA
+AddReg = ati2mtag_Manhattan_PX
+AddReg = ati2mtag_DX11
+DelReg = ati2mtag_RemoveDeviceSettings
+DelFiles = R300.DelFiles
+RegisterDlls = TMM.RegisterDlls
+
+[ati2mtag_Wrestler]
+FeatureScore=E6
+CopyFiles=R300.Miniport, R300.Display, R300.DXX, R300.OGL, R300.OD
+CopyFiles=R300.Mppxy
+CopyFiles=R300.ProxyM, R300.ProxyU
+CopyFiles=r300.CFNext
+AddReg = ati2mtag_SoftwareDeviceSettings
+AddReg = ati2mtag_Wrestler_SoftwareDeviceSettings
+AddReg = ati2mtag_Post_EG
+AddReg = ati2mtag_MultiUVD_SoftwareDeviceSettings
+AddReg = ati2mtag_Mobile_SoftwareDeviceSettings
+AddReg = ati2mtag_Mobile_NONPX_SoftwareDeviceSettings
+AddReg = ati2mtag_Mobile_PX_SoftwareDeviceSettings
+AddReg = ati2mtag_Mobile_PXAA_SoftwareDeviceSettings
+AddReg = ati2mtag_ProxySettings_DX10
+AddReg = ati2mtag_ProxySettings_DX10_PXAA
+AddReg = ati2mtag_PXAA
+AddReg = ati2mtag_Manhattan_PX
+AddReg = ati2mtag_DX11
+DelReg = ati2mtag_RemoveDeviceSettings
+DelFiles = R300.DelFiles
+RegisterDlls = TMM.RegisterDlls
+
+[r300.CFNext]
+aticfx32.dll,,,0x00004000
+
+[r300.Miniport]
+atikmdag.sys
+ati2erec.dll
+atikmpag.sys,,,0x00004000
+
+[r300.Mppxy]
+
+[r300.Display]
+atiumdag.dll,,,0x00004000             ; COPYFLG_IN_USE_TRY_RENAME
+atiumdva.dll,,,0x00004000             ; COPYFLG_IN_USE_TRY_RENAME
+atitmmxx.dll,,,0x00004000
+atiicdxx.dat,,,0x00004000
+;;atiogl32.dll
+amdpcom32.dll,atimpc32.dll,,0x00004000
+atimpc32.dll,,,0x00004000
+atiadlxx.dll,,,0x00004000
+atiumdva.cap,,,0x00004000
+atimuixx.dll,,,0x00004000
+atiapfxx.exe
+atiapfxx.blb
+atiumdmv.dll,,,0x00004000
+atiesrxx.exe,,,0x00004000
+atieclxx.exe,,,0x00004000
+atipdlxx.dll,,,0x00004000
+Oemdspif.dll,,,0x00004000
+ati2edxx.dll,,,0x00004000
+ATIDEMGX.dll,,,0x00004000
+atioglxx.dll,,,0x00004000
+aticaldd.dll,,,0x00004000
+aticalrt.dll,,,0x00004000
+aticalcl.dll,,,0x00004000
+atipblag.dat,,,0x00004000
+atiu9pag.dll,,,0x00004000             ; COPYFLG_IN_USE_TRY_RENAME
+atigktxx.dll,,,0x00004000
+atiglpxx.dll,,,0x00004000
+atitmpxx.dll,,,0x00004000
+atibtmon.exe
+
+[Coinstaller_CopyFiles]
+coinst.dll,,,0x00004000
+Difxapi.dll,,,0x00004000
+
+[r300.DXX]
+atidxx32.dll,,,0x00004000
+atiuxpag.dll,,,0x00004000             ; COPYFLG_IN_USE_TRY_RENAME
+
+[r300.OGL]
+atiogl.xml
+
+[R300.OD]
+ATIODCLI.exe
+ATIODE.exe
+
+[R300.ProxyM]
+atikmpag.sys,,,0x00004000
+
+[R300.ProxyU]
+atipblag.dat,,,0x00004000
+atiu9pag.dll,,,0x00004000
+atiuxpag.dll,,,0x00004000
+atigktxx.dll,,,0x00004000
+atiglpxx.dll,,,0x00004000
+
+[r300.DelFiles]
+ativvaxx.dll
+amdcaldd.dll
+amdcalrt.dll
+amdcalcl.dll
+Ati2evxx.exe
+Ati2evxx.dll
+;
+;Register COM object
+;
+
+[TMM.RegisterDlls]
+11,,atitmmxx.dll,1
+11,,atitmpxx.dll,1
+
+[ati2mtag_Evergreen.Services]
+AddService = amdkmdap, 0x00000002, Proxy_Service_Inst, R300_EventLog_Inst
+AddService = amdkmdag, 0x00000000, AMD_Service_Inst_Evergreen, R300_EventLog_Inst
+DelService = Ati External Event Utility
+AddService = AMD External Events Utility, 0x00000000, Ati2evxx_Generic_Service_Inst, Ati2evxx_EventLog_Inst, APPLICATION, ATIeRecord
+
+[ati2mtag_EvergreenC.Services]
+AddService = amdkmdap, 0x00000002, Proxy_Service_Inst, R300_EventLog_Inst
+AddService = amdkmdag, 0x00000000, AMD_Service_Inst_Evergreen, R300_EventLog_Inst
+DelService = Ati External Event Utility
+AddService = AMD External Events Utility, 0x00000000, Ati2evxx_Generic_Service_Inst, Ati2evxx_EventLog_Inst, APPLICATION, ATIeRecord
+
+[ati2mtag_EvergreenH.Services]
+AddService = amdkmdap, 0x00000002, Proxy_Service_Inst, R300_EventLog_Inst
+AddService = amdkmdag, 0x00000000, AMD_Service_Inst_Evergreen, R300_EventLog_Inst
+DelService = Ati External Event Utility
+AddService = AMD External Events Utility, 0x00000000, Ati2evxx_Generic_Service_Inst, Ati2evxx_EventLog_Inst, APPLICATION, ATIeRecord
+
+[ati2mtag_M76.Services]
+AddService = amdkmdap, 0x00000002, Proxy_Service_Inst, R300_EventLog_Inst
+AddService = amdkmdag, 0x00000000, AMD_Service_Inst_M76, R300_EventLog_Inst
+DelService = Ati External Event Utility
+AddService = AMD External Events Utility, 0x00000000, Ati2evxx_Generic_Service_Inst, Ati2evxx_EventLog_Inst, APPLICATION, ATIeRecord
+
+[ati2mtag_M9x.Services]
+AddService = amdkmdap, 0x00000002, Proxy_Service_Inst_PX, R300_EventLog_Inst
+AddService = amdkmdag, 0x00000000, AMD_Service_Inst_M9x, R300_EventLog_Inst
+DelService = Ati External Event Utility
+AddService = AMD External Events Utility, 0x00000000, Ati2evxx_Generic_Service_Inst, Ati2evxx_EventLog_Inst, APPLICATION, ATIeRecord
+
+[ati2mtag_M9x8.Services]
+AddService = amdkmdap, 0x00000002, Proxy_Service_Inst, R300_EventLog_Inst
+AddService = amdkmdag, 0x00000000, AMD_Service_Inst_M9x8, R300_EventLog_Inst
+DelService = Ati External Event Utility
+AddService = AMD External Events Utility, 0x00000000, Ati2evxx_Generic_Service_Inst, Ati2evxx_EventLog_Inst, APPLICATION, ATIeRecord
+
+[ati2mtag_Manhattan.Services]
+AddService = amdkmdap, 0x00000002, Proxy_Service_Inst, R300_EventLog_Inst
+AddService = amdkmdag, 0x00000000, AMD_Service_Inst_Manhattan, R300_EventLog_Inst
+DelService = Ati External Event Utility
+AddService = AMD External Events Utility, 0x00000000, Ati2evxx_Generic_Service_Inst, Ati2evxx_EventLog_Inst, APPLICATION, ATIeRecord
+
+[ati2mtag_ManhattanP.Services]
+AddService = amdkmdap, 0x00000002, Proxy_Service_Inst, R300_EventLog_Inst
+AddService = amdkmdag, 0x00000000, AMD_Service_Inst_Manhattan, R300_EventLog_Inst
+DelService = Ati External Event Utility
+AddService = AMD External Events Utility, 0x00000000, Ati2evxx_Generic_Service_Inst, Ati2evxx_EventLog_Inst, APPLICATION, ATIeRecord
+
+[ati2mtag_NI.Services]
+AddService = amdkmdap, 0x00000002, Proxy_Service_Inst, R300_EventLog_Inst
+AddService = amdkmdag, 0x00000000, AMD_Service_Inst_NI, R300_EventLog_Inst
+DelService = Ati External Event Utility
+AddService = AMD External Events Utility, 0x00000000, Ati2evxx_Generic_Service_Inst, Ati2evxx_EventLog_Inst, APPLICATION, ATIeRecord
+
+[ati2mtag_NICayman.Services]
+AddService = amdkmdap, 0x00000002, Proxy_Service_Inst, R300_EventLog_Inst
+AddService = amdkmdag, 0x00000000, AMD_Service_Inst_NICayman, R300_EventLog_Inst
+DelService = Ati External Event Utility
+AddService = AMD External Events Utility, 0x00000000, Ati2evxx_Generic_Service_Inst, Ati2evxx_EventLog_Inst, APPLICATION, ATIeRecord
+
+[ati2mtag_R600.Services]
+AddService = amdkmdap, 0x00000002, Proxy_Service_Inst, R300_EventLog_Inst
+AddService = amdkmdag, 0x00000000, AMD_Service_Inst_R600, R300_EventLog_Inst
+DelService = Ati External Event Utility
+AddService = AMD External Events Utility, 0x00000000, Ati2evxx_Generic_Service_Inst, Ati2evxx_EventLog_Inst, APPLICATION, ATIeRecord
+
+[ati2mtag_R7X.Services]
+AddService = amdkmdap, 0x00000002, Proxy_Service_Inst, R300_EventLog_Inst
+AddService = amdkmdag, 0x00000000, AMD_Service_Inst_R7X, R300_EventLog_Inst
+DelService = Ati External Event Utility
+AddService = AMD External Events Utility, 0x00000000, Ati2evxx_Generic_Service_Inst, Ati2evxx_EventLog_Inst, APPLICATION, ATIeRecord
+
+[ati2mtag_RS780.Services]
+AddService = amdkmdap, 0x00000002, Proxy_Service_Inst, R300_EventLog_Inst
+AddService = amdkmdag, 0x00000000, AMD_Service_Inst_RS780, R300_EventLog_Inst
+DelService = Ati External Event Utility
+AddService = AMD External Events Utility, 0x00000000, Ati2evxx_Generic_Service_Inst, Ati2evxx_EventLog_Inst, APPLICATION, ATIeRecord
+
+[ati2mtag_RS780D.Services]
+AddService = amdkmdap, 0x00000002, Proxy_Service_Inst, R300_EventLog_Inst
+AddService = amdkmdag, 0x00000000, AMD_Service_Inst_RS780D, R300_EventLog_Inst
+DelService = Ati External Event Utility
+AddService = AMD External Events Utility, 0x00000000, Ati2evxx_Generic_Service_Inst, Ati2evxx_EventLog_Inst, APPLICATION, ATIeRecord
+
+[ati2mtag_RS880.Services]
+AddService = amdkmdap, 0x00000002, Proxy_Service_Inst, R300_EventLog_Inst
+AddService = amdkmdag, 0x00000000, AMD_Service_Inst_RS880, R300_EventLog_Inst
+DelService = Ati External Event Utility
+AddService = AMD External Events Utility, 0x00000000, Ati2evxx_Generic_Service_Inst, Ati2evxx_EventLog_Inst, APPLICATION, ATIeRecord
+
+[ati2mtag_RV610.Services]
+AddService = amdkmdap, 0x00000002, Proxy_Service_Inst, R300_EventLog_Inst
+AddService = amdkmdag, 0x00000000, AMD_Service_Inst_RV610, R300_EventLog_Inst
+DelService = Ati External Event Utility
+AddService = AMD External Events Utility, 0x00000000, Ati2evxx_Generic_Service_Inst, Ati2evxx_EventLog_Inst, APPLICATION, ATIeRecord
+
+[ati2mtag_RV630.Services]
+AddService = amdkmdap, 0x00000002, Proxy_Service_Inst, R300_EventLog_Inst
+AddService = amdkmdag, 0x00000000, AMD_Service_Inst_RV630, R300_EventLog_Inst
+DelService = Ati External Event Utility
+AddService = AMD External Events Utility, 0x00000000, Ati2evxx_Generic_Service_Inst, Ati2evxx_EventLog_Inst, APPLICATION, ATIeRecord
+
+[ati2mtag_RV7X.Services]
+AddService = amdkmdap, 0x00000002, Proxy_Service_Inst, R300_EventLog_Inst
+AddService = amdkmdag, 0x00000000, AMD_Service_Inst_RV7X, R300_EventLog_Inst
+DelService = Ati External Event Utility
+AddService = AMD External Events Utility, 0x00000000, Ati2evxx_Generic_Service_Inst, Ati2evxx_EventLog_Inst, APPLICATION, ATIeRecord
+
+[ati2mtag_Sumo_Desktop.Services]
+AddService = amdkmdap, 0x00000002, Proxy_Service_Inst, R300_EventLog_Inst
+AddService = amdkmdag, 0x00000000, AMD_Service_Inst_Sumo_Desktop, R300_EventLog_Inst
+DelService = Ati External Event Utility
+AddService = AMD External Events Utility, 0x00000000, Ati2evxx_Generic_Service_Inst, Ati2evxx_EventLog_Inst, APPLICATION, ATIeRecord
+
+[ati2mtag_Sumo_Mobile.Services]
+AddService = amdkmdap, 0x00000002, Proxy_Service_Inst, R300_EventLog_Inst
+AddService = amdkmdag, 0x00000000, AMD_Service_Inst_Sumo_Mobile, R300_EventLog_Inst
+DelService = Ati External Event Utility
+AddService = AMD External Events Utility, 0x00000000, Ati2evxx_Generic_Service_Inst, Ati2evxx_EventLog_Inst, APPLICATION, ATIeRecord
+
+[ati2mtag_Wrestler.Services]
+AddService = amdkmdap, 0x00000002, Proxy_Service_Inst, R300_EventLog_Inst
+AddService = amdkmdag, 0x00000000, AMD_Service_Inst_Wrestler, R300_EventLog_Inst
+DelService = Ati External Event Utility
+AddService = AMD External Events Utility, 0x00000000, Ati2evxx_Generic_Service_Inst, Ati2evxx_EventLog_Inst, APPLICATION, ATIeRecord
+
+[ati2mtag_Evergreen.Coinstallers]
+AddReg=Coinstaller_AddReg
+CopyFiles=Coinstaller_CopyFiles
+
+[ati2mtag_EvergreenC.Coinstallers]
+AddReg=Coinstaller_AddReg
+CopyFiles=Coinstaller_CopyFiles
+
+[ati2mtag_EvergreenH.Coinstallers]
+AddReg=Coinstaller_AddReg
+CopyFiles=Coinstaller_CopyFiles
+
+[ati2mtag_M76.Coinstallers]
+AddReg=Coinstaller_AddReg
+CopyFiles=Coinstaller_CopyFiles
+
+[ati2mtag_M9x.Coinstallers]
+AddReg=Coinstaller_AddReg
+CopyFiles=Coinstaller_CopyFiles
+
+[ati2mtag_M9x8.Coinstallers]
+AddReg=Coinstaller_AddReg
+CopyFiles=Coinstaller_CopyFiles
+
+[ati2mtag_Manhattan.Coinstallers]
+AddReg=Coinstaller_AddReg
+CopyFiles=Coinstaller_CopyFiles
+
+[ati2mtag_ManhattanP.Coinstallers]
+AddReg=Coinstaller_AddReg
+CopyFiles=Coinstaller_CopyFiles
+
+[ati2mtag_NI.Coinstallers]
+AddReg=Coinstaller_AddReg
+CopyFiles=Coinstaller_CopyFiles
+
+[ati2mtag_NICayman.Coinstallers]
+AddReg=Coinstaller_AddReg
+CopyFiles=Coinstaller_CopyFiles
+
+[ati2mtag_R600.Coinstallers]
+AddReg=Coinstaller_AddReg
+CopyFiles=Coinstaller_CopyFiles
+
+[ati2mtag_R7X.Coinstallers]
+AddReg=Coinstaller_AddReg
+CopyFiles=Coinstaller_CopyFiles
+
+[ati2mtag_RS780.Coinstallers]
+AddReg=Coinstaller_AddReg
+CopyFiles=Coinstaller_CopyFiles
+
+[ati2mtag_RS780D.Coinstallers]
+AddReg=Coinstaller_AddReg
+CopyFiles=Coinstaller_CopyFiles
+
+[ati2mtag_RS880.Coinstallers]
+AddReg=Coinstaller_AddReg
+CopyFiles=Coinstaller_CopyFiles
+
+[ati2mtag_RV610.Coinstallers]
+AddReg=Coinstaller_AddReg
+CopyFiles=Coinstaller_CopyFiles
+
+[ati2mtag_RV630.Coinstallers]
+AddReg=Coinstaller_AddReg
+CopyFiles=Coinstaller_CopyFiles
+
+[ati2mtag_RV7X.Coinstallers]
+AddReg=Coinstaller_AddReg
+CopyFiles=Coinstaller_CopyFiles
+
+[ati2mtag_Sumo_Desktop.Coinstallers]
+AddReg=Coinstaller_AddReg
+CopyFiles=Coinstaller_CopyFiles
+
+[ati2mtag_Sumo_Mobile.Coinstallers]
+AddReg=Coinstaller_AddReg
+CopyFiles=Coinstaller_CopyFiles
+
+[ati2mtag_Wrestler.Coinstallers]
+AddReg=Coinstaller_AddReg
+CopyFiles=Coinstaller_CopyFiles
+
+[Proxy_Service_Inst]
+ServiceType    = 1                  ; SERVICE_KERNEL_DRIVER
+StartType      = 3                  ; SERVICE_DEMAND_START
+ErrorControl   = 0                  ; SERVICE_ERROR_IGNORE
+LoadOrderGroup = Video
+ServiceBinary  = %12%\atikmpag.sys
+Delreg = Delreg_services
+;;;GENCOM_REMOVED
+
+[Proxy_Service_Inst_PX]
+ServiceType    = 1                  ; SERVICE_KERNEL_DRIVER
+StartType      = 3                  ; SERVICE_DEMAND_START
+ErrorControl   = 0                  ; SERVICE_ERROR_IGNORE
+LoadOrderGroup = Video
+ServiceBinary  = %12%\atikmpag.sys
+Delreg = Delreg_services
+AddReg = Addreg_PX_Services
+;;;GENCOM_REMOVED
+
+[AMD_Service_Inst_Evergreen]
+AddReg = ati2mtag_SoftwareDeviceSettings
+AddReg = ati2mtag_Evergreen_SoftwareDeviceSettings
+AddReg = ati2mtag_Desktop_SoftwareDeviceSettings
+AddReg = ati2mtag_ProxySettings_DX10
+AddReg = ati2mtag_ProxySettings_DX10_PXAA
+AddReg = ati2mtag_Proxy
+AddReg = ati2mtag_DX11
+DelReg = ati2mtag_RemoveDeviceSettings
+ServiceType    = 1                  ; SERVICE_KERNEL_DRIVER
+StartType      = 3                  ; SERVICE_DEMAND_START
+ErrorControl   = 0                  ; SERVICE_ERROR_IGNORE
+LoadOrderGroup = Video
+ServiceBinary  = %12%\atikmdag.sys
+
+[AMD_Service_Inst_M76]
+AddReg = ati2mtag_SoftwareDeviceSettings
+AddReg = ati2mtag_M76_SoftwareDeviceSettings
+AddReg = ati2mtag_R6x_SoftwareDeviceSettings
+AddReg = ati2mtag_ProxySettings_DX10
+AddReg = ati2mtag_ProxySettings_DX10_PXAA
+AddReg = ati2mtag_Mobile_SoftwareDeviceSettings
+AddReg = ati2mtag_Mobile_PX_SoftwareDeviceSettings
+AddReg = ati2mtag_Mobile_PXAA_SoftwareDeviceSettings
+AddReg = ati2mtag_DX10
+DelReg = ati2mtag_RemoveDeviceSettings
+ServiceType    = 1                  ; SERVICE_KERNEL_DRIVER
+StartType      = 3                  ; SERVICE_DEMAND_START
+ErrorControl   = 0                  ; SERVICE_ERROR_IGNORE
+LoadOrderGroup = Video
+ServiceBinary  = %12%\atikmdag.sys
+
+[AMD_Service_Inst_M9x]
+AddReg = ati2mtag_SoftwareDeviceSettings
+AddReg = ati2mtag_M9x_SoftwareDeviceSettings
+AddReg = ati2mtag_MultiUVD_SoftwareDeviceSettings
+AddReg = ati2mtag_Mobile_SoftwareDeviceSettings
+AddReg = ati2mtag_Mobile_PX_SoftwareDeviceSettings
+AddReg = ati2mtag_Mobile_PXAA_SoftwareDeviceSettings
+AddReg = ati2mtag_ProxySettings_DX10
+AddReg = ati2mtag_ProxySettings_DX10_PXAA
+AddReg = ati2mtag_M9x_PX
+AddReg = ati2mtag_PXAA
+AddReg = ati2mtag_DX10
+DelReg = ati2mtag_RemoveDeviceSettings
+ServiceType    = 1                  ; SERVICE_KERNEL_DRIVER
+StartType      = 3                  ; SERVICE_DEMAND_START
+ErrorControl   = 0                  ; SERVICE_ERROR_IGNORE
+LoadOrderGroup = Video
+ServiceBinary  = %12%\atikmdag.sys
+
+[AMD_Service_Inst_M9x8]
+AddReg = ati2mtag_SoftwareDeviceSettings
+AddReg = ati2mtag_M9x_SoftwareDeviceSettings
+AddReg = ati2mtag_Mobile_SoftwareDeviceSettings
+AddReg = ati2mtag_Mobile_PX_SoftwareDeviceSettings
+AddReg = ati2mtag_Mobile_PXAA_SoftwareDeviceSettings
+AddReg = ati2mtag_ProxySettings_DX10
+AddReg = ati2mtag_ProxySettings_DX10_PXAA
+AddReg = ati2mtag_PXAA
+AddReg = ati2mtag_M9x_PX
+AddReg = ati2mtag_DX10
+DelReg = ati2mtag_RemoveDeviceSettings
+ServiceType    = 1                  ; SERVICE_KERNEL_DRIVER
+StartType      = 3                  ; SERVICE_DEMAND_START
+ErrorControl   = 0                  ; SERVICE_ERROR_IGNORE
+LoadOrderGroup = Video
+ServiceBinary  = %12%\atikmdag.sys
+
+[AMD_Service_Inst_Manhattan]
+AddReg = ati2mtag_SoftwareDeviceSettings
+AddReg = ati2mtag_Manhattan_SoftwareDeviceSettings
+AddReg = ati2mtag_MultiUVD_SoftwareDeviceSettings
+AddReg = ati2mtag_Mobile_SoftwareDeviceSettings
+AddReg = ati2mtag_Mobile_PX_SoftwareDeviceSettings
+AddReg = ati2mtag_Mobile_PXAA_SoftwareDeviceSettings
+AddReg = ati2mtag_ProxySettings_DX10
+AddReg = ati2mtag_ProxySettings_DX10_PXAA
+AddReg = ati2mtag_PXAA
+AddReg = ati2mtag_Manhattan_PX
+AddReg = ati2mtag_DX11
+DelReg = ati2mtag_RemoveDeviceSettings
+ServiceType    = 1                  ; SERVICE_KERNEL_DRIVER
+StartType      = 3                  ; SERVICE_DEMAND_START
+ErrorControl   = 0                  ; SERVICE_ERROR_IGNORE
+LoadOrderGroup = Video
+ServiceBinary  = %12%\atikmdag.sys
+
+[AMD_Service_Inst_NI]
+AddReg = ati2mtag_SoftwareDeviceSettings
+AddReg = ati2mtag_NI_SoftwareDeviceSettings
+AddReg = ati2mtag_Desktop_SoftwareDeviceSettings
+AddReg = ati2mtag_ProxySettings_DX10
+AddReg = ati2mtag_ProxySettings_DX10_PXAA
+AddReg = ati2mtag_Proxy
+AddReg = ati2mtag_DX11
+DelReg = ati2mtag_RemoveDeviceSettings
+ServiceType    = 1                  ; SERVICE_KERNEL_DRIVER
+StartType      = 3                  ; SERVICE_DEMAND_START
+ErrorControl   = 0                  ; SERVICE_ERROR_IGNORE
+LoadOrderGroup = Video
+ServiceBinary  = %12%\atikmdag.sys
+
+[AMD_Service_Inst_NICayman]
+AddReg = ati2mtag_SoftwareDeviceSettings
+AddReg = ati2mtag_NI_SoftwareDeviceSettings
+AddReg = ati2mtag_NICayman_SoftwareDeviceSettings
+AddReg = ati2mtag_Desktop_SoftwareDeviceSettings
+AddReg = ati2mtag_ProxySettings_DX10
+AddReg = ati2mtag_ProxySettings_DX10_PXAA
+AddReg = ati2mtag_Proxy
+AddReg = ati2mtag_DX11
+DelReg = ati2mtag_RemoveDeviceSettings
+ServiceType    = 1                  ; SERVICE_KERNEL_DRIVER
+StartType      = 3                  ; SERVICE_DEMAND_START
+ErrorControl   = 0                  ; SERVICE_ERROR_IGNORE
+LoadOrderGroup = Video
+ServiceBinary  = %12%\atikmdag.sys
+
+[AMD_Service_Inst_R600]
+AddReg = ati2mtag_SoftwareDeviceSettings
+AddReg = ati2mtag_R600_SoftwareDeviceSettings
+AddReg = ati2mtag_R6x_SoftwareDeviceSettings
+AddReg = ati2mtag_Desktop_SoftwareDeviceSettings
+AddReg = ati2mtag_ProxySettings_DX10
+AddReg = ati2mtag_ProxySettings_DX10_PXAA
+AddReg = ati2mtag_Proxy
+AddReg = ati2mtag_DX10
+DelReg = ati2mtag_RemoveDeviceSettings
+ServiceType    = 1                  ; SERVICE_KERNEL_DRIVER
+StartType      = 3                  ; SERVICE_DEMAND_START
+ErrorControl   = 0                  ; SERVICE_ERROR_IGNORE
+LoadOrderGroup = Video
+ServiceBinary  = %12%\atikmdag.sys
+
+[AMD_Service_Inst_R7X]
+AddReg = ati2mtag_SoftwareDeviceSettings
+AddReg = ati2mtag_R7x_SoftwareDeviceSettings
+AddReg = ati2mtag_DX
+AddReg = ati2mtag_Desktop_SoftwareDeviceSettings
+AddReg = ati2mtag_ProxySettings_DX10
+AddReg = ati2mtag_ProxySettings_DX10_PXAA
+AddReg = ati2mtag_Proxy
+AddReg = ati2mtag_DX10
+DelReg = ati2mtag_RemoveDeviceSettings
+ServiceType    = 1                  ; SERVICE_KERNEL_DRIVER
+StartType      = 3                  ; SERVICE_DEMAND_START
+ErrorControl   = 0                  ; SERVICE_ERROR_IGNORE
+LoadOrderGroup = Video
+ServiceBinary  = %12%\atikmdag.sys
+
+[AMD_Service_Inst_RS780]
+AddReg = ati2mtag_SoftwareDeviceSettings
+AddReg = ati2mtag_RS780_SoftwareDeviceSettings
+AddReg = ati2mtag_Desktop_SoftwareDeviceSettings
+AddReg = ati2mtag_ProxySettings_DX10
+AddReg = ati2mtag_ProxySettings_DX10_PXAA
+AddReg = ati2mtag_Proxy
+AddReg = ati2mtag_DX10
+DelReg = ati2mtag_RemoveDeviceSettings
+ServiceType    = 1                  ; SERVICE_KERNEL_DRIVER
+StartType      = 3                  ; SERVICE_DEMAND_START
+ErrorControl   = 0                  ; SERVICE_ERROR_IGNORE
+LoadOrderGroup = Video
+ServiceBinary  = %12%\atikmdag.sys
+
+[AMD_Service_Inst_RS780D]
+AddReg = ati2mtag_SoftwareDeviceSettings
+AddReg = ati2mtag_RS780_SoftwareDeviceSettings
+AddReg = ati2mtag_RS780D_SoftwareDeviceSettings
+AddReg = ati2mtag_Desktop_SoftwareDeviceSettings
+AddReg = ati2mtag_ProxySettings_DX10
+AddReg = ati2mtag_ProxySettings_DX10_PXAA
+AddReg = ati2mtag_Proxy
+AddReg = ati2mtag_DX10
+DelReg = ati2mtag_RemoveDeviceSettings
+ServiceType    = 1                  ; SERVICE_KERNEL_DRIVER
+StartType      = 3                  ; SERVICE_DEMAND_START
+ErrorControl   = 0                  ; SERVICE_ERROR_IGNORE
+LoadOrderGroup = Video
+ServiceBinary  = %12%\atikmdag.sys
+
+[AMD_Service_Inst_RS880]
+AddReg = ati2mtag_SoftwareDeviceSettings
+AddReg = ati2mtag_RS880_SoftwareDeviceSettings
+AddReg = ati2mtag_Desktop_SoftwareDeviceSettings
+AddReg = ati2mtag_ProxySettings_DX10
+AddReg = ati2mtag_ProxySettings_DX10_PXAA
+AddReg = ati2mtag_Proxy
+AddReg = ati2mtag_DX11
+DelReg = ati2mtag_RemoveDeviceSettings
+ServiceType    = 1                  ; SERVICE_KERNEL_DRIVER
+StartType      = 3                  ; SERVICE_DEMAND_START
+ErrorControl   = 0                  ; SERVICE_ERROR_IGNORE
+LoadOrderGroup = Video
+ServiceBinary  = %12%\atikmdag.sys
+
+[AMD_Service_Inst_RV610]
+AddReg = ati2mtag_SoftwareDeviceSettings
+AddReg = ati2mtag_RV610_SoftwareDeviceSettings
+AddReg = ati2mtag_R6x_SoftwareDeviceSettings
+AddReg = ati2mtag_Desktop_SoftwareDeviceSettings
+AddReg = ati2mtag_ProxySettings_DX10
+AddReg = ati2mtag_ProxySettings_DX10_PXAA
+AddReg = ati2mtag_Proxy
+AddReg = ati2mtag_DX10
+DelReg = ati2mtag_RemoveDeviceSettings
+ServiceType    = 1                  ; SERVICE_KERNEL_DRIVER
+StartType      = 3                  ; SERVICE_DEMAND_START
+ErrorControl   = 0                  ; SERVICE_ERROR_IGNORE
+LoadOrderGroup = Video
+ServiceBinary  = %12%\atikmdag.sys
+
+[AMD_Service_Inst_RV630]
+AddReg = ati2mtag_SoftwareDeviceSettings
+AddReg = ati2mtag_RV630_SoftwareDeviceSettings
+AddReg = ati2mtag_R6x_SoftwareDeviceSettings
+AddReg = ati2mtag_Desktop_SoftwareDeviceSettings
+AddReg = ati2mtag_ProxySettings_DX10
+AddReg = ati2mtag_ProxySettings_DX10_PXAA
+AddReg = ati2mtag_Proxy
+AddReg = ati2mtag_DX10
+DelReg = ati2mtag_RemoveDeviceSettings
+ServiceType    = 1                  ; SERVICE_KERNEL_DRIVER
+StartType      = 3                  ; SERVICE_DEMAND_START
+ErrorControl   = 0                  ; SERVICE_ERROR_IGNORE
+LoadOrderGroup = Video
+ServiceBinary  = %12%\atikmdag.sys
+
+[AMD_Service_Inst_RV7X]
+AddReg = ati2mtag_SoftwareDeviceSettings
+AddReg = ati2mtag_R7x_SoftwareDeviceSettings
+AddReg = ati2mtag_Desktop_SoftwareDeviceSettings
+AddReg = ati2mtag_ProxySettings_DX10
+AddReg = ati2mtag_ProxySettings_DX10_PXAA
+AddReg = ati2mtag_Proxy
+AddReg = ati2mtag_DX11
+DelReg = ati2mtag_RemoveDeviceSettings
+ServiceType    = 1                  ; SERVICE_KERNEL_DRIVER
+StartType      = 3                  ; SERVICE_DEMAND_START
+ErrorControl   = 0                  ; SERVICE_ERROR_IGNORE
+LoadOrderGroup = Video
+ServiceBinary  = %12%\atikmdag.sys
+
+[AMD_Service_Inst_Sumo_Desktop]
+AddReg = ati2mtag_SoftwareDeviceSettings
+AddReg = ati2mtag_Sumo_Desktop_SoftwareDeviceSettings
+AddReg = ati2mtag_Desktop_SoftwareDeviceSettings
+AddReg = ati2mtag_ProxySettings_DX10
+AddReg = ati2mtag_ProxySettings_DX10_PXAA
+AddReg = ati2mtag_Proxy
+AddReg = ati2mtag_DX11
+DelReg = ati2mtag_RemoveDeviceSettings
+ServiceType    = 1                  ; SERVICE_KERNEL_DRIVER
+StartType      = 3                  ; SERVICE_DEMAND_START
+ErrorControl   = 0                  ; SERVICE_ERROR_IGNORE
+LoadOrderGroup = Video
+ServiceBinary  = %12%\atikmdag.sys
+
+[AMD_Service_Inst_Sumo_Mobile]
+AddReg = ati2mtag_SoftwareDeviceSettings
+AddReg = ati2mtag_Sumo_Mobile_SoftwareDeviceSettings
+AddReg = ati2mtag_MultiUVD_SoftwareDeviceSettings
+AddReg = ati2mtag_Mobile_SoftwareDeviceSettings
+AddReg = ati2mtag_Mobile_PX_SoftwareDeviceSettings
+AddReg = ati2mtag_Mobile_PXAA_SoftwareDeviceSettings
+AddReg = ati2mtag_ProxySettings_DX10
+AddReg = ati2mtag_ProxySettings_DX10_PXAA
+AddReg = ati2mtag_PXAA
+AddReg = ati2mtag_Manhattan_PX
+AddReg = ati2mtag_DX11
+DelReg = ati2mtag_RemoveDeviceSettings
+ServiceType    = 1                  ; SERVICE_KERNEL_DRIVER
+StartType      = 3                  ; SERVICE_DEMAND_START
+ErrorControl   = 0                  ; SERVICE_ERROR_IGNORE
+LoadOrderGroup = Video
+ServiceBinary  = %12%\atikmdag.sys
+
+[AMD_Service_Inst_Wrestler]
+AddReg = ati2mtag_SoftwareDeviceSettings
+AddReg = ati2mtag_Wrestler_SoftwareDeviceSettings
+AddReg = ati2mtag_MultiUVD_SoftwareDeviceSettings
+AddReg = ati2mtag_Mobile_SoftwareDeviceSettings
+AddReg = ati2mtag_Mobile_PX_SoftwareDeviceSettings
+AddReg = ati2mtag_Mobile_PXAA_SoftwareDeviceSettings
+AddReg = ati2mtag_ProxySettings_DX10
+AddReg = ati2mtag_ProxySettings_DX10_PXAA
+AddReg = ati2mtag_PXAA
+AddReg = ati2mtag_Manhattan_PX
+AddReg = ati2mtag_DX11
+DelReg = ati2mtag_RemoveDeviceSettings
+ServiceType    = 1                  ; SERVICE_KERNEL_DRIVER
+StartType      = 3                  ; SERVICE_DEMAND_START
+ErrorControl   = 0                  ; SERVICE_ERROR_IGNORE
+LoadOrderGroup = Video
+ServiceBinary  = %12%\atikmdag.sys
+
+[R300_EventLog_Inst]
+AddReg = R300_EventLog_AddReg
+
+[R300_EventLog_AddReg]
+HKR,,EventMessageFile,0x00020000,"%SystemRoot%\System32\drivers\ati2erec.dll"
+HKR,,TypesSupported,0x00010001,7
+HKR,, CategoryMessageFile, 0x00020000, "%SystemRoot%\System32\drivers\ati2erec.dll"
+HKR,, CategoryCount, 0x00010001, 63
+
+[Ati2evxx_Generic_Service_Inst]
+ServiceType    = 0x10
+StartType      = 2
+ErrorControl   = 1
+ServiceBinary  = %11%\atiesrxx.exe
+LoadOrderGroup = Event log
+
+[Ati2evxx_EventLog_Inst]
+AddReg=Ati2evxx_EventLog_AddReg
+
+[Ati2evxx_EventLog_AddReg]
+HKR,, eRecordEnable,          %REG_DWORD%,    1
+HKR,, CategoryCount,          %REG_DWORD%,    0x3f
+HKR,, TypesSupported,          %REG_DWORD%,    0x7
+HKR,, CategoryMessageFile,     %REG_EXPAND_SZ%, "%%SystemRoot%%\System32\drivers\ati2erec.dll"
+HKR,, EventMessageFile,     %REG_EXPAND_SZ%, "%%SystemRoot%%\System32\drivers\ati2erec.dll"
+HKLM,"SOFTWARE\ATI Technologies",eRecordEnable,          %REG_DWORD%,    1
+HKR,,TypesSupported,0x00010001,7
+
+[ati2mtag_Evergreen.HW]
+AddReg = atikmdag_MSI_HardwareDeviceSettings
+
+[ati2mtag_EvergreenC.HW]
+AddReg = atikmdag_MSI_HardwareDeviceSettings
+
+[ati2mtag_EvergreenH.HW]
+AddReg = atikmdag_MSI_HardwareDeviceSettings
+
+[ati2mtag_M76.HW]
+AddReg = atikmdag_MSI_HardwareDeviceSettings
+
+[ati2mtag_M9x.HW]
+AddReg = atikmdag_MSI_HardwareDeviceSettings
+
+[ati2mtag_M9x8.HW]
+AddReg = atikmdag_MSI_HardwareDeviceSettings
+
+[ati2mtag_Manhattan.HW]
+AddReg = atikmdag_MSI_HardwareDeviceSettings
+
+[ati2mtag_ManhattanP.HW]
+AddReg = atikmdag_MSI_HardwareDeviceSettings
+
+[ati2mtag_NI.HW]
+AddReg = atikmdag_MSI_HardwareDeviceSettings
+
+[ati2mtag_NICayman.HW]
+AddReg = atikmdag_MSI_HardwareDeviceSettings
+
+[ati2mtag_R600.HW]
+AddReg = atikmdag_MSI_HardwareDeviceSettings
+
+[ati2mtag_R7X.HW]
+AddReg = atikmdag_MSI_HardwareDeviceSettings
+
+[ati2mtag_RS780.HW]
+AddReg = atikmdag_MSI_HardwareDeviceSettings
+
+[ati2mtag_RS780D.HW]
+AddReg = atikmdag_MSI_HardwareDeviceSettings
+
+[ati2mtag_RS880.HW]
+AddReg = atikmdag_MSI_HardwareDeviceSettings
+
+[ati2mtag_RV610.HW]
+AddReg = atikmdag_MSI_HardwareDeviceSettings
+
+[ati2mtag_RV630.HW]
+AddReg = atikmdag_MSI_HardwareDeviceSettings
+
+[ati2mtag_RV7X.HW]
+AddReg = atikmdag_MSI_HardwareDeviceSettings
+
+[ati2mtag_Sumo_Desktop.HW]
+AddReg = atikmdag_MSI_HardwareDeviceSettings
+
+[ati2mtag_Sumo_Mobile.HW]
+AddReg = atikmdag_MSI_HardwareDeviceSettings
+
+[ati2mtag_Wrestler.HW]
+AddReg = atikmdag_MSI_HardwareDeviceSettings
+
+[Coinstaller_AddReg]
+HKR,,CoInstallers32,%REG_MULTI_SZ%,"coinst.dll,CoInstallerEntry"
+
+[ati2mtag_DX]
+; OLD TO BE REMOVED!!!
+HKR,, UserModeDriverName,                   %REG_MULTI_SZ%, aticfx32.dll, aticfx32.dll
+HKR,, InstalledDisplayDrivers,              %REG_MULTI_SZ%, aticfx32, aticfx32, atiumdag, atidxx32, atiumdva
+
+[ati2mtag_DX10]
+HKR,, UserModeDriverName,                   %REG_MULTI_SZ%, aticfx32.dll, aticfx32.dll
+HKR,, InstalledDisplayDrivers,              %REG_MULTI_SZ%, aticfx32, aticfx32, atiumdag, atidxx32, atiumdva
+HKR,, ProxyLDA_Support, %REG_DWORD%, 2
+
+[ati2mtag_DX11]
+HKR,, UserModeDriverName,                   %REG_MULTI_SZ%, aticfx32.dll, aticfx32.dll, aticfx32.dll
+HKR,, InstalledDisplayDrivers,              %REG_MULTI_SZ%, aticfx32, aticfx32, aticfx32, atiumdag, atidxx32, atiumdva
+HKR,, ProxyLDA_Support, %REG_DWORD%, 2
+
+[ati2mtag_Desktop_SoftwareDeviceSettings]
+
+[ati2mtag_EvergreenGL_SoftwareDeviceSettings]
+HKR,, OGL_Specific_NA, %REG_SZ%, 1
+HKR,, 3to2Pulldown_NA, %REG_SZ%, 0
+HKR,, GI_NA, %REG_SZ%, 1
+HKR,, CatalystAI_NA, %REG_SZ%, 1
+HKR,, APISpecific_NA, %REG_SZ%, 1
+HKR,, TemporalAAMultiplier_NA, %REG_SZ%, 1
+HKR,, Main3D_NA, %REG_SZ%, 1
+HKR,, VPURecover_NA, %REG_SZ%, 1
+HKR,, SmartGart_NA, %REG_SZ%, 1
+
+[ati2mtag_Evergreen_SoftwareDeviceSettings]
+HKR,, GCOOPTION_DigitalCrtInfo,    %REG_BINARY%,   A3,38,61,C1,A3,38,61,B1
+HKR,, GCORULE_FlickerWA,             %REG_DWORD%, 1
+HKR,, SMOOTHVISION_NAME, %REG_SZ%, "SMOOTHVISION HD"
+HKR, "UMD",GI_DEF, %REG_SZ%, 1
+HKR, "UMD",AreaAniso_DEF, %REG_SZ%, 0
+HKR,, VIDEO_NAME_SUFFIX, %REG_SZ%, "Avivo(TM)"
+HKR,, SameOnAllUsingStandardInVideoTheaterCloneMode, %REG_SZ%, "1"
+HKR, "UMD",ASTT_DEF, %REG_SZ%, 0
+HKR, "UMD",ASD_DEF, %REG_SZ%, 1
+HKR,, 3to2Pulldown_NA, %REG_SZ%, 0
+HKR,, AreaAniso_NA, %REG_SZ%, "1"
+HKR,, GI_NA, %REG_SZ%, 1
+HKR,, AAF_NA, %REG_SZ%, 0
+HKR, "UMD", AAF_DEF, %REG_SZ%, 0
+HKR, "UMD", AAF_Value_SET, %REG_SZ%, "Box:0,Narrow-tent:1,Wide-tent:2,Edge-detect:3"
+HKR, "UMD", AAF_Mapping_SET, %REG_SZ%, "0(Box:2,Narrow-tent:4,Wide-tent:6,Edge-detect:12) 2(Box:2,Narrow-tent:4,Wide-tent:6) 4(Box:4,Narrow-tent:6,Wide-tent:8,Edge-detect:12) 8(Box:8,Narrow-tent:12,Wide-tent:16,Edge-detect:24) 16(Box:16,Narrow-tent:24,Wide-tent:32)"
+HKR, "UMD",ATMS_DEF, %REG_SZ%, 1
+HKR, "UMD",AAAMethod_DEF, %REG_SZ%, 0
+HKR,, TemporalAAMultiplier_NA, %REG_SZ%, "1"
+HKR,, Detail_NA, %REG_SZ%, "0"
+HKR,, Denoise_NA, %REG_SZ%, "0"
+HKR, "UMD\DXVA",3to2Pulldown, %REG_SZ%, "1"
+HKR, "UMD\DXVA",3to2Pulldown_DEF, %REG_SZ%, "1"
+HKR,, 3to2Pulldown_NA, %REG_SZ%, "0"
+HKR, "UMD\DXVA",DI_METHOD_DEF, %REG_SZ%, "-1"
+HKR, "UMD\DXVA",StaticGamma, %REG_SZ%, "100"
+HKR, "UMD\DXVA",StaticGamma_DEF, %REG_SZ%, "100"
+HKR,, ASTT_NA, %REG_SZ%, "1"
+HKR, "UMD",ASTT_DEF, %REG_SZ%, 0
+HKR, "UMD",ASD_DEF, %REG_SZ%, 0
+HKR, "UMD",ASE_DEF, %REG_SZ%, 0
+HKR,, DemoMode_NA, %REG_SZ%, "0"
+HKR,, SplitScreen_NA, %REG_SZ%, "0"
+HKR,, TheaterMode_NA, %REG_SZ%, 1
+HKR,, DemoMode_DEF, %REG_SZ%, "0"
+HKR,, StaticGamma_NA, %REG_SZ%, 0
+HKR,, Gamma_NA, %REG_SZ%, 1
+HKR,, DisableFBCSupport,      %REG_DWORD%,    1
+HKR,, EQAA_NA, %REG_SZ%, 1
+HKR, "UMD",MLF_DEF, %REG_SZ%, 0
+HKR,, MLF_NA, %REG_SZ%, 0
+HKR,, EnableUlps_NA, %REG_SZ%, 1
+HKR,, SurfaceFormatReplacements_NA, %REG_SZ%, 0
+HKR, "UMD",SurfaceFormatReplacements_DEF, %REG_SZ%, 1
+HKR,, TFQ_NA, %REG_SZ%, 0
+HKR, "UMD",TFQ_DEF, %REG_SZ%, 1
+HKR,, AntiAlias_NA, %REG_SZ%, 0
+HKR, "UMD\DXVA",CameraShake_NA, %REG_SZ%, "1"
+HKR,, DALNonStandardModesBCD1, %REG_BINARY%,12,80,08,00,00,00,00,00,13,60,07,68,00,00,00,59,13,60,07,68,00,00,00,60,13,60,10,24,00,00,00,60,13,60,10,24,00,00,00,75,13,60,10,24,00,00,00,85,13,66,07,68,00,00,00,60,13,66,07,68,00,00,00,60
+HKR,, DALNonStandardModesBCD2, %REG_BINARY%,14,00,10,50,00,00,00,59,14,00,10,50,00,00,00,60,14,40,09,00,00,00,00,60,16,00,09,00,00,00,00,60,16,00,09,00,00,00,00,75,16,00,09,00,00,00,00,85,16,00,09,00,00,00,01,00,16,00,09,00,00,00,01,20
+HKR,, DALNonStandardModesBCD3, %REG_BINARY%,16,00,09,00,00,00,01,60,20,48,15,36,00,00,00,72,20,48,15,36,00,00,00,80,12,80,07,68,00,00,00,00,12,80,09,60,00,00,00,00,16,00,12,00,00,00,00,70,17,92,13,44,00,00,00,00,18,00,14,40,00,00,00,00
+HKR,, DALNonStandardModesBCD4, %REG_BINARY%,18,56,13,92,00,00,00,00
+HKR,, Gxo50HzTimingSupport,          %REG_DWORD%,    1
+HKR,, CVRULE_ENABLEPALTIMINGSUPPORT,      %REG_DWORD%,    1
+HKR,, EnableCrossFireAutoLink,        %REG_DWORD%,    1
+HKR,, DFP_AddHDTVPixelFormats,      %REG_DWORD%,    3
+HKR,, Gxo24HzTimingSupport,          %REG_DWORD%,    1
+HKR,, GXOxvYCCSupport,      %REG_DWORD%,    1
+HKR, "UMD\DXVA",CmMode_XvYCC,               %REG_DWORD%,    1
+HKR,, GXOxvYCCSupport,      %REG_DWORD%,    1
+HKR, "UMD\DXVA",CmMode_XvYCC,               %REG_DWORD%,    1
+HKR, "UMD\DXVA",DynamicContrast_ENABLE_DEF, %REG_SZ%, "1"
+HKR,, EnableUlps,      %REG_DWORD%,    1
+HKR,, EnableCrossFireAutoLink,        %REG_DWORD%,    1
+HKR, "UMD\DXVA",MosquitoNoiseRemoval_DEF, %REG_SZ%, "50"
+HKR, "UMD\DXVA",MosquitoNoiseRemoval_ENABLE_DEF, %REG_SZ%, "1"
+HKR,, MosquitoNoiseRemoval_NA, %REG_SZ%, "0"
+HKR, "UMD\DXVA",Deblocking_DEF, %REG_SZ%, "50"
+HKR, "UMD\DXVA",Deblocking_ENABLE_DEF, %REG_SZ%, "1"
+HKR,, Deblocking_NA, %REG_SZ%, "0"
+HKR, "UMD",Main3D_DEF, %REG_SZ%, 3
+HKR, "UMD",AntiAlias_DEF, %REG_SZ%, 1
+HKR, "UMD",AntiAliasSamples_DEF, %REG_SZ%, 0
+HKR, "UMD",AnisoType_DEF, %REG_SZ%, 0
+HKR, "UMD",AnisoDegree_DEF, %REG_SZ%, 0
+HKR, "UMD",TextureOpt_DEF, %REG_SZ%, 0
+HKR, "UMD",TextureLod_DEF, %REG_SZ%, 0
+HKR, "UMD",TruformMode_DEF, %REG_SZ%, 0
+HKR, "UMD",VSyncControl_DEF, %REG_SZ%, 1
+HKR, "UMD",SwapEffect_DEF, %REG_SZ%, 0
+HKR, "UMD",TemporalAAMultiplier_DEF, %REG_SZ%, 0
+HKR, "UMD",ExportCompressedTex_DEF, %REG_SZ%, 1
+HKR, "UMD",PixelCenter_DEF, %REG_SZ%, 0
+HKR, "UMD",ForceZBufferDepth_DEF, %REG_SZ%, 0
+HKR, "UMD",EnableTripleBuffering_DEF, %REG_SZ%, 0
+HKR, "UMD",CatalystAI_DEF, %REG_SZ%, 1
+HKR,, ColourDesktopGamma_DEF, %REG_SZ%, "1.0 1.0 1.0"
+HKR,, ColourDesktopBrightness_DEF, %REG_SZ%, "0 0 0"
+HKR,, ColourDesktopContrast_DEF, %REG_SZ%, "1.0 1.0 1.0"
+HKR,, ColourFullscreenGamma_DEF, %REG_SZ%, "1.0 1.0 1.0"
+HKR,, ColourFullscreenBrightness_DEF, %REG_SZ%, "0 0 0"
+HKR,, ColourFullscreenContrast_DEF, %REG_SZ%, "1.0 1.0 1.0"
+HKR,, 3D_Refresh_Rate_Override_DEF, %REG_DWORD%, 0
+HKR,, Display_Detection_DEF, %REG_DWORD%, 0
+HKR,, Panning_Mode_DEF, %REG_DWORD%, 0
+HKR,, Force_TV_Detection_DEF, %REG_DWORD%, 0
+
+[ati2mtag_EvergreenC_SoftwareDeviceSettings]
+HKR,, Deblocking_NA, %REG_SZ%, 1
+HKR,, MosquitoNoiseRemoval_NA, %REG_SZ%, 1
+
+[ati2mtag_EvergreenH_SoftwareDeviceSettings]
+HKR,, AutoTuneSupport_NA, %REG_SZ%, 1
+
+[ati2mtag_FGL_SoftwareDeviceSettings]
+HKR,, DisableBlueLineStereoOverride,       %REG_DWORD%,    0
+
+[ati2mtag_M76_SoftwareDeviceSettings]
+HKR,, DALRULE_NOTVANDLCDONCRTC,             %REG_DWORD%,    1
+HKR,, WmAgpMaxIdleClk,			    %REG_DWORD%,    0x20
+HKR,, DisableIDCT,                          %REG_DWORD%,    0
+;;HKLM,"SOFTWARE\Microsoft\Windows\CurrentVersion\Run",ATIModeChange,,"Ati2mdxx.exe"
+HKR,, DALR6 CRT_MaxModeInfo,                  %REG_BINARY%,00,00,00,00,40,06,00,00,B0,04,00,00,00,00,00,00,3C,00,00,00
+HKR,, DisableFullAdapterInit,      %REG_DWORD%,    0
+HKR,, MemInitLatencyTimer,         %REG_DWORD%,    0x775771BF
+HKR,, GCORULE_FlickerWA,             %REG_DWORD%, 1
+HKR,, SMOOTHVISION_NAME, %REG_SZ%, "SMOOTHVISION HD"
+HKR, "UMD",GI_DEF, %REG_SZ%, 1
+HKR, "UMD",ASTT_DEF, %REG_SZ%, 0
+HKR, "UMD",AreaAniso_DEF, %REG_SZ%, 0
+HKR,, SameOnAllUsingStandardInVideoTheaterCloneMode, %REG_SZ%, "1"
+HKR,, 3to2Pulldown_NA, %REG_SZ%, 0
+HKR,, GI_NA, %REG_SZ%, 1
+HKR,, AreaAniso_NA, %REG_SZ%, "1"
+HKR,, VIDEO_NAME_SUFFIX, %REG_SZ%, "Avivo(TM)"
+HKR, "UMD",AntiAliasMapping_SET, %REG_SZ%, "0(0:0,1:0) 2(0:2,1:2) 4(0:4,1:4) 8(0:8,1:8,2:16)"
+HKR,, AAF_NA, %REG_SZ%, 0
+HKR, "UMD", AAF_DEF, %REG_SZ%, 0
+HKR, "UMD", AAF_Value_SET, %REG_SZ%, "Box:0,Narrow-tent:1,Wide-tent:2,Edge-detect:3"
+HKR, "UMD", AAF_Mapping_SET, %REG_SZ%, "0(Box:2,Narrow-tent:4,Wide-tent:6,Edge-detect:12) 2(Box:2,Narrow-tent:4,Wide-tent:6) 4(Box:4,Narrow-tent:6,Wide-tent:8,Edge-detect:12) 8(Box:8,Narrow-tent:12,Wide-tent:16,Edge-detect:24) 16(Box:16,Narrow-tent:24,Wide-tent:32)"
+HKR,, FanSpeedRPMActual_NA, %REG_SZ%, 1
+HKR,, FanSpeedRPMTarget_NA, %REG_SZ%, 1
+HKR,, FanSpeedPercentActual_NA, %REG_SZ%, 1
+HKR,, FanSpeedPercentTarget_NA, %REG_SZ%, 1
+HKR,, DALNonStandardModesBCD1, %REG_BINARY%,08,00,04,80,00,00,00,60,10,24,06,00,00,00,00,60,12,80,07,68,00,00,00,60,14,00,10,50,00,00,00,60
+HKR,, DisableDualView,                 %REG_DWORD%,    0
+HKR,, DisableDualviewWithHotKey,    %REG_DWORD%,    1
+HKR,, TVDisableModes,   %REG_DWORD%,    0
+HKR,, DisableSWInterrupt,      		   %REG_DWORD%,    0
+HKR,, ExtEvent_BIOSEventByInterrupt,      %REG_DWORD%,    1
+HKR,, TVM6Flag,   %REG_DWORD%,    0
+HKR,, DfpUsePixSlip,                  %REG_DWORD%,    1
+HKR,, Gxo50HzTimingSupport,          %REG_DWORD%,    1
+HKR, "UMD\DXVA",DI_METHOD_DEF, %REG_SZ%, "-1"
+HKR,, RemovableSources,                      %REG_DWORD%,    2
+HKR,, EnableCrossFireAutoLink,        %REG_DWORD%,    1
+HKR, "UMD",Main3D_DEF, %REG_SZ%, 3
+HKR, "UMD",AntiAlias_DEF, %REG_SZ%, 1
+HKR, "UMD",AntiAliasSamples_DEF, %REG_SZ%, 0
+HKR, "UMD",AnisoType_DEF, %REG_SZ%, 0
+HKR, "UMD",AnisoDegree_DEF, %REG_SZ%, 0
+HKR, "UMD",TextureOpt_DEF, %REG_SZ%, 0
+HKR, "UMD",TextureLod_DEF, %REG_SZ%, 0
+HKR, "UMD",TruformMode_DEF, %REG_SZ%, 0
+HKR, "UMD",VSyncControl_DEF, %REG_SZ%, 1
+HKR, "UMD",SwapEffect_DEF, %REG_SZ%, 0
+HKR, "UMD",TemporalAAMultiplier_DEF, %REG_SZ%, 0
+HKR, "UMD",ExportCompressedTex_DEF, %REG_SZ%, 1
+HKR, "UMD",PixelCenter_DEF, %REG_SZ%, 0
+HKR, "UMD",ForceZBufferDepth_DEF, %REG_SZ%, 0
+HKR, "UMD",EnableTripleBuffering_DEF, %REG_SZ%, 0
+HKR, "UMD",CatalystAI_DEF, %REG_SZ%, 1
+HKR,, ColourDesktopGamma_DEF, %REG_SZ%, "1.0 1.0 1.0"
+HKR,, ColourDesktopBrightness_DEF, %REG_SZ%, "0 0 0"
+HKR,, ColourDesktopContrast_DEF, %REG_SZ%, "1.0 1.0 1.0"
+HKR,, ColourFullscreenGamma_DEF, %REG_SZ%, "1.0 1.0 1.0"
+HKR,, ColourFullscreenBrightness_DEF, %REG_SZ%, "0 0 0"
+HKR,, ColourFullscreenContrast_DEF, %REG_SZ%, "1.0 1.0 1.0"
+HKR,, 3D_Refresh_Rate_Override_DEF, %REG_DWORD%, 0
+HKR,, Display_Detection_DEF, %REG_DWORD%, 0
+HKR,, Panning_Mode_DEF, %REG_DWORD%, 0
+HKR,, Force_TV_Detection_DEF, %REG_DWORD%, 0
+
+[ati2mtag_M9x_SoftwareDeviceSettings]
+HKR,, DALRULE_NOTVANDLCDONCRTC,             %REG_DWORD%,    1
+HKR,, WmAgpMaxIdleClk,			    %REG_DWORD%,    0x20
+HKR,, DisableIDCT,                          %REG_DWORD%,    0
+;;HKLM,"SOFTWARE\Microsoft\Windows\CurrentVersion\Run",ATIModeChange,,"Ati2mdxx.exe"
+HKR,, DALR6 CRT_MaxModeInfo,                  %REG_BINARY%,00,00,00,00,40,06,00,00,B0,04,00,00,00,00,00,00,3C,00,00,00
+HKR,, DisableFullAdapterInit,      %REG_DWORD%,    0
+HKR,, MemInitLatencyTimer,         %REG_DWORD%,    0x775771BF
+HKR,, GCORULE_FlickerWA,             %REG_DWORD%, 1
+HKR,, SMOOTHVISION_NAME, %REG_SZ%, "SMOOTHVISION HD"
+HKR, "UMD",GI_DEF, %REG_SZ%, 1
+HKR, "UMD",ASTT_DEF, %REG_SZ%, 0
+HKR, "UMD",AreaAniso_DEF, %REG_SZ%, 0
+HKR,, SameOnAllUsingStandardInVideoTheaterCloneMode, %REG_SZ%, "1"
+HKR,, 3to2Pulldown_NA, %REG_SZ%, 0
+HKR,, GI_NA, %REG_SZ%, 1
+HKR,, AreaAniso_NA, %REG_SZ%, "1"
+HKR,, VIDEO_NAME_SUFFIX, %REG_SZ%, "Avivo(TM)"
+HKR,, AAF_NA, %REG_SZ%, 0
+HKR, "UMD", AAF_DEF, %REG_SZ%, 0
+HKR, "UMD", AAF_Value_SET, %REG_SZ%, "Box:0,Narrow-tent:1,Wide-tent:2,Edge-detect:3"
+HKR, "UMD", AAF_Mapping_SET, %REG_SZ%, "0(Box:2,Narrow-tent:4,Wide-tent:6,Edge-detect:12) 2(Box:2,Narrow-tent:4,Wide-tent:6) 4(Box:4,Narrow-tent:6,Wide-tent:8,Edge-detect:12) 8(Box:8,Narrow-tent:12,Wide-tent:16,Edge-detect:24) 16(Box:16,Narrow-tent:24,Wide-tent:32)"
+HKR,, TemporalAAMultiplier_NA, %REG_SZ%, "1"
+HKR, "UMD",AAAMethod_DEF, %REG_SZ%, 0
+HKR, "UMD",ATMS_DEF, %REG_SZ%, 1
+HKR, "UMD\DXVA",3to2Pulldown, %REG_SZ%, "1"
+HKR, "UMD\DXVA",3to2Pulldown_DEF, %REG_SZ%, "1"
+HKR,, Denoise_NA, %REG_SZ%, "0"
+HKR,, Detail_NA, %REG_SZ%, "0"
+HKR,, DynamicContrast_NA, %REG_SZ%, "0"
+HKR,, DemoMode_NA, %REG_SZ%, "0"
+HKR,, SplitScreen_NA, %REG_SZ%, "0"
+HKR,, DemoMode_DEF, %REG_SZ%, "0"
+HKR,, ASE_NA, %REG_SZ%, "1"
+HKR,, Gamma_NA, %REG_SZ%, "1"
+HKR,, DemoMode_NA, %REG_SZ%, "0"
+HKR,, EQAA_NA, %REG_SZ%, 1
+HKR,, MLF_NA, %REG_SZ%, 1
+HKR,, EnableUlps_NA, %REG_SZ%, 1
+HKR,, SurfaceFormatReplacements_NA, %REG_SZ%, 1
+HKR,, TFQ_NA, %REG_SZ%, 1
+HKR,, AntiAlias_NA, %REG_SZ%, 0
+HKR,, DALNonStandardModesBCD1, %REG_BINARY%,08,00,04,80,00,00,00,60,10,24,06,00,00,00,00,60,12,80,07,68,00,00,00,60,14,00,10,50,00,00,00,60
+HKR,, DisableDualView,                 %REG_DWORD%,    0
+HKR,, DisableDualviewWithHotKey,    %REG_DWORD%,    1
+HKR,, TVDisableModes,   %REG_DWORD%,    0
+HKR,, DisableSWInterrupt,      		   %REG_DWORD%,    0
+HKR,, ExtEvent_BIOSEventByInterrupt,      %REG_DWORD%,    1
+HKR,, TVM6Flag,   %REG_DWORD%,    0
+HKR,, DfpUsePixSlip,                  %REG_DWORD%,    1
+HKR,, Gxo50HzTimingSupport,          %REG_DWORD%,    1
+HKR,, CVRULE_ENABLEPALTIMINGSUPPORT,      %REG_DWORD%,    1
+HKR,, EnableCrossFireAutoLink,        %REG_DWORD%,    1
+HKR,, DFP_AddHDTVPixelFormats,      %REG_DWORD%,    3
+HKR,, Gxo24HzTimingSupport,          %REG_DWORD%,    1
+HKR,, GXOxvYCCSupport,      %REG_DWORD%,    1
+HKR, "UMD\DXVA",CmMode_XvYCC,               %REG_DWORD%,    1
+HKR, "UMD\DXVA",DynamicContrast_ENABLE_DEF, %REG_SZ%, "1"
+HKR, "UMD\DXVA",DI_METHOD_DEF, %REG_SZ%, "-1"
+HKR,, EnableUlps,      %REG_DWORD%,    0
+HKR,, RemovableSources,                      %REG_DWORD%,    2
+HKR,, EnableCrossFireAutoLink,        %REG_DWORD%,    1
+HKR, "UMD\DXVA",InternetVideo_DEF, %REG_SZ%, "0"
+HKR, "UMD\DXVA",Fleshtone_DEF, %REG_SZ%, "50"
+HKR, "UMD\DXVA",Fleshtone_ENABLE_DEF, %REG_SZ%, "1"
+HKR, "UMD\DXVA",DynamicContrast_ENABLE_DEF, %REG_SZ%, "1"
+HKR, "UMD",Main3D_DEF, %REG_SZ%, 3
+HKR, "UMD",AntiAlias_DEF, %REG_SZ%, 1
+HKR, "UMD",AntiAliasSamples_DEF, %REG_SZ%, 0
+HKR, "UMD",AnisoType_DEF, %REG_SZ%, 0
+HKR, "UMD",AnisoDegree_DEF, %REG_SZ%, 0
+HKR, "UMD",TextureOpt_DEF, %REG_SZ%, 0
+HKR, "UMD",TextureLod_DEF, %REG_SZ%, 0
+HKR, "UMD",TruformMode_DEF, %REG_SZ%, 0
+HKR, "UMD",VSyncControl_DEF, %REG_SZ%, 1
+HKR, "UMD",SwapEffect_DEF, %REG_SZ%, 0
+HKR, "UMD",TemporalAAMultiplier_DEF, %REG_SZ%, 0
+HKR, "UMD",ExportCompressedTex_DEF, %REG_SZ%, 1
+HKR, "UMD",PixelCenter_DEF, %REG_SZ%, 0
+HKR, "UMD",ForceZBufferDepth_DEF, %REG_SZ%, 0
+HKR, "UMD",EnableTripleBuffering_DEF, %REG_SZ%, 0
+HKR, "UMD",CatalystAI_DEF, %REG_SZ%, 1
+HKR,, ColourDesktopGamma_DEF, %REG_SZ%, "1.0 1.0 1.0"
+HKR,, ColourDesktopBrightness_DEF, %REG_SZ%, "0 0 0"
+HKR,, ColourDesktopContrast_DEF, %REG_SZ%, "1.0 1.0 1.0"
+HKR,, ColourFullscreenGamma_DEF, %REG_SZ%, "1.0 1.0 1.0"
+HKR,, ColourFullscreenBrightness_DEF, %REG_SZ%, "0 0 0"
+HKR,, ColourFullscreenContrast_DEF, %REG_SZ%, "1.0 1.0 1.0"
+HKR,, 3D_Refresh_Rate_Override_DEF, %REG_DWORD%, 0
+HKR,, Display_Detection_DEF, %REG_DWORD%, 0
+HKR,, Panning_Mode_DEF, %REG_DWORD%, 0
+HKR,, Force_TV_Detection_DEF, %REG_DWORD%, 0
+
+[ati2mtag_Manhattan_SoftwareDeviceSettings]
+HKR,, DALRULE_NOTVANDLCDONCRTC,             %REG_DWORD%,    1
+HKR,, WmAgpMaxIdleClk,			    %REG_DWORD%,    0x20
+HKR,, DisableIDCT,                          %REG_DWORD%,    0
+;;HKLM,"SOFTWARE\Microsoft\Windows\CurrentVersion\Run",ATIModeChange,,"Ati2mdxx.exe"
+HKR,, DALR6 CRT_MaxModeInfo,                  %REG_BINARY%,00,00,00,00,40,06,00,00,B0,04,00,00,00,00,00,00,3C,00,00,00
+HKR,, DisableFullAdapterInit,      %REG_DWORD%,    0
+HKR,, MemInitLatencyTimer,         %REG_DWORD%,    0x775771BF
+HKR,, GCORULE_FlickerWA,             %REG_DWORD%, 1
+HKR,, SMOOTHVISION_NAME, %REG_SZ%, "SMOOTHVISION HD"
+HKR, "UMD",GI_DEF, %REG_SZ%, 1
+HKR, "UMD",ASTT_DEF, %REG_SZ%, 0
+HKR, "UMD",AreaAniso_DEF, %REG_SZ%, 0
+HKR,, SameOnAllUsingStandardInVideoTheaterCloneMode, %REG_SZ%, "1"
+HKR,, 3to2Pulldown_NA, %REG_SZ%, 0
+HKR,, GI_NA, %REG_SZ%, 1
+HKR,, AreaAniso_NA, %REG_SZ%, "1"
+HKR,, VIDEO_NAME_SUFFIX, %REG_SZ%, "Avivo(TM)"
+HKR,, AAF_NA, %REG_SZ%, 0
+HKR, "UMD", AAF_DEF, %REG_SZ%, 0
+HKR, "UMD", AAF_Value_SET, %REG_SZ%, "Box:0,Narrow-tent:1,Wide-tent:2,Edge-detect:3"
+HKR, "UMD", AAF_Mapping_SET, %REG_SZ%, "0(Box:2,Narrow-tent:4,Wide-tent:6,Edge-detect:12) 2(Box:2,Narrow-tent:4,Wide-tent:6) 4(Box:4,Narrow-tent:6,Wide-tent:8,Edge-detect:12) 8(Box:8,Narrow-tent:12,Wide-tent:16,Edge-detect:24) 16(Box:16,Narrow-tent:24,Wide-tent:32)"
+HKR,, TemporalAAMultiplier_NA, %REG_SZ%, "1"
+HKR, "UMD",AAAMethod_DEF, %REG_SZ%, 0
+HKR, "UMD",ATMS_DEF, %REG_SZ%, 1
+HKR, "UMD\DXVA",3to2Pulldown, %REG_SZ%, "1"
+HKR, "UMD\DXVA",3to2Pulldown_DEF, %REG_SZ%, "1"
+HKR,, Denoise_NA, %REG_SZ%, "0"
+HKR,, Detail_NA, %REG_SZ%, "0"
+HKR,, DynamicContrast_NA, %REG_SZ%, "0"
+HKR, "UMD\DXVA",StaticGamma, %REG_SZ%, "100"
+HKR, "UMD\DXVA",StaticGamma_DEF, %REG_SZ%, "100"
+HKR,, ASTT_NA, %REG_SZ%, "1"
+HKR, "UMD",ASTT_DEF, %REG_SZ%, 0
+HKR, "UMD",ASD_DEF, %REG_SZ%, 0
+HKR, "UMD",ASE_DEF, %REG_SZ%, 0
+HKR,, DemoMode_NA, %REG_SZ%, "0"
+HKR,, SplitScreen_NA, %REG_SZ%, "0"
+HKR,, TheaterMode_NA, %REG_SZ%, 1
+HKR,, DemoMode_DEF, %REG_SZ%, "0"
+HKR,, DisableFBCSupport,      %REG_DWORD%,    1
+HKR,, StaticGamma_NA, %REG_SZ%, 0
+HKR,, Gamma_NA, %REG_SZ%, 1
+HKR,, EQAA_NA, %REG_SZ%, 1
+HKR,, MLF_NA, %REG_SZ%, 1
+HKR,, EnableUlps_NA, %REG_SZ%, 1
+HKR,, SurfaceFormatReplacements_NA, %REG_SZ%, 1
+HKR,, TFQ_NA, %REG_SZ%, 1
+HKR,, AntiAlias_NA, %REG_SZ%, 0
+HKR, "UMD\DXVA",CameraShake_NA, %REG_SZ%, "1"
+HKR,, DALNonStandardModesBCD1, %REG_BINARY%,08,00,04,80,00,00,00,60,10,24,06,00,00,00,00,60,12,80,07,68,00,00,00,60,14,00,10,50,00,00,00,60
+HKR,, DisableDualView,                 %REG_DWORD%,    0
+HKR,, DisableDualviewWithHotKey,    %REG_DWORD%,    1
+HKR,, TVDisableModes,   %REG_DWORD%,    0
+HKR,, DisableSWInterrupt,      		   %REG_DWORD%,    0
+HKR,, ExtEvent_BIOSEventByInterrupt,      %REG_DWORD%,    1
+HKR,, TVM6Flag,   %REG_DWORD%,    0
+HKR,, DfpUsePixSlip,                  %REG_DWORD%,    1
+HKR,, Gxo50HzTimingSupport,          %REG_DWORD%,    1
+HKR,, CVRULE_ENABLEPALTIMINGSUPPORT,      %REG_DWORD%,    1
+HKR,, EnableCrossFireAutoLink,        %REG_DWORD%,    1
+HKR,, DFP_AddHDTVPixelFormats,      %REG_DWORD%,    3
+HKR,, Gxo24HzTimingSupport,          %REG_DWORD%,    1
+HKR,, GXOxvYCCSupport,      %REG_DWORD%,    1
+HKR, "UMD\DXVA",CmMode_XvYCC,               %REG_DWORD%,    1
+HKR, "UMD\DXVA",DynamicContrast_ENABLE_DEF, %REG_SZ%, "1"
+HKR, "UMD\DXVA",DI_METHOD_DEF, %REG_SZ%, "-1"
+HKR,, EnableUlps,      %REG_DWORD%,    1
+HKR,, EnableCrossFireAutoLink,        %REG_DWORD%,    1
+HKR, "UMD\DXVA",MosquitoNoiseRemoval_DEF, %REG_SZ%, "50"
+HKR, "UMD\DXVA",MosquitoNoiseRemoval_ENABLE_DEF, %REG_SZ%, "1"
+HKR,, MosquitoNoiseRemoval_NA, %REG_SZ%, "0"
+HKR, "UMD\DXVA",Deblocking_DEF, %REG_SZ%, "50"
+HKR, "UMD\DXVA",Deblocking_ENABLE_DEF, %REG_SZ%, "1"
+HKR,, Deblocking_NA, %REG_SZ%, "0"
+HKR, "UMD",Main3D_DEF, %REG_SZ%, 3
+HKR, "UMD",AntiAlias_DEF, %REG_SZ%, 1
+HKR, "UMD",AntiAliasSamples_DEF, %REG_SZ%, 0
+HKR, "UMD",AnisoType_DEF, %REG_SZ%, 0
+HKR, "UMD",AnisoDegree_DEF, %REG_SZ%, 0
+HKR, "UMD",TextureOpt_DEF, %REG_SZ%, 0
+HKR, "UMD",TextureLod_DEF, %REG_SZ%, 0
+HKR, "UMD",TruformMode_DEF, %REG_SZ%, 0
+HKR, "UMD",VSyncControl_DEF, %REG_SZ%, 1
+HKR, "UMD",SwapEffect_DEF, %REG_SZ%, 0
+HKR, "UMD",TemporalAAMultiplier_DEF, %REG_SZ%, 0
+HKR, "UMD",ExportCompressedTex_DEF, %REG_SZ%, 1
+HKR, "UMD",PixelCenter_DEF, %REG_SZ%, 0
+HKR, "UMD",ForceZBufferDepth_DEF, %REG_SZ%, 0
+HKR, "UMD",EnableTripleBuffering_DEF, %REG_SZ%, 0
+HKR, "UMD",CatalystAI_DEF, %REG_SZ%, 1
+HKR,, ColourDesktopGamma_DEF, %REG_SZ%, "1.0 1.0 1.0"
+HKR,, ColourDesktopBrightness_DEF, %REG_SZ%, "0 0 0"
+HKR,, ColourDesktopContrast_DEF, %REG_SZ%, "1.0 1.0 1.0"
+HKR,, ColourFullscreenGamma_DEF, %REG_SZ%, "1.0 1.0 1.0"
+HKR,, ColourFullscreenBrightness_DEF, %REG_SZ%, "0 0 0"
+HKR,, ColourFullscreenContrast_DEF, %REG_SZ%, "1.0 1.0 1.0"
+HKR,, 3D_Refresh_Rate_Override_DEF, %REG_DWORD%, 0
+HKR,, Display_Detection_DEF, %REG_DWORD%, 0
+HKR,, Panning_Mode_DEF, %REG_DWORD%, 0
+HKR,, Force_TV_Detection_DEF, %REG_DWORD%, 0
+
+[ati2mtag_ManhattanP_SoftwareDeviceSettings]
+HKR,, Deblocking_NA, %REG_SZ%, 1
+HKR,, MosquitoNoiseRemoval_NA, %REG_SZ%, 1
+
+[ati2mtag_NI_SoftwareDeviceSettings]
+HKR,, GCOOPTION_DigitalCrtInfo,    %REG_BINARY%,   A3,38,61,C1,A3,38,61,B1
+HKR,, GCORULE_FlickerWA,             %REG_DWORD%, 1
+HKR,, SMOOTHVISION_NAME, %REG_SZ%, ""
+HKR, "UMD",GI_DEF, %REG_SZ%, 1
+HKR, "UMD",AreaAniso_DEF, %REG_SZ%, 0
+HKR,, VIDEO_NAME_SUFFIX, %REG_SZ%, "Avivo(TM)"
+HKR,, SameOnAllUsingStandardInVideoTheaterCloneMode, %REG_SZ%, "1"
+HKR, "UMD",ASTT_DEF, %REG_SZ%, 0
+HKR, "UMD",ASD_DEF, %REG_SZ%, 1
+HKR,, 3to2Pulldown_NA, %REG_SZ%, 0
+HKR,, AreaAniso_NA, %REG_SZ%, "1"
+HKR,, GI_NA, %REG_SZ%, 1
+HKR,, AAF_NA, %REG_SZ%, 0
+HKR, "UMD", AAF_DEF, %REG_SZ%, 0
+HKR, "UMD",AAF_Value_SET,%REG_SZ%, "Standard:0,Edge-detect:3"
+HKR, "UMD",AAF_Mapping_SET,%REG_SZ%, "0(Standard:2,Edge-detect:12) 2(Standard:2) 4(Standard:4,Edge-detect:12) 8(Standard:8,Edge-detect:24) 16(Standard:16)"
+HKR, "UMD",ATMS_DEF, %REG_SZ%, 1
+HKR, "UMD",AAAMethod_DEF, %REG_SZ%, 0
+HKR,, TemporalAAMultiplier_NA, %REG_SZ%, "1"
+HKR,, Detail_NA, %REG_SZ%, "0"
+HKR,, Denoise_NA, %REG_SZ%, "0"
+HKR, "UMD\DXVA",3to2Pulldown, %REG_SZ%, "1"
+HKR, "UMD\DXVA",3to2Pulldown_DEF, %REG_SZ%, "1"
+HKR,, 3to2Pulldown_NA, %REG_SZ%, "0"
+HKR, "UMD\DXVA",DI_METHOD_DEF, %REG_SZ%, "-1"
+HKR, "UMD\DXVA",StaticGamma, %REG_SZ%, "100"
+HKR, "UMD\DXVA",StaticGamma_DEF, %REG_SZ%, "100"
+HKR,, ASTT_NA, %REG_SZ%, "1"
+HKR, "UMD",ASTT_DEF, %REG_SZ%, 0
+HKR, "UMD",ASD_DEF, %REG_SZ%, 0
+HKR, "UMD",ASE_DEF, %REG_SZ%, 0
+HKR,, DemoMode_NA, %REG_SZ%, "0"
+HKR,, SplitScreen_NA, %REG_SZ%, "0"
+HKR,, TheaterMode_NA, %REG_SZ%, 1
+HKR,, DemoMode_DEF, %REG_SZ%, "0"
+HKR,, StaticGamma_NA, %REG_SZ%, 0
+HKR,, Gamma_NA, %REG_SZ%, 1
+HKR,, DisableFBCSupport,      %REG_DWORD%,    1
+HKR,, EQAA_NA, %REG_SZ%, 1
+HKR,, MLF_NA, %REG_SZ%, 0
+HKR, "UMD",MLF_DEF, %REG_SZ%, 0
+HKR,, EnableUlps_NA, %REG_SZ%, 1
+HKR,, SurfaceFormatReplacements_NA, %REG_SZ%, 0
+HKR, "UMD",SurfaceFormatReplacements_DEF, %REG_SZ%, 1
+HKR,, TFQ_NA, %REG_SZ%, 0
+HKR, "UMD",TFQ_DEF, %REG_SZ%, 1
+HKR,, AntiAlias_NA, %REG_SZ%, 0
+HKR, "UMD",AntiAliasSamples_SET,%REG_SZ%, "0 2 4 8"
+HKR,, TextureLod_NA, %REG_SZ%, 1
+HKR, "UMD",AntiAlias_DEF, %REG_SZ%, 1
+HKR, "UMD",AntiAliasSamples_DEF, %REG_SZ%, 0
+HKR, "UMD",AntiAliasMapping_SET,%REG_SZ%, "0(0:0,1:0) 2(0:2,1:2) 4(0:4,1:4) 8(0:8,1:8,2:16)"
+HKR,, TestOnceRequest_NA, %REG_SZ%, 1
+HKR,, AutoTuneRequest_NA, %REG_SZ%, 1
+HKR,, DALNonStandardModesBCD1, %REG_BINARY%,12,80,08,00,00,00,00,00,13,60,07,68,00,00,00,60,13,60,10,24,00,00,00,60,13,60,10,24,00,00,00,75,13,60,10,24,00,00,00,85,13,66,07,68,00,00,00,60,13,66,07,68,00,00,00,60,14,00,10,50,00,00,00,59
+HKR,, DALNonStandardModesBCD2, %REG_BINARY%,14,00,10,50,00,00,00,60,14,40,09,00,00,00,00,60,16,00,09,00,00,00,00,60,16,00,09,00,00,00,00,75,16,00,09,00,00,00,00,85,16,00,09,00,00,00,01,00,16,00,09,00,00,00,01,20,16,00,09,00,00,00,01,60
+HKR,, DALNonStandardModesBCD3, %REG_BINARY%,20,48,15,36,00,00,00,72,20,48,15,36,00,00,00,80,12,80,07,68,00,00,00,00,12,80,09,60,00,00,00,00,16,00,12,00,00,00,00,70,17,92,13,44,00,00,00,00,18,00,14,40,00,00,00,00,18,56,13,92,00,00,00,00
+HKR,, Gxo50HzTimingSupport,          %REG_DWORD%,    1
+HKR,, CVRULE_ENABLEPALTIMINGSUPPORT,      %REG_DWORD%,    1
+HKR,, EnableCrossFireAutoLink,        %REG_DWORD%,    1
+HKR,, DFP_AddHDTVPixelFormats,      %REG_DWORD%,    3
+HKR,, Gxo24HzTimingSupport,          %REG_DWORD%,    1
+HKR,, GXOxvYCCSupport,      %REG_DWORD%,    1
+HKR, "UMD\DXVA",CmMode_XvYCC,               %REG_DWORD%,    1
+HKR,, GXOxvYCCSupport,      %REG_DWORD%,    1
+HKR, "UMD\DXVA",CmMode_XvYCC,               %REG_DWORD%,    1
+HKR, "UMD\DXVA",DynamicContrast_ENABLE_DEF, %REG_SZ%, "1"
+HKR,, EnableUlps,      %REG_DWORD%,    1
+HKR,, EnableCrossFireAutoLink,        %REG_DWORD%,    1
+HKR, "UMD\DXVA",MosquitoNoiseRemoval_DEF, %REG_SZ%, "50"
+HKR, "UMD\DXVA",MosquitoNoiseRemoval_ENABLE_DEF, %REG_SZ%, "1"
+HKR,, MosquitoNoiseRemoval_NA, %REG_SZ%, "0"
+HKR, "UMD\DXVA",Deblocking_DEF, %REG_SZ%, "50"
+HKR, "UMD\DXVA",Deblocking_ENABLE_DEF, %REG_SZ%, "1"
+HKR,, Deblocking_NA, %REG_SZ%, "0"
+HKR, "UMD\DXVA", CameraShake_ENABLE_DEF, %REG_SZ%, "0"
+HKR, "UMD\DXVA", CameraShakeStrength_DEF, %REG_SZ%, "1"
+HKR, "UMD\DXVA", CameraShakeDelay_DEF, %REG_SZ%, "1"
+HKR, "UMD\DXVA", CameraShakeZoom_DEF, %REG_SZ%, "95"
+HKR, "UMD",Main3D_DEF, %REG_SZ%, 3
+HKR, "UMD",AntiAlias_DEF, %REG_SZ%, 1
+HKR, "UMD",AntiAliasSamples_DEF, %REG_SZ%, 0
+HKR, "UMD",AnisoType_DEF, %REG_SZ%, 0
+HKR, "UMD",AnisoDegree_DEF, %REG_SZ%, 0
+HKR, "UMD",TextureOpt_DEF, %REG_SZ%, 0
+HKR, "UMD",TextureLod_DEF, %REG_SZ%, 0
+HKR, "UMD",TruformMode_DEF, %REG_SZ%, 0
+HKR, "UMD",VSyncControl_DEF, %REG_SZ%, 1
+HKR, "UMD",SwapEffect_DEF, %REG_SZ%, 0
+HKR, "UMD",TemporalAAMultiplier_DEF, %REG_SZ%, 0
+HKR, "UMD",ExportCompressedTex_DEF, %REG_SZ%, 1
+HKR, "UMD",PixelCenter_DEF, %REG_SZ%, 0
+HKR, "UMD",ForceZBufferDepth_DEF, %REG_SZ%, 0
+HKR, "UMD",EnableTripleBuffering_DEF, %REG_SZ%, 0
+HKR, "UMD",CatalystAI_DEF, %REG_SZ%, 1
+HKR,, ColourDesktopGamma_DEF, %REG_SZ%, "1.0 1.0 1.0"
+HKR,, ColourDesktopBrightness_DEF, %REG_SZ%, "0 0 0"
+HKR,, ColourDesktopContrast_DEF, %REG_SZ%, "1.0 1.0 1.0"
+HKR,, ColourFullscreenGamma_DEF, %REG_SZ%, "1.0 1.0 1.0"
+HKR,, ColourFullscreenBrightness_DEF, %REG_SZ%, "0 0 0"
+HKR,, ColourFullscreenContrast_DEF, %REG_SZ%, "1.0 1.0 1.0"
+HKR,, 3D_Refresh_Rate_Override_DEF, %REG_DWORD%, 0
+HKR,, Display_Detection_DEF, %REG_DWORD%, 0
+HKR,, Panning_Mode_DEF, %REG_DWORD%, 0
+HKR,, Force_TV_Detection_DEF, %REG_DWORD%, 0
+
+[ati2mtag_NICayman_SoftwareDeviceSettings]
+HKR,, EQAA_NA, %REG_SZ%, 0
+HKR, "UMD",EQAA_DEF, %REG_SZ%, 0
+HKR, "UMD",EQAAMapping_SET,%REG_SZ%, "0(0:0,1:0) 2(0:2,1:2) 4(0:4,1:4) 8(0:8,1:8,2:16)"
+
+[ati2mtag_Mobile_SoftwareDeviceSettings]
+HKLM,"Software\AMD\EEU",HKPreferenceUseCCD,          %REG_DWORD%,    0
+HKLM,"Software\AMD\EEU",AutomaticDisplayConfiguration,      %REG_DWORD%,    1
+HKR,, DALRULE_ENABLESHOWACSLIDER,                  %REG_DWORD%,    1
+HKR,, DALRULE_ENABLESHOWDCLOWSLIDER,                  %REG_DWORD%,    1
+HKR,, ExtEvent_EnableAutoDisplayConfig,      %REG_DWORD%,    1
+HKR,, DALOPTION_MinResBCD,  %REG_BINARY%, 00,00,00,00,00,00,00,60
+HKR,, UserMustConfirm,      %REG_DWORD%,    1
+HKR,, DisableBlueLineStereoOverride,       %REG_DWORD%,    0
+HKLM,"Software\AMD\EEU",SetLandscapeAsDefaultInCloneMode,          %REG_DWORD%,    1
+
+[ati2mtag_Mobile_PX_SoftwareDeviceSettings]
+HKR,, ACPI_HKUseCCD,    %REG_DWORD%,    1
+HKR,, PXACAdapter, %REG_DWORD%, 2
+HKR,, PXDCAdapter, %REG_DWORD%, 1
+
+[ati2mtag_Mobile_NONPX_SoftwareDeviceSettings]
+
+[ati2mtag_Mobile_PXAA_SoftwareDeviceSettings]
+HKR,, PX2HPDEnable,      %REG_DWORD%,    1
+HKR,, PX2HotkeySwitch,      %REG_DWORD%,    1
+HKR,, PX2EnableConnectivityAPI,      %REG_DWORD%,    1
+HKR,, PXUseAPLForSwitch,             %REG_DWORD%, 1
+HKR,, PXReducePopUps,             %REG_DWORD%, 1
+
+[ati2mtag_MultiUVD_SoftwareDeviceSettings]
+HKR,, PP_DisableMultiUVDStates,      %REG_DWORD%,    0
+
+[ati2mtag_R600_SoftwareDeviceSettings]
+HKR,, DisableFullAdapterInit,      %REG_DWORD%,    0
+HKR,, GCOOPTION_DigitalCrtInfo,    %REG_BINARY%,   A3,38,61,C1,A3,38,61,B1
+HKR,, PrimaryTiling,                 %REG_SZ%,    1
+HKR,, GCORULE_FlickerWA,             %REG_DWORD%, 1
+HKR,, SMOOTHVISION_NAME, %REG_SZ%, "SMOOTHVISION HD"
+HKR, "UMD",GI_DEF, %REG_SZ%, 1
+HKR, "UMD",AreaAniso_DEF, %REG_SZ%, 0
+HKR,, VIDEO_NAME_SUFFIX, %REG_SZ%, "Avivo(TM)"
+HKR,, SameOnAllUsingStandardInVideoTheaterCloneMode, %REG_SZ%, "1"
+HKR, "UMD",ASTT_DEF, %REG_SZ%, 0
+HKR, "UMD",ASD_DEF, %REG_SZ%, 1
+HKR,, 3to2Pulldown_NA, %REG_SZ%, 0
+HKR,, AreaAniso_NA, %REG_SZ%, "1"
+HKR,, GI_NA, %REG_SZ%, 1
+HKR, "UMD",AntiAliasMapping_SET, %REG_SZ%, "0(0:0,1:0) 2(0:2,1:2) 4(0:4,1:4) 8(0:8,1:8,2:16)"
+HKR,, AAF_NA, %REG_SZ%, 0
+HKR, "UMD", AAF_DEF, %REG_SZ%, 0
+HKR, "UMD", AAF_Value_SET, %REG_SZ%, "Box:0,Narrow-tent:1,Wide-tent:2,Edge-detect:3"
+HKR, "UMD", AAF_Mapping_SET, %REG_SZ%, "0(Box:2,Narrow-tent:4,Wide-tent:6,Edge-detect:12) 2(Box:2,Narrow-tent:4,Wide-tent:6) 4(Box:4,Narrow-tent:6,Wide-tent:8,Edge-detect:12) 8(Box:8,Narrow-tent:12,Wide-tent:16,Edge-detect:24) 16(Box:16,Narrow-tent:24,Wide-tent:32)"
+HKR, "UMD\DXVA",DI_METHOD_DEF, %REG_SZ%, "-1"
+HKR,, FanSpeedRPMActual_NA, %REG_SZ%, 1
+HKR,, FanSpeedRPMTarget_NA, %REG_SZ%, 1
+HKR,, FanSpeedPercentActual_NA, %REG_SZ%, 1
+HKR,, FanSpeedPercentTarget_NA, %REG_SZ%, 1
+HKR,, DALNonStandardModesBCD1, %REG_BINARY%,07,20,04,80,00,00,00,60,07,20,04,80,00,00,00,75,07,20,04,80,00,00,00,85,08,48,04,80,00,00,00,60,08,48,04,80,00,00,00,75,08,48,04,80,00,00,00,85,12,80,07,20,00,00,00,60,12,80,07,20,00,00,00,75
+HKR,, DALNonStandardModesBCD2, %REG_BINARY%,12,80,07,20,00,00,00,85,12,80,07,68,00,00,00,60,12,80,07,68,00,00,00,75,12,80,07,68,00,00,00,85,12,80,08,00,00,00,00,00,13,60,07,68,00,00,00,60,13,60,07,68,00,00,00,75,13,60,07,68,00,00,00,85
+HKR,, DALNonStandardModesBCD3, %REG_BINARY%,14,40,09,00,00,00,00,00,16,80,10,50,00,00,00,00,19,20,10,80,00,00,00,30,19,20,10,80,00,00,00,85,12,80,09,60,00,00,00,00,16,00,12,00,00,00,00,70,17,92,13,44,00,00,00,00,18,00,14,40,00,00,00,00
+HKR,, DALNonStandardModesBCD4, %REG_BINARY%,18,56,13,92,00,00,00,00
+HKR,, TVM6Flag,   %REG_DWORD%,    0
+HKR,, Gxo50HzTimingSupport,          %REG_DWORD%,    1
+HKR,, EnableCrossFireAutoLink,        %REG_DWORD%,    1
+HKR, "UMD",Main3D_DEF, %REG_SZ%, 3
+HKR, "UMD",AntiAlias_DEF, %REG_SZ%, 1
+HKR, "UMD",AntiAliasSamples_DEF, %REG_SZ%, 0
+HKR, "UMD",AnisoType_DEF, %REG_SZ%, 0
+HKR, "UMD",AnisoDegree_DEF, %REG_SZ%, 0
+HKR, "UMD",TextureOpt_DEF, %REG_SZ%, 0
+HKR, "UMD",TextureLod_DEF, %REG_SZ%, 0
+HKR, "UMD",TruformMode_DEF, %REG_SZ%, 0
+HKR, "UMD",VSyncControl_DEF, %REG_SZ%, 1
+HKR, "UMD",SwapEffect_DEF, %REG_SZ%, 0
+HKR, "UMD",TemporalAAMultiplier_DEF, %REG_SZ%, 0
+HKR, "UMD",ExportCompressedTex_DEF, %REG_SZ%, 1
+HKR, "UMD",PixelCenter_DEF, %REG_SZ%, 0
+HKR, "UMD",ForceZBufferDepth_DEF, %REG_SZ%, 0
+HKR, "UMD",EnableTripleBuffering_DEF, %REG_SZ%, 0
+HKR, "UMD",CatalystAI_DEF, %REG_SZ%, 1
+HKR,, ColourDesktopGamma_DEF, %REG_SZ%, "1.0 1.0 1.0"
+HKR,, ColourDesktopBrightness_DEF, %REG_SZ%, "0 0 0"
+HKR,, ColourDesktopContrast_DEF, %REG_SZ%, "1.0 1.0 1.0"
+HKR,, ColourFullscreenGamma_DEF, %REG_SZ%, "1.0 1.0 1.0"
+HKR,, ColourFullscreenBrightness_DEF, %REG_SZ%, "0 0 0"
+HKR,, ColourFullscreenContrast_DEF, %REG_SZ%, "1.0 1.0 1.0"
+HKR,, 3D_Refresh_Rate_Override_DEF, %REG_DWORD%, 0
+HKR,, Display_Detection_DEF, %REG_DWORD%, 0
+HKR,, Panning_Mode_DEF, %REG_DWORD%, 0
+HKR,, Force_TV_Detection_DEF, %REG_DWORD%, 0
+
+[ati2mtag_R6x_SoftwareDeviceSettings]
+HKR, "UMD",ATMS_DEF, %REG_SZ%, 1
+HKR, "UMD",AAAMethod_DEF, %REG_SZ%, 0
+HKR,, Detail_NA, %REG_SZ%, "0"
+HKR,, Denoise_NA, %REG_SZ%, "0"
+HKR,, DynamicContrast_NA, %REG_SZ%, "1"
+HKR, "UMD\DXVA",3to2Pulldown, %REG_SZ%, "1"
+HKR, "UMD\DXVA",3to2Pulldown_DEF, %REG_SZ%, "1"
+HKR,, 3to2Pulldown_NA, %REG_SZ%, "0"
+HKR,, Gamma_NA, %REG_SZ%, 1
+HKR,, OverridePA_NA, %REG_SZ%, "1"
+HKR,, ASE_NA, %REG_SZ%, "1"
+HKR,, DemoMode_NA, %REG_SZ%, "1"
+HKR,, SplitScreen_NA, %REG_SZ%, "1"
+HKR,, InternetVideo_NA, %REG_SZ%, 1
+HKR,, CVRULE_ENABLEPALTIMINGSUPPORT,      %REG_DWORD%,    1
+HKR,, EnableCrossFireAutoLink,        %REG_DWORD%,    1
+HKR,, DFP_AddHDTVPixelFormats,      %REG_DWORD%,    3
+HKR,, Gxo24HzTimingSupport,          %REG_DWORD%,    1
+HKR, "UMD\DXVA",Fleshtone_DEF, %REG_SZ%, "50"
+HKR, "UMD\DXVA",Fleshtone_ENABLE_DEF, %REG_SZ%, "1"
+
+[ati2mtag_R7X_SoftwareDeviceSettings]
+HKR,, GCOOPTION_DigitalCrtInfo,    %REG_BINARY%,   A3,38,61,C1,A3,38,61,B1
+HKR,, GCORULE_FlickerWA,             %REG_DWORD%, 1
+HKR,, SMOOTHVISION_NAME, %REG_SZ%, "SMOOTHVISION HD"
+HKR, "UMD",GI_DEF, %REG_SZ%, 1
+HKR, "UMD",AreaAniso_DEF, %REG_SZ%, 0
+HKR,, VIDEO_NAME_SUFFIX, %REG_SZ%, "Avivo(TM)"
+HKR,, SameOnAllUsingStandardInVideoTheaterCloneMode, %REG_SZ%, "1"
+HKR, "UMD",ASTT_DEF, %REG_SZ%, 0
+HKR, "UMD",ASD_DEF, %REG_SZ%, 1
+HKR,, 3to2Pulldown_NA, %REG_SZ%, 0
+HKR,, AreaAniso_NA, %REG_SZ%, "1"
+HKR,, GI_NA, %REG_SZ%, 1
+HKR,, AAF_NA, %REG_SZ%, 0
+HKR, "UMD", AAF_DEF, %REG_SZ%, 0
+HKR, "UMD", AAF_Value_SET, %REG_SZ%, "Box:0,Narrow-tent:1,Wide-tent:2,Edge-detect:3"
+HKR, "UMD", AAF_Mapping_SET, %REG_SZ%, "0(Box:2,Narrow-tent:4,Wide-tent:6,Edge-detect:12) 2(Box:2,Narrow-tent:4,Wide-tent:6) 4(Box:4,Narrow-tent:6,Wide-tent:8,Edge-detect:12) 8(Box:8,Narrow-tent:12,Wide-tent:16,Edge-detect:24) 16(Box:16,Narrow-tent:24,Wide-tent:32)"
+HKR, "UMD",ATMS_DEF, %REG_SZ%, 1
+HKR, "UMD",AAAMethod_DEF, %REG_SZ%, 0
+HKR,, TemporalAAMultiplier_NA, %REG_SZ%, "1"
+HKR,, Detail_NA, %REG_SZ%, "0"
+HKR,, Denoise_NA, %REG_SZ%, "0"
+HKR, "UMD\DXVA",3to2Pulldown, %REG_SZ%, "1"
+HKR, "UMD\DXVA",3to2Pulldown_DEF, %REG_SZ%, "1"
+HKR,, 3to2Pulldown_NA, %REG_SZ%, "0"
+HKR, "UMD\DXVA",DI_METHOD_DEF, %REG_SZ%, "-1"
+HKR,, ASE_NA, %REG_SZ%, "1"
+HKR,, DemoMode_NA, %REG_SZ%, "0"
+HKR,, SplitScreen_NA, %REG_SZ%, "0"
+HKR,, DemoMode_DEF, %REG_SZ%, "0"
+HKR,, Gamma_NA, %REG_SZ%, 1
+HKR,, DemoMode_NA, %REG_SZ%, "0"
+HKR,, DALNonStandardModesBCD1, %REG_BINARY%,07,20,04,80,00,00,00,60,07,20,04,80,00,00,00,75,07,20,04,80,00,00,00,85,07,20,05,76,00,00,00,00,08,48,04,80,00,00,00,60,08,48,04,80,00,00,00,75,08,48,04,80,00,00,00,85,12,80,07,20,00,00,00,00
+HKR,, DALNonStandardModesBCD2, %REG_BINARY%,12,80,07,68,00,00,00,00,12,80,08,00,00,00,00,00,13,60,07,68,00,00,00,00,13,60,10,24,00,00,00,60,13,60,10,24,00,00,00,75,13,60,10,24,00,00,00,85,13,66,07,68,00,00,00,60,13,66,07,68,00,00,00,60
+HKR,, DALNonStandardModesBCD3, %REG_BINARY%,14,00,10,50,00,00,00,59,14,00,10,50,00,00,00,60,14,40,09,00,00,00,00,59,14,40,09,00,00,00,00,60,16,00,09,00,00,00,00,60,16,00,09,00,00,00,00,75,16,00,09,00,00,00,00,85,16,00,09,00,00,00,01,00
+HKR,, DALNonStandardModesBCD4, %REG_BINARY%,16,00,09,00,00,00,01,20,16,00,09,00,00,00,01,60,16,80,10,50,00,00,00,00,19,20,10,80,00,00,00,00,19,20,12,00,00,00,00,00,20,48,15,36,00,00,00,72,20,48,15,36,00,00,00,80,12,80,09,60,00,00,00,00
+HKR,, DALNonStandardModesBCD5, %REG_BINARY%,16,00,12,00,00,00,00,70,17,92,13,44,00,00,00,00,18,00,14,40,00,00,00,00,18,56,13,92,00,00,00,00
+HKR,, Gxo50HzTimingSupport,          %REG_DWORD%,    1
+HKR,, CVRULE_ENABLEPALTIMINGSUPPORT,      %REG_DWORD%,    1
+HKR,, EnableCrossFireAutoLink,        %REG_DWORD%,    1
+HKR,, DFP_AddHDTVPixelFormats,      %REG_DWORD%,    3
+HKR,, Gxo24HzTimingSupport,          %REG_DWORD%,    1
+HKR,, GXOxvYCCSupport,      %REG_DWORD%,    1
+HKR, "UMD\DXVA",CmMode_XvYCC,               %REG_DWORD%,    1
+HKR, "UMD\DXVA",DynamicContrast_ENABLE_DEF, %REG_SZ%, "1"
+HKR,, EnableUlps,      %REG_DWORD%,    0
+HKR, "UMD\DXVA",InternetVideo_DEF, %REG_SZ%, "0"
+HKR, "UMD\DXVA",Fleshtone_DEF, %REG_SZ%, "50"
+HKR, "UMD\DXVA",Fleshtone_ENABLE_DEF, %REG_SZ%, "1"
+HKR, "UMD\DXVA",DynamicContrast_ENABLE_DEF, %REG_SZ%, "1"
+HKR, "UMD",Main3D_DEF, %REG_SZ%, 3
+HKR, "UMD",AntiAlias_DEF, %REG_SZ%, 1
+HKR, "UMD",AntiAliasSamples_DEF, %REG_SZ%, 0
+HKR, "UMD",AnisoType_DEF, %REG_SZ%, 0
+HKR, "UMD",AnisoDegree_DEF, %REG_SZ%, 0
+HKR, "UMD",TextureOpt_DEF, %REG_SZ%, 0
+HKR, "UMD",TextureLod_DEF, %REG_SZ%, 0
+HKR, "UMD",TruformMode_DEF, %REG_SZ%, 0
+HKR, "UMD",VSyncControl_DEF, %REG_SZ%, 1
+HKR, "UMD",SwapEffect_DEF, %REG_SZ%, 0
+HKR, "UMD",TemporalAAMultiplier_DEF, %REG_SZ%, 0
+HKR, "UMD",ExportCompressedTex_DEF, %REG_SZ%, 1
+HKR, "UMD",PixelCenter_DEF, %REG_SZ%, 0
+HKR, "UMD",ForceZBufferDepth_DEF, %REG_SZ%, 0
+HKR, "UMD",EnableTripleBuffering_DEF, %REG_SZ%, 0
+HKR, "UMD",CatalystAI_DEF, %REG_SZ%, 1
+HKR,, ColourDesktopGamma_DEF, %REG_SZ%, "1.0 1.0 1.0"
+HKR,, ColourDesktopBrightness_DEF, %REG_SZ%, "0 0 0"
+HKR,, ColourDesktopContrast_DEF, %REG_SZ%, "1.0 1.0 1.0"
+HKR,, ColourFullscreenGamma_DEF, %REG_SZ%, "1.0 1.0 1.0"
+HKR,, ColourFullscreenBrightness_DEF, %REG_SZ%, "0 0 0"
+HKR,, ColourFullscreenContrast_DEF, %REG_SZ%, "1.0 1.0 1.0"
+HKR,, 3D_Refresh_Rate_Override_DEF, %REG_DWORD%, 0
+HKR,, Display_Detection_DEF, %REG_DWORD%, 0
+HKR,, Panning_Mode_DEF, %REG_DWORD%, 0
+HKR,, Force_TV_Detection_DEF, %REG_DWORD%, 0
+
+[ati2mtag_RS780D_SoftwareDeviceSettings]
+HKR,, DisableFBCSupport,      %REG_DWORD%,    0
+
+[ati2mtag_RS780_SoftwareDeviceSettings]
+HKR,, DisableFullAdapterInit,      %REG_DWORD%,    0
+HKR,, GCOOPTION_DigitalCrtInfo,    %REG_BINARY%,   A3,38,61,C1,A3,38,61,B1
+HKR,, PrimaryTiling,                 %REG_SZ%,    1
+HKR,, GCORULE_FlickerWA,             %REG_DWORD%, 1
+HKR,, SMOOTHVISION_NAME, %REG_SZ%, "SMOOTHVISION HD"
+HKR, "UMD",GI_DEF, %REG_SZ%, 1
+HKR, "UMD",AreaAniso_DEF, %REG_SZ%, 0
+HKR,, VIDEO_NAME_SUFFIX, %REG_SZ%, "Avivo(TM)"
+HKR,, SameOnAllUsingStandardInVideoTheaterCloneMode, %REG_SZ%, "1"
+HKR, "UMD",ASTT_DEF, %REG_SZ%, 0
+HKR, "UMD",ASD_DEF, %REG_SZ%, 1
+HKR,, 3to2Pulldown_NA, %REG_SZ%, 0
+HKR, "UMD\DXVA",3to2Pulldown, %REG_SZ%, "1"
+HKR, "UMD\DXVA",3to2Pulldown_DEF, %REG_SZ%, "1"
+HKR,, GI_NA, %REG_SZ%, 1
+HKR,, AreaAniso_NA, %REG_SZ%, "1"
+HKR, "UMD",AntiAliasMapping_SET, %REG_SZ%, "0(0:0,1:0) 2(0:2,1:2) 4(0:4,1:4,2:8)"
+HKR,, AAF_NA, %REG_SZ%, 0
+HKR, "UMD", AAF_DEF, %REG_SZ%, 0
+HKR, "UMD", AAF_Value_SET, %REG_SZ%, "Box:0,Narrow-tent:1,Wide-tent:2"
+HKR, "UMD", AAF_Mapping_SET, %REG_SZ%, "0(Box:2,Narrow-tent:4,Wide-tent:6) 2(Box:2,Narrow-tent:4,Wide-tent:6) 4(Box:4,Narrow-tent:6,Wide-tent:8) 8(Box:8,Narrow-tent:12,Wide-tent:16)"
+HKR,, DynamicContrast_NA, %REG_SZ%, "1"
+HKR, "UMD\DXVA",DI_METHOD_DEF, %REG_SZ%, "-1"
+HKR,, Gamma_NA, %REG_SZ%, 1
+HKR,, ASE_NA, %REG_SZ%, "1"
+HKR,, DemoMode_NA, %REG_SZ%, "0"
+HKR,, SplitScreen_NA, %REG_SZ%, "0"
+HKR,, DemoMode_DEF, %REG_SZ%, "0"
+HKR,, DemoMode_NA, %REG_SZ%, "0"
+HKR,, DALNonStandardModesBCD1, %REG_BINARY%,13,60,07,68,00,00,00,00,10,24,07,68,00,00,00,00,12,80,07,68,00,00,00,00,12,80,09,60,00,00,00,00,16,00,12,00,00,00,00,70,17,92,13,44,00,00,00,00,18,00,14,40,00,00,00,00,18,56,13,92,00,00,00,00
+HKR,, DisableDualView,                 %REG_DWORD%,    0
+HKR,, DisableDualviewWithHotKey,    %REG_DWORD%,    1
+HKR,, TVDisableModes,   %REG_DWORD%,    0
+HKR,, TVM6Flag,   %REG_DWORD%,    0
+HKR,, Gxo50HzTimingSupport,          %REG_DWORD%,    1
+HKR,, CVRULE_ENABLEPALTIMINGSUPPORT,      %REG_DWORD%,    1
+HKR,, DisableFBCSupport,      %REG_DWORD%,    0
+HKLM,"Software\AMD\EEU",VideoPlaybackCpuThrottle,          %REG_DWORD%,    1
+HKR,, ExtEvent_VideoPlaybackCpuThrottle,        %REG_DWORD%,    0x64
+HKR,, DFP_AddHDTVPixelFormats,      %REG_DWORD%,    3
+HKR,, Gxo24HzTimingSupport,          %REG_DWORD%,    1
+HKR,, R600UDGPRS, %REG_DWORD%, 0
+HKR,, EnableCrossFireAutoLink,        %REG_DWORD%,    1
+HKR,, PP_RS780DisableUVDBranchClkGating,   %REG_DWORD%,    1
+HKR, "UMD\DXVA",InternetVideo_DEF, %REG_SZ%, "0"
+HKR, "UMD\DXVA",Fleshtone_DEF, %REG_SZ%, "50"
+HKR, "UMD\DXVA",Fleshtone_ENABLE_DEF, %REG_SZ%, "1"
+HKR, "UMD\DXVA",DynamicContrast_ENABLE_DEF, %REG_SZ%, "1"
+HKR, "UMD",Main3D_DEF, %REG_SZ%, 3
+HKR, "UMD",AntiAlias_DEF, %REG_SZ%, 1
+HKR, "UMD",AntiAliasSamples_DEF, %REG_SZ%, 0
+HKR, "UMD",AnisoType_DEF, %REG_SZ%, 0
+HKR, "UMD",AnisoDegree_DEF, %REG_SZ%, 0
+HKR, "UMD",TextureOpt_DEF, %REG_SZ%, 0
+HKR, "UMD",TextureLod_DEF, %REG_SZ%, 0
+HKR, "UMD",TruformMode_DEF, %REG_SZ%, 0
+HKR, "UMD",VSyncControl_DEF, %REG_SZ%, 1
+HKR, "UMD",SwapEffect_DEF, %REG_SZ%, 0
+HKR, "UMD",TemporalAAMultiplier_DEF, %REG_SZ%, 0
+HKR, "UMD",ExportCompressedTex_DEF, %REG_SZ%, 1
+HKR, "UMD",PixelCenter_DEF, %REG_SZ%, 0
+HKR, "UMD",ForceZBufferDepth_DEF, %REG_SZ%, 0
+HKR, "UMD",EnableTripleBuffering_DEF, %REG_SZ%, 0
+HKR, "UMD",CatalystAI_DEF, %REG_SZ%, 1
+HKR,, ColourDesktopGamma_DEF, %REG_SZ%, "1.0 1.0 1.0"
+HKR,, ColourDesktopBrightness_DEF, %REG_SZ%, "0 0 0"
+HKR,, ColourDesktopContrast_DEF, %REG_SZ%, "1.0 1.0 1.0"
+HKR,, ColourFullscreenGamma_DEF, %REG_SZ%, "1.0 1.0 1.0"
+HKR,, ColourFullscreenBrightness_DEF, %REG_SZ%, "0 0 0"
+HKR,, ColourFullscreenContrast_DEF, %REG_SZ%, "1.0 1.0 1.0"
+HKR,, 3D_Refresh_Rate_Override_DEF, %REG_DWORD%, 0
+HKR,, Display_Detection_DEF, %REG_DWORD%, 0
+HKR,, Panning_Mode_DEF, %REG_DWORD%, 0
+HKR,, Force_TV_Detection_DEF, %REG_DWORD%, 0
+
+[ati2mtag_RS880_SoftwareDeviceSettings]
+HKR,, DisableFullAdapterInit,      %REG_DWORD%,    0
+HKR,, GCOOPTION_DigitalCrtInfo,    %REG_BINARY%,   A3,38,61,C1,A3,38,61,B1
+HKR,, PrimaryTiling,                 %REG_SZ%,    1
+HKR,, GCORULE_FlickerWA,             %REG_DWORD%, 1
+HKR,, EnableCrossFireAutoLink,        %REG_DWORD%,    1
+HKR,, SMOOTHVISION_NAME, %REG_SZ%, "SMOOTHVISION HD"
+HKR, "UMD",GI_DEF, %REG_SZ%, 1
+HKR, "UMD",AreaAniso_DEF, %REG_SZ%, 0
+HKR,, VIDEO_NAME_SUFFIX, %REG_SZ%, "Avivo(TM)"
+HKR,, SameOnAllUsingStandardInVideoTheaterCloneMode, %REG_SZ%, "1"
+HKR, "UMD",ASTT_DEF, %REG_SZ%, 0
+HKR, "UMD",ASD_DEF, %REG_SZ%, 1
+HKR,, 3to2Pulldown_NA, %REG_SZ%, 0
+HKR, "UMD\DXVA",3to2Pulldown, %REG_SZ%, "1"
+HKR, "UMD\DXVA",3to2Pulldown_DEF, %REG_SZ%, "1"
+HKR,, GI_NA, %REG_SZ%, 1
+HKR,, AreaAniso_NA, %REG_SZ%, "1"
+HKR, "UMD",AntiAliasMapping_SET, %REG_SZ%, "0(0:0,1:0) 2(0:2,1:2) 4(0:4,1:4,2:8)"
+HKR,, AAF_NA, %REG_SZ%, 0
+HKR, "UMD", AAF_DEF, %REG_SZ%, 0
+HKR, "UMD", AAF_Value_SET, %REG_SZ%, "Box:0,Narrow-tent:1,Wide-tent:2"
+HKR, "UMD", AAF_Mapping_SET, %REG_SZ%, "0(Box:2,Narrow-tent:4,Wide-tent:6) 2(Box:2,Narrow-tent:4,Wide-tent:6) 4(Box:4,Narrow-tent:6,Wide-tent:8) 8(Box:8,Narrow-tent:12,Wide-tent:16)"
+HKR,, DynamicContrast_NA, %REG_SZ%, "1"
+HKR, "UMD\DXVA",DI_METHOD_DEF, %REG_SZ%, "-1"
+HKR,, DynamicContrast_NA, %REG_SZ%, "0"
+HKR,, TemporalAAMultiplier_NA, %REG_SZ%, 1
+HKR,, Gamma_NA, %REG_SZ%, 1
+HKR,, ASE_NA, %REG_SZ%, "1"
+HKR,, DemoMode_NA, %REG_SZ%, "0"
+HKR,, SplitScreen_NA, %REG_SZ%, "0"
+HKR,, DemoMode_DEF, %REG_SZ%, "0"
+HKR,, DemoMode_NA, %REG_SZ%, "0"
+HKR,, DALNonStandardModesBCD1, %REG_BINARY%,10,24,07,68,00,00,00,00,12,80,07,68,00,00,00,00,12,80,09,60,00,00,00,00,13,60,07,68,00,00,00,60,13,60,07,68,00,00,00,70,13,66,07,68,00,00,00,60,13,66,07,68,00,00,00,70,16,00,12,00,00,00,00,70
+HKR,, DALNonStandardModesBCD2, %REG_BINARY%,17,92,13,44,00,00,00,00,18,00,14,40,00,00,00,00,18,56,13,92,00,00,00,00
+HKR,, DisableDualView,                 %REG_DWORD%,    0
+HKR,, DisableDualviewWithHotKey,    %REG_DWORD%,    1
+HKR,, TVDisableModes,   %REG_DWORD%,    0
+HKR,, TVM6Flag,   %REG_DWORD%,    0
+HKR,, Gxo50HzTimingSupport,          %REG_DWORD%,    1
+HKR,, CVRULE_ENABLEPALTIMINGSUPPORT,      %REG_DWORD%,    1
+HKR,, DisableFBCSupport,      %REG_DWORD%,    0
+HKLM,"Software\AMD\EEU",VideoPlaybackCpuThrottle,          %REG_DWORD%,    1
+HKR,, ExtEvent_VideoPlaybackCpuThrottle,        %REG_DWORD%,    0x64
+HKR,, DFP_AddHDTVPixelFormats,      %REG_DWORD%,    3
+HKR,, Gxo24HzTimingSupport,          %REG_DWORD%,    1
+HKR,, PP_DisableMultiUVDStates,      %REG_DWORD%,    0
+HKR,, EnableUlps,      %REG_DWORD%,    1
+HKR,, EnableCrossFireAutoLink,        %REG_DWORD%,    1
+HKR,, PP_RS780DisableUVDBranchClkGating,   %REG_DWORD%,    1
+HKR, "UMD\DXVA",InternetVideo_DEF, %REG_SZ%, "0"
+HKR, "UMD\DXVA",Fleshtone_DEF, %REG_SZ%, "50"
+HKR, "UMD\DXVA",Fleshtone_ENABLE_DEF, %REG_SZ%, "1"
+HKR, "UMD\DXVA",DynamicContrast_ENABLE_DEF, %REG_SZ%, "1"
+HKR, "UMD",Main3D_DEF, %REG_SZ%, 3
+HKR, "UMD",AntiAlias_DEF, %REG_SZ%, 1
+HKR, "UMD",AntiAliasSamples_DEF, %REG_SZ%, 0
+HKR, "UMD",AnisoType_DEF, %REG_SZ%, 0
+HKR, "UMD",AnisoDegree_DEF, %REG_SZ%, 0
+HKR, "UMD",TextureOpt_DEF, %REG_SZ%, 0
+HKR, "UMD",TextureLod_DEF, %REG_SZ%, 0
+HKR, "UMD",TruformMode_DEF, %REG_SZ%, 0
+HKR, "UMD",VSyncControl_DEF, %REG_SZ%, 1
+HKR, "UMD",SwapEffect_DEF, %REG_SZ%, 0
+HKR, "UMD",TemporalAAMultiplier_DEF, %REG_SZ%, 0
+HKR, "UMD",ExportCompressedTex_DEF, %REG_SZ%, 1
+HKR, "UMD",PixelCenter_DEF, %REG_SZ%, 0
+HKR, "UMD",ForceZBufferDepth_DEF, %REG_SZ%, 0
+HKR, "UMD",EnableTripleBuffering_DEF, %REG_SZ%, 0
+HKR, "UMD",CatalystAI_DEF, %REG_SZ%, 1
+HKR,, ColourDesktopGamma_DEF, %REG_SZ%, "1.0 1.0 1.0"
+HKR,, ColourDesktopBrightness_DEF, %REG_SZ%, "0 0 0"
+HKR,, ColourDesktopContrast_DEF, %REG_SZ%, "1.0 1.0 1.0"
+HKR,, ColourFullscreenGamma_DEF, %REG_SZ%, "1.0 1.0 1.0"
+HKR,, ColourFullscreenBrightness_DEF, %REG_SZ%, "0 0 0"
+HKR,, ColourFullscreenContrast_DEF, %REG_SZ%, "1.0 1.0 1.0"
+HKR,, 3D_Refresh_Rate_Override_DEF, %REG_DWORD%, 0
+HKR,, Display_Detection_DEF, %REG_DWORD%, 0
+HKR,, Panning_Mode_DEF, %REG_DWORD%, 0
+HKR,, Force_TV_Detection_DEF, %REG_DWORD%, 0
+
+[ati2mtag_RV610_SoftwareDeviceSettings]
+HKR,, DisableFullAdapterInit,      %REG_DWORD%,    0
+HKR,, GCOOPTION_DigitalCrtInfo,    %REG_BINARY%,   A3,38,61,C1,A3,38,61,B1
+HKR,, PrimaryTiling,                 %REG_SZ%,    1
+HKR,, GCORULE_FlickerWA,             %REG_DWORD%, 1
+HKR,, SMOOTHVISION_NAME, %REG_SZ%, "SMOOTHVISION HD"
+HKR, "UMD",GI_DEF, %REG_SZ%, 1
+HKR, "UMD",AreaAniso_DEF, %REG_SZ%, 0
+HKR,, VIDEO_NAME_SUFFIX, %REG_SZ%, "Avivo(TM)"
+HKR,, SameOnAllUsingStandardInVideoTheaterCloneMode, %REG_SZ%, "1"
+HKR, "UMD",ASTT_DEF, %REG_SZ%, 0
+HKR, "UMD",ASD_DEF, %REG_SZ%, 1
+HKR,, 3to2Pulldown_NA, %REG_SZ%, 0
+HKR,, GI_NA, %REG_SZ%, 1
+HKR,, AreaAniso_NA, %REG_SZ%, "1"
+HKR, "UMD",AntiAliasMapping_SET, %REG_SZ%, "0(0:0,1:0) 2(0:2,1:2) 4(0:4,1:4,2:8)"
+HKR,, AAF_NA, %REG_SZ%, 0
+HKR, "UMD", AAF_DEF, %REG_SZ%, 0
+HKR, "UMD", AAF_Value_SET, %REG_SZ%, "Box:0,Narrow-tent:1,Wide-tent:2"
+HKR, "UMD", AAF_Mapping_SET, %REG_SZ%, "0(Box:2,Narrow-tent:4,Wide-tent:6) 2(Box:2,Narrow-tent:4,Wide-tent:6) 4(Box:4,Narrow-tent:6,Wide-tent:8) 8(Box:8,Narrow-tent:12,Wide-tent:16)"
+HKR, "UMD\DXVA",DI_METHOD_DEF, %REG_SZ%, "-1"
+HKR,, FanSpeedRPMActual_NA, %REG_SZ%, 1
+HKR,, FanSpeedRPMTarget_NA, %REG_SZ%, 1
+HKR,, FanSpeedPercentActual_NA, %REG_SZ%, 1
+HKR,, FanSpeedPercentTarget_NA, %REG_SZ%, 1
+HKR,, DALNonStandardModesBCD1, %REG_BINARY%,07,20,04,80,00,00,00,60,07,20,04,80,00,00,00,75,07,20,04,80,00,00,00,85,08,48,04,80,00,00,00,60,08,48,04,80,00,00,00,75,08,48,04,80,00,00,00,85,12,80,07,20,00,00,00,60,12,80,07,20,00,00,00,75
+HKR,, DALNonStandardModesBCD2, %REG_BINARY%,12,80,07,20,00,00,00,85,12,80,07,68,00,00,00,60,12,80,07,68,00,00,00,75,12,80,07,68,00,00,00,85,12,80,08,00,00,00,00,00,13,60,07,68,00,00,00,60,13,60,07,68,00,00,00,75,13,60,07,68,00,00,00,85
+HKR,, DALNonStandardModesBCD3, %REG_BINARY%,14,40,09,00,00,00,00,00,16,80,10,50,00,00,00,00,19,20,10,80,00,00,00,30,19,20,10,80,00,00,00,85,12,80,09,60,00,00,00,00,16,00,12,00,00,00,00,70,17,92,13,44,00,00,00,00,18,00,14,40,00,00,00,00
+HKR,, DALNonStandardModesBCD4, %REG_BINARY%,18,56,13,92,00,00,00,00
+HKR,, TVM6Flag,   %REG_DWORD%,    0
+HKR,, Gxo50HzTimingSupport,          %REG_DWORD%,    1
+HKR,, EnableCrossFireAutoLink,        %REG_DWORD%,    1
+HKR, "UMD",Main3D_DEF, %REG_SZ%, 3
+HKR, "UMD",AntiAlias_DEF, %REG_SZ%, 1
+HKR, "UMD",AntiAliasSamples_DEF, %REG_SZ%, 0
+HKR, "UMD",AnisoType_DEF, %REG_SZ%, 0
+HKR, "UMD",AnisoDegree_DEF, %REG_SZ%, 0
+HKR, "UMD",TextureOpt_DEF, %REG_SZ%, 0
+HKR, "UMD",TextureLod_DEF, %REG_SZ%, 0
+HKR, "UMD",TruformMode_DEF, %REG_SZ%, 0
+HKR, "UMD",VSyncControl_DEF, %REG_SZ%, 1
+HKR, "UMD",SwapEffect_DEF, %REG_SZ%, 0
+HKR, "UMD",TemporalAAMultiplier_DEF, %REG_SZ%, 0
+HKR, "UMD",ExportCompressedTex_DEF, %REG_SZ%, 1
+HKR, "UMD",PixelCenter_DEF, %REG_SZ%, 0
+HKR, "UMD",ForceZBufferDepth_DEF, %REG_SZ%, 0
+HKR, "UMD",EnableTripleBuffering_DEF, %REG_SZ%, 0
+HKR, "UMD",CatalystAI_DEF, %REG_SZ%, 1
+HKR,, ColourDesktopGamma_DEF, %REG_SZ%, "1.0 1.0 1.0"
+HKR,, ColourDesktopBrightness_DEF, %REG_SZ%, "0 0 0"
+HKR,, ColourDesktopContrast_DEF, %REG_SZ%, "1.0 1.0 1.0"
+HKR,, ColourFullscreenGamma_DEF, %REG_SZ%, "1.0 1.0 1.0"
+HKR,, ColourFullscreenBrightness_DEF, %REG_SZ%, "0 0 0"
+HKR,, ColourFullscreenContrast_DEF, %REG_SZ%, "1.0 1.0 1.0"
+HKR,, 3D_Refresh_Rate_Override_DEF, %REG_DWORD%, 0
+HKR,, Display_Detection_DEF, %REG_DWORD%, 0
+HKR,, Panning_Mode_DEF, %REG_DWORD%, 0
+HKR,, Force_TV_Detection_DEF, %REG_DWORD%, 0
+
+[ati2mtag_RV630_SoftwareDeviceSettings]
+HKR,, DisableFullAdapterInit,      %REG_DWORD%,    0
+HKR,, GCOOPTION_DigitalCrtInfo,    %REG_BINARY%,   A3,38,61,C1,A3,38,61,B1
+HKR,, PrimaryTiling,                 %REG_SZ%,    1
+HKR,, GCORULE_FlickerWA,             %REG_DWORD%, 1
+HKR,, SMOOTHVISION_NAME, %REG_SZ%, "SMOOTHVISION HD"
+HKR, "UMD",GI_DEF, %REG_SZ%, 1
+HKR, "UMD",AreaAniso_DEF, %REG_SZ%, 0
+HKR,, VIDEO_NAME_SUFFIX, %REG_SZ%, "Avivo(TM)"
+HKR,, SameOnAllUsingStandardInVideoTheaterCloneMode, %REG_SZ%, "1"
+HKR, "UMD",ASTT_DEF, %REG_SZ%, 0
+HKR, "UMD",ASD_DEF, %REG_SZ%, 1
+HKR,, 3to2Pulldown_NA, %REG_SZ%, 0
+HKR,, GI_NA, %REG_SZ%, 1
+HKR,, AreaAniso_NA, %REG_SZ%, "1"
+HKR, "UMD",AntiAliasMapping_SET, %REG_SZ%, "0(0:0,1:0) 2(0:2,1:2) 4(0:4,1:4) 8(0:8,1:8,2:16)"
+HKR,, AAF_NA, %REG_SZ%, 0
+HKR, "UMD", AAF_DEF, %REG_SZ%, 0
+HKR, "UMD", AAF_Value_SET, %REG_SZ%, "Box:0,Narrow-tent:1,Wide-tent:2,Edge-detect:3"
+HKR, "UMD", AAF_Mapping_SET, %REG_SZ%, "0(Box:2,Narrow-tent:4,Wide-tent:6,Edge-detect:12) 2(Box:2,Narrow-tent:4,Wide-tent:6) 4(Box:4,Narrow-tent:6,Wide-tent:8,Edge-detect:12) 8(Box:8,Narrow-tent:12,Wide-tent:16,Edge-detect:24) 16(Box:16,Narrow-tent:24,Wide-tent:32)"
+HKR, "UMD\DXVA",DI_METHOD_DEF, %REG_SZ%, "-1"
+HKR,, FanSpeedRPMActual_NA, %REG_SZ%, 1
+HKR,, FanSpeedRPMTarget_NA, %REG_SZ%, 1
+HKR,, FanSpeedPercentActual_NA, %REG_SZ%, 1
+HKR,, FanSpeedPercentTarget_NA, %REG_SZ%, 1
+HKR,, DALNonStandardModesBCD1, %REG_BINARY%,07,20,04,80,00,00,00,60,07,20,04,80,00,00,00,75,07,20,04,80,00,00,00,85,08,48,04,80,00,00,00,60,08,48,04,80,00,00,00,75,08,48,04,80,00,00,00,85,12,80,07,20,00,00,00,60,12,80,07,20,00,00,00,75
+HKR,, DALNonStandardModesBCD2, %REG_BINARY%,12,80,07,20,00,00,00,85,12,80,07,68,00,00,00,60,12,80,07,68,00,00,00,75,12,80,07,68,00,00,00,85,12,80,08,00,00,00,00,00,13,60,07,68,00,00,00,60,13,60,07,68,00,00,00,75,13,60,07,68,00,00,00,85
+HKR,, DALNonStandardModesBCD3, %REG_BINARY%,14,40,09,00,00,00,00,00,16,80,10,50,00,00,00,00,19,20,10,80,00,00,00,30,19,20,10,80,00,00,00,85,12,80,09,60,00,00,00,00,16,00,12,00,00,00,00,70,17,92,13,44,00,00,00,00,18,00,14,40,00,00,00,00
+HKR,, DALNonStandardModesBCD4, %REG_BINARY%,18,56,13,92,00,00,00,00
+HKR,, TVM6Flag,   %REG_DWORD%,    0
+HKR,, Gxo50HzTimingSupport,          %REG_DWORD%,    1
+HKR,, EnableCrossFireAutoLink,        %REG_DWORD%,    1
+HKR, "UMD",Main3D_DEF, %REG_SZ%, 3
+HKR, "UMD",AntiAlias_DEF, %REG_SZ%, 1
+HKR, "UMD",AntiAliasSamples_DEF, %REG_SZ%, 0
+HKR, "UMD",AnisoType_DEF, %REG_SZ%, 0
+HKR, "UMD",AnisoDegree_DEF, %REG_SZ%, 0
+HKR, "UMD",TextureOpt_DEF, %REG_SZ%, 0
+HKR, "UMD",TextureLod_DEF, %REG_SZ%, 0
+HKR, "UMD",TruformMode_DEF, %REG_SZ%, 0
+HKR, "UMD",VSyncControl_DEF, %REG_SZ%, 1
+HKR, "UMD",SwapEffect_DEF, %REG_SZ%, 0
+HKR, "UMD",TemporalAAMultiplier_DEF, %REG_SZ%, 0
+HKR, "UMD",ExportCompressedTex_DEF, %REG_SZ%, 1
+HKR, "UMD",PixelCenter_DEF, %REG_SZ%, 0
+HKR, "UMD",ForceZBufferDepth_DEF, %REG_SZ%, 0
+HKR, "UMD",EnableTripleBuffering_DEF, %REG_SZ%, 0
+HKR, "UMD",CatalystAI_DEF, %REG_SZ%, 1
+HKR,, ColourDesktopGamma_DEF, %REG_SZ%, "1.0 1.0 1.0"
+HKR,, ColourDesktopBrightness_DEF, %REG_SZ%, "0 0 0"
+HKR,, ColourDesktopContrast_DEF, %REG_SZ%, "1.0 1.0 1.0"
+HKR,, ColourFullscreenGamma_DEF, %REG_SZ%, "1.0 1.0 1.0"
+HKR,, ColourFullscreenBrightness_DEF, %REG_SZ%, "0 0 0"
+HKR,, ColourFullscreenContrast_DEF, %REG_SZ%, "1.0 1.0 1.0"
+HKR,, 3D_Refresh_Rate_Override_DEF, %REG_DWORD%, 0
+HKR,, Display_Detection_DEF, %REG_DWORD%, 0
+HKR,, Panning_Mode_DEF, %REG_DWORD%, 0
+HKR,, Force_TV_Detection_DEF, %REG_DWORD%, 0
+
+[ati2mtag_Sumo_Desktop_SoftwareDeviceSettings]
+HKR,, GCOOPTION_DigitalCrtInfo,    %REG_BINARY%,   A3,38,61,C1,A3,38,61,B1
+HKR,, GCORULE_FlickerWA,             %REG_DWORD%, 1
+HKR,, SMOOTHVISION_NAME, %REG_SZ%, "SMOOTHVISION HD"
+HKR, "UMD",GI_DEF, %REG_SZ%, 1
+HKR, "UMD",AreaAniso_DEF, %REG_SZ%, 0
+HKR,, VIDEO_NAME_SUFFIX, %REG_SZ%, "Avivo(TM)"
+HKR,, SameOnAllUsingStandardInVideoTheaterCloneMode, %REG_SZ%, "1"
+HKR, "UMD",ASTT_DEF, %REG_SZ%, 0
+HKR, "UMD",ASD_DEF, %REG_SZ%, 1
+HKR,, 3to2Pulldown_NA, %REG_SZ%, 0
+HKR,, AreaAniso_NA, %REG_SZ%, "1"
+HKR,, GI_NA, %REG_SZ%, 1
+HKR,, AAF_NA, %REG_SZ%, 0
+HKR, "UMD", AAF_DEF, %REG_SZ%, 0
+HKR, "UMD", AAF_Value_SET, %REG_SZ%, "Box:0,Narrow-tent:1,Wide-tent:2,Edge-detect:3"
+HKR, "UMD", AAF_Mapping_SET, %REG_SZ%, "0(Box:2,Narrow-tent:4,Wide-tent:6,Edge-detect:12) 2(Box:2,Narrow-tent:4,Wide-tent:6) 4(Box:4,Narrow-tent:6,Wide-tent:8,Edge-detect:12) 8(Box:8,Narrow-tent:12,Wide-tent:16,Edge-detect:24) 16(Box:16,Narrow-tent:24,Wide-tent:32)"
+HKR, "UMD",ATMS_DEF, %REG_SZ%, 1
+HKR, "UMD",AAAMethod_DEF, %REG_SZ%, 0
+HKR,, TemporalAAMultiplier_NA, %REG_SZ%, "1"
+HKR,, Detail_NA, %REG_SZ%, "0"
+HKR,, Denoise_NA, %REG_SZ%, "0"
+HKR, "UMD\DXVA",3to2Pulldown, %REG_SZ%, "1"
+HKR, "UMD\DXVA",3to2Pulldown_DEF, %REG_SZ%, "1"
+HKR,, 3to2Pulldown_NA, %REG_SZ%, "0"
+HKR, "UMD\DXVA",DI_METHOD_DEF, %REG_SZ%, "-1"
+HKR, "UMD\DXVA",StaticGamma, %REG_SZ%, "100"
+HKR, "UMD\DXVA",StaticGamma_DEF, %REG_SZ%, "100"
+HKR,, ASTT_NA, %REG_SZ%, "1"
+HKR, "UMD",ASTT_DEF, %REG_SZ%, 0
+HKR, "UMD",ASD_DEF, %REG_SZ%, 0
+HKR, "UMD",ASE_DEF, %REG_SZ%, 0
+HKR,, DemoMode_NA, %REG_SZ%, "0"
+HKR,, SplitScreen_NA, %REG_SZ%, "0"
+HKR,, TheaterMode_NA, %REG_SZ%, 1
+HKR,, DemoMode_DEF, %REG_SZ%, "0"
+HKR,, StaticGamma_NA, %REG_SZ%, 0
+HKR,, Gamma_NA, %REG_SZ%, 1
+HKR,, PP_Sumo_DisableGfxPowerGatingInUVD, %REG_DWORD%, 0
+HKR, "UMD",MLF_DEF, %REG_SZ%, 0
+HKR,, MLF_NA, %REG_SZ%, 0
+HKR,, DisableCfP2PAperture,      %REG_DWORD%,    1
+HKR,, PP_DeferFirstStateSwitch,      %REG_DWORD%,    0
+HKR,, SurfaceFormatReplacements_NA, %REG_SZ%, 0
+HKR, "UMD",SurfaceFormatReplacements_DEF, %REG_SZ%, 1
+HKR,, TFQ_NA, %REG_SZ%, 0
+HKR, "UMD",TFQ_DEF, %REG_SZ%, 1
+HKR,, DALNonStandardModesBCD1, %REG_BINARY%,13,60,07,68,00,00,00,60,13,60,07,68,00,00,00,75,13,60,07,68,00,00,00,85,13,66,07,68,00,00,00,60,14,40,09,00,00,00,00,00,12,80,07,68,00,00,00,00,12,80,09,60,00,00,00,00,16,00,12,00,00,00,00,70
+HKR,, DALNonStandardModesBCD2, %REG_BINARY%,17,92,13,44,00,00,00,00,18,00,14,40,00,00,00,00,18,56,13,92,00,00,00,00
+HKR,, Gxo50HzTimingSupport,          %REG_DWORD%,    1
+HKR,, CVRULE_ENABLEPALTIMINGSUPPORT,      %REG_DWORD%,    1
+HKR,, DisableFBCSupport,      %REG_DWORD%,    0
+HKR,, EnableCrossFireAutoLink,        %REG_DWORD%,    1
+HKR,, DFP_AddHDTVPixelFormats,      %REG_DWORD%,    3
+HKR,, Gxo24HzTimingSupport,          %REG_DWORD%,    1
+HKR,, GXOxvYCCSupport,      %REG_DWORD%,    1
+HKR, "UMD\DXVA",CmMode_XvYCC,               %REG_DWORD%,    1
+HKR,, GXOxvYCCSupport,      %REG_DWORD%,    1
+HKR, "UMD\DXVA",CmMode_XvYCC,               %REG_DWORD%,    1
+HKR, "UMD\DXVA",DynamicContrast_ENABLE_DEF, %REG_SZ%, "1"
+HKR,, EnableUlps,      %REG_DWORD%,    1
+HKR,, EnableCrossFireAutoLink,        %REG_DWORD%,    1
+HKR, "UMD\DXVA",MosquitoNoiseRemoval_DEF, %REG_SZ%, "50"
+HKR, "UMD\DXVA",MosquitoNoiseRemoval_ENABLE_DEF, %REG_SZ%, "1"
+HKR,, MosquitoNoiseRemoval_NA, %REG_SZ%, "0"
+HKR, "UMD\DXVA",Deblocking_DEF, %REG_SZ%, "50"
+HKR, "UMD\DXVA",Deblocking_ENABLE_DEF, %REG_SZ%, "1"
+HKR,, Deblocking_NA, %REG_SZ%, "0"
+HKR,, DalForceUnderscanAdjustment,             %REG_DWORD%, 1
+HKR, "UMD\DXVA", CameraShake_ENABLE_DEF, %REG_SZ%, "0"
+HKR, "UMD\DXVA", CameraShakeStrength_DEF, %REG_SZ%, "1"
+HKR, "UMD\DXVA", CameraShakeDelay_DEF, %REG_SZ%, "1"
+HKR, "UMD\DXVA", CameraShakeZoom_DEF, %REG_SZ%, "95"
+HKR, "UMD",Main3D_DEF, %REG_SZ%, 3
+HKR, "UMD",AntiAlias_DEF, %REG_SZ%, 1
+HKR, "UMD",AntiAliasSamples_DEF, %REG_SZ%, 0
+HKR, "UMD",AnisoType_DEF, %REG_SZ%, 0
+HKR, "UMD",AnisoDegree_DEF, %REG_SZ%, 0
+HKR, "UMD",TextureOpt_DEF, %REG_SZ%, 0
+HKR, "UMD",TextureLod_DEF, %REG_SZ%, 0
+HKR, "UMD",TruformMode_DEF, %REG_SZ%, 0
+HKR, "UMD",VSyncControl_DEF, %REG_SZ%, 1
+HKR, "UMD",SwapEffect_DEF, %REG_SZ%, 0
+HKR, "UMD",TemporalAAMultiplier_DEF, %REG_SZ%, 0
+HKR, "UMD",ExportCompressedTex_DEF, %REG_SZ%, 1
+HKR, "UMD",PixelCenter_DEF, %REG_SZ%, 0
+HKR, "UMD",ForceZBufferDepth_DEF, %REG_SZ%, 0
+HKR, "UMD",EnableTripleBuffering_DEF, %REG_SZ%, 0
+HKR, "UMD",CatalystAI_DEF, %REG_SZ%, 1
+HKR,, ColourDesktopGamma_DEF, %REG_SZ%, "1.0 1.0 1.0"
+HKR,, ColourDesktopBrightness_DEF, %REG_SZ%, "0 0 0"
+HKR,, ColourDesktopContrast_DEF, %REG_SZ%, "1.0 1.0 1.0"
+HKR,, ColourFullscreenGamma_DEF, %REG_SZ%, "1.0 1.0 1.0"
+HKR,, ColourFullscreenBrightness_DEF, %REG_SZ%, "0 0 0"
+HKR,, ColourFullscreenContrast_DEF, %REG_SZ%, "1.0 1.0 1.0"
+HKR,, 3D_Refresh_Rate_Override_DEF, %REG_DWORD%, 0
+HKR,, Display_Detection_DEF, %REG_DWORD%, 0
+HKR,, Panning_Mode_DEF, %REG_DWORD%, 0
+HKR,, Force_TV_Detection_DEF, %REG_DWORD%, 0
+
+[ati2mtag_Sumo_Mobile_SoftwareDeviceSettings]
+HKR,, DALRULE_NOTVANDLCDONCRTC,             %REG_DWORD%,    1
+HKR,, WmAgpMaxIdleClk,			    %REG_DWORD%,    0x20
+HKR,, DisableIDCT,                          %REG_DWORD%,    0
+;;HKLM,"SOFTWARE\Microsoft\Windows\CurrentVersion\Run",ATIModeChange,,"Ati2mdxx.exe"
+HKR,, DALR6 CRT_MaxModeInfo,                  %REG_BINARY%,00,00,00,00,40,06,00,00,B0,04,00,00,00,00,00,00,3C,00,00,00
+HKR,, DisableFullAdapterInit,      %REG_DWORD%,    0
+HKR,, MemInitLatencyTimer,         %REG_DWORD%,    0x775771BF
+HKR,, GCORULE_FlickerWA,             %REG_DWORD%, 1
+HKR,, SMOOTHVISION_NAME, %REG_SZ%, "SMOOTHVISION HD"
+HKR, "UMD",GI_DEF, %REG_SZ%, 1
+HKR, "UMD",ASTT_DEF, %REG_SZ%, 0
+HKR, "UMD",AreaAniso_DEF, %REG_SZ%, 0
+HKR,, SameOnAllUsingStandardInVideoTheaterCloneMode, %REG_SZ%, "1"
+HKR,, 3to2Pulldown_NA, %REG_SZ%, 0
+HKR,, GI_NA, %REG_SZ%, 1
+HKR,, AreaAniso_NA, %REG_SZ%, "1"
+HKR,, VIDEO_NAME_SUFFIX, %REG_SZ%, "Avivo(TM)"
+HKR,, AAF_NA, %REG_SZ%, 0
+HKR, "UMD", AAF_DEF, %REG_SZ%, 0
+HKR, "UMD", AAF_Value_SET, %REG_SZ%, "Box:0,Narrow-tent:1,Wide-tent:2,Edge-detect:3"
+HKR, "UMD", AAF_Mapping_SET, %REG_SZ%, "0(Box:2,Narrow-tent:4,Wide-tent:6,Edge-detect:12) 2(Box:2,Narrow-tent:4,Wide-tent:6) 4(Box:4,Narrow-tent:6,Wide-tent:8,Edge-detect:12) 8(Box:8,Narrow-tent:12,Wide-tent:16,Edge-detect:24) 16(Box:16,Narrow-tent:24,Wide-tent:32)"
+HKR,, TemporalAAMultiplier_NA, %REG_SZ%, "1"
+HKR, "UMD",AAAMethod_DEF, %REG_SZ%, 0
+HKR, "UMD",ATMS_DEF, %REG_SZ%, 1
+HKR, "UMD\DXVA",3to2Pulldown, %REG_SZ%, "1"
+HKR, "UMD\DXVA",3to2Pulldown_DEF, %REG_SZ%, "1"
+HKR,, Denoise_NA, %REG_SZ%, "0"
+HKR,, Detail_NA, %REG_SZ%, "0"
+HKR,, DynamicContrast_NA, %REG_SZ%, "0"
+HKR, "UMD\DXVA",StaticGamma, %REG_SZ%, "100"
+HKR, "UMD\DXVA",StaticGamma_DEF, %REG_SZ%, "100"
+HKR,, ASTT_NA, %REG_SZ%, "1"
+HKR, "UMD",ASTT_DEF, %REG_SZ%, 0
+HKR, "UMD",ASD_DEF, %REG_SZ%, 0
+HKR, "UMD",ASE_DEF, %REG_SZ%, 0
+HKR,, DemoMode_NA, %REG_SZ%, "0"
+HKR,, SplitScreen_NA, %REG_SZ%, "0"
+HKR,, TheaterMode_NA, %REG_SZ%, 1
+HKR,, DemoMode_DEF, %REG_SZ%, "0"
+HKR,, StaticGamma_NA, %REG_SZ%, 0
+HKR,, Gamma_NA, %REG_SZ%, 1
+HKR,, PP_Sumo_DisableGfxPowerGatingInUVD, %REG_DWORD%, 0
+HKR, "UMD",MLF_DEF, %REG_SZ%, 0
+HKR,, MLF_NA, %REG_SZ%, 0
+HKR,, SurfaceFormatReplacements_NA, %REG_SZ%, 0
+HKR, "UMD",SurfaceFormatReplacements_DEF, %REG_SZ%, 1
+HKR,, TFQ_NA, %REG_SZ%, 0
+HKR, "UMD",TFQ_DEF, %REG_SZ%, 1
+HKR,, DALNonStandardModesBCD1, %REG_BINARY%,13,60,07,68,00,00,00,60,13,60,07,68,00,00,00,75,13,60,07,68,00,00,00,85,13,66,07,68,00,00,00,60,14,40,09,00,00,00,00,00,08,00,04,80,00,00,00,60,10,24,06,00,00,00,00,60,12,80,07,68,00,00,00,60
+HKR,, DALNonStandardModesBCD2, %REG_BINARY%,13,66,07,68,00,00,00,60,14,00,10,50,00,00,00,60
+HKR,, DALRestrictedModesBCD1, %REG_BINARY%,13,66,07,68,00,00,00,60
+HKR,, DisableDualView,                 %REG_DWORD%,    0
+HKR,, DisableDualviewWithHotKey,    %REG_DWORD%,    1
+HKR,, TVDisableModes,   %REG_DWORD%,    0
+HKR,, DisableSWInterrupt,      		   %REG_DWORD%,    0
+HKR,, ExtEvent_BIOSEventByInterrupt,      %REG_DWORD%,    1
+HKR,, TVM6Flag,   %REG_DWORD%,    0
+HKR,, DfpUsePixSlip,                  %REG_DWORD%,    1
+HKR,, Gxo50HzTimingSupport,          %REG_DWORD%,    1
+HKR,, CVRULE_ENABLEPALTIMINGSUPPORT,      %REG_DWORD%,    1
+HKR,, DisableFBCSupport,      %REG_DWORD%,    0
+HKR,, EnableCrossFireAutoLink,        %REG_DWORD%,    1
+HKR,, DFP_AddHDTVPixelFormats,      %REG_DWORD%,    3
+HKR,, Gxo24HzTimingSupport,          %REG_DWORD%,    1
+HKR,, GXOxvYCCSupport,      %REG_DWORD%,    1
+HKR, "UMD\DXVA",CmMode_XvYCC,               %REG_DWORD%,    1
+HKR, "UMD\DXVA",DynamicContrast_ENABLE_DEF, %REG_SZ%, "1"
+HKR, "UMD\DXVA",DI_METHOD_DEF, %REG_SZ%, "-1"
+HKR,, EnableUlps,      %REG_DWORD%,    1
+HKR,, EnableCrossFireAutoLink,        %REG_DWORD%,    1
+HKR, "UMD\DXVA",MosquitoNoiseRemoval_DEF, %REG_SZ%, "50"
+HKR, "UMD\DXVA",MosquitoNoiseRemoval_ENABLE_DEF, %REG_SZ%, "1"
+HKR,, MosquitoNoiseRemoval_NA, %REG_SZ%, "0"
+HKR, "UMD\DXVA",Deblocking_DEF, %REG_SZ%, "50"
+HKR, "UMD\DXVA",Deblocking_ENABLE_DEF, %REG_SZ%, "1"
+HKR,, Deblocking_NA, %REG_SZ%, "0"
+HKR,, DalForceUnderscanAdjustment,             %REG_DWORD%, 1
+HKR, "UMD\DXVA", CameraShake_ENABLE_DEF, %REG_SZ%, "0"
+HKR, "UMD\DXVA", CameraShakeStrength_DEF, %REG_SZ%, "1"
+HKR, "UMD\DXVA", CameraShakeDelay_DEF, %REG_SZ%, "1"
+HKR, "UMD\DXVA", CameraShakeZoom_DEF, %REG_SZ%, "95"
+HKR, "UMD",Main3D_DEF, %REG_SZ%, 3
+HKR, "UMD",AntiAlias_DEF, %REG_SZ%, 1
+HKR, "UMD",AntiAliasSamples_DEF, %REG_SZ%, 0
+HKR, "UMD",AnisoType_DEF, %REG_SZ%, 0
+HKR, "UMD",AnisoDegree_DEF, %REG_SZ%, 0
+HKR, "UMD",TextureOpt_DEF, %REG_SZ%, 0
+HKR, "UMD",TextureLod_DEF, %REG_SZ%, 0
+HKR, "UMD",TruformMode_DEF, %REG_SZ%, 0
+HKR, "UMD",VSyncControl_DEF, %REG_SZ%, 1
+HKR, "UMD",SwapEffect_DEF, %REG_SZ%, 0
+HKR, "UMD",TemporalAAMultiplier_DEF, %REG_SZ%, 0
+HKR, "UMD",ExportCompressedTex_DEF, %REG_SZ%, 1
+HKR, "UMD",PixelCenter_DEF, %REG_SZ%, 0
+HKR, "UMD",ForceZBufferDepth_DEF, %REG_SZ%, 0
+HKR, "UMD",EnableTripleBuffering_DEF, %REG_SZ%, 0
+HKR, "UMD",CatalystAI_DEF, %REG_SZ%, 1
+HKR,, ColourDesktopGamma_DEF, %REG_SZ%, "1.0 1.0 1.0"
+HKR,, ColourDesktopBrightness_DEF, %REG_SZ%, "0 0 0"
+HKR,, ColourDesktopContrast_DEF, %REG_SZ%, "1.0 1.0 1.0"
+HKR,, ColourFullscreenGamma_DEF, %REG_SZ%, "1.0 1.0 1.0"
+HKR,, ColourFullscreenBrightness_DEF, %REG_SZ%, "0 0 0"
+HKR,, ColourFullscreenContrast_DEF, %REG_SZ%, "1.0 1.0 1.0"
+HKR,, 3D_Refresh_Rate_Override_DEF, %REG_DWORD%, 0
+HKR,, Display_Detection_DEF, %REG_DWORD%, 0
+HKR,, Panning_Mode_DEF, %REG_DWORD%, 0
+HKR,, Force_TV_Detection_DEF, %REG_DWORD%, 0
+
+[ati2mtag_Wrestler_SoftwareDeviceSettings]
+HKR,, DALRULE_NOTVANDLCDONCRTC,             %REG_DWORD%,    1
+HKR,, WmAgpMaxIdleClk,			    %REG_DWORD%,    0x20
+HKR,, DisableIDCT,                          %REG_DWORD%,    0
+;;HKLM,"SOFTWARE\Microsoft\Windows\CurrentVersion\Run",ATIModeChange,,"Ati2mdxx.exe"
+HKR,, DALR6 CRT_MaxModeInfo,                  %REG_BINARY%,00,00,00,00,40,06,00,00,B0,04,00,00,00,00,00,00,3C,00,00,00
+HKR,, DisableFullAdapterInit,      %REG_DWORD%,    0
+HKR,, MemInitLatencyTimer,         %REG_DWORD%,    0x775771BF
+HKR,, GCORULE_FlickerWA,             %REG_DWORD%, 1
+HKR,, SMOOTHVISION_NAME, %REG_SZ%, "SMOOTHVISION HD"
+HKR, "UMD",GI_DEF, %REG_SZ%, 1
+HKR, "UMD",ASTT_DEF, %REG_SZ%, 0
+HKR, "UMD",AreaAniso_DEF, %REG_SZ%, 0
+HKR,, SameOnAllUsingStandardInVideoTheaterCloneMode, %REG_SZ%, "1"
+HKR,, 3to2Pulldown_NA, %REG_SZ%, 0
+HKR,, GI_NA, %REG_SZ%, 1
+HKR,, AreaAniso_NA, %REG_SZ%, "1"
+HKR,, VIDEO_NAME_SUFFIX, %REG_SZ%, "Avivo(TM)"
+HKR,, AAF_NA, %REG_SZ%, 0
+HKR, "UMD", AAF_DEF, %REG_SZ%, 0
+HKR, "UMD", AAF_Value_SET, %REG_SZ%, "Box:0,Narrow-tent:1,Wide-tent:2,Edge-detect:3"
+HKR, "UMD", AAF_Mapping_SET, %REG_SZ%, "0(Box:2,Narrow-tent:4,Wide-tent:6,Edge-detect:12) 2(Box:2,Narrow-tent:4,Wide-tent:6) 4(Box:4,Narrow-tent:6,Wide-tent:8,Edge-detect:12) 8(Box:8,Narrow-tent:12,Wide-tent:16,Edge-detect:24) 16(Box:16,Narrow-tent:24,Wide-tent:32)"
+HKR,, TemporalAAMultiplier_NA, %REG_SZ%, "1"
+HKR, "UMD",AAAMethod_DEF, %REG_SZ%, 0
+HKR, "UMD",ATMS_DEF, %REG_SZ%, 1
+HKR, "UMD\DXVA",3to2Pulldown, %REG_SZ%, "1"
+HKR, "UMD\DXVA",3to2Pulldown_DEF, %REG_SZ%, "1"
+HKR,, Denoise_NA, %REG_SZ%, "0"
+HKR,, Detail_NA, %REG_SZ%, "0"
+HKR,, DynamicContrast_NA, %REG_SZ%, "0"
+HKR, "UMD\DXVA",StaticGamma, %REG_SZ%, "100"
+HKR, "UMD\DXVA",StaticGamma_DEF, %REG_SZ%, "100"
+HKR,, ASTT_NA, %REG_SZ%, "1"
+HKR, "UMD",ASTT_DEF, %REG_SZ%, 0
+HKR, "UMD",ASD_DEF, %REG_SZ%, 0
+HKR, "UMD",ASE_DEF, %REG_SZ%, 0
+HKR,, DemoMode_NA, %REG_SZ%, "0"
+HKR,, SplitScreen_NA, %REG_SZ%, "0"
+HKR,, TheaterMode_NA, %REG_SZ%, 1
+HKR,, DemoMode_DEF, %REG_SZ%, "0"
+HKR,, StaticGamma_NA, %REG_SZ%, 0
+HKR,, Gamma_NA, %REG_SZ%, 1
+HKR,, DRR_ENABLE,      %REG_DWORD%,    0
+HKR,, EnableSlsSupport,      %REG_DWORD%,    0
+HKR,, DALNonStandardModesBCD1, %REG_BINARY%,13,60,07,68,00,00,00,60,13,60,07,68,00,00,00,75,13,60,07,68,00,00,00,85,13,66,07,68,00,00,00,60,14,40,09,00,00,00,00,00,08,00,04,80,00,00,00,60,10,24,06,00,00,00,00,60,12,80,07,68,00,00,00,60
+HKR,, DALNonStandardModesBCD2, %REG_BINARY%,14,00,10,50,00,00,00,60
+HKR,, DisableDualView,                 %REG_DWORD%,    0
+HKR,, DisableDualviewWithHotKey,    %REG_DWORD%,    1
+HKR,, TVDisableModes,   %REG_DWORD%,    0
+HKR,, DisableSWInterrupt,      		   %REG_DWORD%,    0
+HKR,, ExtEvent_BIOSEventByInterrupt,      %REG_DWORD%,    1
+HKR,, TVM6Flag,   %REG_DWORD%,    0
+HKR,, DfpUsePixSlip,                  %REG_DWORD%,    1
+HKR,, Gxo50HzTimingSupport,          %REG_DWORD%,    1
+HKR,, CVRULE_ENABLEPALTIMINGSUPPORT,      %REG_DWORD%,    1
+HKR,, DisableFBCSupport,      %REG_DWORD%,    0
+HKR,, EnableCrossFireAutoLink,        %REG_DWORD%,    1
+HKR,, DFP_AddHDTVPixelFormats,      %REG_DWORD%,    3
+HKR,, Gxo24HzTimingSupport,          %REG_DWORD%,    1
+HKR,, GXOxvYCCSupport,      %REG_DWORD%,    1
+HKR, "UMD\DXVA",CmMode_XvYCC,               %REG_DWORD%,    1
+HKR, "UMD\DXVA",DynamicContrast_ENABLE_DEF, %REG_SZ%, "1"
+HKR, "UMD\DXVA",DI_METHOD_DEF, %REG_SZ%, "-1"
+HKR,, EnableUlps,      %REG_DWORD%,    1
+HKR,, EnableCrossFireAutoLink,        %REG_DWORD%,    1
+HKR, "UMD\DXVA",MosquitoNoiseRemoval_DEF, %REG_SZ%, "50"
+HKR, "UMD\DXVA",MosquitoNoiseRemoval_ENABLE_DEF, %REG_SZ%, "1"
+HKR,, MosquitoNoiseRemoval_NA, %REG_SZ%, "0"
+HKR, "UMD\DXVA",Deblocking_DEF, %REG_SZ%, "50"
+HKR, "UMD\DXVA",Deblocking_ENABLE_DEF, %REG_SZ%, "1"
+HKR,, Deblocking_NA, %REG_SZ%, "0"
+HKR, "UMD\DXVA",InternetVideo_DEF, %REG_SZ%, "0"
+HKR,, DalForceUnderscanAdjustment,             %REG_DWORD%, 1
+HKR, "UMD\DXVA", CameraShake_ENABLE_DEF, %REG_SZ%, "0"
+HKR, "UMD\DXVA", CameraShakeStrength_DEF, %REG_SZ%, "1"
+HKR, "UMD\DXVA", CameraShakeDelay_DEF, %REG_SZ%, "1"
+HKR, "UMD\DXVA", CameraShakeZoom_DEF, %REG_SZ%, "95"
+HKR, "UMD",Main3D_DEF, %REG_SZ%, 3
+HKR, "UMD",AntiAlias_DEF, %REG_SZ%, 1
+HKR, "UMD",AntiAliasSamples_DEF, %REG_SZ%, 0
+HKR, "UMD",AnisoType_DEF, %REG_SZ%, 0
+HKR, "UMD",AnisoDegree_DEF, %REG_SZ%, 0
+HKR, "UMD",TextureOpt_DEF, %REG_SZ%, 0
+HKR, "UMD",TextureLod_DEF, %REG_SZ%, 0
+HKR, "UMD",TruformMode_DEF, %REG_SZ%, 0
+HKR, "UMD",VSyncControl_DEF, %REG_SZ%, 1
+HKR, "UMD",SwapEffect_DEF, %REG_SZ%, 0
+HKR, "UMD",TemporalAAMultiplier_DEF, %REG_SZ%, 0
+HKR, "UMD",ExportCompressedTex_DEF, %REG_SZ%, 1
+HKR, "UMD",PixelCenter_DEF, %REG_SZ%, 0
+HKR, "UMD",ForceZBufferDepth_DEF, %REG_SZ%, 0
+HKR, "UMD",EnableTripleBuffering_DEF, %REG_SZ%, 0
+HKR, "UMD",CatalystAI_DEF, %REG_SZ%, 1
+HKR,, ColourDesktopGamma_DEF, %REG_SZ%, "1.0 1.0 1.0"
+HKR,, ColourDesktopBrightness_DEF, %REG_SZ%, "0 0 0"
+HKR,, ColourDesktopContrast_DEF, %REG_SZ%, "1.0 1.0 1.0"
+HKR,, ColourFullscreenGamma_DEF, %REG_SZ%, "1.0 1.0 1.0"
+HKR,, ColourFullscreenBrightness_DEF, %REG_SZ%, "0 0 0"
+HKR,, ColourFullscreenContrast_DEF, %REG_SZ%, "1.0 1.0 1.0"
+HKR,, 3D_Refresh_Rate_Override_DEF, %REG_DWORD%, 0
+HKR,, Display_Detection_DEF, %REG_DWORD%, 0
+HKR,, Panning_Mode_DEF, %REG_DWORD%, 0
+HKR,, Force_TV_Detection_DEF, %REG_DWORD%, 0
+
+[ati2mtag_SoftwareDeviceSettings]
+HKR,, DDC2Disabled,                         %REG_DWORD%,    0
+HKR,, DisableBlockWrite,                    %REG_DWORD%,    1
+HKR,, DisableDMACopy,                       %REG_DWORD%,    0
+HKR,, KMDTst,                               %REG_DWORD%,    1
+HKR,, MultiFunctionSupported,               %REG_DWORD%,    0
+HKR,, TestEnv,                              %REG_DWORD%,    0
+HKR,, TimingSelection,                      %REG_DWORD%,    0
+HKR,, VgaCompatible,                        %REG_DWORD%,    0
+HKR,,"Adaptive De-interlacing",             %REG_DWORD%,    1
+HKR,,"VPE Adaptive De-interlacing",         %REG_DWORD%,    1
+HKR,, GCOOPTION_DisableGPIOPowerSaveMode,   %REG_DWORD%,    1
+HKLM,"Software\ATI Technologies\CBT",ReleaseVersion,,"8.92-111109a-129967C-ATI"
+HKR,, ReleaseVersion,,"8.92-111109a-129967C-ATI"
+HKR,, BuildNumber,,"09700"
+HKR,, DALGameGammaScale,       %REG_DWORD%,   0x00646464
+HKLM, "Software\CLASSES\CLSID\{EBB5845F-CA80-11CF-BD3C-008029E89281}\InProcServer32",ThreadingModel,,"Both"
+HKLM,"SOFTWARE\Microsoft\Windows Media Foundation",EMUOPM, %REG_DWORD%, 0
+HKR,, GXOPPUseExclusiveExecution,  %REG_DWORD%,    1
+HKR, "UMD\DXVA",OvlTheaterMode_DEF, %REG_SZ%, "0"
+HKR, "UMD\DXVA",TrueWhite_DEF, %REG_SZ%, "0"
+HKR, "UMD\DXVA",LRTCCoef_DEF, %REG_SZ%, "100"
+HKLM,"Software\Microsoft\TMM",UseIViewHelper, %REG_DWORD%, 1
+HKR,, DXVA_WMV_NA, %REG_SZ%, "1"
+HKR,, DI_METHOD_NA, %REG_SZ%, "0"
+HKR,, GCORULE_X1DETECT,        %REG_DWORD%,    1
+HKR, "UMD\DXVA",OvlTheaterModeType_DEF, %REG_SZ%, "0"
+HKR, "UMD\DXVA",LRTCEnable, %REG_SZ%, "0"
+HKR, "UMD\DXVA",LRTCEnable_DEF, %REG_SZ%, "0"
+HKR, "UMD",MainVideo_SET, %REG_SZ%, "0 1 2 3 4"
+HKR, "UMD",MainVideo_TBL, %REG_SZ%, "1:Brightness=0.0,Contrast=1.0,Saturation=1.0,Gamma=0.0,Hue=0.0;2:Brightness=-3.0,Contrast=1.16,Saturation=1.25,Gamma=0.0,Hue=0.0;3:Brightness=-3.0,Contrast=1.07,Saturation=1.10,Gamma=0.0,Hue=0.0;4:Brightness=7.0,Contrast=1.25,Saturation=0.96,Gamma=0.0,Hue=0.0"
+HKR, "UMD",ATMS_NA, %REG_SZ%, 1
+HKR,, Force_CV_Detection_DEF,      %REG_DWORD%, 0
+HKR,, LDA_ChainDescriptor, %REG_SZ%, ""
+HKR, "UMD\DXVA",WhiteBalanceCorrection_DEF, %REG_SZ%, "0"
+HKR, "UMD\DXVA",BlueStretch_DEF, %REG_SZ%, "1"
+HKR, "UMD\DXVA",StaticGamma_ENABLE_DEF, %REG_SZ%, "0"
+HKR, "UMD\DXVA",DemoMode_DEF, %REG_SZ%, "0"
+HKR,, PowerXpressLoad, %REG_DWORD%, 0xFFFFFFFF
+HKR, "UMD",CFM_SET, %REG_SZ%, "0,1,2,3"
+HKR, "UMD",CFM_DEF, %REG_SZ%, "1"
+HKR,, DisableTiling,                        %REG_DWORD%,    0
+HKR,, DisableMMSnifferCode,               %REG_DWORD%,    0
+HKR,, Catalyst_Version,,"11.12"
+HKR,, TVForceDetection,   %REG_DWORD%,    0
+HKR,, TVEnableOverscan,      %REG_DWORD%,    1
+HKR, "UMD\DXVA", DXVA_WMV, %REG_SZ%, "0"
+HKR, "UMD\DXVA", DXVA_WMV_DEF, %REG_SZ%, "0"
+HKR,, DXVA_WMV_NA, %REG_SZ%, "1"
+HKR,, PP_ULPSDelayIntervalInMilliSeconds,      %REG_DWORD%,    30000
+HKR,, AutoColorDepthReduction_NA,   %REG_DWORD%,    1
+HKLM,"SYSTEM\CurrentControlSet\Services\Atierecord",eRecordEnable,          %REG_DWORD%,    1
+HKLM,"SYSTEM\CurrentControlSet\Services\Atierecord",eRecordEnablePopups,          %REG_DWORD%,    1
+HKR,, OpenGLDriverName,                   %REG_MULTI_SZ%, atioglxx.dll
+HKR,, OpenGLFlags,               %REG_DWORD%,    3
+HKR,, OpenGLVersion,               %REG_DWORD%,    1
+HKR,, DAL_DFPRestrictedModesBCD,               %REG_BINARY%, 06,40,04,32,00,00,00,00
+HKR,, DAL_DFP2RestrictedModesBCD,               %REG_BINARY%, 06,40,04,32,00,00,00,00
+HKR,, DAL_DFPEXTTMDSRestrictedModesBCD,               %REG_BINARY%, 06,40,04,32,00,00,00,00
+HKR,, PXSplashScreen,    %REG_DWORD%,    0
+HKLM,"Software\AMD\EEU", LogOutputERecord,          %REG_DWORD%,    1
+HKR,, DalAsicFIDOSForcedModeSupport,             %REG_DWORD%, 3
+HKR, "UMD\DXVA",Detail_DEF, %REG_SZ%, "10"
+HKR, "UMD\DXVA",Detail_ENABLE_DEF, %REG_SZ%, "1"
+HKR, "UMD\DXVA",Denoise_DEF, %REG_SZ%, "64"
+HKR, "UMD\DXVA",Denoise_ENABLE_DEF, %REG_SZ%, "1"
+HKR, "UMD\DXVA",OverridePA_DEF, %REG_SZ%, "0"
+HKR, "UMD\DXVA",ColorVibrance_DEF, %REG_SZ%, "40"
+HKR, "UMD\DXVA",ColorVibrance_ENABLE_DEF, %REG_SZ%, "1"
+
+[atikmdag_MSI_HardwareDeviceSettings]
+HKR,Interrupt Management\MessageSignaledInterruptProperties, MSISupported, 0x00010001, 1
+
+[ati2mtag_ProxySettings_DX10]
+HKR,, OpenGLDriverName,          %REG_MULTI_SZ%, atiglpxx.dll
+
+[ati2mtag_ProxySettings_DX10_PXAA]
+HKR,, D3DVendorName,       %REG_MULTI_SZ%, atiumdag.dll, atiumdag.dll, atidxx32.dll, atidxx32.dll
+HKR,, OpenGLVendorName,          %REG_MULTI_SZ%, atioglxx.dll, atioglxx.dll
+HKR,, PXACAutoSwitch,      %REG_DWORD%,    0
+HKR,, PXDCAutoSwitch,      %REG_DWORD%,    0
+
+[ati2mtag_PXAA]
+HKR,, UserModeDriverGUID,     %REG_SZ%, {"F3A42474-0891-4151-B44A-ED04B657432B"}
+HKR,, PXProfileSync,      %REG_DWORD%,    1
+HKR,, PXUseAPLForSwitch,             %REG_DWORD%, 1
+HKR,, PXReducePopUps,             %REG_DWORD%, 1
+
+[ati2mtag_M9x_PX]
+
+[ati2mtag_Manhattan_PX]
+
+[ati2mtag_Pre_EG]
+HKR,, Deblocking_NA, %REG_SZ%, "1"
+HKR,, MosquitoNoiseRemoval_NA, %REG_SZ%, "1"
+HKR,, DynamicRange_NA, %REG_SZ%, "1"
+HKR,, BlueStretch_NA, %REG_SZ%, "1"
+HKR,, EQAA_NA, %REG_SZ%, 1
+HKR,, MLF_NA, %REG_SZ%, 1
+HKR,, EnableUlps_NA, %REG_SZ%, 1
+HKR,, SurfaceFormatReplacements_NA, %REG_SZ%, 1
+HKR,, TFQ_NA, %REG_SZ%, 1
+HKR,, AntiAlias_NA, %REG_SZ%, 0
+HKR,, StaticGamma_NA, %REG_SZ%, "1"
+HKR,, Tessellation_NA, %REG_SZ%, "1"
+HKR, "UMD\DXVA",CameraShake_NA, %REG_SZ%, "1"
+HKR,, GXOCRTDisableHorizontalSyncAdj,             %REG_DWORD%, 0
+HKR,, GXOCRTDisableVerticalSyncAdj,             %REG_DWORD%, 0
+HKR,, GXOCRTDisablecompositeSyncAdj,             %REG_DWORD%, 0
+
+[ati2mtag_Post_EG]
+HKR, "UMD",Tessellation_OPTION_DEF, %REG_SZ%, "0"
+HKR, "UMD",Tessellation_DEF, %REG_SZ%, "64"
+HKR, "UMD\DXVA",InternetVideo_DEF, %REG_SZ%, "0"
+HKR, "UMD\DXVA",Fleshtone_DEF, %REG_SZ%, "50"
+HKR, "UMD\DXVA",Fleshtone_ENABLE_DEF, %REG_SZ%, "1"
+HKR,, DalAllowHSyncVSyncAdjustment,             %REG_DWORD%, 1
+HKR,, DalAllowCompositeSyncAdjustment,             %REG_DWORD%, 1
+HKR, "UMD\DXVA",DynamicRange_DEF, %REG_SZ%, "0"
+HKR, "UMD\DXVA",DynamicRange_ENABLE_DEF, %REG_SZ%, "0"
+HKR, "UMD\DXVA",DynamicContrast_ENABLE_DEF, %REG_SZ%, "1"
+HKR, "UMD\DXVA",BlueStretch_ENABLE_DEF, %REG_SZ%, "1"
+HKR, "UMD\DXVA",BlueStretch_DEF, %REG_SZ%, "1"
+
+[ati2mtag_Proxy]
+HKR,, UserModeDriverGUID,     %REG_SZ%, {"F3A42474-0891-4151-B44A-ED04B657432B"}
+
+[Delreg_services]
+HKR,, KMD_PXDefaultScheme
+HKR,, KMD_PXForceDynamicSchemeSupport
+HKR,, PXRemovableDeviceInfo
+HKR,, PXScheme
+HKR,, PXVgaDeviceInfo
+HKR,, KMD_PXDefaultGpuForDynamicScheme
+
+[Addreg_PX_Services]
+
+[ati2mtag_RemoveDeviceSettings]
+HKR,, Adaptive De-interlacing
+HKR,, AgpLevel
+HKR,, AntiAlias
+HKR,, DALCurrentObjectData
+HKR,, DALLastConnected
+HKR,, DALLastSelected
+HKR,, DALLastTypes
+HKR,, DALNonStandardModesBCD
+HKR,, DALObjectData
+HKR,, DALObjectData0
+HKR,, DALObjectData1
+HKR,, DALR6 CRT_MaxModeInfo
+HKR,, DALR6 CRT2_MaxModeInfo
+HKR,, DALR6 DFP_MaxModeInfo
+HKR,, DALR6 DFPx_MaxModeInfo
+HKR,, DALR6 GCO_Index0
+HKR,, DALRestrictedModesBCD
+HKR,, DALRULE_ADDNATIVEMODESTOMODETABLE
+HKR,, DALRULE_CRTSUPPORTSALLMODES
+HKR,, DALRULE_DISABLEBANDWIDTH
+HKR,, DALRULE_DISPLAYSRESTRICTMODES
+HKR,, DALRULE_NOCRTANDLCDONSAMECONTROLLER
+HKR,, DALRULE_NOFORCEBOOT
+HKR,, DALRULE_NOTVANDCRTONSAMECONTROLLER
+HKR,, DALRULE_RESTRICTUNKNOWNMONITOR
+HKR,, DALRULE_SAVEPANLOCK
+HKR,, DALSelectObjectData0
+HKR,, DALSelectObjectData1
+HKR,, DDC2Disabled
+HKR,, DefaultMode
+HKR,, DFPRULE_HotplugSupported
+HKR,, DisableAGP
+HKR,, DisableAGPPM4
+HKR,, DisableBlockWrite
+HKR,, DisableDMA
+HKR,, DisableDMACopy
+HKR,, DisableDrvStretchBlt
+HKR,, DisableDynamicEnableMode
+HKR,, DisableEnumAllChilds
+HKR,, DisableFullAdapterInit
+HKR,, DisableHierarchicalZ
+HKR,, DisableIDCT
+HKR,, DisableLCD
+HKR,, DisableMMLIB
+HKR,, DisableOpenGLScrAccelerate
+HKR,, DisablePllInit
+HKR,, DisablePrimaryTiling
+HKR,, DisableTCL
+HKR,, DisableTimeStampWriteBack
+HKR,, DisableUSWC
+HKR,, DisableVPE
+HKR,, DisableFullAdapterInit
+HKR,, EnableWaitUntilIdxTriList2
+HKR,, GCORULE_HIGHDISPRI
+HKR,, GCORULE_R200TVPLLWA
+HKR,, KD_TilingMode
+HKR,, LVB
+HKR,, MaxAgpVb
+HKR,, MaxAGPVB
+HKR,, MaxLocalVb
+HKR,, MaxLocalVB
+HKR,, SubmitOnDraw
+HKR,, TestEnv
+HKR,, TimingSelection
+HKR,, TVR200Flag
+HKR,, VgaCompatible
+HKR,, VPE Adaptive De-interlacing
+HKR,, ATIPoll
+HKR,, TVM6Flag
+HKR,, DALNonStandardModesBCD
+HKR,, DALNonStandardModesBCD1
+HKR,, DALNonStandardModesBCD2
+HKR,, DALNonStandardModesBCD3
+HKR,, DALNonStandardModesBCD4
+HKR,, DALNonStandardModesBCD5
+HKR,, DALRestrictedModesBCD
+HKR,, DALRestrictedModesBCD1
+HKR,, DALRestrictedModesBCD2
+HKR,, DALRestrictedModesBCD3
+HKR,, DALRestrictedModesBCD4
+HKR,, DALRestrictedModesBCD5
+HKR,, RemovableSources
+HKR,, TheaterMode_NA
+HKR,, AreaAniso_DEF
+HKR,, ASTT_DEF
+HKR,, ASD_DEF
+HKR,, GI_DEF
+HKR,, CatalystAI_DEF
+HKR,, ASTT_NA
+HKR,, DALPowerPlayOptions
+HKR,, OGL_Specific_NA
+HKR,, ASTT_NA
+HKR,, APISpecific_NA
+HKR,, TemporalAAMultiplier_NA
+HKR,, Main3D_NA
+HKR,, CatalystAI_NA
+HKR,, NoPreview_NA
+HKR,, ASTT_NA
+HKR,, 3to2Pulldown_NA
+HKR,, Transcode_NA
+HKR, "UMD\DXVA", DXVA_NOHDDECODE
+HKR,, GxoDisable8bppMode
+HKR, "UMD\DXVA",SORTOverrideFPSCaps
+HKR, "UMD\DXVA",SORTOverrideVidSizeCaps
+HKR, "UMD\DXVA",DXVA_Only24FPS1080MPEG2
+HKR, "UMD\DXVA",DXVA_Only24FPS1080H264
+HKR, "UMD\DXVA",DXVA_Only24FPS1080VC1
+HKR, "UMD",ATMS_DEF
+HKR, "UMD",AAAMethod_DEF
+HKR,, TestEnv
+HKR,, PP_DisablePPLib
+HKR,, FrameBufferMode
+HKR,, EnableUnifiedGartSegment
+HKR,, EnablePDMA
+HKR,, PrimaryTiling
+HKR,, FrameBufferMode
+HKR,, EnableUnifiedGartSegment
+HKR,, EnablePDMA
+HKR,, PP_GFXClockGatingEnabled
+HKR,, LogicalMemCfg
+HKR,, AdjustFBSegment
+HKR,, DisableRejectCf
+HKR,, PP_GFXClockGatingEnabled
+HKR,, DisablePCIEGen2Support
+HKR,, DisableVPURecover
+HKR,, DynamicContrast_ENABLE_DEF
+HKR,, DynamicContrast_NA
+HKR, "UMD\DXVA",DynamicContrast_DEF
+HKR,, DP_EnableSSByDefault
+HKR,, DXVA_WMV_DEF
+HKR,, DXVA_WMV
+HKR,, DisableCfSpSupport
+HKR, "UMD",ForceDX10Only
+HKR,, DALRULE_PHYSICAL_DETECTION_AT_RESUME
+HKR,, UserModeDriverGUID
+HKLM,, Software\Microsoft\TMM
+HKR,, DisableLoadBalancing
+HKR,, ProxyLDA_ChainID
+HKR,, ProxyLDA_ChainLength
+HKR,, ProxyLDA_DeviceID
+HKR,, ProxyLDA_Status
+HKR,, ProxyLDA_Support
+HKR,, LDA_Support
+HKR,, PX_Bypass
+HKR,, PX_PnP_HighPerformance
+HKR,, PX_PnP_PowerSaving
+HKR,, DMMEnableDDCPolling
+HKR,, DalInstallFlag
+HKR,, DALR6 DFP
+HKR,, DALR6 DFPI 2
+HKR,, DALR6 DFPI 3
+HKR,, DALR6 DFPI 4
+HKR,, DALR6 DFPI 5
+HKR,, GDOADJR6 DFP
+HKR,, GDOADJR6 DFPI 2
+HKR,, GDOADJR6 DFPI 3
+HKR,, GDOADJR6 DFPI 4
+HKR,, GDOADJR6 DFPI 5
+HKR,, DemoMode_DEF
+HKR,, DemoMode_NA
+HKR,, DisableFBCSupport
+HKR,, DisableOGL10BitPixelFormats
+HKR,, DALRULE_AllowNativeModeAsDefaultModes
+HKR,, VisualEnhancements_Capabilities
+HKR,, VisualEnhancements_Capabilities_DEF
+HKR, "UMD",EnableUlps_DEF
+HKR,, InternetVideo_NA
+HKR,, PP_PhmSoftPowerPlayTable
+HKR,, PXBlockCrtSwitch
+HKR,, PP_SCLKDEEPSLEEPDISABLE
+HKR,, PP_MCLKStutterModeThreshold
+HKR,, StutterMode
+HKR, "UMD\DXVA",CameraShake_NA
+HKR,, CameraShake_NA
+HKR,, DFPRULE_HotplugSupported
+HKR,, TVContrastDefaultNTSC
+HKR,, DALRULE_POWERPLAYOPTIONENABLEDBYDEFAULT
+HKR,, DALRULE_RESTRICTNONDDCCRTTO1024x768
+HKR,, DALRULE_ALLOWNONDDCCRTALLMODESUPTO1024x768
+HKR,, DALRULE_ALLOWNONDDCCRTALLMODESUPTO1920x1200
+HKR,, TVLumaFlicker
+HKR,, TVDotCrawl
+HKR,, TVCompositeFilter
+HKR,, DALDisplayPrioritySequence
+HKR,, ExtEvent_SaveADCProfileGlobally
+HKR,, ExtEvent_NonExtendedADCProfileOnHotKey
+HKR,, DALRULE_ADDEXTDESKTOPTOPROFILEKEY
+HKR,, DALRULE_GETDEFAULTTVFORMATATBOOT
+HKR,, DisableCursor
+HKR,, DALRULE_USERESTRICTEDNATIVETIMING
+HKR,, DFPOption_MaxFreq
+HKR,, DisableAGPFW
+HKR,, UseBT601CSC
+HKR,, CRTRULE_FORCECRTDAC1DETECTED
+HKR,, CRTRULE_FORCECRTDAC2DETECTED
+HKR,, CRTRULE_FORCECRTDACTYPESDETECTED
+HKR,, DALRULE_PROFILEPREFERREDMODEBASEDONEXTDEVICE
+HKR,, GCORULE_TMDSReducedBlankingUseCVT
+HKR,, DFPOption_SingleLink
+HKR,, DFPXOption_SingleLink
+HKR,, TVContrastDefaultNTSCJ
+HKR,, TVContrastDefaultPAL
+HKR,, R6LCD_ALLOWDISABLELOWREFRESHBYUSER
+HKR,, TVDACSettings
+HKR,, DALRULE_ALLOWMONITORRANGELIMITMODESCRT
+HKR,, GCOOPTION_DefaultOvlBrightness
+HKR,, GCOOPTION_DefaultOvlSaturation
+HKR,, GCOOPTION_DefaultOvlContrast
+HKR,, DAL_CRTRestrictedModesBCD
+HKR,, dwVForceMode
+HKR,, PP_GFXClockGatingEnabled
+HKR,, DisableFBCSupport
+HKR,, DisableCrossFire
+HKR,, LDA_Status
+HKR,, LDA_ChainID
+HKR,, LDA_ChainLength
+HKR,, LDA_DeviceID
+HKR,, MMLibSupport
+HKR,, RemovableSources
+HKR,, VForceModeSize
+HKR,, PipeChannels
+HKR,, MVPUMemoryDowngrade
+HKR,, MVPULimitVisibleMemory
+HKR,, MemoryBankDowngrade
+HKR, "UMD",MVPU
+HKR,, DisableLoadBalancing
+HKR,, GCORULE_ExtTMDSReduceBlankTiming
+HKR,, GCOOPTION_ExtTMDSMaxTMDSClockSpeed
+HKR,, OverDrive3_NA
+HKR,, OverDrive2_NA
+HKR,, DAL_CvRestrictedModesBCD
+HKR,, AutoClockConfig_NA
+HKR,, DALRULE_DISABLEVARIBRIGHTBYDEFAULT
+HKR,, DALRULE_HIDEVARIBRIGHT
+HKR,, PP_VariBrightFeatureEnable
+HKR,, PP_UserVariBrightEnable
+HKR,, GCORULE_CvImproveClkPrecision
+HKR,, DALDefaultCvModeBCD
+HKR,, DALRULE_CVUSEOPTIMODEASDEFAULT
+HKR,, GXOM5XDisableLaneSwitch
+HKR,, DALRULE_LIMITEDGREYSCALESUPPORT
+HKR,, Extevent_HotplugUseCurrentMapping
+HKR,, ExtEvent_EnableADCTriggeredByTMM
+HKR,, DAL_TVRestrictedModesBCD
+HKR, "UMD\DXVA",HWUVD_DisableH264
+HKR, "UMD\DXVA",HWUVD_DisableVC1
+HKR,, DisableVForceMode
+HKR,, PP_ForceReportOverdrive4
+HKR,, DALRULE_LIMITEDGREYSCALESUPPORT
+HKR,, EnablePPSMSupport
+HKR,, PPSMSupportLevel
+HKR,, EnableSPSurface
+HKR,, ExtEvent_ApplyBootupProfile
+HKR,, PP_DeferFirstStateSwitch
+HKR,, GXODontDisableVGAAtResume
+HKR,, PP_RS780CGINTGFXMISC2
+HKR, "UMD",R600DB_DEBUG
+HKR,, EnableGeminiAutoLink
+HKR,, DisableFBCSupport
+HKR,, FBCSupportLevel
+HKR,, HDTVRULE_HDTVGDOENABLE
+HKR,, HDTVRULE_HDTVSIGNALFORMAT
+HKR,, ForceHigh3DClocks_NA
+HKR,, LEDSamplePeriodMs
+HKR,, LEDSampleHeight
+HKR,, LEDSampleWidth
+HKCU,"Software\AMD\Install",Command Line option for DAL
+HKR,, DALRULE_DoNotReportPALHDTVModes
+HKR,, ExtEvent_EnablePolling
+HKR,, TMDS_DisableDither
+HKR,, DigitalHDTVDefaultUnderscan
+HKR,, PP_VariBrightFeatureEnable
+HKR,, GXODFPxDVODDRSupport
+HKR,, PXSplashScreen
+HKR,, DMMReportCurrentScalingSupport
+HKR,, EnableLassoSupport
+HKR,, EnableXDSupport
+HKR,, PlatformConfig
+HKR,,   DisableVLDForSingleFireMVAsic
+HKR,, DALRULE_AllowNonCEModes
+HKR,, EnableGPUVirtulizationFeature
+HKR,, MemorySizeReservedForHostOS
+HKR,, ExtEvent_ADCNoDetectionAtHotKey
+HKR,, GXOxvYCCSupport
+HKR,, PXBlockCrtSwitch
+HKR,, GXOUseSclkforProgrammableDispClk
+HKR,, DALDefaultACPowerState
+HKR,, DALDCLowThresholdValue
+HKR,, DALRULE_NOTSHOWFORCEMODEINCLONE
+HKR,, DALRULE_NOTSHOWRANGELIMITMODEINCLONE
+HKR,, ExtEvent_ApplyBootupProfileForOEMSpecification
+HKR,, PO_SwRi
+HKR,, DALPanelPatchByID
+HKR,, GXOTwoDigitalPanelPLLWa
+HKR,, DMMRecommendNonDDCCRTModes
+HKR,, GxoAllCvFormatSupportedAtBoot
+HKR,, DALRULE_ENABLEMONITORTIMEOUTPWRSTATE
+HKR,, Gxo30BppPanels
+HKLM,"Software\AMD\EEU", SaveProfileGlobally
+HKR,, GXODFPDefaultCoherentMode
+HKR,, GXODFP2DefaultCoherentMode
+HKR,, GXODFPXDefaultCoherentMode
+HKR,, PXACAdapter
+HKR,, PXDCAdapter
+HKR,, PXACAutoSwitch
+HKR,, PXDCAutoSwitch
+HKR,, UserMustConfirm
+HKR,, PowerXpressLoad
+HKR,, D3DVendorName
+HKR,, OpenGLVendorName
+HKR, "UMD",DisplayCrossfireLogo_DEF
+HKR,, DALRULE_SkipEDIDReadForNoSink
+HKR,, DisablePCIEx1LaneUVD
+HKR,, PP_DCPowerSourceUIMapping_Default
+HKR,, MaxDPMClock
+HKR,, PXandHCF
+HKR,, Disable8435
+HKR,, GCOOPTION_MaxOverlayBandwidth
+HKR,, Gxo_AdapterOverlayBandwidth
+HKR,, CRTRULE_R520FORCECRTDAC2DETECTED
+HKR,, DMMEnableDDCPolling
+HKR,, PP_DisableODStateInDC
+HKR,, PP_DisableDCODT
+HKR,, PXFactoryDefaultState
+HKR,, PXDefaultState
+HKR,, SUPPORTHPDMISSINGDVI
+HKR,, EnableLassoSupport
+HKR,, GxoAdjustVBlankForHTLinkChange
+HKR,, DAL_DFPScalingOptionDefault
+HKR,, DAL_DFP2ScalingOptionDefault
+HKR,, DAL_DFP3ScalingOptionDefault
+HKR,, DAL_DFP4ScalingOptionDefault
+HKR,, DAL_DFP5ScalingOptionDefault
+HKLM,"Software\Microsoft\TMM"
+HKLM,"Software\Microsoft\TMM"
+HKR,, LcdPixelClockFrequencySpreadPercentage
+HKR,, RemovableSources
+HKR,, SKIPAZALIAINBLANK
+HKR,, DisableFireGLCrossfire
+HKR,, LCDOverdrivePerPowerSource
+HKR,, PP_UserVariBrightLevel
+HKR,, HdmiDefaultColorDepth
+HKR,, DALRULE_FORCE_DISABLE_DP_AUDIO
+HKR, "UMD\DXVA", VForceMPEG2SDOnly
+HKR,, EnablePartialBlitForPaging
+HKR,, DAL_LcdRestrictedModesBCD
+HKR,, EnableSlsSupport
+HKR,, GXODisablePFREQCHG
+HKR,, DisableMultiSlsGridSupport
+HKR,, EnableSixCloneSupport
+HKR,, DalAsicFIDMaxNC
+HKR,, EnableCpuMemCpy
+HKR,, PP_ABMFeatureEnable
+HKR,, ATIFSpecificSupport
+HKR,, EnableSLSBezelSupport
+HKR,, DalFID9204Enable
+HKR,, DP_NotSendingLTMessage
+HKR,, DalReportSingleSelectedTiming
+HKR, "UMD\DXVA", HWUVD_H264Level51Support
+HKR,, PP_EnableCFULPSPolicy
+HKR, "UMD\DXVA", VForceUVDH264MVC
+HKR,, GXODFP2ReducedBlanking
+HKR,, DalForceTimingResync
+HKR,, PP_EnableDualACTemplateForOD
+HKR,, EPVD
+HKR,, DP_DisableHBR2
+HKR,, DalNumOfPathPerDpMstConnector
+HKR,, PP_MCLKStutterModeThreshold
+HKR,, DALDefaultModeNonDdcVga
+HKR,, PP_DisableSMUUVDHandshake
+HKR,, DalTravisPwDnPolling
+HKR,, GSLWorkaround
+HKR,, PP_DisableULV
+HKR,, DisableForceUvdToSclk
+HKR,, DisableVPURecover
+HKR,, DisableGfxCGPowerGating
+
+[ati2mtag_Evergreen.GeneralConfigData]
+MaximumDeviceMemoryConfiguration=256
+MaximumNumberOfDevices=4
+
+[ati2mtag_EvergreenC.GeneralConfigData]
+MaximumDeviceMemoryConfiguration=256
+MaximumNumberOfDevices=4
+
+[ati2mtag_EvergreenH.GeneralConfigData]
+MaximumDeviceMemoryConfiguration=256
+MaximumNumberOfDevices=4
+
+[ati2mtag_M76.GeneralConfigData]
+MaximumDeviceMemoryConfiguration=128
+MaximumNumberOfDevices=4
+
+[ati2mtag_M9x.GeneralConfigData]
+MaximumDeviceMemoryConfiguration=128
+MaximumNumberOfDevices=4
+
+[ati2mtag_M9x8.GeneralConfigData]
+MaximumDeviceMemoryConfiguration=128
+MaximumNumberOfDevices=4
+
+[ati2mtag_Manhattan.GeneralConfigData]
+MaximumDeviceMemoryConfiguration=128
+MaximumNumberOfDevices=4
+
+[ati2mtag_ManhattanP.GeneralConfigData]
+MaximumDeviceMemoryConfiguration=128
+MaximumNumberOfDevices=4
+
+[ati2mtag_NI.GeneralConfigData]
+MaximumDeviceMemoryConfiguration=256
+MaximumNumberOfDevices=4
+
+[ati2mtag_NICayman.GeneralConfigData]
+MaximumDeviceMemoryConfiguration=256
+MaximumNumberOfDevices=4
+
+[ati2mtag_R600.GeneralConfigData]
+MaximumDeviceMemoryConfiguration=256
+MaximumNumberOfDevices=4
+
+[ati2mtag_R7X.GeneralConfigData]
+MaximumDeviceMemoryConfiguration=256
+MaximumNumberOfDevices=4
+
+[ati2mtag_RS780.GeneralConfigData]
+MaximumDeviceMemoryConfiguration=128
+MaximumNumberOfDevices=4
+
+[ati2mtag_RS780D.GeneralConfigData]
+MaximumDeviceMemoryConfiguration=128
+MaximumNumberOfDevices=4
+
+[ati2mtag_RS880.GeneralConfigData]
+MaximumDeviceMemoryConfiguration=128
+MaximumNumberOfDevices=4
+
+[ati2mtag_RV610.GeneralConfigData]
+MaximumDeviceMemoryConfiguration=256
+MaximumNumberOfDevices=4
+
+[ati2mtag_RV630.GeneralConfigData]
+MaximumDeviceMemoryConfiguration=256
+MaximumNumberOfDevices=4
+
+[ati2mtag_RV7X.GeneralConfigData]
+MaximumDeviceMemoryConfiguration=256
+MaximumNumberOfDevices=4
+
+[ati2mtag_Sumo_Desktop.GeneralConfigData]
+MaximumDeviceMemoryConfiguration=256
+MaximumNumberOfDevices=4
+
+[ati2mtag_Sumo_Mobile.GeneralConfigData]
+MaximumDeviceMemoryConfiguration=128
+MaximumNumberOfDevices=4
+
+[ati2mtag_Wrestler.GeneralConfigData]
+MaximumDeviceMemoryConfiguration=128
+MaximumNumberOfDevices=4
+
+[SourceDisksNames.x86]
+1 = %DiskId%,,,.\B128376
+
+[SourceDisksFiles]
+ati2edxx.dll=1
+ati2erec.dll=1
+atiadlxx.dll=1
+atiapfxx.blb=1
+atiapfxx.exe=1
+atibtmon.exe=1
+aticalcl.dll=1
+aticaldd.dll=1
+aticalrt.dll=1
+aticfx32.dll=1
+atidemgx.dll=1
+atidxx32.dll=1
+atieclxx.exe=1
+atiesrxx.exe=1
+atigktxx.dll=1
+atiglpxx.dll=1
+atiicdxx.dat=1
+atikmdag.sys=1
+atikmpag.sys=1
+atimpc32.dll=1
+atimuixx.dll=1
+atiodcli.exe=1
+atiode.exe=1
+atiogl.xml=1
+atioglxx.dll=1
+atipblag.dat=1
+atipdlxx.dll=1
+atitmmxx.dll=1
+atitmpxx.dll=1
+atiu9pag.dll=1
+atiumdag.dll=1
+atiumdmv.dll=1
+atiumdva.cap=1
+atiumdva.dll=1
+atiuxpag.dll=1
+coinst.dll=1
+difxapi.dll=1
+oemdspif.dll=1
+
+[Strings]
+;
+; Non-Localizable Strings
+;
+REG_SZ         = 0x00000000
+REG_MULTI_SZ   = 0x00010000
+REG_EXPAND_SZ  = 0x00020000
+REG_BINARY     = 0x00000001
+REG_DWORD      = 0x00010001
+SERVICEROOT    = "System\CurrentControlSet\Services"
+;
+; Localizable Strings
+;
+DiskId       = "Advanced Micro Devices, Inc. Installation DISK (VIDEO)"
+GraphAdap    = "Graphics Adapter"
+ATI          = "Advanced Micro Devices, Inc."
+DisplayUninstall = "AMD Display Component Uninstall"
+ATIR300="WDDM (R300)" 
+AMD68B8.1 = "AMD Radeon HD 6700 Series"
+AMD9598.1 = "ATI All-in-Wonder HD"
+AMD94C1.1 = "ATI Radeon HD 2400 Pro"
+AMD94C3.1 = "ATI Radeon HD 2400 PRO"
+AMD94C1.2 = "ATI Radeon HD 2400 XT"
+AMD9400.1 = "ATI Radeon HD 2900 PRO"
+AMD9400.2 = "ATI Radeon HD 2900 XT"
+AMD9581.1 = "ATI Radeon HD 3600 Series"
+AMD9501.1 = "ATI Radeon HD 3690"
+AMD9505.1 = "ATI Radeon HD 3690"
+AMD9505.2 = "ATI Radeon HD 3850"
+AMD9501.2 = "ATI Radeon HD 3870"
+AMD68F9.1 = "AMD Radeon HD 6350"
+AMD68FA.1 = "AMD Radeon HD 7350"
+AMD68FA.2 = "AMD Radeon HD 7350"
+AMD68F9.2 = "ATI Radeon HD 5450"
+AMD94C3.2 = "ATI Radeon HD 2350 Series"
+AMD94C3.3 = "ATI Radeon HD 2400"
+AMD94C1.3 = "ATI Radeon HD 2400 Pro"
+AMD94C3.4 = "ATI Radeon HD 2400 PRO"
+AMD94C3.5 = "ATI Radeon HD 2400 PRO"
+AMD94C1.4 = "ATI Radeon HD 2400 XT"
+AMD68F9.3 = "AMD Radeon HD 6350"
+AMD689C.1 = "ASUS ARES"
+AMD68E1.1 = "ASUS EAH5450 Series"
+AMD689C.2 = "ASUS EAH5870 Series"
+AMD9598.2 = "ATI Radeon HD 4570"
+AMD9505.3 = "ATI Radeon HD 4730"
+AMD944A.1 = "ATI Radeon HD 4800 Series"
+AMD9598.3 = "HD3730"
+AMD68E1.2 = "ATI Radeon HD 5400 Series"
+AMD68E1.3 = "ATI Mobility Radeon HD 5000 Series"
+AMD94C3.6 = "ATI Radeon HD 2400 PRO"
+AMD94C3.7 = "ATI Radeon HD 2400 PRO"
+AMD94C1.5 = "ATI Radeon HD 2400 XT"
+AMD94C3.8 = "ATI Radeon HD 3410"
+AMD9552.1 = "ATI Radeon HD 4300/4500 Series"
+AMD9552.2 = "ATI Radeon HD 4300/4500 Series"
+AMD944A.2 = "ATI Radeon HD 4800 Series"
+AMD68E1.4 = "ATI Radeon HD 5400 Series"
+AMD68E1.5 = "ATI Radeon HD 5400 Series"
+AMD68E1.6 = "ATI Radeon HD 5400 Series"
+AMD68E1.7 = "ATI Radeon HD 5400 Series"
+AMD68E1.8 = "ATI Radeon HD 5400 Series"
+AMD9498.1 = "ATI Radeon HDG 4670"
+AMD94C3.9 = "ATI Radeon HD 2400"
+AMD94C3.10 = "ATI Radeon HD 2400"
+AMD94C3.11 = "ATI Radeon HD 2400"
+AMD94C3.12 = "ATI Radeon HD 2400 PRO"
+AMD94C1.6 = "ATI Radeon HD 2400 XT"
+AMD94C1.7 = "ATI Radeon HD 2400 XT"
+AMD94C1.8 = "ATI Radeon HD 2400 XT"
+AMD94C1.9 = "ATI Radeon HD 2400 XT"
+AMD94C3.13 = "ATI Radeon HD 3410"
+AMD9589.1 = "ATI Radeon HD 3610"
+AMD944A.3 = "ATI Radeon HD 4800 Series"
+AMD68E1.9 = "ATI Radeon HD 5400 Series"
+AMD68E1.10 = "ATI Radeon HD 5400 Series"
+AMD68BF.1 = "AMD Radeon HD 6750"
+AMD955F.1 = "ATI Desktop Radeon HD 4500/4300 Series"
+AMD94C3.14 = "ATI Radeon HD 2350 Series"
+AMD94C3.15 = "ATI Radeon HD 2400 LE"
+AMD95C5.1 = "ATI Radeon HD 3450"
+AMD95C0.1 = "ATI Radeon HD 3550"
+AMD95C5.2 = "ATI Radeon HD 3550"
+AMD9591.1 = "ATI Radeon HD 3600 Series"
+AMD9581.2 = "ATI Radeon HD 3600 Series"
+AMD9583.1 = "ATI Radeon HD 3600 Series"
+AMD9598.4 = "ATI Radeon HD 3730"
+AMD9505.4 = "ATI Radeon HD 3850"
+AMD95C5.3 = "ATI Radeon HD 4230"
+AMD95C5.4 = "ATI Radeon HD 4230"
+AMD95C5.5 = "ATI Radeon HD 4250"
+AMD95C5.6 = "ATI Radeon HD 4250"
+AMD95C5.7 = "ATI Radeon HD 4300 Series"
+AMD9552.3 = "ATI Radeon HD 4300/4500 Series"
+AMD9598.5 = "ATI Radeon HD 4570"
+AMD9505.5 = "ATI Radeon HD 4730"
+AMD9505.6 = "ATI Radeon HD 4730"
+AMD9505.7 = "ATI Radeon HD 4750"
+AMD9505.8 = "ATI Radeon HD 4750"
+AMD68E1.11 = "ATI Radeon HD 5400 Series"
+AMD68F9.4 = "ATI Radeon HD 6230"
+AMD68E1.12 = "ATI Radeon HD 6230"
+AMD68F9.5 = "ATI Radeon HD 6250"
+AMD68E1.13 = "ATI Radeon HD 6250"
+AMD68F9.6 = "ATI Radeon HD 6290"
+AMD68F9.7 = "ATI Radeon HD 6350"
+AMD68E1.14 = "ATI Radeon HD 6350"
+AMD68DA.1 = "ATI Radeon HD 6390"
+AMD68DA.2 = "ATI Radeon HD 6490"
+AMD68D9.1 = "ATI Radeon HD 6510"
+AMD68D9.2 = "ATI Radeon HD 6610"
+AMD68BE.1 = "ATI Radeon HD 6750"
+AMD9480.1 = "ATI Radeon HD4650"
+AMD9552.4 = "VisionTek Radeon 4350"
+AMD955F.2 = "VisionTek Radeon 4350"
+AMD944A.4 = "ATI Radeon HD 4800 Series"
+AMD9552.5 = "VisionTek Radeon 4350"
+AMD955F.3 = "VisionTek Radeon 4350"
+AMD9598.6 = "VisionTek Radeon HD 2600 Pro"
+AMD9598.7 = "VisionTek Radeon HD 2600 XT"
+AMD68E1.15 = "VisionTek Radeon HD 5450"
+AMD68F9.8 = "AMD Radeon HD 6350A Graphics"
+AMD6759.1 = "AMD Radeon HD 6570 Graphics"
+AMD68BE.2 = "AMD Radeon HD 6750 Graphics"
+AMD94C3.16 = "ATI Radeon HD 2400 PRO"
+AMD94C3.17 = "ATI Radeon HD 3410"
+AMD9589.2 = "ATI Radeon HD 3610"
+AMD68F9.9 = "ATI Radeon HD 6350 Graphics"
+AMD68E0.1 = "AMD  Radeon HD 5400 Series"
+AMD954F.1 = "ATI Radeon HD 4550"
+AMD954F.2 = "ATI Radeon HD 4550"
+AMD9555.1 = "ATI Radeon HD 4550"
+AMD9498.2 = "ATI Radeon HD 4650"
+AMD9498.3 = "ATI Radeon HD 4650"
+AMD9498.4 = "ATI Radeon HD 4650"
+AMD9498.5 = "ATI Radeon HD 4670"
+AMD9498.6 = "ATI Radeon HD 4670"
+AMD94B3.1 = "ATI Radeon HD 4770"
+AMD944A.5 = "ATI Radeon HD 4800 Series"
+AMD944C.1 = "ATI Radeon HD 4830"
+AMD944C.2 = "ATI Radeon HD 4830"
+AMD9442.1 = "ATI Radeon HD 4850"
+AMD9442.2 = "ATI Radeon HD 4850"
+AMD9440.1 = "ATI Radeon HD 4870"
+AMD9440.2 = "ATI Radeon HD 4870"
+AMD9440.3 = "ATI Radeon HD 4870"
+AMD9440.4 = "ATI Radeon HD 4870"
+AMD9441.1 = "ATI Radeon HD 4870 X2"
+AMD68E1.16 = "ATI Radeon HD 5400 Series"
+AMD9555.2 = "ATI Radeon HD4300/HD4500 series"
+AMD954F.3 = "XFX Radeon HD 4570"
+AMD68BE.3 = "AMD Radeon HD 6750"
+AMD68BF.2 = "AMD Radeon HD 6750"
+AMD68FA.3 = "AMD Radeon HD 7350"
+AMD68C1.1 = "ATI  Radeon HD 5000 Series"
+AMD68E0.2 = "ATI  Radeon HD 5400 Series"
+AMD68E1.17 = "ATI  Radeon HD 6350"
+AMD94C3.18 = "ATI Radeon HD 2350 Series"
+AMD94C3.19 = "ATI Radeon HD 2400 PRO"
+AMD94C3.20 = "ATI Radeon HD 2400 PRO"
+AMD94C3.21 = "ATI Radeon HD 2400 PRO"
+AMD94C3.22 = "ATI Radeon HD 2400 PRO"
+AMD94C3.23 = "ATI Radeon HD 2400 PRO"
+AMD95C0.2 = "ATI Radeon HD 3550"
+AMD95C0.3 = "ATI Radeon HD 3570"
+AMD9589.3 = "ATI Radeon HD 3600 Series"
+AMD95C5.8 = "ATI Radeon HD 4250"
+AMD95C0.4 = "ATI Radeon HD 4250"
+AMD95C5.9 = "ATI Radeon HD 4250"
+AMD9552.6 = "ATI Radeon HD 4300/4500 Series"
+AMD9553.1 = "ATI Radeon HD 4300/4500 Series"
+AMD954F.4 = "ATI Radeon HD 4450"
+AMD954F.5 = "ATI Radeon HD 4520"
+AMD9598.8 = "ATI Radeon HD 4570"
+AMD9598.9 = "ATI Radeon HD 4580"
+AMD9540.1 = "ATI Radeon HD 4590"
+AMD9598.10 = "ATI Radeon HD 4610"
+AMD9490.1 = "ATI Radeon HD 4710"
+AMD9505.9 = "ATI Radeon HD 4730"
+AMD9505.10 = "ATI Radeon HD 4750"
+AMD9501.3 = "ATI Radeon HD 4750"
+AMD9505.11 = "ATI Radeon HD 4750"
+AMD944A.6 = "ATI Radeon HD 4800 Series"
+AMD944E.1 = "ATI Radeon HD 4810 Series"
+AMD944E.2 = "ATI Radeon HD 4810 series"
+AMD68E1.18 = "ATI Radeon HD 5400 Series"
+AMD68E1.19 = "ATI Radeon HD 5400 Series"
+AMD68F9.10 = "ATI Radeon HD 5450"
+AMD68F9.11 = "ATI Radeon HD 5450"
+AMD68F9.12 = "ATI Radeon HD 5450"
+AMD68F9.13 = "ATI Radeon HD 5470"
+AMD68E1.20 = "ATI Radeon HD 5470"
+AMD68F9.14 = "ATI Radeon HD 5490"
+AMD68F9.15 = "ATI Radeon HD 5530"
+AMD68DA.3 = "ATI Radeon HD 5630"
+AMD68D8.1 = "ATI Radeon HD 5690"
+AMD68D8.2 = "ATI Radeon HD 5730"
+AMD6899.1 = "ATI Radeon HD 5850X2"
+AMD68E1.21 = "ATI Radeon HD 6230"
+AMD68F9.16 = "ATI Radeon HD 6230"
+AMD68F9.17 = "ATI Radeon HD 6350"
+AMD68F9.18 = "ATI Radeon HD 6350"
+AMD68F9.19 = "ATI Radeon HD 6350 Graphics"
+AMD68DA.4 = "ATI Radeon HD 6390"
+AMD68DA.5 = "ATI Radeon HD 6490"
+AMD68D9.3 = "ATI Radeon HD 6510"
+AMD68D9.4 = "ATI Radeon HD 6510"
+AMD68D9.5 = "ATI Radeon HD 6610"
+AMD68BE.4 = "ATI Radeon HD 6750"
+AMD9555.3 = "ATI Radeon HD4300/HD4500 series"
+AMD95C0.5 = "Sapphire Radeon HD 3550"
+AMD9501.4 = "Sapphire Radeon HD 3690"
+AMD9505.12 = "Sapphire Radeon HD 3690"
+AMD9598.11 = "Sapphire Radeon HD 3730"
+AMD9598.12 = "Sapphire Radeon HD 3750"
+AMD954F.6 = "Sapphire Radeon HD4570"
+AMD6738.1 = "AMD Radeon HD 6800 Series"
+AMD6739.1 = "AMD Radeon HD 6850 X2"
+AMD94C3.24 = "ATI Radeon HD 2350 Series"
+AMD94C3.25 = "ATI Radeon HD 2400 LE"
+AMD9589.4 = "ATI Radeon HD 3600 Series"
+AMD9501.5 = "ATI Radeon HD 3690"
+AMD9505.13 = "ATI Radeon HD 3690"
+AMD95C5.10 = "ATI Radeon HD 4250"
+AMD95C5.11 = "ATI Radeon HD 4300 Series"
+AMD9552.7 = "ATI Radeon HD 4300/4500 Series"
+AMD954F.7 = "ATI Radeon HD 4450"
+AMD954F.8 = "ATI Radeon HD 4520"
+AMD9540.2 = "ATI Radeon HD 4590"
+AMD9598.13 = "ATI Radeon HD 4610"
+AMD9498.7 = "ATI Radeon HD 4700"
+AMD9490.2 = "ATI Radeon HD 4710"
+AMD9498.8 = "ATI Radeon HD 4720"
+AMD944E.3 = "ATI Radeon HD 4730 Series"
+AMD944A.7 = "ATI Radeon HD 4800 Series"
+AMD944E.4 = "ATI Radeon HD 4810 Series"
+AMD944E.5 = "ATI Radeon HD 4820"
+AMD68E1.22 = "ATI Radeon HD 5400 Series"
+AMD68E1.23 = "ATI Radeon HD 5400 Series"
+AMD68F9.20 = "ATI Radeon HD 5470"
+AMD68F9.21 = "ATI Radeon HD 5490"
+AMD68F9.22 = "ATI Radeon HD 5530"
+AMD68DA.6 = "ATI Radeon HD 5630"
+AMD68D8.3 = "ATI Radeon HD 5730"
+AMD68F9.23 = "ATI Radeon HD 6350"
+AMD68D9.6 = "ATI Radeon HD 6510"
+AMD68E1.24 = "AMD Radeon HD 6230"
+AMD6738.2 = "AMD Radeon HD 6870 X2"
+AMD6738.3 = "AMD Radeon HD 6870 X2"
+AMD94C3.26 = "ATI Radeon HD 2400"
+AMD95C5.12 = "ATI Radeon HD 4230"
+AMD9552.8 = "ATI Radeon HD 4300/4500 Series"
+AMD954F.9 = "ATI Radeon HD 4450"
+AMD9598.14 = "ATI Radeon HD 4570"
+AMD9598.15 = "ATI Radeon HD 4580"
+AMD9490.3 = "ATI Radeon HD 4710"
+AMD9505.14 = "ATI Radeon HD 4750"
+AMD944A.8 = "ATI Radeon HD 4800 Series"
+AMD68E1.25 = "ATI Radeon HD 5400 Series"
+AMD68F9.24 = "ATI Radeon HD 5470"
+AMD68F9.25 = "ATI Radeon HD 5470"
+AMD68F9.26 = "ATI Radeon HD 5490"
+AMD68DA.7 = "ATI Radeon HD 5630"
+AMD68D9.7 = "ATI Radeon HD 5630"
+AMD68D8.4 = "ATI Radeon HD 5690"
+AMD68D8.5 = "ATI Radeon HD 5730"
+AMD68F9.27 = "ATI Radeon HD 6230"
+AMD68F9.28 = "ATI Radeon HD 6250"
+AMD68F9.29 = "ATI Radeon HD 6290"
+AMD68F9.30 = "ATI Radeon HD 6350"
+AMD68E1.26 = "ATI Radeon HD 6350"
+AMD68DA.8 = "ATI Radeon HD 6390"
+AMD68D9.8 = "ATI Radeon HD 6510"
+AMD68BE.5 = "ATI Radeon HD 6750"
+AMD9598.16 = "ATI Radeon HD3750"
+AMD94C3.27 = "Qimonda Radeon HD 2400 PRO"
+AMD9589.5 = "Qimonda Radeon HD 2600 PRO"
+AMD9588.1 = "Qimonda Radeon HD 2600 XT"
+AMD95C5.13 = "Qimonda Radeon HD 3450"
+AMD95C5.14 = "Qimonda Radeon HD 3450"
+AMD68F9.31 = "ATI Radeon HD 6230"
+AMD9591.2 = "VisionTek Radeon HD 2600/3600 Series"
+AMD68F9.32 = "ATI Radeon HD 6250"
+AMD68F9.33 = "ATI Radeon HD 6290"
+AMD9519.1 = "AMD FireStream 9170"
+AMD9452.1 = "AMD FireStream 9250"
+AMD9450.1 = "AMD FireStream 9270"
+AMD688D.1 = "AMD FireStream 9350"
+AMD688C.1 = "AMD FireStream 9370"
+AMD675F.1 = "AMD Radeon HD 5500 Series"
+AMD9803.1 = "AMD Radeon HD 6250 Graphics"
+AMD9805.1 = "AMD Radeon HD 6250 Graphics"
+AMD9807.1 = "AMD Radeon HD 6290 Graphics"
+AMD9802.1 = "AMD Radeon HD 6310 Graphics"
+AMD9804.1 = "AMD Radeon HD 6310 Graphics"
+AMD9806.1 = "AMD Radeon HD 6320 Graphics"
+AMD9642.1 = "AMD Radeon HD 6370D"
+AMD6770.1 = "AMD Radeon HD 6400 Series"
+AMD9644.1 = "AMD Radeon HD 6410D"
+AMD9645.1 = "AMD Radeon HD 6410D"
+AMD6779.1 = "AMD Radeon HD 6450"
+AMD964A.1 = "AMD Radeon HD 6530D"
+AMD9640.1 = "AMD Radeon HD 6550D"
+AMD6759.2 = "AMD Radeon HD 6570"
+AMD6758.1 = "AMD Radeon HD 6670"
+AMD68BA.1 = "AMD Radeon HD 6700 Series"
+AMD68BF.3 = "AMD Radeon HD 6700 Series"
+AMD673E.1 = "AMD Radeon HD 6700 Series"
+AMD6738.4 = "AMD Radeon HD 6800 Series"
+AMD6739.2 = "AMD Radeon HD 6800 Series"
+AMD689B.1 = "AMD Radeon HD 6800 Series"
+AMD6718.1 = "AMD Radeon HD 6900 Series"
+AMD6719.1 = "AMD Radeon HD 6900 Series"
+AMD671D.1 = "AMD Radeon HD 6900 Series"
+AMD671F.1 = "AMD Radeon HD 6900 Series"
+AMD9649.1 = "AMD Radeon(TM) HD 6480G"
+AMD68E0.3 = "ATI Mobility Radeon HD 5000 Series"
+AMD9616.1 = "ATI Radeon 3000 Graphics"
+AMD9611.1 = "ATI Radeon 3100 Graphics"
+AMD94C7.1 = "ATI Radeon HD 2350"
+AMD94C3.28 = "ATI Radeon HD 2400 Series"
+AMD94C1.10 = "ATI Radeon HD 2400 Series"
+AMD94CC.1 = "ATI Radeon HD 2400 Series"
+AMD9589.6 = "ATI Radeon HD 2600 PRO"
+AMD958A.1 = "ATI Radeon HD 2600 X2 Series"
+AMD9588.2 = "ATI Radeon HD 2600 XT"
+AMD9405.1 = "ATI Radeon HD 2900 GT"
+AMD9403.1 = "ATI Radeon HD 2900 PRO"
+AMD9400.3 = "ATI Radeon HD 2900 XT"
+AMD9610.1 = "ATI Radeon HD 3200 Graphics"
+AMD9614.1 = "ATI Radeon HD 3300 Graphics"
+AMD95C0.6 = "ATI Radeon HD 3400 Series"
+AMD95C5.15 = "ATI Radeon HD 3400 Series"
+AMD9598.17 = "ATI Radeon HD 3600 Series"
+AMD9501.6 = "ATI Radeon HD 3800 Series"
+AMD9505.15 = "ATI Radeon HD 3800 Series"
+AMD9507.1 = "ATI Radeon HD 3830"
+AMD9513.1 = "ATI Radeon HD 3850 X2"
+AMD9513.2 = "ATI Radeon HD 3850 X2"
+AMD950F.1 = "ATI Radeon HD 3870 X2"
+AMD9710.1 = "ATI Radeon HD 4200"
+AMD9715.1 = "ATI Radeon HD 4250"
+AMD9714.1 = "ATI Radeon HD 4290"
+AMD954F.10 = "ATI Radeon HD 4300/4500 Series"
+AMD9540.3 = "ATI Radeon HD 4550"
+AMD9490.4 = "ATI Radeon HD 4600 Series"
+AMD9498.9 = "ATI Radeon HD 4600 Series"
+AMD944E.6 = "ATI Radeon HD 4700 Series"
+AMD944E.7 = "ATI Radeon HD 4700 Series"
+AMD94B4.1 = "ATI Radeon HD 4700 Series"
+AMD94B3.2 = "ATI Radeon HD 4770"
+AMD94B5.1 = "ATI Radeon HD 4770"
+AMD9440.5 = "ATI Radeon HD 4800 Series"
+AMD9442.3 = "ATI Radeon HD 4800 Series"
+AMD944C.3 = "ATI Radeon HD 4800 Series"
+AMD9460.1 = "ATI Radeon HD 4800 Series"
+AMD9462.1 = "ATI Radeon HD 4800 Series"
+AMD9443.1 = "ATI Radeon HD 4850 X2"
+AMD9441.2 = "ATI Radeon HD 4870 X2"
+AMD68F9.34 = "ATI Radeon HD 5450"
+AMD68DA.9 = "ATI Radeon HD 5500 Series"
+AMD68D9.9 = "ATI Radeon HD 5570"
+AMD68B9.1 = "ATI Radeon HD 5600/5700"
+AMD68D8.6 = "ATI Radeon HD 5670"
+AMD68B8.2 = "ATI Radeon HD 5700 Series"
+AMD68BE.6 = "ATI Radeon HD 5700 Series"
+AMD6898.1 = "ATI Radeon HD 5800 Series"
+AMD6899.2 = "ATI Radeon HD 5800 Series"
+AMD689E.1 = "ATI Radeon HD 5800 Series"
+AMD689C.3 = "ATI Radeon HD 5900 Series"
+
+[ATI.Mfg.NTx86.6.1]
